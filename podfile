@@ -1,0 +1,5 @@
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'AVOSCloud'
+pod 'Masonry'
+pod 'SVProgressHUD'
