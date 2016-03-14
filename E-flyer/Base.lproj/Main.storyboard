@@ -1075,6 +1075,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="btn_regist" destination="rfB-Rp-DZD" id="x0R-9m-OpV"/>
                         <outlet property="btn_valid" destination="qHc-2b-KN7" id="ZKf-MM-vcg"/>
                     </connections>
                 </viewController>

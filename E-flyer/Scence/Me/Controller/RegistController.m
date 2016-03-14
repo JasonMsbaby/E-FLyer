@@ -10,6 +10,7 @@
 
 @interface RegistController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn_valid;
+@property (weak, nonatomic) IBOutlet UIButton *btn_regist;
 
 @end
 
@@ -17,8 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupView];
+}
+
+
+- (void)setupView{
     [_btn_valid setBackgroundColor:[UIColor colorWithWhite:0.600 alpha:1.000]];
-    
+    [_btn_regist setBackgroundColor:[UIColor colorWithRed:0.000 green:0.502 blue:0.251 alpha:1.000]];
+    _btn_regist.layer.cornerRadius = 3;
+    _btn_regist.clipsToBounds = YES;
 }
 
 /*!

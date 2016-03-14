@@ -67,6 +67,7 @@
 		96EB75F91C859B1300B3658F /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75EE1C859B1300B3658F /* WMPlayer.m */; };
 		96EB75FC1C85A3C300B3658F /* DataManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75FB1C85A3C300B3658F /* DataManger.m */; };
 		96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75FE1C85A82700B3658F /* VideoModel.m */; };
+		96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F66DFC1C9691C80023F6F3 /* PopView.m */; };
 		FA04D69D2E262D85529EAF40 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D6CCA0EDCAE98C331D816D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +186,8 @@
 		96EB75FB1C85A3C300B3658F /* DataManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManger.m; sourceTree = "<group>"; };
 		96EB75FD1C85A82700B3658F /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
 		96EB75FE1C85A82700B3658F /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		96F66DFB1C9691C80023F6F3 /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
+		96F66DFC1C9691C80023F6F3 /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
 		BEB5D0E83D49F361AA3BD0D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +259,7 @@
 		965433901C803625005B8BD1 /* E-flyer */ = {
 			isa = PBXGroup;
 			children = (
+				96F66DFA1C9691B00023F6F3 /* Common */,
 				965434031C804D4C005B8BD1 /* Resources */,
 				965433EC1C803EDA005B8BD1 /* Basic */,
 				965433ED1C803EDA005B8BD1 /* Categroy */,
@@ -566,6 +570,15 @@
 			path = WMPlayer;
 			sourceTree = "<group>";
 		};
+		96F66DFA1C9691B00023F6F3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				96F66DFB1C9691C80023F6F3 /* PopView.h */,
+				96F66DFC1C9691C80023F6F3 /* PopView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -798,6 +811,7 @@
 				96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */,
 				96C864061C85330000365512 /* UIView+EFView.m in Sources */,
 				96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */,
+				96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */,
 				96A7F8621C80BEDC00412B79 /* FlyerController.m in Sources */,
 				96EB75BF1C85647400B3658F /* FlyerYouLikeCell.m in Sources */,
 				9684D8531C82E0A200F4E542 /* MeController.m in Sources */,
