@@ -43,6 +43,7 @@
 - (IBAction)registAction:(id)sender {
 }
 - (IBAction)loginAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
