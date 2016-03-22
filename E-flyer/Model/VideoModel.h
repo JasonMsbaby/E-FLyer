@@ -50,4 +50,8 @@
 
 @property(assign,nonatomic) BOOL isplaying;
 
+
+
+
+
 @end

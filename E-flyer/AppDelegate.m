@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/26.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import <IQKeyboardManager.h>
 #import "AppDelegate.h"
 #import <AVOSCloud.h>
 #import "EFUser.h"
@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self loadLeanCloud];
     [self initData];
+    [self setUpIQKeyboardManager];
     return YES;
 }
 
@@ -47,6 +48,15 @@
 }
 
 #pragma mark - 初始化数据
+
+
+- (void)setUpIQKeyboardManager{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
+}
 
 - (void)initData{
     //初始化分类信息

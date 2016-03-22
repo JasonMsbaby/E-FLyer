@@ -1,5 +1,6 @@
 PODS:
   - AVOSCloud (3.2.5.1)
+  - IQKeyboardManager (4.0.0)
   - Masonry (0.6.4)
   - MJRefresh (3.1.0)
   - SDWebImage (3.7.5):
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - AVOSCloud
+  - IQKeyboardManager
   - Masonry
   - MJRefresh
   - SDWebImage
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AVOSCloud: f5b1f8d04b2ad4035d01b6b96fb9ed450fd7a1cd
+  IQKeyboardManager: b91928f7927ba55a5829b4dcf4b7a6736ac9fc22
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
