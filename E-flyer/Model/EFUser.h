@@ -9,5 +9,5 @@
 #import "BasicModel.h"
 #import <AVOSCloud.h>
 @interface EFUser : AVUser<AVSubclassing>
-@property(strong,nonatomic) NSString *username;
+
 @end

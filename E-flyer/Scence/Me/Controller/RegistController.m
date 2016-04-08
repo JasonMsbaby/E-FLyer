@@ -11,6 +11,9 @@
 @interface RegistController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn_valid;
 @property (weak, nonatomic) IBOutlet UIButton *btn_regist;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *pwd1;
+@property (weak, nonatomic) IBOutlet UITextField *pwd2;
 
 @end
 
@@ -36,6 +39,25 @@
  */
 - (IBAction)close:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+/*!
+ *  注册用户
+ *
+ *  @param sender sender description
+ */
+- (IBAction)regist:(id)sender {
+    if ([self.pwd1.text isEqualToString:self.pwd2.text]) {
+        EFUser *user = [EFUser user];
+        user.username = self.userName.text;
+        user.password = self.pwd1.text;
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                [self alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
+                    [self close:nil];
+                }];
+            }
+        }];
+    }
 }
 
 

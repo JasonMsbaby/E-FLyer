@@ -1011,6 +1011,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="loginAction:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="EL5-q9-mnd"/>
+                                                    <action selector="regist:" destination="bNb-ir-oHN" eventType="touchUpInside" id="ff9-nb-8Rs"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册表示您已经阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfP-8H-qO3">
@@ -1091,6 +1092,9 @@
                     <connections>
                         <outlet property="btn_regist" destination="rfB-Rp-DZD" id="x0R-9m-OpV"/>
                         <outlet property="btn_valid" destination="qHc-2b-KN7" id="ZKf-MM-vcg"/>
+                        <outlet property="pwd1" destination="8wV-NZ-E7h" id="tTs-Xr-yJj"/>
+                        <outlet property="pwd2" destination="xIQ-k1-10Q" id="YJ4-Tp-7At"/>
+                        <outlet property="userName" destination="bsk-Pj-GE4" id="psr-0b-nLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMt-gP-OUB" userLabel="First Responder" sceneMemberID="firstResponder"/>

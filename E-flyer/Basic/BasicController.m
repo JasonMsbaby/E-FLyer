@@ -26,4 +26,19 @@
 }
 
 
+- (void)alerWithTitle:(NSString *)title Message:(NSString *)message CallBack:(void (^)())callback{
+    if (message == nil) {
+        message = @"";
+    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *action_ok = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        callback();
+    }];
+    UIAlertAction *action_cancle = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+    [alert addAction:action_ok];
+    [alert addAction:action_cancle];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 @end

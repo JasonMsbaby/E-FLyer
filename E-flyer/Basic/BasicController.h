@@ -10,4 +10,14 @@
 #import "Constanst.h"
 @interface BasicController : UIViewController
 @property(strong,nonatomic) EFUser *currentUser;
+
+/*!
+ *  弹出框
+ *
+ *  @param title    title description
+ *  @param message  message description
+ *  @param callback     
+ */
+- (void)alerWithTitle:(NSString *)title Message:(NSString *)message CallBack:(void(^)())callback;
+
 @end

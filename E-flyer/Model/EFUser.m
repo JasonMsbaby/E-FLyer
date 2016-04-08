@@ -16,5 +16,4 @@
 + (NSString *)parseClassName{
     return @"_User";
 }
-@dynamic username;
 @end
