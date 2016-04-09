@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *HeaderMask;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *HeaderH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *HeaderMaskH;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *phone;
+@property (weak, nonatomic) IBOutlet UILabel *money;
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
 @property (weak, nonatomic) IBOutlet UIView *userInfoView;
 @property(strong,nonatomic) UIView *loginView;
@@ -31,6 +34,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self initView];
+    [self layoutUserInfo];
 }
 /*!
  *  加载视图
@@ -40,29 +44,45 @@
     self.headImg.clipsToBounds = YES;
     
     _data = [MeMenu menuList];
-//    if (self.currentUser == nil) {
-//        self.userInfoView.hidden = YES;
-//        self.loginView.hidden = NO;
-//    }else{
-//        self.userInfoView.hidden = NO;
-//        self.loginView.hidden = YES;
-//    }
+    if (self.currentUser == nil) {
+        self.userInfoView.hidden = YES;
+        self.loginView.hidden = NO;
+    }else{
+        self.userInfoView.hidden = NO;
+        self.loginView.hidden = YES;
+    }
+}
+/*!
+ *  加载用户数据
+ */
+- (void)layoutUserInfo{
+    self.userName.text = self.currentUser.username;
+    self.phone.text = self.currentUser.mobilePhoneNumber;
+    self.money.text = [NSString stringWithFormat:@"%.2lf",self.currentUser.money];
+    if (self.currentUser == nil) {
+        self.headImg.image = [UIImage imageNamed:@"head"];
+    }else{
+        if (self.currentUser.headImg == nil) {
+            self.headImg.image = [UIImage imageNamed:@"head_default"];
+        }else{
+            //加载用户的头像
+        }}
 }
 /*!
  *  加载登录按钮
  */
 - (void)loadLoginButton{
+    [self.view layoutIfNeeded];
     self.loginView = [UIView new];
-    self.loginView.backgroundColor = [UIColor redColor];
     self.btn_login = [[UIButton alloc]initWithFrame:CGRectMake(0, 25, 100, 30)];
     [self.btn_login setTitle:@"登录/注册" forState:(UIControlStateNormal)];
     [self.btn_login setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
     [self.btn_login addTarget:self action:@selector(loginAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.loginView addSubview:self.btn_login];
-    [self.headImg addSubview:self.loginView];
+    [self.HeaderMask addSubview:self.loginView];
     [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headImg.mas_right).offset(10);
-        make.right.equalTo(self.view);
+        make.right.equalTo(self.view).offset(-20);
         make.top.bottom.equalTo(self.headImg);
     }];
 }

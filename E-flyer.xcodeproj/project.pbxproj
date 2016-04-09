@@ -69,6 +69,7 @@
 		96EB75FC1C85A3C300B3658F /* DataManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75FB1C85A3C300B3658F /* DataManger.m */; };
 		96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75FE1C85A82700B3658F /* VideoModel.m */; };
 		96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F66DFC1C9691C80023F6F3 /* PopView.m */; };
+		96F81BC51CB9650900A3B523 /* head_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F81BC41CB9650900A3B523 /* head_default@2x.png */; };
 		FA04D69D2E262D85529EAF40 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D6CCA0EDCAE98C331D816D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +192,7 @@
 		96EB75FE1C85A82700B3658F /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		96F66DFB1C9691C80023F6F3 /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
 		96F66DFC1C9691C80023F6F3 /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
+		96F81BC41CB9650900A3B523 /* head_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_default@2x.png"; sourceTree = "<group>"; };
 		BEB5D0E83D49F361AA3BD0D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -527,6 +529,7 @@
 		965434041C804D4C005B8BD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				96F81BC41CB9650900A3B523 /* head_default@2x.png */,
 				96E59ED01C8EFBAE00D24F02 /* weixin@2x.png */,
 				96E59ECB1C8EE46E00D24F02 /* share@2x.png */,
 				96E59EC91C8EE06400D24F02 /* down_close@2x.png */,
@@ -707,6 +710,7 @@
 				96C8640B1C85511400365512 /* img@2x.png in Resources */,
 				96A7F8671C80C6F700412B79 /* left_back@2x.png in Resources */,
 				96E59ECA1C8EE06400D24F02 /* down_close@2x.png in Resources */,
+				96F81BC51CB9650900A3B523 /* head_default@2x.png in Resources */,
 				96A7F7CA1C8099C700412B79 /* tab_add@2x.png in Resources */,
 				968D1A091C8D8DBE00D1BDBC /* meBg@2x.png in Resources */,
 				962FCF2C1C8460D000981B5D /* circle@2x.png in Resources */,

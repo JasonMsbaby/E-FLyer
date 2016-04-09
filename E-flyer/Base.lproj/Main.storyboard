@@ -601,6 +601,7 @@
                                     <constraint firstAttribute="trailing" secondItem="c2B-5z-SaO" secondAttribute="trailing" id="JGi-3t-vaD"/>
                                     <constraint firstItem="1Yy-jt-jkf" firstAttribute="leading" secondItem="8Ma-rf-IQi" secondAttribute="trailing" constant="5" id="JZy-Fe-3aH"/>
                                     <constraint firstItem="c2B-5z-SaO" firstAttribute="top" secondItem="7xb-pK-PdR" secondAttribute="bottom" constant="5" id="Ohq-bh-8RV"/>
+                                    <constraint firstItem="1Yy-jt-jkf" firstAttribute="leading" secondItem="8Ma-rf-IQi" secondAttribute="trailing" constant="5" id="RDt-th-nkx"/>
                                     <constraint firstAttribute="trailing" secondItem="1Yy-jt-jkf" secondAttribute="trailing" id="WAQ-2E-ThN"/>
                                     <constraint firstAttribute="trailing" secondItem="7xb-pK-PdR" secondAttribute="trailing" id="Ygo-0k-cUX"/>
                                     <constraint firstItem="7xb-pK-PdR" firstAttribute="leading" secondItem="sEe-Xm-Ea7" secondAttribute="leading" id="aGv-Vn-aOD"/>
@@ -620,6 +621,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="w3O-Rv-raA" firstAttribute="top" secondItem="oaY-ZK-xVf" secondAttribute="bottom" id="0xD-s1-jAo"/>
+                            <constraint firstItem="1Yy-jt-jkf" firstAttribute="leading" secondItem="oaY-ZK-xVf" secondAttribute="trailing" constant="-165" id="1sD-ea-R4l"/>
                             <constraint firstItem="rjc-55-w3T" firstAttribute="leading" secondItem="LWu-uP-2di" secondAttribute="leading" id="2d8-pl-mjW"/>
                             <constraint firstItem="oaY-ZK-xVf" firstAttribute="top" secondItem="mX4-f3-cso" secondAttribute="bottom" constant="180" id="4j6-sy-Qyb"/>
                             <constraint firstItem="sEe-Xm-Ea7" firstAttribute="leading" secondItem="LWu-uP-2di" secondAttribute="leading" constant="130" id="94U-9f-k85"/>
@@ -642,6 +644,7 @@
                             <mask key="constraints">
                                 <exclude reference="AzW-D4-qPB"/>
                                 <exclude reference="R2F-4w-JLJ"/>
+                                <exclude reference="1sD-ea-R4l"/>
                             </mask>
                         </variation>
                     </view>
@@ -652,8 +655,11 @@
                         <outlet property="HeaderMask" destination="okv-LH-6Ve" id="WuJ-l4-WVI"/>
                         <outlet property="HeaderMaskH" destination="2wc-XF-KgA" id="VcP-Av-0M7"/>
                         <outlet property="headImg" destination="rma-3D-qPT" id="xDl-cY-NhL"/>
+                        <outlet property="money" destination="1Yy-jt-jkf" id="D6a-MD-q0H"/>
+                        <outlet property="phone" destination="c2B-5z-SaO" id="vyO-vg-E2g"/>
                         <outlet property="tableView" destination="oaY-ZK-xVf" id="day-db-zFE"/>
                         <outlet property="userInfoView" destination="sEe-Xm-Ea7" id="581-Ww-DS0"/>
+                        <outlet property="userName" destination="7xb-pK-PdR" id="YNz-35-K2l"/>
                         <segue destination="EEq-Sq-iY1" kind="show" id="D79-pP-iQS"/>
                     </connections>
                 </viewController>

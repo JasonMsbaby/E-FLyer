@@ -52,15 +52,17 @@
     }
     if ([self.pwd1.text isEqualToString:self.pwd2.text]) {
         EFUser *user = [EFUser user];
-        user.username = self.userName.text;
+        user.username = [NSString stringWithFormat:@"%@_新用户",self.userName.text];
         user.password = self.pwd1.text;
+        user.mobilePhoneNumber = self.userName.text;
+        
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 [self alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
                     [self close:nil];
                 }];
             }else{
-                [self alerWithTitle:@"提示" Message:@"注册失败" CallBack:nil];
+                [self toastWithError:error];
             }
         }];
     }else{

@@ -48,14 +48,14 @@
 }
 
 
-- (void)toastWithCode:(NSInteger)code{
-    NSString *c = [NSString stringWithFormat:@"code_%ld",code];
+- (void)toastWithError:(NSError *)err{
+    NSString *c = [NSString stringWithFormat:@"code_%ld",err.code];
     App *app = [App sharedApp];
-    NSString *err = app.kCode[c];
-    if(err == nil){
-        err = [NSString stringWithFormat:@"%ld",code];
+    NSString *e = app.kCode[c];
+    if(e == nil){
+        e = [NSString stringWithFormat:@"%ld-%@",err.code,err.userInfo[@"error"]];
     }
-    [SVProgressHUD showErrorWithStatus:err];
+    [SVProgressHUD showErrorWithStatus:e];
 }
 
 

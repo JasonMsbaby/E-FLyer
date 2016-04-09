@@ -9,6 +9,10 @@
 #import "EFUser.h"
 
 @implementation EFUser
+@dynamic money;
+
+@dynamic headImg;
+
 +(void)load{
     [super load];
     [self registerSubclass];
@@ -16,4 +20,7 @@
 + (NSString *)parseClassName{
     return @"_User";
 }
+
+
+
 @end

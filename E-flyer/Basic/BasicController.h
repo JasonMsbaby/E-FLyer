@@ -24,7 +24,7 @@
 /*!
  *  根据错误码弹出提示
  *
- *  @param code     常量中配置的错误码
+ *  @param err
  */
-- (void)toastWithCode:(NSInteger)code;
+- (void)toastWithError:(NSError *)err;
 @end

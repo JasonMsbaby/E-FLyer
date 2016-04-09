@@ -9,5 +9,7 @@
 #import "BasicModel.h"
 #import <AVOSCloud.h>
 @interface EFUser : AVUser<AVSubclassing>
+@property(assign,nonatomic) double money;
 
+@property(strong,nonatomic) AVFile *headImg;
 @end
