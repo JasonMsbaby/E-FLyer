@@ -36,6 +36,10 @@
 
 
 #pragma mark - 按钮事件操作
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)winxinLoginAction:(id)sender {
 }
 - (IBAction)forgetPwdAction:(id)sender {

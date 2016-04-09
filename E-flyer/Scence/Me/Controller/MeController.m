@@ -16,8 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *HeaderMask;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *HeaderH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *HeaderMaskH;
-@property (weak, nonatomic) IBOutlet UIView *headImg;
+@property (weak, nonatomic) IBOutlet UIImageView *headImg;
 @property (weak, nonatomic) IBOutlet UIView *userInfoView;
+@property(strong,nonatomic) UIView *loginView;
 @property(strong,nonatomic) NSDictionary *data;
 @property(strong,nonatomic) UIButton *btn_login;
 @end
@@ -25,6 +26,7 @@
 @implementation MeController
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [self loadLoginButton];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -36,35 +38,33 @@
 - (void)initView{
     self.headImg.layer.cornerRadius = 50;
     self.headImg.clipsToBounds = YES;
+    
     _data = [MeMenu menuList];
-    if (self.currentUser == nil) {
-        [self hiddenSubView:YES];
-    }else{
-        [self hiddenSubView:NO];
-    }
-}
-/*!
- *  控制子控件的显示隐藏
- *
- *  @param flag
- */
-- (void)hiddenSubView:(BOOL)flag{
-    for (UIView *view in self.userInfoView.subviews) {
-        view.hidden = flag;
-    }
-    if (flag) {
-        [self loadLoginButton];
-    }
+//    if (self.currentUser == nil) {
+//        self.userInfoView.hidden = YES;
+//        self.loginView.hidden = NO;
+//    }else{
+//        self.userInfoView.hidden = NO;
+//        self.loginView.hidden = YES;
+//    }
 }
 /*!
  *  加载登录按钮
  */
 - (void)loadLoginButton{
+    self.loginView = [UIView new];
+    self.loginView.backgroundColor = [UIColor redColor];
     self.btn_login = [[UIButton alloc]initWithFrame:CGRectMake(0, 25, 100, 30)];
     [self.btn_login setTitle:@"登录/注册" forState:(UIControlStateNormal)];
     [self.btn_login setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
     [self.btn_login addTarget:self action:@selector(loginAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.userInfoView addSubview:self.btn_login];
+    [self.loginView addSubview:self.btn_login];
+    [self.headImg addSubview:self.loginView];
+    [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.headImg.mas_right).offset(10);
+        make.right.equalTo(self.view);
+        make.top.bottom.equalTo(self.headImg);
+    }];
 }
 /*!
  *  点击登录按钮

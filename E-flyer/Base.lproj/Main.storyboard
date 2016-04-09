@@ -721,7 +721,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMh-qk-pK8">
                                         <rect key="frame" x="10" y="5" width="260" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -780,7 +780,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有账号?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rs-rj-KUB">
-                                <rect key="frame" x="10" y="473" width="160" height="16"/>
+                                <rect key="frame" x="10" y="473" width="106.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Bd-A3-gbs"/>
                                 </constraints>
@@ -794,12 +794,20 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-sS-vXZ">
-                                <rect key="frame" x="173" y="467" width="52" height="28"/>
+                                <rect key="frame" x="119.5" y="467" width="52" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="立即注册"/>
                                 <connections>
                                     <action selector="registAction:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="435-Zz-87C"/>
                                     <segue destination="bNb-ir-oHN" kind="presentation" id="CzP-Vx-o5e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-ZK-PMV">
+                                <rect key="frame" x="181.5" y="467" width="95" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="不想注册,再看看"/>
+                                <connections>
+                                    <action selector="back:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="zCJ-4V-jOr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -809,15 +817,17 @@
                             <constraint firstItem="5Ra-sS-vXZ" firstAttribute="centerY" secondItem="2Rs-rj-KUB" secondAttribute="centerY" id="5AB-q6-NCG"/>
                             <constraint firstItem="zRP-aC-bQV" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" id="6k6-oJ-444"/>
                             <constraint firstItem="zRP-aC-bQV" firstAttribute="top" secondItem="coF-Af-xrH" secondAttribute="bottom" constant="-20" id="8P9-UG-nu9"/>
+                            <constraint firstItem="Cw3-ZK-PMV" firstAttribute="leading" secondItem="5Ra-sS-vXZ" secondAttribute="trailing" constant="10" id="AzM-jj-NPL"/>
                             <constraint firstItem="MK3-M6-iqf" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" constant="20" id="CGs-Zl-XF5"/>
                             <constraint firstItem="5Ra-sS-vXZ" firstAttribute="centerY" secondItem="2Rs-rj-KUB" secondAttribute="centerY" id="FUV-NJ-VCG"/>
+                            <constraint firstItem="Cw3-ZK-PMV" firstAttribute="top" secondItem="5Ra-sS-vXZ" secondAttribute="top" id="FvB-fs-4en"/>
                             <constraint firstAttribute="trailing" secondItem="p7M-nj-QgP" secondAttribute="trailing" constant="20" id="H3R-sw-DGt"/>
                             <constraint firstItem="1qh-eQ-p5N" firstAttribute="top" secondItem="2Rs-rj-KUB" secondAttribute="bottom" constant="20" id="He1-NS-Ygr"/>
                             <constraint firstItem="ge5-H3-yJQ" firstAttribute="top" secondItem="neQ-XZ-1Cq" secondAttribute="bottom" constant="10" id="K5d-9U-wDE"/>
                             <constraint firstItem="1qh-eQ-p5N" firstAttribute="top" secondItem="2Rs-rj-KUB" secondAttribute="bottom" constant="30" id="NeF-eK-1IZ"/>
                             <constraint firstItem="zRP-aC-bQV" firstAttribute="height" secondItem="ufg-Bn-hFs" secondAttribute="height" multiplier="2:5" id="PLI-n4-BMR"/>
                             <constraint firstAttribute="trailing" secondItem="ge5-H3-yJQ" secondAttribute="trailing" constant="20" id="QdJ-dr-dSS"/>
-                            <constraint firstItem="2Rs-rj-KUB" firstAttribute="width" secondItem="ufg-Bn-hFs" secondAttribute="width" multiplier="1:2" id="R3B-57-prr"/>
+                            <constraint firstItem="2Rs-rj-KUB" firstAttribute="width" secondItem="ufg-Bn-hFs" secondAttribute="width" multiplier="1:3" id="R3B-57-prr"/>
                             <constraint firstItem="0Vx-Lk-BDu" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" constant="20" id="RDm-VI-dxu"/>
                             <constraint firstItem="5Ra-sS-vXZ" firstAttribute="leading" secondItem="2Rs-rj-KUB" secondAttribute="trailing" constant="3" id="Tma-Dl-wyy"/>
                             <constraint firstItem="neQ-XZ-1Cq" firstAttribute="top" secondItem="zRP-aC-bQV" secondAttribute="bottom" constant="20" id="Ubd-Uh-8N9"/>
@@ -828,6 +838,7 @@
                             <constraint firstItem="p7M-nj-QgP" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" constant="20" id="bp7-th-4v3"/>
                             <constraint firstItem="5Ra-sS-vXZ" firstAttribute="leading" secondItem="2Rs-rj-KUB" secondAttribute="trailing" constant="10" id="fb5-4w-Q88"/>
                             <constraint firstAttribute="trailing" secondItem="MK3-M6-iqf" secondAttribute="trailing" constant="20" id="gRU-uE-qMf"/>
+                            <constraint firstItem="Cw3-ZK-PMV" firstAttribute="height" secondItem="5Ra-sS-vXZ" secondAttribute="height" id="hpx-7h-vMQ"/>
                             <constraint firstItem="0Vx-Lk-BDu" firstAttribute="top" secondItem="Yea-CO-gmQ" secondAttribute="bottom" constant="10" id="htN-MN-8tr"/>
                             <constraint firstItem="MK3-M6-iqf" firstAttribute="top" secondItem="ge5-H3-yJQ" secondAttribute="bottom" constant="10" id="p3F-JU-Xh3"/>
                             <constraint firstAttribute="trailing" secondItem="Yea-CO-gmQ" secondAttribute="trailing" constant="20" id="rxy-Cn-P5S"/>

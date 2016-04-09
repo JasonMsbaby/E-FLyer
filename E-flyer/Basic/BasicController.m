@@ -14,9 +14,14 @@
 
 @implementation BasicController
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.currentUser = [EFUser currentUser];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentUser = [EFUser currentUser];
     //NSLog(@"BasicViewController");
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"left_back"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]style:(UIBarButtonItemStylePlain) target:self action:@selector(leftBarButtonItemBack:)];
 }
