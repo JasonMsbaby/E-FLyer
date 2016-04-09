@@ -43,7 +43,18 @@
 - (IBAction)registAction:(id)sender {
 }
 - (IBAction)loginAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [SVProgressHUD show];
+    WeakSelf
+    [EFUser logInWithUsernameInBackground:self.phone.text password:self.password.text block:^(AVUser *user, NSError *error) {
+        if (error != nil) {
+            NSLog(@"%@",error);
+            [weakSelf toastWithCode:error.code];
+            return ;
+        }
+        [AVUser changeCurrentUser:user save:YES];
+        [self.navigationController popViewControllerAnimated:YES];
+        [SVProgressHUD dismiss];
+    }];
 }
 
 @end

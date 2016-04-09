@@ -76,6 +76,15 @@
     loginController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:loginController animated:YES];
 }
+/*!
+ *  注销登录
+ *
+ *  @param item
+ */
+- (void)exit{
+    [AVUser logOut];
+    [self loginAction:nil];
+}
 
 
 #pragma mark - ScrollViewDelegate
@@ -129,5 +138,13 @@
         return 0.00001;
     }
     return 0.1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    if (section == 1 && row == 3) {
+        [self exit];
+    }
 }
 @end

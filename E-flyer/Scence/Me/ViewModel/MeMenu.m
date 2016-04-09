@@ -26,7 +26,7 @@
     MeMenu *m1_1 = [[MeMenu alloc]initWithTitle:@"我的1" Image:@"me_setting"];
     MeMenu *m1_2 = [[MeMenu alloc]initWithTitle:@"我的2" Image:@"me_setting"];
     MeMenu *m1_3 = [[MeMenu alloc]initWithTitle:@"我的3" Image:@"me_setting"];
-    MeMenu *m1_4 = [[MeMenu alloc]initWithTitle:@"我的4" Image:@"me_setting"];
+    MeMenu *m1_4 = [[MeMenu alloc]initWithTitle:@"退出登录" Image:@"me_setting"];
     NSArray *m1 = @[m1_1,m1_2,m1_3,m1_4];
     
     

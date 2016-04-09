@@ -46,6 +46,10 @@
  *  @param sender sender description
  */
 - (IBAction)regist:(id)sender {
+    if ([self.userName.text isEqualToString:@""]) {
+        [self alerWithTitle:@"提示" Message:@"用户名不能为空" CallBack:nil];
+        return;
+    }
     if ([self.pwd1.text isEqualToString:self.pwd2.text]) {
         EFUser *user = [EFUser user];
         user.username = self.userName.text;
@@ -55,8 +59,12 @@
                 [self alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
                     [self close:nil];
                 }];
+            }else{
+                [self alerWithTitle:@"提示" Message:@"注册失败" CallBack:nil];
             }
         }];
+    }else{
+        [self alerWithTitle:@"提示" Message:@"两次输入的密码不一致" CallBack:nil];
     }
 }
 

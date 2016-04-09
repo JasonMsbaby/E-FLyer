@@ -5,10 +5,11 @@
 //  Created by Jason_Msbaby on 16/2/28.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import <Foundation/Foundation.h>
 #ifndef Constanst_h
 #define Constanst_h
 
+#define WeakSelf __weak typeof(self) weakSelf = self;
 
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -32,7 +33,15 @@ fprintf(stderr, "-------\n");                                               \
 #else
 #define NSLog(...)
 #endif
-//---------------------打印日志--------------------------
+//---------------------系统常量--------------------------
+#define kCode_211 用户不存在
+
+
+
+
+
 
 
 #endif /* Constanst_h */
+
+

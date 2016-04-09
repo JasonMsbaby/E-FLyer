@@ -11,6 +11,7 @@
 		962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0A1C8682A200DCAE4B /* VideoController.m */; };
 		962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0D1C86972300DCAE4B /* VideoPlayController.m */; };
 		962FCF2C1C8460D000981B5D /* circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 962FCF2B1C8460D000981B5D /* circle@2x.png */; };
+		9634C93B1CB8D72500519377 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634C93A1CB8D72500519377 /* App.m */; };
 		965433931C803625005B8BD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433921C803625005B8BD1 /* main.m */; };
 		965433961C803625005B8BD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433951C803625005B8BD1 /* AppDelegate.m */; };
 		9654339C1C803625005B8BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9654339A1C803625005B8BD1 /* Main.storyboard */; };
@@ -98,6 +99,8 @@
 		962BCB0C1C86972300DCAE4B /* VideoPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayController.h; sourceTree = "<group>"; };
 		962BCB0D1C86972300DCAE4B /* VideoPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayController.m; sourceTree = "<group>"; };
 		962FCF2B1C8460D000981B5D /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
+		9634C9391CB8D72500519377 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		9634C93A1CB8D72500519377 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		9654338E1C803625005B8BD1 /* E-flyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-flyer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		965433921C803625005B8BD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		965433941C803625005B8BD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 				96CFD2D51C8E7E56007D10E9 /* ToolUtils.m */,
 				96E59EB81C8EB53000D24F02 /* BasicModel.h */,
 				96E59EB91C8EB53000D24F02 /* BasicModel.m */,
+				9634C9391CB8D72500519377 /* App.h */,
+				9634C93A1CB8D72500519377 /* App.m */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -817,6 +822,7 @@
 				9684D8531C82E0A200F4E542 /* MeController.m in Sources */,
 				9686D9991C846EC0005EC027 /* FlyerHeaderView.m in Sources */,
 				96CFD2D61C8E7E56007D10E9 /* ToolUtils.m in Sources */,
+				9634C93B1CB8D72500519377 /* App.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
