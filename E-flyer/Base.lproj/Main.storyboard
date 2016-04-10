@@ -1114,7 +1114,7 @@
                         <outlet property="btn_valid" destination="qHc-2b-KN7" id="ZKf-MM-vcg"/>
                         <outlet property="pwd1" destination="8wV-NZ-E7h" id="tTs-Xr-yJj"/>
                         <outlet property="pwd2" destination="xIQ-k1-10Q" id="YJ4-Tp-7At"/>
-                        <outlet property="txt_valideCode" destination="u0p-1L-SfT" id="2O3-FC-96L"/>
+                        <outlet property="txt_valideCode" destination="EiY-GA-n3V" id="B6X-hN-6yn"/>
                         <outlet property="userName" destination="bsk-Pj-GE4" id="psr-0b-nLe"/>
                     </connections>
                 </viewController>

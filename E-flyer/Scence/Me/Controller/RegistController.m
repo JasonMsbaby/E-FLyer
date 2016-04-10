@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *pwd1;
 @property (weak, nonatomic) IBOutlet UITextField *pwd2;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txt_valideCode;
+@property (weak, nonatomic) IBOutlet UITextField *txt_valideCode;
 @property(strong,nonatomic) NSTimer *timer;
 @property(assign,nonatomic) NSInteger time_span;
 
@@ -41,10 +41,21 @@
 /*!
  *  发送验证码
  *
- *  @param sender 
+ *  @param sender
  */
 - (IBAction)btn_sendValideCode:(id)sender {
-    [self.timer resume];
+    if (self.userName.text != nil) {
+        [AVOSCloud requestSmsCodeWithPhoneNumber:self.userName.text callback:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                [SVProgressHUD showInfoWithStatus:@"发送验证码成功,请耐心等待"];
+                [self.timer resume];
+            }else{
+                [self toastWithError:error];
+            }
+        }];
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"请填写手机号!"];
+    }
 }
 - (void)timerInterval:(NSTimer *)t{
     [self.btn_valid setTitle:[NSString stringWithFormat:@"%ld",self.time_span] forState:(UIControlStateNormal)];
@@ -78,36 +89,48 @@
  */
 - (IBAction)regist:(id)sender {
     if ([self.userName.text isEqualToString:@""]) {
-        [self alerWithTitle:@"提示" Message:@"用户名不能为空" CallBack:nil];
+        [SVProgressHUD showInfoWithStatus:@"用户名不能为空"];
         return;
     }
-    if ([self.pwd1.text isEqualToString:self.pwd2.text]) {
-        EFUser *user = [EFUser user];
-        user.username = [NSString stringWithFormat:@"%@_新用户",self.userName.text];
-        user.password = self.pwd1.text;
-        user.mobilePhoneNumber = self.userName.text;
-        WeakObj(self)
-        [self registWithRoleWithBlock:^(int type) {
-            if (type != -1) {
-                user.type = type;
-                [SVProgressHUD show];
-                [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    if (![self.pwd1.text isEqualToString:self.pwd2.text]) {
+        [SVProgressHUD showInfoWithStatus:@"两次输入的密码不一致"];
+        return;
+    }
+    
+    WeakObj(self)
+    [self registWithRoleWithBlock:^(int type) {
+        if (type != -1) {
+            [SVProgressHUD show];
+            [EFUser signUpOrLoginWithMobilePhoneNumberInBackground:self.userName.text smsCode:self.txt_valideCode.text block:^(AVUser *user, NSError *error) {
+                if (error!= nil) {
+                    [self toastWithError:error];
+                    return ;
+                }
+                EFUser *currentUser = [EFUser currentUser];
+                currentUser.username = [NSString stringWithFormat:@"%@_新用户",self.userName.text];
+                currentUser.password = self.pwd1.text;
+                currentUser.type = type;
+                [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
+                        [SVProgressHUD dismiss];
                         [selfWeak alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
                             [selfWeak close:nil];
                         }];
                     }else{
                         [selfWeak toastWithError:error];
+                        [currentUser deleteEventuallyWithBlock:^(id object, NSError *error) {
+                            [SVProgressHUD dismiss];
+                        }];
                     }
                 }];
-
-            }
-        }];
-        
-    }else{
-        [self alerWithTitle:@"提示" Message:@"两次输入的密码不一致" CallBack:nil];
-    }
+                
+            }];
+        }
+    }];
 }
+
+
+
 /*!
  *  注册时选择角色
  */
