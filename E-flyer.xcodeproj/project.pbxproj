@@ -61,6 +61,9 @@
 		96E59ED11C8EFBAE00D24F02 /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E59ED01C8EFBAE00D24F02 /* weixin@2x.png */; };
 		96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E59ED61C8F04BD00D24F02 /* RegistController.m */; };
 		96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA8461CBA244E00508683 /* NSTimer+EFTimer.m */; };
+		96EAA84A1CBA46B700508683 /* EFGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA8491CBA46B700508683 /* EFGood.m */; };
+		96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA84C1CBA48AD00508683 /* EFCrowd.m */; };
+		96EAA8501CBA49BC00508683 /* EFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA84F1CBA49BC00508683 /* EFCity.m */; };
 		96EB75BF1C85647400B3658F /* FlyerYouLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */; };
 		96EB75C21C85743400B3658F /* VideoController_abandon.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75C11C85743400B3658F /* VideoController_abandon.m */; };
 		96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75C61C857B5000B3658F /* VideoCarousel.m */; };
@@ -178,6 +181,12 @@
 		96E59ED61C8F04BD00D24F02 /* RegistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistController.m; sourceTree = "<group>"; };
 		96EAA8451CBA244E00508683 /* NSTimer+EFTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EFTimer.h"; sourceTree = "<group>"; };
 		96EAA8461CBA244E00508683 /* NSTimer+EFTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+EFTimer.m"; sourceTree = "<group>"; };
+		96EAA8481CBA46B700508683 /* EFGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFGood.h; sourceTree = "<group>"; };
+		96EAA8491CBA46B700508683 /* EFGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFGood.m; sourceTree = "<group>"; };
+		96EAA84B1CBA48AD00508683 /* EFCrowd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFCrowd.h; sourceTree = "<group>"; };
+		96EAA84C1CBA48AD00508683 /* EFCrowd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCrowd.m; sourceTree = "<group>"; };
+		96EAA84E1CBA49BC00508683 /* EFCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFCity.h; sourceTree = "<group>"; };
+		96EAA84F1CBA49BC00508683 /* EFCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCity.m; sourceTree = "<group>"; };
 		96EB75BD1C85647400B3658F /* FlyerYouLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerYouLikeCell.h; sourceTree = "<group>"; };
 		96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerYouLikeCell.m; sourceTree = "<group>"; };
 		96EB75C01C85743400B3658F /* VideoController_abandon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController_abandon.h; sourceTree = "<group>"; };
@@ -351,6 +360,12 @@
 				96E59EBC1C8EB60F00D24F02 /* EFUser.m */,
 				96E59EBE1C8EB79500D24F02 /* EFCategroy.h */,
 				96E59EBF1C8EB79500D24F02 /* EFCategroy.m */,
+				96EAA8481CBA46B700508683 /* EFGood.h */,
+				96EAA8491CBA46B700508683 /* EFGood.m */,
+				96EAA84B1CBA48AD00508683 /* EFCrowd.h */,
+				96EAA84C1CBA48AD00508683 /* EFCrowd.m */,
+				96EAA84E1CBA49BC00508683 /* EFCity.h */,
+				96EAA84F1CBA49BC00508683 /* EFCity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -805,6 +820,8 @@
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
+				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
+				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
@@ -824,6 +841,7 @@
 				965433931C803625005B8BD1 /* main.m in Sources */,
 				96A7F8651C80C5C200412B79 /* BasicController.m in Sources */,
 				96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */,
+				96EAA8501CBA49BC00508683 /* EFCity.m in Sources */,
 				96C864061C85330000365512 /* UIView+EFView.m in Sources */,
 				96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */,
 				96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */,
