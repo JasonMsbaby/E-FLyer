@@ -34,7 +34,7 @@ fprintf(stderr, "-------\n");                                               \
 #define NSLog(...)
 #endif
 //---------------------系统常量--------------------------
-#define kCode_211 用户不存在
+#define kRegist_Time 60
 
 
 

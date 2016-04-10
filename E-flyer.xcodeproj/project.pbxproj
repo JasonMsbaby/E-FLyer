@@ -60,6 +60,7 @@
 		96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E59ECE1C8EF5CC00D24F02 /* LoginController.m */; };
 		96E59ED11C8EFBAE00D24F02 /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E59ED01C8EFBAE00D24F02 /* weixin@2x.png */; };
 		96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E59ED61C8F04BD00D24F02 /* RegistController.m */; };
+		96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA8461CBA244E00508683 /* NSTimer+EFTimer.m */; };
 		96EB75BF1C85647400B3658F /* FlyerYouLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */; };
 		96EB75C21C85743400B3658F /* VideoController_abandon.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75C11C85743400B3658F /* VideoController_abandon.m */; };
 		96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75C61C857B5000B3658F /* VideoCarousel.m */; };
@@ -175,6 +176,8 @@
 		96E59ED01C8EFBAE00D24F02 /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
 		96E59ED51C8F04BD00D24F02 /* RegistController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistController.h; sourceTree = "<group>"; };
 		96E59ED61C8F04BD00D24F02 /* RegistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistController.m; sourceTree = "<group>"; };
+		96EAA8451CBA244E00508683 /* NSTimer+EFTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EFTimer.h"; sourceTree = "<group>"; };
+		96EAA8461CBA244E00508683 /* NSTimer+EFTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+EFTimer.m"; sourceTree = "<group>"; };
 		96EB75BD1C85647400B3658F /* FlyerYouLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerYouLikeCell.h; sourceTree = "<group>"; };
 		96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerYouLikeCell.m; sourceTree = "<group>"; };
 		96EB75C01C85743400B3658F /* VideoController_abandon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController_abandon.h; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 				96C864051C85330000365512 /* UIView+EFView.m */,
 				96E59EC31C8ECC9500D24F02 /* AVQuery+EFQuery.h */,
 				96E59EC41C8ECC9500D24F02 /* AVQuery+EFQuery.m */,
+				96EAA8451CBA244E00508683 /* NSTimer+EFTimer.h */,
+				96EAA8461CBA244E00508683 /* NSTimer+EFTimer.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -801,6 +806,7 @@
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
+				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,

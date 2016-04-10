@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "NSTimer+EFTimer.h"
 #import "RegistController.h"
 
 @interface RegistController ()
@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *pwd1;
 @property (weak, nonatomic) IBOutlet UITextField *pwd2;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txt_valideCode;
+@property(strong,nonatomic) NSTimer *timer;
+@property(assign,nonatomic) NSInteger time_span;
 
 @end
 
@@ -26,10 +29,38 @@
 
 
 - (void)setupView{
-    [_btn_valid setBackgroundColor:[UIColor colorWithWhite:0.600 alpha:1.000]];
+    [_btn_valid setBackgroundColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000]];
     [_btn_regist setBackgroundColor:[UIColor colorWithRed:0.000 green:0.502 blue:0.251 alpha:1.000]];
     _btn_regist.layer.cornerRadius = 3;
     _btn_regist.clipsToBounds = YES;
+    self.time_span = kRegist_Time;
+    self.timer =[NSTimer timerWithTimeInterval:1 target:self selector:@selector(timerInterval:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    [self.timer pause];
+}
+/*!
+ *  发送验证码
+ *
+ *  @param sender 
+ */
+- (IBAction)btn_sendValideCode:(id)sender {
+    [self.timer resume];
+}
+- (void)timerInterval:(NSTimer *)t{
+    [self.btn_valid setTitle:[NSString stringWithFormat:@"%ld",self.time_span] forState:(UIControlStateNormal)];
+    
+    if (self.time_span == 0) {
+        [_btn_valid setBackgroundColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000]];
+        [self.btn_valid setTitle:@"获取验证码" forState:(UIControlStateNormal)];
+        [self.btn_valid setEnabled:YES];
+        self.time_span = kRegist_Time;
+        [self.timer pause];
+    }else{
+        [_btn_valid setBackgroundColor:[UIColor colorWithWhite:0.600 alpha:1.000]];
+        [self.btn_valid setEnabled:NO];
+    }
+    
+    self.time_span--;
 }
 
 /*!
