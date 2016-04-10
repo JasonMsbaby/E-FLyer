@@ -33,7 +33,8 @@ static App *app = nil;
 - (void)setupErrorCode{
     self.kCode = @{
                    @"code_210":@"密码错误",
-                   @"code_211":@"用户不存在"
+                   @"code_211":@"用户不存在",
+                   @"code_214":@"用户已存在,请登录"
                    };
 }
 

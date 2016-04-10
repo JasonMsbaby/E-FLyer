@@ -48,11 +48,11 @@
 }
 - (IBAction)loginAction:(id)sender {
     [SVProgressHUD show];
-    WeakSelf
+    WeakObj(self)
     [EFUser logInWithMobilePhoneNumberInBackground:self.phone.text password:self.password.text block:^(AVUser *user, NSError *error) {
         if (error != nil) {
             NSLog(@"%@",error);
-            [weakSelf toastWithError:error];
+            [selfWeak toastWithError:error];
             return ;
         }
         [self.navigationController popViewControllerAnimated:YES];

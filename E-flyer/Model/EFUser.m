@@ -10,7 +10,7 @@
 
 @implementation EFUser
 @dynamic money;
-
+@dynamic type;
 @dynamic headImg;
 
 +(void)load{

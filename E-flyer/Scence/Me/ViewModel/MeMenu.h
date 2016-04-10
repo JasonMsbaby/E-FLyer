@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "EFUser.h"
 #import <Foundation/Foundation.h>
 
 @interface MeMenu : NSObject
@@ -16,10 +16,10 @@
 
 
 /*!
- *  获取个人中心的菜单列表
+ *  商家个人中心菜单
  *
  *  @return
  */
-+ (NSDictionary *)menuList;
++ (NSDictionary *)menuListWithUser:(EFUser *)currentUser;
 
 @end

@@ -9,7 +9,7 @@
 #ifndef Constanst_h
 #define Constanst_h
 
-#define WeakSelf __weak typeof(self) weakSelf = self;
+#define WeakObj(o) __weak typeof(o) o##Weak = o;
 
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width

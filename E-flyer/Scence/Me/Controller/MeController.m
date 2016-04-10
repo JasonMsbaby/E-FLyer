@@ -43,7 +43,7 @@
     self.headImg.layer.cornerRadius = 50;
     self.headImg.clipsToBounds = YES;
     
-    _data = [MeMenu menuList];
+    _data = [MeMenu menuListWithUser:self.currentUser];
     if (self.currentUser == nil) {
         self.userInfoView.hidden = YES;
         self.loginView.hidden = NO;
@@ -143,7 +143,10 @@
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:@"meCell"];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    NSArray  *arr = _data[_data.allKeys[indexPath.section]];
+    NSArray *sectionArr = [_data.allKeys sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
+        return [obj1 compare:obj2];
+    }];
+    NSArray *arr = _data[sectionArr[indexPath.section]];
     MeMenu *menu = arr[indexPath.row];
     cell.textLabel.text = menu.title;
     cell.imageView.image = [UIImage imageNamed:menu.img];

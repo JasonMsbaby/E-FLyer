@@ -55,19 +55,49 @@
         user.username = [NSString stringWithFormat:@"%@_新用户",self.userName.text];
         user.password = self.pwd1.text;
         user.mobilePhoneNumber = self.userName.text;
-        
-        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                [self alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
-                    [self close:nil];
+        WeakObj(self)
+        [self registWithRoleWithBlock:^(int type) {
+            if (type != -1) {
+                user.type = type;
+                [SVProgressHUD show];
+                [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        [selfWeak alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
+                            [selfWeak close:nil];
+                        }];
+                    }else{
+                        [selfWeak toastWithError:error];
+                    }
                 }];
-            }else{
-                [self toastWithError:error];
+
             }
         }];
+        
     }else{
         [self alerWithTitle:@"提示" Message:@"两次输入的密码不一致" CallBack:nil];
     }
+}
+/*!
+ *  注册时选择角色
+ */
+- (void)registWithRoleWithBlock:(void(^)(int type))block{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请选择近的角色" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    [alert addAction:[UIAlertAction actionWithTitle:@"商家" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        if (block != nil) {
+            block(0);
+        }
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        if (block != nil) {
+            block(1);
+        }
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        if (block != nil) {
+            block(-1);
+        }
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
