@@ -12,6 +12,15 @@
 @implementation MeMenu
 
 
+- (id)initWithTitle:(NSString *)title Image:(NSString *)image IDD:(NSString *)idd{
+    if (self = [super init]) {
+        self.title = title;
+        self.img = image;
+        self.idd = idd;
+    }
+    return self;
+}
+
 - (id)initWithTitle:(NSString *)title Image:(NSString *)image{
     if (self = [super init]) {
         self.title = title;
@@ -25,29 +34,29 @@
 
 + (NSDictionary *)menuListWithUser:(EFUser *)currentUser{
     //商家个人菜单
-    MeMenu *m1_1 = [[MeMenu alloc]initWithTitle:@"商家1" Image:@"me_setting"];
-    MeMenu *m1_2 = [[MeMenu alloc]initWithTitle:@"商家2" Image:@"me_setting"];
-    MeMenu *m1_3 = [[MeMenu alloc]initWithTitle:@"商家3" Image:@"me_setting"];
-    MeMenu *m1_4 = [[MeMenu alloc]initWithTitle:@"退出登录" Image:@"me_setting"];
+    MeMenu *m1_1 = [[MeMenu alloc]initWithTitle:@"个人信息" Image:@"me_setting"];
+    MeMenu *m1_2 = [[MeMenu alloc]initWithTitle:@"用户数据" Image:@"me_setting"];
+    MeMenu *m1_3 = [[MeMenu alloc]initWithTitle:@"商品管理" Image:@"me_setting"];
+    MeMenu *m1_4 = [[MeMenu alloc]initWithTitle:@"账户管理" Image:@"me_setting"];
     NSArray *m1 = @[m1_1,m1_2,m1_3,m1_4];
     //个人菜单
-    MeMenu *m11_1 = [[MeMenu alloc]initWithTitle:@"我的1" Image:@"me_setting"];
-    MeMenu *m11_2 = [[MeMenu alloc]initWithTitle:@"我的2" Image:@"me_setting"];
-    MeMenu *m11_3 = [[MeMenu alloc]initWithTitle:@"我的3" Image:@"me_setting"];
-    MeMenu *m11_4 = [[MeMenu alloc]initWithTitle:@"我的4" Image:@"me_setting"];
-    NSArray *m11 = @[m11_1,m11_2,m11_3,m11_4];
+    MeMenu *m11_1 = [[MeMenu alloc]initWithTitle:@"个人信息" Image:@"me_setting"];
+    MeMenu *m11_2 = [[MeMenu alloc]initWithTitle:@"历史记录" Image:@"me_setting"];
+    MeMenu *m11_3 = [[MeMenu alloc]initWithTitle:@"收入" Image:@"me_setting"];
+    NSArray *m11 = @[m11_1,m11_2,m11_3];
     
     //通用菜单
-    MeMenu *m2_1 = [[MeMenu alloc]initWithTitle:@"设置1" Image:@"me_setting"];
-    MeMenu *m2_2 = [[MeMenu alloc]initWithTitle:@"设置2" Image:@"me_setting"];
-    MeMenu *m2_3 = [[MeMenu alloc]initWithTitle:@"设置3" Image:@"me_setting"];
-    MeMenu *m2_4 = [[MeMenu alloc]initWithTitle:@"退出登录" Image:@"me_setting"];
-    NSArray *m2 = @[m2_1,m2_2,m2_3,m2_4];
+    MeMenu *m2_1 = [[MeMenu alloc]initWithTitle:@"关于我们" Image:@"me_setting"];
+    MeMenu *m2_2 = [[MeMenu alloc]initWithTitle:@"退出登录" Image:@"me_setting" IDD:@"exit"];
+    NSMutableArray *m2 = [NSMutableArray arrayWithObjects:m2_1, nil];
+    if (currentUser != nil) {
+        [m2 addObject:m2_2];
+    }
     
     if(currentUser.type == 0){
-        return @{@"我的":m11,@"设置":m2};
-    }else{
         return @{@"我的":m1,@"设置":m2};
+    }else{
+        return @{@"我的":m11,@"设置":m2};
     }
 }
 @end

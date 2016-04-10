@@ -24,6 +24,7 @@
 @property(strong,nonatomic) UIView *loginView;
 @property(strong,nonatomic) NSDictionary *data;
 @property(strong,nonatomic) UIButton *btn_login;
+@property(strong,nonatomic) NSArray *sortedKeys;
 @end
 
 @implementation MeController
@@ -44,6 +45,11 @@
     self.headImg.clipsToBounds = YES;
     
     _data = [MeMenu menuListWithUser:self.currentUser];
+    self.sortedKeys = [_data.allKeys sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
+        return [obj1 compare:obj2];
+    }];
+    [self.tableView reloadData];
+    
     if (self.currentUser == nil) {
         self.userInfoView.hidden = YES;
         self.loginView.hidden = NO;
@@ -131,11 +137,11 @@
 
 #pragma mark - tableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSArray *arr = _data[_data.allKeys[section]];
+    NSArray *arr = _data[self.sortedKeys[section]];
     return arr.count;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return _data.allKeys.count;
+    return self.sortedKeys.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"meCell"];
@@ -143,10 +149,8 @@
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:@"meCell"];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    NSArray *sectionArr = [_data.allKeys sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
-        return [obj1 compare:obj2];
-    }];
-    NSArray *arr = _data[sectionArr[indexPath.section]];
+    
+    NSArray *arr = _data[self.sortedKeys[indexPath.section]];
     MeMenu *menu = arr[indexPath.row];
     cell.textLabel.text = menu.title;
     cell.imageView.image = [UIImage imageNamed:menu.img];
@@ -166,7 +170,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    if (section == 1 && row == 3) {
+    MeMenu *menu = _data[self.sortedKeys[section]][row];
+    if ([menu.idd isEqualToString:@"exit"]) {
         [self exit];
     }
 }
