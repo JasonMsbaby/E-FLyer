@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>相似性检测报告全文版</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<style>
+    body{line-height:150%;font-size:13px;padding:0 15px; margin:0;}
+    h2,p,div,h3{padding:0;margin:0;}
+    h2{padding:10px 0;padding:12px 0;font-size:23px;border-top:1px solid #0362A3;color:#444;}
+    .clear{clear:left;}
+    h2{text-align:center;}
+    .green{color:Green;}
+    .top_logo{width:100%;float:left;padding:10px 0;}
+    .top_logoSpan{float: right; padding:35px 20px 6px 0;color:Gray;}
+    .titlewidth{width:45%; text-align:center; display:inline-block;font-size:15px;color:#444;}
+    #description{padding-left:20px;bottom:10px;}
+    #description p{padding-top:10px;color:#666;line-height:100% !important;font-size:12px;}
+    #reportheader p{line-height:180%;}
+    .rightcopy {border:1px solid #ccc;background:#f5f5f5;border-right:none;padding:5px;}
+    .lefttext {padding:0 1% 0 0.5%;width:48%;}
+    .greenBorder { border-right: 15px solid green;}
+    .redBorder { border-right: 15px solid #9f0016;}
+    .titlebgst{padding:6px 20px 6px 22px;background:#eff5fd;margin-bottom:1px;border:1px solid #BCD6F4;border-bottom:none;}
+</style>
+    <div style="margin-bottom: 10px;">
+        <div class="top_logo">
+            <span class="top_logoSpan">论文相似性检测报告</span><img src='data:image/png;base64,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' /></div>
+        <div class="clear">
+        </div>
+        <div id="reportheader">
+            <h2>
+                论文相似性检测报告(全文版)</h2><p>论文标题：</p><p>论文作者：</p>
+            <p>
+                报告编号：7485e7c6-78c0-43dc-8d64-a495000683c2</p>            
+            
+            <p>
+                原文字数：19,488</p>
+            <p>
+                检测日期：2015年05月11日</p>
+            <p>
+                检测范围：中国学术期刊数据库（CSPD）、中国学位论文全文数据库（CDDB）、中国学术会议论文数据库（CCPD）、中国学术网页数据库（CSWD）</p>
+          <p id="conclusion">
+            <p>
+                <b>总相似比：</b><span style="color:red">3.53%</span>（参考文献相似比：<span style="color:#008000">0.00%</span>，排除参考文献相似比：<span style="color:red">3.53%）</span></p>
+          </p>
+          </div>
+    </div> 
+    <h3 id="fullscreenSwitch" class="titlebgst">
+        <p class="titlewidth"><b>原文</b></p> <p class="titlewidth"><b>相似论文片段</b></p>
+    </h3>    
+    <table width="100%" style="border: 1px solid rgb(188, 214, 244); table-layout: fixed; overflow: hidden; word-break: keep-all; word-wrap: break-word;">
+        
+        <tr>
+            <td align="left" valign="top" class="lefttext" >
+            目录
+
+1 引言	2
+1.1 课题的背景	2
+1.2 课题的意义	2
+1.3 课题的国内外现状及发展动态	2
+2 相关开发语言及技术介绍	3
+2.1 iOS操作系统	3
+2.2 Objective-c语言	4
+2.3 Xcode开发环境介绍	4
+2.4 iOS数据持久化	5
+2.5 MVC设计模式	5
+2.6 iOS开发流程图	6
+3 系统分析	6
+3.1 可行性分析	6
+3.1.1 技术可行性分析	6
+3.1.2 经济可行性分析	7
+3.2 功能分析	7
+4 总体设计	8
+4.1 设计环境	8
+4.2 UI设计	8
+4.2.1 应用引导界面设计	8
+4.2.2 用户主界面设计	8
+4.2.3 房产税费模块界面设计	8
+4.2.4 房市资讯模块界面设计	9
+4.2.5 房价走势模块界面设计	9
+4.2.6 更多模块界面设计	9
+4.3 数据库的设计	9
+4.3.1实体描述	9
+4.3.2 数据库表	9
+5 系统功能图	12
+5.1 用户引导界面	12
+5.2 房产税费界面	13
+5.3 房市资讯界面	13
+6 系统实现	15
+6.1 用户引导模块代码	15
+6.2 房产税费模块代码	17
+6.3 房市资讯模块代码	19
+6.4 房价走势模块代码	20
+6.5 更多模块代码	22
+7 系统测试与维护	24
+7.1 系统测试	24
+7.1.1 房产税费模块测试方案与执行	25
+7.1.2 房价走势模块测试方案与执行	25
+7.2 系统维护	25
+8 总结与展望	26
+参考文献	26
+致  谢	29
+ 
+基于iOS开发的房产应用系统的设计与实现
+李  曼
+（德州学院信息管理学院，山东德州 253023）
+摘 要  随着我国住房制度改革不断深化和居民收入水平的提高，住房成为新的消费热点。于此同时，房地产市场也在高速发展，为了减轻房产销售人员复杂的房贷、商贷和公积金贷款的计算，提高房产销售人员的工作效率，特为房产销售人员量身定制基于iOS开发的房产类应用－房税宝，此款应用提供专业房屋贷款、商业贷款和公积金贷款计算，最新的房市资讯，动态的城市房价走势，以及人性化的UI设计，流畅的用户体验等功能。
+关键词 iOS开发；房税税费；房市资讯；房价走势
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 引言
+1.1 课题的背景
+随着宽带无线接入技术和移动终端技术的飞速发展，人们迫切希望能够随时随地方便地从互联网获取信息和服务，移动互联网应运而生并迅猛发展。在我国互联网的发展过程中，PC互联网已日趋饱和，移动互联网却呈现井喷式发展。伴随着移动终端价格的下降及wifi的广泛铺设，移动网民呈现爆发趋势。
+移动互联网的发展，也带来了移动APP应用的爆炸式增长。APP是英文Application的简称，随着智能手机的流行，APP也指的是智能手机的第三方应用程序。现今移动终端设备应用广泛，相应的程序开发十分流行，制作APP应用成为主流，市场上应用最广的移动终端操作系统就是android和iOS。
+Android是一个以Linux为基础的开放源代码移动设备操作系统，主要用于智能手机和平板电脑，以其开放性，多任务，大功能，画面流畅，硬件设备优良多样等各种优点，占智能机一大部分；但它也存在着不足，如：兼容性差，各种机型的配置不一样，以至于开发的时候出现各种版本。有些产品华而不实，用户体验差。
+iOS（原名：iPhone OS）是由苹果公司为移动设备所开发的操作系统，其优点也十分的明显：流畅的操作体验、丰富的应用程序、精美的系统界面以及较高的安全性都是目前其他手机系统所难以媲美的。
+1.2 课题的意义
+北京燕山德馨乐居房产公司是燕山地区规模最大的房产经纪有限公司，涵盖专业代理房屋买卖租赁、权证过户、房产知识咨询、购房贷款、消费贷款、抵押贷款、房屋银行业务、公积金提取及其它相关信息咨询办理等复杂的业务。高效率的工作，成为对房产销售人员的职业技能的考验。为了减少房产销售人员复杂的房产专业计算，提高工作效率，减轻房产销售人员的工作负担，设计并开发了基于北京燕山德馨乐居房产公司的一款实用性手机应用。
+1.3 课题的国内外现状及发展动态
+随着移动联网的高速发展，手机APP应用“大腕”创造了一个全新的3G信息时代，其影响已经深入到各行各业。手机APP应用软件同各个行业相互结合，一方面有助于实现线下资源信息的快速共享，满足广大用户对各个行业信息资源的需求，另一方面则可以为更多传统行业开辟更为广阔的市场，提供有利借鉴。手机APP助力企业实现了在线互动交流，从而实现了双向信息交流与互动，不仅全方位满足了消费者需求，同时也让企业的信息服务质量得到显著提高。移动互联网的发展和手机APP应用的实用性早已改变了传统的商业模式，如今房地产行业也进入到了移动APP的领域当中，为房地产的移动互联网发展带来了契机。房地产APP应用的出现，大大解放了房产销售人员的劳动力。据了解，通过房地产APP，大大减轻了房产销售人员的工作负担，提高房产销售人员的工作效率。
+目前在苹果APP Store上面，有关房产领域的APP也是应有尽有，但是这些APP的侧重点在与提供更加商业化的房源信息，房产税费涉及很少，对于房产专业计算来说，实用性不强。未来房产业仍然是主流的行业，设计一款专业的房产税费手机应用，迎合房产业的发展，具有很强的实用性。
+2 相关
+            </td>
+            <td align="left" valign="top" >
+                            
+            </td>
+        </tr>
+        
+        <tr>
+            <td align="left" valign="top" class="lefttext" >
+            开发语言及技术介绍
+2.1 <font color=#9F0016>iOS操作系统</font>
+<font color=#9F0016>iOS操作系统</font>是由美国苹果<font color=#9F0016>公司开发的手持设备操作系统。原名叫iPhone OS，苹果公司于2007年1月9日的Macworld大会上公布该操作系统，直到2010年6月7日WWWDC大会上徐步改名为iOS。该操作系统设计精美、操作简单，帮助苹果公司设计的iPhone手机迅速的占领市场。随后苹果公司的其他产品，诸如：iPod Touch、iPad以及Apple TV等产品都采用该操作系统。iOS操作系统已Darwin为基础，这与苹果台式机的Mac OSX操作系统一样，因此也属于类Unix的商业操作系统。</font>
+iOS是基于<font color=#9F0016>Mac OSX</font>同样的内核，iOS  App有图示的OS技术层次支撑起来。在进行<font color=#9F0016>iPhone </font>App开发时，应当从上至下的使用这些技术层次，iOS系统架构如图所示：
+ 
+图1：<font color=#9F0016>iOS操作系统</font>
+            </td>
+            <td align="left" valign="top" class='rightcopy redBorder'>
+                
+                <span>[<font color="red">3.53%</font>]
+                    <a href="http://d.wanfangdata.com.cn/Periodical_wxhlkj201312035.aspx"
+                        target="_blank">iOS与Android操作系统的优缺点比较</a>
+                    [期刊论文]《无线互联科技》，2013年  孙晓文</span><br/>                 
+                 <span><font color=#9F0016>公司开发的手持设备操作系统。原名叫iPhone OS，苹果公司于2007年1月9日的Macworld大会上公布该操作系统，直到2010年6月7日WWWDC大会上徐步改名为iOS。该操作系统设计精美、操作简单，帮助苹果公司设计的iPhone手机迅速的占领市场。随后苹果公司的其他产品，诸如：iPod Touch、iPad以及Apple TV等产品都采用该操作系统。iOS操作系统已Darwin为基础，这与苹果台式机的Mac OSX操作系统一样，因此也属于类Unix的商业操作系统。</font>1.2 Android操作系统Android是一种基于</span>
+                            
+            </td>
+        </tr>
+        
+        <tr>
+            <td align="left" valign="top" class="lefttext" >
+            层次结构图
+1)	Core OS层-----包含核心部分、文件系统、网络基础、安全特性、能量管理和一些设备驱动，还有一些系统级别的API。
+2)	Core Services层----提供核心服务，例如字符串处理函数、集合管理、网络管理、URL处理工具、联系人维护、偏好设置等。
+3)	Media层----该层框架和服务依赖Core Services层，向Cocoa Touch层提供画图和多媒体服务，如声音、图片、视频等。
+4)	Cocoa Touch层----该框架基于 iPhone OS应用层直接调用层，大部分使用Objective-C的API，主要由Foundation和UIKit两个框架构成。
+2.2 Objective-c语言
+	Objective-C是一种通用、高级、面向对象的编程语言。它扩展了标准的ANSI C编程语言，将Smalltalk式的消息传递机制加入到ANSI C中。
+2.3 Xcode开发环境介绍
+
+2.4 iOS数据持久化
+保存在系统中的数据（如程序中定义的对象、变量），会在程序推出之后被释放，只有将这些数据保存成固定的文件，才能实现数据持久化。
+
+2.5 MVC设计模式
+MVC是Apple iOS应用开发需要遵循的设计模式。它把一个界面分成三部分，模型－视图－控制器
+
+2.6 iOS开发流程图
+ 
+图2：iOS开发流程图
+3 系统分析
+3.1 可行性分析
+3.1.1 技术可行性分析
+基于iOS开发的房产应用是集房产税费、房市资讯、房价走势、更多为一体的手机应用。北京燕山德馨乐居房产公司为房税计算、房贷计算、商贷计算等一系列房产领域的专业计算提供业务逻辑支持。
+在技术上可行主要体现在以下几个方面:
+1)	开发人员已具备独立开发小、中型应用的能力；
+2)	房产税费计算的逻辑已经解决；
+3)	开发环境和配置已经完善。
+3.1.2 经济可行性分析
+基于iOS的房产应用系统在房产公司的应用，将大大减少房产销售人员人为差错，提高工作效率，再加上操作上的便利和人性化界面设计，具有显著的经济效益及社会效益。其次开发工程中需要消耗的人力物力财力都在承受范围之内。因此，经济是可行的。
+3.2 功能分析
+基于iOS开发的房产应用分为app引导、房产税费、房市资讯、房价走势和更多五大模块，下面根据这五大模块，进行详细的功能分析。
+1)	引导界面：应用初次安装，会显示用户引导界面，以最简介的方式，让用户了解应用的整体业务流程。（引导界面的实现思路是：调用系统提供的单例NSUserDefaults，判断是否是初次安装，引导界面UI设计使用UIScrollView，UIPageControl，UIImageView，UIButton四个控件）。
+2)	房产税费：包括房税，商贷，公积金，更多菜单，封装房税计算的业务逻辑，不联网的情况下，仍可正常操作。
+3)	房市资讯：集聚房产市场领域的最新资讯。（房市资讯模块使用AF netWorking请求网络数据；SDWebImage异步加载网络图片，设置占位图；使用MJRefresh实现UI TableView的下拉刷新，上拉加载；使用UITableViewCell的重用机制，UITableViewCell的自定制，展示网络资讯数据；使用UIWebView实现app内网页数据展示，使用SDWebImage实现图片展示）。
+
+4 总体设计
+系统的总体设计是系统设计过程中的一个重要步骤，该部分总体的介绍了系统设计的环境、UI设计和数据库设计，重点描述了UI界面设计和数据库设计，同时，为系统详细设计做了充分的准备。
+4.1 设计环境
+系统开发设计的具体环境如下：
+1)	系统开发平台：Mac OS X；
+2)	系统开发语言：OC；
+3)	数据库管理系统软件：SQLite3数据库；
+4)	运行平台：iOS终端产品（苹果设备）。
+4.2 UI设计
+
+4.2.1 应用引导界面设计
+引导界面用于首次打开应用，向用户展示应用功能。界面设计要求简洁、易懂，界面不宜过多，本项目中采用手势滑动，切换引导界面。 
+4.2.2 用户主界面设计
+主界面使用户打开应用进入的首页， 展示应用的功能模块，界面设计采用UITabBarController管理四个导航视图控制器,轻松完成控制器之间的切换,是主流的设计方式，典型的例子就是QQ、微信等应用。
+4.2.3 房产税费模块界面设计
+房产税费模块的主界面，房贷、商贷和公积金贷款计算界面风格相同，通过顶部导航栏中UISwitc控件，完成三个视图间的切换；右上角按钮，实现抽屉效果，将房产税费的所有功能集于菜单，大大减少冗余界面，功能设计合理，逻辑清晰。
+4.2.4 房市资讯模块界面设计
+房市资讯界面向用户展示房产领域最新资讯，通过自定制cell，实现多种样式单元格数据的展示，界面集成下拉刷新，上拉加载，提高界面的流畅性。资讯详情页，以纯文字的展示，便于用户快捷获取房市信息。
+4.2.5 房价走势模块界面设计
+房价走势界面，动态的折线图绘制，给用户最直观的房价数据展示，周和月两个维度获取城市房价历史走势；切换城市，足不出户了解全国房价趋势，动画展现热门城市关注度和房价，充分发挥动画的可视性。
+4.2.6 更多模块界面设计
+更多模块界面设计，向用户提供更人性化的需求，及时意见反馈，清理应用缓存，友情链接，真正的服务与用户。
+4.3 数据库的设计
+本应用在房产税费模块使用了SQLite数据库，主要用于保存用户房贷、商贷和公积金贷款的计算结果和房源的信息。
+4.3.1实体描述
+1)	房贷实体：日期、房税总价、原值、成交价、网签价、契税、个税、营业税、土地出让金、中介服务费、代办过户、代办交验、代办审批、贷款代办费、房税总价。
+2)	商贷实体；日期、房屋评估值、房屋面积、按揭成数、按揭年数、年贷款利率、年利率、月供款额、可贷款数、月还款。
+3)	公积金贷款实体：日期、婚姻状况、个人月缴存额、配偶月缴存额、房屋评估值、房屋面积、按揭成数、按揭年数、年贷款利率分类、年利率、月供款额、评估值可贷款数、评估值月还款数、月缴存可贷款数、月缴存月还款、可贷款数、月还款
+4)	房源实体：成交价、网签价、原值、所售房屋面积、现有住房、所售住房性质、所售住房年限、买家现有住房、贷款类型、贷款金额、中价服务费百分比。
+
+
+
+4.3.2 数据库表
+如表1至表4所示：
+表1 results（房贷计算表）
+	字段名	字段说明	数据类型	字段长度	小数位	空	主键
+1	date	日期	Date	20	0	N	Y
+2	cost	原值	Int	10	2	N	
+3	transactionPrice	成交价	nvarchar	10	2	N	
+4	basePrice	底价	nvarchar	10	2	N	
+5	deedTax	契税	nvarchar	10	2		
+6	individualncomeTax	个税	nvarchar	20	2		
+7	businesstax	营业税	nvarchar	10	2		
+8	landTransferFees	土地出让金	nvarchar	10	2		
+9	agencyFee	中介服务费	nvarchar	10	2		
+10	transferFee	代办过户	Int	10	0		
+11	renderedFee	代办交验	Int	10	0		
+12	approvalFee	代办审批	Int	10	0、		
+13	loanFee	贷款代办费	Int	10	0		
+14	totalFee	总价	nvarchar	20	2		
+表2  BLoadInfor （商贷计算表）
+	字段名	字段说明	数据类型	字段长度	小数位	空	主键
+1	date	日期	Date	10	2	N	Y
+2	assessValue	房屋评估值	nvarchar	10	2	N	
+3	houseArea	房屋面积	nvarchar	10	2	N	
+4	percentage	按揭成数	nvarchar	10	1	N	
+5	year	按揭年数	nvarchar	50	0	N	
+6	APR	年贷款利率分类	nvarchar	50	0	N	
+7	APRValue	年利率	nvarchar	10	2	N	
+8	monthMoney	月供款额	nvarchar	10	2	N	
+9	loadMoney	可贷款数	nvarchar	10	2	N	
+10	monthLoadMoney	月还款	nvarchar	10	2	N	
+表3  HPFLoadTable（公积金贷款计算表表）
+	字段名	字段说明	数据类型	字段长度	小数位	空	主键
+1	date	日期	Date	10	0	N	Y
+2	Marriage	婚姻状况	nvarchar	30	2	N	
+3	personal	个人月缴存额	nvarchar	20	2	Y	
+4	spouse	配偶月缴存额	nvarchar	20	2	Y	
+5	assessValue	房屋评估值	nvarchar	20	2	N	
+6	houseArea	房屋面积	nvarchar	20	2	N	
+7	percentage	按揭成数	nvarchar	20	2	N	
+8	year	按揭年数	nvarchar	50	0		
+9	APR	年贷款利率分类	nvarchar	50	0		
+10	APRValue	年利率	nvarchar	10	2		
+11	monthMoney	月供款额	nvarchar	10	2		
+12	loadMoneyOne	评估值可贷款额	nvarchar	10	2		
+13	monthLoadMoneyOne	评估值月还款	nvarchar	10	2		
+14	loadMoneyTwo	月缴存可贷款额	nvarchar	10	2		
+15	monthLoadMoneyTwo	月缴存月还款	nvarchar	10	2		
+16	loadMoneyLast	可贷款数	nvarchar	10	2		
+17	mothLoadMoneyLast	月还款	nvarchar	10	2		
+表4 infors（房源信息表）
+	字段名	字段说明	数据类型	字段长度	小数位	空	主键
+1	Date	日期	Date		0	N	Y
+2	price	成交价	nvarchar	10	2	N	
+3	cost	原值	nvarchar		2	N	
+4	houseArea	房屋面积	nvarchar		2	N	
+5	sellerHouseNum	现有住房	Int		0	N	
+6	houseType	住房性质	nvarchar	20	0	N	
+7	years	住房年限	nvarchar	2	0	N	
+8	buyerHouseNum	住房套数	Int		0		
+9	dkType	贷款类型	nvarchar		0		
+10	present	中介服务费百分比	nvarchar		2		
+11	dkMoney	贷款金额	nvarchar		2		
+12	basePrice	底价	nvarchar		2		
+至此，系统的数据库设计完毕，系统数据库设计好后，下一步就可进行系统功能的实现。
+5 系统功能图
+该模块通过对目标系统的精确描述，实现了对各个模块功能的详细分析与设计，从而在编码阶段可以把这个描述直接翻译成某种程序设计语言书写的程序,实现系统的详细设计。
+5.1 用户引导界面
+  
+图3：用户引导界面
+5.2 房产税费界面
+  
+图4房产税费界面
+5.3 房市资讯界面
+  
+图5房市资讯界面
+5.4 房价走势界面
+  
+图6房价走势界面
+5.5 更多模块界面
+  
+图7更多模块界面
+6 系统实现
+该系统采用OC等相关语言进行编码实现，因为OC语言的程序生产率较高，使用的符号和概念更符合人的习惯。因此用OC高级编程语言写出来的程序容易阅读，容易测试，容易调试，容易维护。在本部分中，对系统中具有代表性的相关操作及代码进行详细说明。
+6.1 用户引导模块代码
+    //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝图片数组＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@&quot;user_guide1&quot;], [UIImage imageNamed:@&quot;user_guide2&quot;],[UIImage imageNamed:@&quot;user_guide3&quot;],nil];
+    //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝创建UIScrollView对象＝＝＝＝＝＝＝＝＝＝
+    UIScrollView * scrollView=[[UIScrollView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.scrollView=scrollView;
+    scrollView.layer.masksToBounds =YES;
+    scrollView.layer.cornerRadius =5;
+    scrollView.pagingEnabled=YES;
+    scrollView.delegate=self;
+    scrollView.contentSize=CGSizeMake([[UIScreen mainScreen] bounds].size.width*imagesArray.count, [[UIScreen mainScreen] bounds].size.height);
+    //for循环添加图片
+    for (int i=0; i&lt;imagesArray.count; i++) {
+        UIImageView * imageView=[[UIImageView alloc]initWithFrame:CGRectMake([[UIScreen mainScreen]bounds].size.width*i, 0, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds ].size.height)];
+        imageView.image=[imagesArray objectAtIndex:i];
+        imageView.layer.masksToBounds =YES;
+        imageView.layer.cornerRadius =5;
+        [scrollView addSubview:imageView];
+        [imageView release];
+    }
+    //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝button＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor orangeColor];
+    [button setTitle:@&quot;进去瞧瞧&quot; forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.frame =CGRectMake([[UIScreen mainScreen] bounds].size.width*3-200, [[UIScreen mainScreen] bounds].size.height-90, 90, 44);
+    [button addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
+    button.layer.cornerRadius = 5;
+    [self.scrollView addSubview:button];
+    //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝创建UIPageControl对象＝＝＝＝＝＝＝＝＝
+    UIPageControl * pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake([[UIScreen mainScreen]bounds].size.width-190, [[UIScreen mainScreen]bounds].size.height-20, 60, 20)];
+    pageControl.enabled=YES;
+    self.pageControl=pageControl;
+    pageControl.pageIndicatorTintColor = [UIColor orangeColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.numberOfPages=imagesArray.count;
+    [pageControl addTarget:self action:@selector(changePages:) forControlEvents:UIControlEventValueChanged];
+    //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝添加视图＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    [self.view addSubview:scrollView];
+    [self.view addSubview:pageControl];
+     //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝释放＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    [scrollView release];
+	[pageControl release];
+6.2 房产税费模块代码
+InfomationTableViewController * infoList = [[InfomationTableViewController alloc]init];
+        UINavigationController * infoListnav = [[UINavigationController alloc]initWithRootViewController:infoList];
+        //设置pop回来时baibtnItem的颜色
+        infoListnav.navigationBar.tintColor = [UIColor darkGrayColor];
+        infoListnav.navigationBar.backgroundColor = [UIColor whiteColor];
+        infoListnav.navigationBar.translucent= NO;
+         infoList.navigationItem.title = @&quot;房市资讯&quot;;
+        infoListnav.tabBarItem.title = @&quot;房市资讯&quot;;
+        infoListnav.tabBarItem.image = [UIImage imageNamed:@&quot;newsss&quot;];
+       // 房产税费控制器
+        HouseTaxHomeViewController * taxVC = [[HouseTaxHomeViewController alloc]init];
+        UINavigationController * taxnav = [[UINavigationController alloc]initWithRootViewController:taxVC];
+        taxnav.navigationBar.translucent= NO;
+        taxnav.navigationBar.tintColor = [UIColor lightGrayColor];
+        taxnav.tabBarItem.title = @&quot;房产税费&quot;;
+        taxnav.tabBarItem.image = [UIImage imageNamed:@&quot;53-house&quot;];
+        //房价走势控制器
+        HousePriceTrendViewController * thirdVC = [[HousePriceTrendViewController alloc]init];
+        UINavigationController * thirdnav = [[UINavigationController alloc]initWithRootViewController:thirdVC];
+        thirdnav.navigationBar.translucent = NO;
+        thirdnav.navigationBar.tintColor = [UIColor darkGrayColor];
+        thirdnav.tabBarItem.image = [UIImage imageNamed:@&quot;16-line-chart&quot;];
+        thirdVC.navigationItem.title = @&quot;房价走势&quot;;
+        thirdnav.tabBarItem.title = @&quot;房价走势&quot;;
+        thirdnav.navigationBar.translucent= NO;
+         //更多
+        MoreTableViewController * moreVC = [[MoreTableViewController alloc]init];
+        UINavigationController * morenav = [[UINavigationController alloc]initWithRootViewController:moreVC];
+        moreVC.navigationItem.title = @&quot;更多&quot;;
+        morenav.tabBarItem.title = @&quot;更多&quot;;
+        morenav.navigationBar.tintColor = [UIColor darkGrayColor];
+        morenav.tabBarItem.image = [UIImage imageNamed:@&quot;more2&quot;];
+        morenav.navigationBar.translucent = NO;
+        //导航控制器管理控制器
+        self.viewControllers = @[taxnav,infoListnav,thirdnav,morenav];
+self.navigationItem.title = @&quot;房税计算&quot;;
+    UIBarButtonItem * left = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@&quot;Nav_list&quot;] style:UIBarButtonItemStyleBordered target:self action:@selector(unfold:)];
+    self.navigationItem.leftBarButtonItem =left;
+    [left release];
+    // Do any additional setup after loading the view.
+    DVSwitch * dvSwitch = [[DVSwitch alloc]initWithStringsArray:@[@&quot;房税&quot;,@&quot;商贷&quot;,@&quot;公积金&quot;]];
+    dvSwitch.backgroundColor = [UIColor colorWithRed:247/255.0 green:156/255.0 blue:12/255.0 alpha:1];
+    dvSwitch.labelTextColorInsideSlider = [UIColor orangeColor];
+    dvSwitch.labelTextColorOutsideSlider = [UIColor whiteColor];
+    dvSwitch.sliderColor = [UIColor whiteColor];
+    dvSwitch.cornerRadius = 5.0;
+    dvSwitch.frame = CGRectMake(150, 5, 170,40);
+    self.navigationItem.titleView  = dvSwitch;
+    //控制器1
+    HouseTaxCalculationViewHomeController *firstVC = [[HouseTaxCalculationViewHomeController alloc]init];
+    [self.view addSubview:firstVC.view];
+    [self addChildViewController:firstVC];
+    //控制器2
+    HouseLoadOneViewController *loadOneVC = [[HouseLoadOneViewController alloc]init];
+    //控制器3
+    HouseLoadTwoViewController *loadTwoVC = [[HouseLoadTwoViewController alloc]init];
+    //表头
+    NSArray * array = [[NSArray alloc]initWithObjects:firstVC,loadOneVC,loadTwoVC,nil];
+    NSArray *viewArray = [[NSArray alloc]initWithObjects:firstVC.view,loadOneVC.view,loadTwoVC.view,nil];
+    [dvSwitch setPressedHandler:^(NSUInteger index) {
+        //移除视图和控制器
+        [[[self.view subviews] lastObject] removeFromSuperview];
+        [[self.childViewControllers lastObject] removeFromParentViewController];
+        //添加视图和控制器
+        [self.view addSubview:[viewArray objectAtIndex:index]];
+        [self addChildViewController:[array objectAtIndex:index]]; 
+    }];
+6.3 房市资讯模块代码
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    //#warning 自动刷新(一进入程序就下拉刷新)
+    [self.tableView headerBeginRefreshing];
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @&quot;下拉可以刷新了&quot;;
+    self.tableView.headerReleaseToRefreshText = @&quot;松开马上刷新了&quot;;
+    self.tableView.headerRefreshingText = @&quot;正在帮你刷新中、、、&quot;; 
+    self.tableView.footerPullToRefreshText = @&quot;上拉可以加载更多数据了&quot;;
+    self.tableView.footerReleaseToRefreshText = @&quot;松开马上加载更多数据了&quot;;
+    self.tableView.footerRefreshingText = @&quot;正在帮你加载中、、、&quot;;
+}
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //使用封装的类进行请求
+        JSONData *jsonData = [[JSONData alloc]init];//
+        jsonData.delegate = self;//
+        [jsonData houseListJsonDataWithUrl:HousList_URL_ONE];//
+        [jsonData release];//
+        // 刷新表格
+        [self.tableView reloadData];
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView headerEndRefreshing];
+    });
+}
+6.4 房价走势模块代码
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    // Do any additional setup after loading the view.
+    [self performSelectorInBackground:@selector(jiexi) withObject:nil];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.bounds.size.height-60)] ;
+    imgView.backgroundColor = [UIColor whiteColor];
+    imgView.image = [UIImage imageNamed:@&quot;10.png&quot;];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(110, 100, 100, 30)];
+    label.text = @&quot;正在加载中...&quot;;
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:17];
+    label.textAlignment = NSTextAlignmentCenter;;
+    [imgView addSubview:label];
+    [label release];
+    self.myimageview = imgView;
+    [self.view addSubview:imgView];
+    [imgView release];
+}
+
+
+7 系统测试与维护
+7.1 系统测试
+系统测试是保证系统质量和可靠性的关键步骤，是对系统开发过程中的系统分析系统设计和实施的最后复查。根据测试的概念和目的，在进行信息系统测试。
+  在房产税费模块，测试主要针对测试结果是否正确和符合行业规则，是否能准备记录下计算结果。
+  在房市资讯模块，测试cell的图片是否能及时显示，下拉是否会进行数据刷新，上拉是否会加载更多数据，以及跳转详情页面数据是否完整。
+  在房价走势模块，主要对折线图进行测试其显示是否达到标准，手势是否能相应，切换城市后数据是否会刷新。
+  在更多模块，主要测试意见反馈功能是否能够实现，是否能够及时收到邮件。
+  在完成逐个模块测试后，开始对系统整体进行验收测试，运行该系统，在运行过程中是否会出现闪退等错误。
+7.1.1 房产税费模块测试方案与执行
+房产税费模块测试方案表如表5所示：
+表5登录模块测试方案表
+	测试方案	预期结果	执行结果	程序修改	调试结果
+1	房贷计算逻辑是否正确	房产销售人员测试	逻辑正确	无	达到预期结果
+2	弹出抽屉事件是否正常	没有触发响应事件	抽屉不消失	修改	没有达到预期结果
+3	房税计算结果，短信发送	按照格式发送成功	发送成功	无	达到预期结果
+
+7.1.2 房价走势模块测试方案与执行
+房价走势模块测试方案表如表6所示：
+表6教材征订模块测试方案
+	测试方案	预期结果	执行结果	程序修改	调试结果
+1	切换城市，刷新所选城市的房价走势界面	刷新房价走势界面	与预期结果一直	无	成功刷新当前城市的房价信息
+2	查看热门区域，动态展示关注度和房常	界面显示，开始执行动画	与预期结果一直	无	实现热门区域数据的动态展示
+
+7.2 系统维护
+软件维护是在软件已经交付使用之后，为了改正错误或满足新的需要而修改软件的过程。
+1)	系统的维护主要包括四个方面：程序的维护、数据文件的维护、代码的维护。
+2)	维护人员必须在正确理解一个程序之后才能对它进行修改，影响可维护性的因素：可理  解性、可测试性、可修改性、可移植性、效率、可使用性、可靠性。
+
+
+
+
+参考文献
+[1]	Mark Dalrymple, Scott Knaster:Learn Objective-C on the Mac[M].人民邮电出版社,2009.
+[2]	钟冠贤. Objective-C编程之道:iOS设计模式解析[M].人民邮电出版社,2011.
+[3]	金斯伯格. iPhone应用用户体验设计实践与案[M].机械工业出版社.2011.
+[4]	斯塔格.构建iPhone企业级应用:基于HTML,CSS 和JavaScript[M].中国电力出版社,2011.
+[5]  John Ray.iPhone开发入门经典(第2版)[M].人民邮电出版社,2012.
+[6]  王一柠,李春燕, 赵国等编.轻松玩转iPhone 4s.化学工业出版社,2012 .
+[7]  马克, iPhone开发基础教程. 人民邮电,2009. 
+[8]  杨正洪,苏伟基,郑齐心,杜理渊.iPhone 4应用程序开发入门与实战,2012. 
+[9] 严蔚敏,吴伟民.数据结构(C语言版)[M].北京:清华大学出版社,1997. 
+[10] 弋荣静.iOS平台手机阅读客户端的设计与实现[M].北京邮电大学,2013.
+[11] 王云泽,李一哲,郭琳.移动终端用户界面框架的研究[J].计算机工程与设计.2012,(04): 66-67.  
+[12] 崔巍.数据库系统及应用(第二版) [M].北京:高等教育出版社.2013. 
+[13] Stephen G. Kochan. Programming in Objective-C 2.0[M].2009.
+[14] 谭浩强.C语言设计[M].第三版.北京:清华大学出版社,2005.
+[15] 萨丹(Erica Sadun) (作者),张彩霞(译者),易磊(译者)等.iPhone开发密集.第二版.人民邮电出版社,2010.
+[16] 刘冶. Objective-C程序设计基本教程.第一版.人民邮电出版社,2009.
+[17] 纳丁(Nutting,J.)等著,周庆成,邓强,武海峰等译.第六版.北京:人民邮电出版社,2014.10.
+ 
+Design and Implementation of Property Application Development System Based on iOS
+Li man
+(College of Information Management, Dezhou University, Dezhou, Shandong 253023)
+Abstract  In recent years, with the deepening of housing system reform in our country and the improvement of people&#39;s income, housing becomes the new consumption hot spots. In the real estate market and in the high speed development, which is closely linked to ease the housing sales personnel complex tax, the calculation of mortgages and business loans, improving  the efficiency of sales personnel, for the real estate sales personnel and tailored to iOS mobile application based on the housing tool class – Fang shuibao.This application is mainly to provide professional real estate taxes and fees, housing loans and commercial loans calculation, the latest housing information, dynamic city house prices, as well as user-friendly UI design, smooth user experience.
+Keyword  iOS Mobile phone application; Housing Tax; Housing market information; Price trend
+
+ 
+致  谢
+时光荏苒，四年的大学生活即将结束。回顾四年来我的学习历程，很多的事情值得去怀念，很多的人值得一辈子去感激。
+首先，感谢我的指导教师在我做毕业设计的每个阶段，从开题到最后实现，以及论文的写作过程中都给予了我悉心的指导和教诲。指导老师渊博的知识使我受益匪浅，她严谨的治学态度也是我永远学习的榜样，并将积极影响我今后的学习和工作。
+其次，感谢在我大学生活中教育我、帮助我的所有老师，是你们的无私奉献和尽心帮助才使我顺利完成学业。
+最后，要感谢一直帮助我，支持我，鼓励我的所有同学和朋友，感谢你们一直以来对我的照顾和帮助。
+感谢母校德州学院在大学四年对我的孜孜教导和辛勤培育，为我插上了知识的翅膀。在未来的学习和工作过程中，我将更加努力，以丰厚的成果来答谢曾经关心、帮助和支持过我的所有老师、同学和朋友。
+            </td>
+            <td align="left" valign="top" >
+                            
+            </td>
+        </tr>
+        
+    </table>
+    <div id="description">
+        <p class="smtit">
+            说明：</p>
+        <p>
+            1.总相似比≈送检论文与检测范围全部数据相似部分的字数/送检论文总字数</p>
+        <p>
+            2.参考文献相似比≈送检论文与其参考文献相似部分的字数/送检论文总字数</p>
+        <p>
+            3.排除参考文献相似比=总相似比 - 参考文献相似比</p>
+        <p>
+            4.剩余相似比≈总相似比-典型片段总相似比
+        </p>
+        <p>
+            5.本报告为检测系统算法自动生成，仅供参考
+        </p>
+    </div>
+    
+    <script>
+        window.onload = function () {
+            
+        }
+    </script>
+    
+</body>
+</html>
