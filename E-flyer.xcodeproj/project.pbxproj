@@ -14,6 +14,15 @@
 		9634C93B1CB8D72500519377 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634C93A1CB8D72500519377 /* App.m */; };
 		963C74711CBC04BE00FAFB20 /* addImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963C74701CBC04BE00FAFB20 /* addImg@2x.png */; };
 		963C74731CBC0DEA00FAFB20 /* money60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963C74721CBC0DEA00FAFB20 /* money60@2x.png */; };
+		9642E0BD1CBCB97B00EEAC61 /* close_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642E0AB1CBCB97B00EEAC61 /* close_icon@2x.png */; };
+		9642E0BE1CBCB97B00EEAC61 /* LrdAlertTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0AD1CBCB97B00EEAC61 /* LrdAlertTableView.m */; };
+		9642E0BF1CBCB97B00EEAC61 /* LrdDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0AF1CBCB97B00EEAC61 /* LrdDateModel.m */; };
+		9642E0C01CBCB97B00EEAC61 /* LrdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0B11CBCB97B00EEAC61 /* LrdTableViewCell.m */; };
+		9642E0C11CBCB97B00EEAC61 /* CameraAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0B41CBCB97B00EEAC61 /* CameraAlertView.m */; };
+		9642E0C21CBCB97B00EEAC61 /* close_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642E0B61CBCB97B00EEAC61 /* close_icon@2x.png */; };
+		9642E0C31CBCB97B00EEAC61 /* LrdPasswordAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0B81CBCB97B00EEAC61 /* LrdPasswordAlertView.m */; };
+		9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0BA1CBCB97B00EEAC61 /* WTReParser.m */; };
+		9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0BC1CBCB97B00EEAC61 /* WTReTextField.m */; };
 		965433931C803625005B8BD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433921C803625005B8BD1 /* main.m */; };
 		965433961C803625005B8BD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433951C803625005B8BD1 /* AppDelegate.m */; };
 		9654339C1C803625005B8BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9654339A1C803625005B8BD1 /* Main.storyboard */; };
@@ -110,6 +119,22 @@
 		9634C93A1CB8D72500519377 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		963C74701CBC04BE00FAFB20 /* addImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addImg@2x.png"; sourceTree = "<group>"; };
 		963C74721CBC0DEA00FAFB20 /* money60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money60@2x.png"; sourceTree = "<group>"; };
+		9642E0AB1CBCB97B00EEAC61 /* close_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_icon@2x.png"; sourceTree = "<group>"; };
+		9642E0AC1CBCB97B00EEAC61 /* LrdAlertTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrdAlertTableView.h; sourceTree = "<group>"; };
+		9642E0AD1CBCB97B00EEAC61 /* LrdAlertTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrdAlertTableView.m; sourceTree = "<group>"; };
+		9642E0AE1CBCB97B00EEAC61 /* LrdDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrdDateModel.h; sourceTree = "<group>"; };
+		9642E0AF1CBCB97B00EEAC61 /* LrdDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrdDateModel.m; sourceTree = "<group>"; };
+		9642E0B01CBCB97B00EEAC61 /* LrdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrdTableViewCell.h; sourceTree = "<group>"; };
+		9642E0B11CBCB97B00EEAC61 /* LrdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrdTableViewCell.m; sourceTree = "<group>"; };
+		9642E0B31CBCB97B00EEAC61 /* CameraAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraAlertView.h; sourceTree = "<group>"; };
+		9642E0B41CBCB97B00EEAC61 /* CameraAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraAlertView.m; sourceTree = "<group>"; };
+		9642E0B61CBCB97B00EEAC61 /* close_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_icon@2x.png"; sourceTree = "<group>"; };
+		9642E0B71CBCB97B00EEAC61 /* LrdPasswordAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrdPasswordAlertView.h; sourceTree = "<group>"; };
+		9642E0B81CBCB97B00EEAC61 /* LrdPasswordAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrdPasswordAlertView.m; sourceTree = "<group>"; };
+		9642E0B91CBCB97B00EEAC61 /* WTReParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReParser.h; sourceTree = "<group>"; };
+		9642E0BA1CBCB97B00EEAC61 /* WTReParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReParser.m; sourceTree = "<group>"; };
+		9642E0BB1CBCB97B00EEAC61 /* WTReTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReTextField.h; sourceTree = "<group>"; };
+		9642E0BC1CBCB97B00EEAC61 /* WTReTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReTextField.m; sourceTree = "<group>"; };
 		9654338E1C803625005B8BD1 /* E-flyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-flyer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		965433921C803625005B8BD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		965433941C803625005B8BD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -253,6 +278,53 @@
 				34D6CCA0EDCAE98C331D816D /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9642E0A91CBCB97B00EEAC61 /* LrdAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9642E0AA1CBCB97B00EEAC61 /* LrdAlertView */,
+				9642E0B21CBCB97B00EEAC61 /* LrdCameraAlertView */,
+				9642E0B51CBCB97B00EEAC61 /* LrdPasswordAlertView */,
+			);
+			path = LrdAlertView;
+			sourceTree = "<group>";
+		};
+		9642E0AA1CBCB97B00EEAC61 /* LrdAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9642E0AB1CBCB97B00EEAC61 /* close_icon@2x.png */,
+				9642E0AC1CBCB97B00EEAC61 /* LrdAlertTableView.h */,
+				9642E0AD1CBCB97B00EEAC61 /* LrdAlertTableView.m */,
+				9642E0AE1CBCB97B00EEAC61 /* LrdDateModel.h */,
+				9642E0AF1CBCB97B00EEAC61 /* LrdDateModel.m */,
+				9642E0B01CBCB97B00EEAC61 /* LrdTableViewCell.h */,
+				9642E0B11CBCB97B00EEAC61 /* LrdTableViewCell.m */,
+			);
+			path = LrdAlertView;
+			sourceTree = "<group>";
+		};
+		9642E0B21CBCB97B00EEAC61 /* LrdCameraAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9642E0B31CBCB97B00EEAC61 /* CameraAlertView.h */,
+				9642E0B41CBCB97B00EEAC61 /* CameraAlertView.m */,
+			);
+			path = LrdCameraAlertView;
+			sourceTree = "<group>";
+		};
+		9642E0B51CBCB97B00EEAC61 /* LrdPasswordAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9642E0B61CBCB97B00EEAC61 /* close_icon@2x.png */,
+				9642E0B71CBCB97B00EEAC61 /* LrdPasswordAlertView.h */,
+				9642E0B81CBCB97B00EEAC61 /* LrdPasswordAlertView.m */,
+				9642E0B91CBCB97B00EEAC61 /* WTReParser.h */,
+				9642E0BA1CBCB97B00EEAC61 /* WTReParser.m */,
+				9642E0BB1CBCB97B00EEAC61 /* WTReTextField.h */,
+				9642E0BC1CBCB97B00EEAC61 /* WTReTextField.m */,
+			);
+			path = LrdPasswordAlertView;
 			sourceTree = "<group>";
 		};
 		965433851C803625005B8BD1 = {
@@ -537,6 +609,7 @@
 		965433FF1C803EDA005B8BD1 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				9642E0A91CBCB97B00EEAC61 /* LrdAlertView */,
 				96EB75D31C859B1300B3658F /* WMPlayer */,
 			);
 			path = Vendors;
@@ -736,7 +809,9 @@
 				96E59ECC1C8EE46E00D24F02 /* share@2x.png in Resources */,
 				96C8640B1C85511400365512 /* img@2x.png in Resources */,
 				96A7F8671C80C6F700412B79 /* left_back@2x.png in Resources */,
+				9642E0C21CBCB97B00EEAC61 /* close_icon@2x.png in Resources */,
 				96E59ECA1C8EE06400D24F02 /* down_close@2x.png in Resources */,
+				9642E0BD1CBCB97B00EEAC61 /* close_icon@2x.png in Resources */,
 				96F81BC51CB9650900A3B523 /* head_default@2x.png in Resources */,
 				96A7F7CA1C8099C700412B79 /* tab_add@2x.png in Resources */,
 				968D1A091C8D8DBE00D1BDBC /* meBg@2x.png in Resources */,
@@ -825,22 +900,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				9627194A1C80813B00D11747 /* EFTabBar.m in Sources */,
+				9642E0C31CBCB97B00EEAC61 /* LrdPasswordAlertView.m in Sources */,
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
 				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
+				9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */,
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
+				9642E0BF1CBCB97B00EEAC61 /* LrdDateModel.m in Sources */,
+				9642E0C11CBCB97B00EEAC61 /* CameraAlertView.m in Sources */,
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,
+				9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */,
 				96C864091C8549AC00365512 /* FlyerRecommendCell.m in Sources */,
 				96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,
 				96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */,
 				965433961C803625005B8BD1 /* AppDelegate.m in Sources */,
 				96EB75C21C85743400B3658F /* VideoController_abandon.m in Sources */,
+				9642E0C01CBCB97B00EEAC61 /* LrdTableViewCell.m in Sources */,
 				96EB75F91C859B1300B3658F /* WMPlayer.m in Sources */,
 				96E59EBD1C8EB60F00D24F02 /* EFUser.m in Sources */,
 				96E59EC51C8ECC9500D24F02 /* AVQuery+EFQuery.m in Sources */,
@@ -851,6 +932,7 @@
 				96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */,
 				96EAA8501CBA49BC00508683 /* EFCity.m in Sources */,
 				96C864061C85330000365512 /* UIView+EFView.m in Sources */,
+				9642E0BE1CBCB97B00EEAC61 /* LrdAlertTableView.m in Sources */,
 				96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */,
 				96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */,
 				96A7F8621C80BEDC00412B79 /* FlyerController.m in Sources */,
@@ -1002,7 +1084,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "E-flyer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "--.E-flyer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beijing.JasonMsbaby.EFlyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1017,7 +1099,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "E-flyer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "--.E-flyer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beijing.JasonMsbaby.EFlyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
