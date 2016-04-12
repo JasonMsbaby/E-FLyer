@@ -23,6 +23,9 @@
 		9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0BA1CBCB97B00EEAC61 /* WTReParser.m */; };
 		9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0BC1CBCB97B00EEAC61 /* WTReTextField.m */; };
 		9642E0C81CBD01F500EEAC61 /* LrdDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E0C71CBD01F500EEAC61 /* LrdDateModel.m */; };
+		9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E1141CBD270000EEAC61 /* CityViewController.m */; };
+		9642E1171CBD271C00EEAC61 /* icon_nav_quxiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */; };
+		9642E1191CBD272D00EEAC61 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1181CBD272D00EEAC61 /* city.plist */; };
 		965433931C803625005B8BD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433921C803625005B8BD1 /* main.m */; };
 		965433961C803625005B8BD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433951C803625005B8BD1 /* AppDelegate.m */; };
 		9654339C1C803625005B8BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9654339A1C803625005B8BD1 /* Main.storyboard */; };
@@ -135,6 +138,10 @@
 		9642E0BC1CBCB97B00EEAC61 /* WTReTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReTextField.m; sourceTree = "<group>"; };
 		9642E0C61CBD01F500EEAC61 /* LrdDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrdDateModel.h; sourceTree = "<group>"; };
 		9642E0C71CBD01F500EEAC61 /* LrdDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrdDateModel.m; sourceTree = "<group>"; };
+		9642E1131CBD270000EEAC61 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		9642E1141CBD270000EEAC61 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_nav_quxiao.png; sourceTree = "<group>"; };
+		9642E1181CBD272D00EEAC61 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
 		9654338E1C803625005B8BD1 /* E-flyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-flyer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		965433921C803625005B8BD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		965433941C803625005B8BD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -503,6 +510,8 @@
 		965433F41C803EDA005B8BD1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9642E1131CBD270000EEAC61 /* CityViewController.h */,
+				9642E1141CBD270000EEAC61 /* CityViewController.m */,
 				965434001C803F3C005B8BD1 /* TabBarController.h */,
 				965434011C803F3C005B8BD1 /* TabBarController.m */,
 				96E59EC61C8EDE1100D24F02 /* HomeAddInfoController.h */,
@@ -618,6 +627,7 @@
 		965434031C804D4C005B8BD1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9642E1181CBD272D00EEAC61 /* city.plist */,
 				965434041C804D4C005B8BD1 /* Images */,
 			);
 			path = Resources;
@@ -626,6 +636,7 @@
 		965434041C804D4C005B8BD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */,
 				963C74721CBC0DEA00FAFB20 /* money60@2x.png */,
 				963C74701CBC04BE00FAFB20 /* addImg@2x.png */,
 				96F81BC41CB9650900A3B523 /* head_default@2x.png */,
@@ -799,6 +810,7 @@
 				963C74711CBC04BE00FAFB20 /* addImg@2x.png in Resources */,
 				96A7F85F1C80B94E00412B79 /* index_search@2x.png in Resources */,
 				96EB75F81C859B1300B3658F /* WMPlayer.bundle in Resources */,
+				9642E1171CBD271C00EEAC61 /* icon_nav_quxiao.png in Resources */,
 				965433A11C803625005B8BD1 /* LaunchScreen.storyboard in Resources */,
 				9654340B1C804D4C005B8BD1 /* tab_seller@2x.png in Resources */,
 				965434091C804D4C005B8BD1 /* tab_flyer@2x.png in Resources */,
@@ -813,6 +825,7 @@
 				96E59ECA1C8EE06400D24F02 /* down_close@2x.png in Resources */,
 				9642E0BD1CBCB97B00EEAC61 /* close_icon@2x.png in Resources */,
 				96F81BC51CB9650900A3B523 /* head_default@2x.png in Resources */,
+				9642E1191CBD272D00EEAC61 /* city.plist in Resources */,
 				96A7F7CA1C8099C700412B79 /* tab_add@2x.png in Resources */,
 				968D1A091C8D8DBE00D1BDBC /* meBg@2x.png in Resources */,
 				962FCF2C1C8460D000981B5D /* circle@2x.png in Resources */,
@@ -904,6 +917,7 @@
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
+				9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */,
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
 				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
 				9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */,

@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "CityViewController.h"
 #import "EFCategroy.h"
 #import "LrdDateModel.h"
 #import "EFCrowd.h"
@@ -100,7 +101,14 @@
  */
 - (IBAction)btnAreaClick:(id)sender {
     [self alerSheetWithTitle:@"选择方式" Message:@"请选择添加区域的方式" Buttons:@[@"通过城市选择",@"通过地图选点"] CallBack:^(NSInteger index) {
-        NSLog(@"%ld",index);
+        if (index == 0) {
+            CityViewController *cityVC = [CityViewController new];
+            WeakObj(self)
+            cityVC.block = ^(NSInteger row,LrdDateModel *model){
+                selfWeak.lbl_area.text = model.title;
+            };
+            [self presentViewController:cityVC animated:YES completion:nil];
+        }
     }];
 }
 /*!
