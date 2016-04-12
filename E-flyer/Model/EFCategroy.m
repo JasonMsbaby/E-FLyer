@@ -15,18 +15,27 @@
 @dynamic desc;
 @dynamic image;
 
+static EFCategroy *categroy;
++(instancetype)shareInstance{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        categroy = [[EFCategroy alloc]init];
+    });
+    return categroy;
+}
+
+- (void)initWithRemote{
+    AVQuery *query = [EFCategroy query];
+    [query includeKey:@"image"];
+    self.data = [query findObjects];
+}
+
+
 + (void)load{
     [super load];
     [self registerSubclass];
 }
 
-+ (void)listEFCategroyonSuccess:(success)success{
-    AVQuery *query = [EFCategroy query];
-    [query includeKey:@"image"];
-    [query findObjectsInBackgroundWithSuccess:^(NSArray<EFCategroy *> *result) {
-        success(result);
-    }];
-}
 
 
 @end

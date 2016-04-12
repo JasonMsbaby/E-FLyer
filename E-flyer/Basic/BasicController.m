@@ -47,6 +47,20 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)alerSheetWithTitle:(NSString *)title Message:(NSString *)message Buttons:(NSArray<NSString *> *)btns CallBack:(void (^)(NSInteger index))callBack{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    for (int i = 0; i < btns.count; i++) {
+        [alert addAction:[UIAlertAction actionWithTitle:btns[i] style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            if (callBack != nil) {
+                callBack(i);
+            }
+        }]];
+    }
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (void)toastWithError:(NSError *)err{
     NSString *c = [NSString stringWithFormat:@"code_%ld",err.code];

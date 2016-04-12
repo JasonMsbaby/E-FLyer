@@ -1,19 +1,15 @@
 //
 //  LrdDateModel.h
-//  AlertTableView
+//  E-flyer
 //
-//  Created by 键盘上的舞者 on 3/28/16.
-//  Copyright © 2016 键盘上的舞者. All rights reserved.
+//  Created by Jason_Msbaby on 16/4/12.
+//  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface LrdDateModel : NSObject
+@property(strong,nonatomic) NSString *title;
 
-@property (nonatomic, copy) NSString *time;
-
-@property (nonatomic, copy) NSString *price;
-
-- (instancetype)initWithTime:(NSString *)time price:(NSString *)price;
-
+- (instancetype)initWithTitle:(NSString *)title;
 @end

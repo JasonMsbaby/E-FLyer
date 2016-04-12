@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/26.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import <SVProgressHUD.h>
 #import "EFCity.h"
 #import "EFCrowd.h"
 #import <IQKeyboardManager.h>
@@ -22,6 +23,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self loadLeanCloud];
     [self initData];
+    //初始化一些基本数据
+    [self loading];
     [self setUpIQKeyboardManager];
     return YES;
 }
@@ -58,6 +61,14 @@
     manager.shouldResignOnTouchOutside = YES;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.enableAutoToolbar = NO;
+}
+
+
+- (void)loading{
+    [SVProgressHUD showWithStatus:@"正在初始化,请稍后..."];
+    [[EFCrowd shareInstance] initFromRemote];
+    [[EFCategroy shareInstance]initWithRemote];
+    [SVProgressHUD dismiss];
 }
 
 - (void)initData{

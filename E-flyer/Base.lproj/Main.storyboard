@@ -1202,6 +1202,9 @@
                                                             <constraint firstAttribute="width" secondItem="eMf-ve-kbj" secondAttribute="height" multiplier="23:15" id="Ht2-KT-YDX"/>
                                                         </constraints>
                                                         <state key="normal" image="addImg.png"/>
+                                                        <connections>
+                                                            <action selector="btnFileClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="U9s-kU-wg2"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="问题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9RV-a2-aC5">
                                                         <rect key="frame" x="156" y="117" width="189" height="30"/>
@@ -1250,6 +1253,9 @@
                                                         <rect key="frame" x="80" y="6" width="42" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="所有人"/>
+                                                        <connections>
+                                                            <action selector="btnPersonClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="U6F-Nq-MXY"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信息类别:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PH-Wj-Kev">
                                                         <rect key="frame" x="152" y="12" width="60.5" height="17"/>
@@ -1261,6 +1267,9 @@
                                                         <rect key="frame" x="222" y="6" width="56" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="新店新品"/>
+                                                        <connections>
+                                                            <action selector="btnCategroyClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="ZpE-Ca-Icw"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1301,6 +1310,9 @@
                                                     </textField>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H2K-nQ-EaJ">
                                                         <rect key="frame" x="296" y="5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="btnSwitchChanged:" destination="qmp-im-vKh" eventType="valueChanged" id="ftu-5F-dbB"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXk-w1-CrJ">
                                                         <rect key="frame" x="238" y="10" width="48" height="20"/>
@@ -1351,6 +1363,9 @@
                                                         <rect key="frame" x="138" y="6" width="52" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <state key="normal" title="重新选择"/>
+                                                        <connections>
+                                                            <action selector="btnAreaClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="hb2-mJ-6la"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1428,6 +1443,9 @@
                                         <state key="normal" title="支付">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnPayClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="xcF-8l-gR3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1460,7 +1478,10 @@
                     <connections>
                         <outlet property="btn_addFile" destination="eMf-ve-kbj" id="rSU-x7-XqY"/>
                         <outlet property="btn_pay" destination="3K3-TK-2Ew" id="XvY-K3-eQI"/>
-                        <outlet property="dropBaseView" destination="oJe-KS-6YD" id="39X-GB-gNE"/>
+                        <outlet property="btn_selectArea" destination="z9g-hJ-knn" id="69X-RI-RL2"/>
+                        <outlet property="btn_selectCategroy" destination="Gb2-pF-KE7" id="Md5-KK-f1D"/>
+                        <outlet property="btn_selectPerson" destination="2px-de-UgU" id="H0T-K7-P0R"/>
+                        <outlet property="lbl_area" destination="Qls-cP-kIs" id="Ifs-qj-agY"/>
                         <outlet property="subMoney" destination="CXz-UM-EV6" id="6ty-Ha-Jiv"/>
                         <outlet property="switch_isUp" destination="H2K-nQ-EaJ" id="nU3-zW-VxD"/>
                         <outlet property="txt_answer" destination="def-bX-sbH" id="mYo-J4-J4o"/>

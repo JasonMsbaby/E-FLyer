@@ -29,10 +29,19 @@
 //关闭按钮
 @property (nonatomic, strong) UIButton *closeButton;
 
+@property(strong,nonatomic) NSString *txt_title;
+@property(strong,nonatomic) NSString *txt_subTitle;
 
 @end
 
 @implementation LrdAlertTableView
+
+
+- (instancetype)initWithTitle:(NSString *)title SubTitle:(NSString *)subTitle{
+    self.txt_title = title;
+    self.txt_subTitle = subTitle;
+    return [self initWithFrame:[UIScreen mainScreen].bounds];
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -48,19 +57,31 @@
         _contentView.layer.cornerRadius = 5;
         [self addSubview:_contentView];
         
-        _title = [[UILabel alloc] init];
-        _title.font = [UIFont boldSystemFontOfSize:18];
-        _title.textAlignment = NSTextAlignmentCenter;
-        _title.textColor = [UIColor blackColor];
-        _title.text = @"还款详情";
-        [self.contentView addSubview:_title];
         
-        _subTitle = [[UILabel alloc] init];
-        _subTitle.font = [UIFont systemFontOfSize:13];
-        _subTitle.textColor = [UIColor grayColor];
-        _subTitle.textAlignment = NSTextAlignmentCenter;
-        _subTitle.text = @"每月应还本金￥50.00";
-        [self.contentView addSubview:_subTitle];
+        
+        if (self.txt_title != nil) {
+            _title = [[UILabel alloc] init];
+            _title.font = [UIFont boldSystemFontOfSize:18];
+            _title.textAlignment = NSTextAlignmentCenter;
+            _title.textColor = [UIColor blackColor];
+            _title.text = self.txt_title;
+            [self.contentView addSubview:_title];
+        }
+        
+        
+        
+        
+        
+        if (self.txt_subTitle != nil) {
+            _subTitle = [[UILabel alloc] init];
+            _subTitle.font = [UIFont systemFontOfSize:13];
+            _subTitle.textColor = [UIColor grayColor];
+            _subTitle.textAlignment = NSTextAlignmentCenter;
+            _subTitle.text = self.txt_subTitle;
+            [self.contentView addSubview:_subTitle];
+        }
+        
+        
         
         _line = [[UILabel alloc] init];
         _line.backgroundColor = [UIColor grayColor];
@@ -97,20 +118,37 @@
         make.right.equalTo(self.contentView.mas_right).offset(-10);
     }];
     
-    [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(25);
-        make.left.equalTo(self.contentView.mas_left);
-        make.right.equalTo(self.contentView.mas_right);
-    }];
+    if (self.title != nil) {
+        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView.mas_top).offset(25);
+            make.left.equalTo(self.contentView.mas_left);
+            make.right.equalTo(self.contentView.mas_right);
+        }];
+    }
     
-    [self.subTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.title.mas_bottom).offset(20);
-        make.left.equalTo(self.contentView.mas_left);
-        make.right.equalTo(self.contentView.mas_right);
-    }];
+    if (self.subTitle != nil) {
+        [self.subTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+            if (self.title != nil) {
+                make.top.equalTo(self.title.mas_bottom).offset(20);
+            }else{
+                make.top.equalTo(self.contentView).offset(20);
+            }
+            
+            make.left.equalTo(self.contentView.mas_left);
+            make.right.equalTo(self.contentView.mas_right);
+        }];
+    }
+    
+    
     
     [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.subTitle.mas_bottom).offset(20);
+        if (self.subTitle != nil) {
+            make.top.equalTo(self.subTitle.mas_bottom).offset(20);
+        }else if(self.title != nil){
+            make.top.equalTo(self.title.mas_bottom).offset(20);
+        }else{
+            make.top.equalTo(self.contentView).offset(20);
+        }
         make.left.equalTo(self.contentView.mas_left);
         make.right.equalTo(self.contentView.mas_right);
         make.height.mas_equalTo(@1);
@@ -171,8 +209,16 @@
         cell = [[LrdTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     cell.model = self.dataArray[indexPath.row];
-    cell.userInteractionEnabled = NO;
+    //cell.userInteractionEnabled = NO;
     return cell;
+}
+#pragma tableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.block != nil) {
+        self.block(indexPath.row,self.dataArray[indexPath.row]);
+    }
+    [self dismiss];
 }
 
 @end

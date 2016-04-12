@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LrdDateModel;
+
+typedef void(^DidSelectedBlock)(NSInteger row,LrdDateModel *model);
 
 @interface LrdAlertTableView : UIView
+
+
+- (instancetype)initWithTitle:(NSString *)title SubTitle:(NSString *)subTitle;
 
 //从外面传进来的数据数组
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
+@property(copy,nonatomic) DidSelectedBlock block;
 //弹出
 - (void)pop;
 

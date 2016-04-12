@@ -41,10 +41,8 @@
  *  加载数据
  */
 - (void)loadData{
-    [EFCategroy listEFCategroyonSuccess:^(NSArray *result) {
-        self.headerView.data = result;
-        [self.tableView reloadData];
-    }];
+    self.headerView.data = [EFCategroy shareInstance].data;
+    [self.tableView reloadData];
 }
 /*!
  *  添加上拉 下拉刷新
@@ -55,7 +53,7 @@
         NSLog(@"下拉刷新");
         [self.tableView.mj_header endRefreshing];
     }];
-
+    
 }
 
 //扫一扫

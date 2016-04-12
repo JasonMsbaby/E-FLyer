@@ -12,9 +12,29 @@
 @dynamic job;
 @dynamic sort;
 
+
+
+
 + (void)load{
     [super load];
     [self registerSubclass];
+}
+
+static EFCrowd *crowd;
+
++ (instancetype)shareInstance{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        crowd = [[EFCrowd alloc]init];
+    });
+    return crowd;
+}
+
+
+
+- (void)initFromRemote{
+    AVQuery *query = [EFCrowd query];
+    self.data = [query findObjects];
 }
 
 - (instancetype)initWithJob:(NSString *)job sort:(NSInteger)sort{
@@ -25,4 +45,5 @@
     }
     return self;
 }
+
 @end

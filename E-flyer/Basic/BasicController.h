@@ -21,6 +21,8 @@
  *  @param callback     
  */
 - (void)alerWithTitle:(NSString *)title Message:(NSString *)message CallBack:(void(^)())callback;
+
+-(void)alerSheetWithTitle:(NSString *)title Message:(NSString *)message Buttons:(NSArray<NSString *> *)btns CallBack:(void (^)(NSInteger index))callBack;
 /*!
  *  根据错误码弹出提示
  *

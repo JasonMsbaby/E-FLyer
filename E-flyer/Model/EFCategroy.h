@@ -14,7 +14,9 @@
 @property(assign,nonatomic) int index;
 @property(strong,nonatomic) AVFile *image;
 
+@property(strong,nonatomic) NSArray<EFCategroy *> *data;
 
-+(void) listEFCategroyonSuccess:(success)success;
+- (void)initWithRemote;
++ (instancetype)shareInstance;
 
 @end
