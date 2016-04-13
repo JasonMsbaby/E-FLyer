@@ -15,7 +15,11 @@
 @dynamic desc;
 @dynamic image;
 
+
+
 static EFCategroy *categroy;
+
+
 +(instancetype)shareInstance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

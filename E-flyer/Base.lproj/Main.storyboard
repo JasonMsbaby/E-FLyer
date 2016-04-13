@@ -1203,7 +1203,7 @@
                                                         </constraints>
                                                         <state key="normal" image="addImg.png"/>
                                                         <connections>
-                                                            <action selector="btnFileClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="U9s-kU-wg2"/>
+                                                            <action selector="btnAddFileClick:" destination="qmp-im-vKh" eventType="touchUpInside" id="bOZ-dr-QJo"/>
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="问题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9RV-a2-aC5">

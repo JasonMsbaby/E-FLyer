@@ -138,7 +138,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
     }
-    
     cell.textLabel.text = [[self.dataSource[indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     return cell;
@@ -147,7 +146,8 @@
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.block != nil) {
-        LrdDateModel *model = [[self.dataSource[indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"name"];
+        NSString *cityName = [[self.dataSource[indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"name"];
+        LrdDateModel *model = [[LrdDateModel alloc] initWithTitle:cityName];
         self.block(indexPath.row,model);
     }
     [self dismissViewControllerAnimated:YES completion:nil];

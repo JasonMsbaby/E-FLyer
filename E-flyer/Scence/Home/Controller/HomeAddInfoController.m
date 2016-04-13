@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+//#import <CRMediaPickerController.h>
 #import "CityViewController.h"
 #import "EFCategroy.h"
 #import "LrdDateModel.h"
@@ -12,8 +13,11 @@
 #import "LrdAlertTableView.h"
 #import "HomeAddInfoController.h"
 #import "SVProgressHUD.h"
+#import <Photos/Photos.h>
 
-@interface HomeAddInfoController ()
+//typedef void(^Result)(NSData *fileData, NSString *fileName);
+
+@interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *subMoney;//总计金额
 @property (weak, nonatomic) IBOutlet UIButton *btn_pay;//支付按钮
 @property (weak, nonatomic) IBOutlet UITextField *txt_title;//标题
@@ -28,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_selectCategroy;//选择分类
 @property (weak, nonatomic) IBOutlet UIButton *btn_selectArea;//选择地区
 @property (weak, nonatomic) IBOutlet UILabel *lbl_area;//选择之后的地区展示控件
-
+@property(strong,nonatomic) UIImagePickerController *mediaVC;
 @end
 
 
@@ -36,12 +40,10 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = kRandomColor;
+    //    self.view.backgroundColor = kRandomColor;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"down_close"] style:(UIBarButtonItemStyleDone) target:self action:@selector(leftBarButtonItemClick:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share"] style:(UIBarButtonItemStyleDone) target:self action:@selector(rightBarButtonItemClick:)];
 }
-
-
 
 #pragma mark - 导航栏两侧按钮点击事件
 - (void)leftBarButtonItemClick:(UIBarButtonItem *)sender{
@@ -111,19 +113,25 @@
         }
     }];
 }
+- (IBAction)btnAddFileClick:(id)sender {
+    WeakObj(self)
+    [self alerSheetWithTitle:@"添加图片/视频" Message:@"请选择添加方式" Buttons:@[@"本地选取图片/视频",@"照相/录像"] CallBack:^(NSInteger index) {
+        _mediaVC = [[UIImagePickerController alloc]init];
+        _mediaVC.delegate = self;
+        if (index == 0) {
+            [selfWeak initPhotoVideoSelect];
+        }else{
+            [selfWeak initCarmera];
+        }
+    }];
+}
 /*!
  *  支付
  *
  *  @param sender sender description
  */
 - (IBAction)btnPayClick:(id)sender {
-}
-/*!
- *  添加图片或视频
- *
- *  @param sender sender description
- */
-- (IBAction)btnFileClick:(id)sender {
+    
 }
 /*!
  *  是否推荐
@@ -131,11 +139,39 @@
  *  @param sender sender description
  */
 - (IBAction)btnSwitchChanged:(id)sender {
+    
 }
 
-#pragma mark - LrdAlertTableDataSources
+#pragma mark - 拍照或录像的帮助方法
+- (void)initCarmera{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [_mediaVC setSourceType:UIImagePickerControllerSourceTypeCamera];// 设置类型
+        // 设置所支持的类型，设置只能拍照，或则只能录像，或者两者都可以
+        [_mediaVC setMediaTypes:@[@"public.movie",@"public.image"]];
+        // 设置录制视频的质量
+        [_mediaVC setVideoQuality:UIImagePickerControllerQualityTypeHigh];
+        //设置最长摄像时间
+        [_mediaVC setVideoMaximumDuration:10.f];
+        [_mediaVC setAllowsEditing:YES];// 设置是否可以管理已经存在的图片或者视频
+        [self presentViewController:_mediaVC animated:YES completion:nil];
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"您的手机不支持相机"];
+        return;
+    }
+}
+- (void)initPhotoVideoSelect{
+    _mediaVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [_mediaVC setMediaTypes:@[@"public.movie",@"public.image"]];
+    [self presentViewController:_mediaVC animated:YES completion:nil];
+}
 
-
-
-
+#pragma mark - imagePickControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    WeakObj(self)
+    NSLog(@"%@",info);
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
+//        [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
+//    }];
+}
 @end
