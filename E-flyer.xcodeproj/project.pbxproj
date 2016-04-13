@@ -57,6 +57,7 @@
 		9666EE601C85B13E00D01CFB /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9666EE5F1C85B13E00D01CFB /* play@2x.png */; };
 		9684D8531C82E0A200F4E542 /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9684D8521C82E0A200F4E542 /* MeController.m */; };
 		9686D9991C846EC0005EC027 /* FlyerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686D9981C846EC0005EC027 /* FlyerHeaderView.m */; };
+		968B1AC11CBEA6CB00FDE255 /* EFBMKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 968B1AC01CBEA6CB00FDE255 /* EFBMKModel.m */; };
 		968D1A021C8D760000D1BDBC /* sendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968D1A011C8D760000D1BDBC /* sendButton@2x.png */; };
 		968D1A041C8D76A500D1BDBC /* sendButton_focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968D1A031C8D76A500D1BDBC /* sendButton_focus@2x.png */; };
 		968D1A091C8D8DBE00D1BDBC /* meBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968D1A081C8D8DBE00D1BDBC /* meBg@2x.png */; };
@@ -201,6 +202,8 @@
 		9684D8521C82E0A200F4E542 /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeController.m; sourceTree = "<group>"; };
 		9686D9971C846EC0005EC027 /* FlyerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerHeaderView.h; sourceTree = "<group>"; };
 		9686D9981C846EC0005EC027 /* FlyerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerHeaderView.m; sourceTree = "<group>"; };
+		968B1ABF1CBEA6CB00FDE255 /* EFBMKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFBMKModel.h; sourceTree = "<group>"; };
+		968B1AC01CBEA6CB00FDE255 /* EFBMKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFBMKModel.m; sourceTree = "<group>"; };
 		968D1A011C8D760000D1BDBC /* sendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sendButton@2x.png"; sourceTree = "<group>"; };
 		968D1A031C8D76A500D1BDBC /* sendButton_focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sendButton_focus@2x.png"; sourceTree = "<group>"; };
 		968D1A081C8D8DBE00D1BDBC /* meBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meBg@2x.png"; sourceTree = "<group>"; };
@@ -517,6 +520,8 @@
 				96EAA84C1CBA48AD00508683 /* EFCrowd.m */,
 				96EAA84E1CBA49BC00508683 /* EFCity.h */,
 				96EAA84F1CBA49BC00508683 /* EFCity.m */,
+				968B1ABF1CBEA6CB00FDE255 /* EFBMKModel.h */,
+				968B1AC01CBEA6CB00FDE255 /* EFBMKModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1023,6 +1028,7 @@
 				96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */,
 				965343BC1CBDFA1A00459664 /* ShowBMKMap.m in Sources */,
 				96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */,
+				968B1AC11CBEA6CB00FDE255 /* EFBMKModel.m in Sources */,
 				96A7F8621C80BEDC00412B79 /* FlyerController.m in Sources */,
 				96EB75BF1C85647400B3658F /* FlyerYouLikeCell.m in Sources */,
 				9684D8531C82E0A200F4E542 /* MeController.m in Sources */,

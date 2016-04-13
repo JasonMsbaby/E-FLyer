@@ -11,6 +11,7 @@
 #import "EFCategroy.h"
 #import "BasicModel.h"
 #import "EFUser.h"
+#import "EFBMKModel.h"
 #import <Foundation/Foundation.h>
 
 @interface EFGood :BasicModel
@@ -25,7 +26,7 @@
 @property(assign,nonatomic) NSInteger receivedCount;//已领取数量
 @property(strong,nonatomic) EFUser *blongUser;//所属用户
 @property(strong,nonatomic) EFCrowd *crowd;//针对人群
-@property(strong,nonatomic) EFCity *city;//针对城市
+@property(strong,nonatomic) EFBMKModel *address;//针对区域
 @property(assign,nonatomic) BOOL enable;//是否上架
 @property(assign,nonatomic) BOOL recommend;//是否推荐
 @end

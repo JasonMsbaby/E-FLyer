@@ -15,6 +15,7 @@
 #import "SVProgressHUD.h"
 #import <Photos/Photos.h>
 #import "ToolUtils.h"
+#import "EFBMKModel.h"
 #import "ShowBMKMap.h"
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
@@ -113,6 +114,9 @@
             [self presentViewController:cityVC animated:YES completion:nil];
         }else{
             ShowBMKMap *mapVC = [[ShowBMKMap alloc] init];
+            mapVC.block = ^(EFBMKModel *model){
+                self.lbl_area.text = [NSString stringWithFormat:@"%@【附近:%.2f公里】",model.address,model.scope/1000];
+            };
             [[self navigationController] pushViewController:mapVC animated:YES];
         }
     }];
