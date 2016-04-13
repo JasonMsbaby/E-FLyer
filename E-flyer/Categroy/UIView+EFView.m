@@ -9,6 +9,11 @@
 #import "UIView+EFView.h"
 
 @implementation UIView (EFView)
+@dynamic x;
+@dynamic y;
+@dynamic width;
+@dynamic height;
+
 - (void)setCornerRadius:(CGFloat)cornerRadius
 {
     self.layer.cornerRadius = cornerRadius;
@@ -18,5 +23,20 @@
 - (CGFloat)cornerRadius
 {
     return self.layer.cornerRadius;
+}
+
+-(CGFloat)x{
+    return self.frame.origin.x;
+}
+-(CGFloat)y{
+    return self.frame.origin.y;
+}
+
+- (CGFloat)width{
+    return self.bounds.size.width;
+}
+
+- (CGFloat)height{
+    return self.bounds.size.height;
 }
 @end
