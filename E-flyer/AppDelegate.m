@@ -24,6 +24,7 @@
     [self loadLeanCloud];
     [self initData];
     //初始化一些基本数据
+    [self initMap];
     [self loading];
     [self setUpIQKeyboardManager];
     return YES;
@@ -53,8 +54,6 @@
 }
 
 #pragma mark - 初始化数据
-
-
 - (void)setUpIQKeyboardManager{
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;
@@ -69,6 +68,16 @@
     [[EFCrowd shareInstance] initFromRemote];
     [[EFCategroy shareInstance]initWithRemote];
     [SVProgressHUD dismiss];
+}
+
+- (void)initMap{
+    self.mapManger = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [self.mapManger start:@"KwEQcioHGhuh2LAV6mxTQpbR4Hi8LLf3"  generalDelegate:nil];
+    if (!ret) {
+        [SVProgressHUD showErrorWithStatus:@"地图初始化失败,请打开本软件的定位权限"];
+//        exit(0);
+    }
 }
 
 - (void)initData{

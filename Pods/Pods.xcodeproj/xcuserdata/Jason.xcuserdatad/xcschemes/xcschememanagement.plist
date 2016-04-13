@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CRMediaPickerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>09467DB91E50C8423A3D4FECC4A183DB</key>
+		<key>203BAA935AC4C241BA05E3CF4FB0CB71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5938DA830634F087A255B98B09FB4252</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D4DF3A9D114A41F60A8E301D664724A9</key>
+		<key>B16F9D5BE7A2FB5368486469845EFFE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC44375D573D6D763CA12BF4BE41792F</key>
+		<key>D921D4936640E113712CFF134EEFA4D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -15,6 +15,7 @@
 #import "SVProgressHUD.h"
 #import <Photos/Photos.h>
 #import "ToolUtils.h"
+#import "ShowBMKMap.h"
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
 @interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -110,6 +111,9 @@
                 selfWeak.lbl_area.text = model.title;
             };
             [self presentViewController:cityVC animated:YES completion:nil];
+        }else{
+            ShowBMKMap *mapVC = [[ShowBMKMap alloc] init];
+            [[self navigationController] pushViewController:mapVC animated:YES];
         }
     }];
 }
