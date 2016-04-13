@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface ToolUtils : NSObject
@@ -15,4 +15,14 @@
  *  @return 返回唯一字符串
  */
 + (NSString *)randomUUID;
+/*!
+ *  根据视频地址获取视频的某个时间的图片
+ *
+ *  @param videoURL 视频地址
+ *  @param time     时间
+ *
+ *  @return
+ */
++ (UIImage*) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time;
+
 @end

@@ -14,7 +14,7 @@
 #import "HomeAddInfoController.h"
 #import "SVProgressHUD.h"
 #import <Photos/Photos.h>
-
+#import "ToolUtils.h"
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
 @interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -169,9 +169,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     WeakObj(self)
     NSLog(@"%@",info);
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
-//        [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
-//    }];
+    [self dismissViewControllerAnimated:YES completion:^{
+        if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {
+            UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
+            [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
+        }else{
+            UIImage *img = [ToolUtils thumbnailImageForVideo:[info objectForKey:UIImagePickerControllerMediaURL] atTime:0];
+            [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
+        }
+    }];
 }
 @end
