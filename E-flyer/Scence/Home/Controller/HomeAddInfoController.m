@@ -19,7 +19,7 @@
 #import "ShowBMKMap.h"
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
-@interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *subMoney;//总计金额
 @property (weak, nonatomic) IBOutlet UIButton *btn_pay;//支付按钮
 @property (weak, nonatomic) IBOutlet UITextField *txt_title;//标题
@@ -44,6 +44,8 @@
     //    self.view.backgroundColor = kRandomColor;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"down_close"] style:(UIBarButtonItemStyleDone) target:self action:@selector(leftBarButtonItemClick:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share"] style:(UIBarButtonItemStyleDone) target:self action:@selector(rightBarButtonItemClick:)];
+    self.txt_price.delegate = self;
+    self.txt_number.delegate = self;
 }
 
 #pragma mark - 导航栏两侧按钮点击事件
@@ -193,5 +195,11 @@
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
         }
     }];
+}
+#pragma mark - 文本框代理 用于计算当前应支付的金额
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    float price = [self.txt_price.text floatValue];
+    float number = [self.txt_number.text intValue];
+    self.subMoney.text = [NSString stringWithFormat:@"%.2f",price*number];
 }
 @end
