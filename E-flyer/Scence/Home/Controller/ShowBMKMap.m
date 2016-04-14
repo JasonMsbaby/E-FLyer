@@ -18,10 +18,10 @@
 @interface ShowBMKMap ()<BMKMapViewDelegate,BMKGeoCodeSearchDelegate>
 @property(strong,nonatomic) BMKMapView *mapView;
 @property(strong,nonatomic) BMKGeoCodeSearch *mapSearch;
-@property(assign,nonatomic) CLLocationCoordinate2D position;
-@property(strong,nonatomic) UIView *dragCircleView;
-@property(strong,nonatomic) UILabel *number_circle;
-@property(assign,nonatomic) CGFloat distance;
+@property(assign,nonatomic) CLLocationCoordinate2D position;//记录实际经纬度圆心
+@property(strong,nonatomic) UIView *dragCircleView;//可拖动的view
+@property(strong,nonatomic) UILabel *number_circle;//圆形的直径
+@property(assign,nonatomic) CGFloat distance;//圆形的直径对应的实际距离
 @property(strong,nonatomic) EFBMKModel *model;//确定最终选择的model
 //@property(strong,nonatomic) BMKCircle *circle;
 //@property(strong,nonatomic) BMKCircleView *circleView;
@@ -87,6 +87,7 @@
  *  @param slider
  */
 - (void)slideChanged:(UISlider *)slider{
+    [self.view layoutIfNeeded];
     [self.dragCircleView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.height.equalTo(@(slider.value));
     }];
@@ -122,6 +123,8 @@
     
     BMKMapPoint point_start = BMKMapPointForCoordinate(coor_start);
     BMKMapPoint point_end = BMKMapPointForCoordinate(coor_end);
+    
+    self.position = coorDinateRegion.center;
     
     self.distance = BMKMetersBetweenMapPoints(point_start,point_end);
     
@@ -214,9 +217,16 @@
 //}
 
 
-- (void)dragCircleView:(UIPanGestureRecognizer *)recognizer{
-    CGPoint location = [recognizer locationInView:self.view];
-    self.dragCircleView.center = location;
+- (void)dragCircleView:(UIPanGestureRecognizer *)sender{
+    if (sender.state == UIGestureRecognizerStateChanged ||
+        sender.state == UIGestureRecognizerStateEnded) {
+        //注意，这里取得的参照坐标系是该对象的上层View的坐标。
+        CGPoint offset = [sender translationInView:self.view];
+        //通过计算偏移量来设定draggableObj的新坐标
+        [self.dragCircleView setCenter:CGPointMake(_dragCircleView.center.x + offset.x, _dragCircleView.center.y + offset.y)];
+        //初始化sender中的坐标位置。如果不初始化，移动坐标会一直积累起来。
+        [sender setTranslation:CGPointMake(0, 0) inView:self.view];
+    }
     [self disTanceInView];
 }
 
