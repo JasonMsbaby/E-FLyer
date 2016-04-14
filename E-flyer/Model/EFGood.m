@@ -21,7 +21,7 @@
 @dynamic blongUser;//所属用
 @dynamic crowd;//针对人群
 @dynamic address;//针对区域
-@dynamic enable;//是否上架
+@dynamic status;//
 @dynamic recommend;//是否推荐
 
 + (void)load{

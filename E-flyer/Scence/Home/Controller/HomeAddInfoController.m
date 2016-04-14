@@ -16,10 +16,12 @@
 #import <Photos/Photos.h>
 #import "ToolUtils.h"
 #import "EFBMKModel.h"
+#import "LrdPasswordAlertView.h"
 #import "ShowBMKMap.h"
+#import "EFGood.h"
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
-@interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
+@interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *subMoney;//总计金额
 @property (weak, nonatomic) IBOutlet UIButton *btn_pay;//支付按钮
 @property (weak, nonatomic) IBOutlet UITextField *txt_title;//标题
@@ -34,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_selectCategroy;//选择分类
 @property (weak, nonatomic) IBOutlet UIButton *btn_selectArea;//选择地区
 @property(strong,nonatomic) UIImagePickerController *mediaVC;
+@property(strong,nonatomic) EFGood *good;
 @end
 
 
@@ -46,6 +49,17 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share"] style:(UIBarButtonItemStyleDone) target:self action:@selector(rightBarButtonItemClick:)];
     self.txt_price.delegate = self;
     self.txt_number.delegate = self;
+    self.txt_content.delegate = self;
+    [self initGood];
+}
+
+- (void)initGood{
+    self.good = [EFGood object];
+    self.good.blongUser = self.currentUser;
+    self.good.crowd = [EFCrowd shareInstance].data[0];
+    self.good.categroy = [EFCategroy shareInstance].data[0];
+    self.good.recommend = NO;
+    self.good.address = [EFBMKModel ChinaArea];
 }
 
 #pragma mark - 导航栏两侧按钮点击事件
@@ -76,6 +90,7 @@
     WeakObj(self)
     dropDown_person.block = ^(NSInteger row,LrdDateModel *model){
         [selfWeak.btn_selectPerson setTitle:model.title forState:(UIControlStateNormal)];
+        selfWeak.good.crowd = [EFCrowd shareInstance].data[row];
     };
     [dropDown_person pop];
     
@@ -96,6 +111,7 @@
     WeakObj(self)
     dropDown_categroy.block = ^(NSInteger row,LrdDateModel *model){
         [selfWeak.btn_selectCategroy setTitle:model.title forState:(UIControlStateNormal)];
+        selfWeak.good.categroy = [EFCategroy shareInstance].data[row];
     };
     [dropDown_categroy pop];
 }
@@ -110,6 +126,7 @@
     mapVC.block = ^(EFBMKModel *model){
         NSString *area = [NSString stringWithFormat:@"%@【附近:%.2f公里】",model.address,model.scope/1000];
         [selfWeak.btn_selectArea setTitle:area forState:(UIControlStateNormal)];
+        selfWeak.good.address = model;
     };
     [[self navigationController] pushViewController:mapVC animated:YES];
     
@@ -148,8 +165,80 @@
  *  @param sender sender description
  */
 - (IBAction)btnPayClick:(id)sender {
+    if ([self checkInfo]) {
+        [self alerSheetWithTitle:@"支付" Message:@"请选择支付类型" Buttons:@[@"支付宝支付",@"余额支付"] CallBack:^(NSInteger index) {
+            switch (index) {
+                case 0://支付宝支付
+                    [self payWithAliPay];
+                    break;
+                case 1:
+                    [self payWithMoney];
+                    break;
+                default:
+                    break;
+            }
+        }];
+    }
+}
+//支付宝支付
+- (void)payWithAliPay{
     
 }
+//余额支付
+- (void)payWithMoney{
+    if (self.currentUser == nil) {
+        WeakObj(self)
+        [self alerWithTitle:@"提示" Message:@"您未登录,是否跳转到登录页面" CallBack:^{
+            [selfWeak.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"] animated:YES];
+        }];
+        return;
+    }
+    if ([self.subMoney.text floatValue]>self.currentUser.money) {
+        [SVProgressHUD showErrorWithStatus:@"账户余额不足,请充值后再支付"];
+    }else{
+        [SVProgressHUD showWithStatus:@"正在发布,请稍后.由于图片较大,上传缓慢,请耐心等候..."];
+        [self.good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                self.currentUser.money = self.currentUser.money - [self.subMoney.text floatValue];
+                [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        [SVProgressHUD showInfoWithStatus:@"发布成功"];
+                    }else{
+                        [self toastWithError:error];
+                    }
+                }];
+            }else{
+                [self toastWithError:error];
+            }
+        }];
+    }
+}
+
+- (BOOL)checkInfo{
+    self.good.title = self.txt_title.text;
+    self.good.content = self.txt_content.text;
+    self.good.question = self.txt_question.text;
+    self.good.answer = self.txt_answer.text;
+    
+    if (_good.title == nil || [_good.title isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"标题不能为空"];
+        return NO;
+    }
+    if (_good.file == nil) {
+        [SVProgressHUD showErrorWithStatus:@"请选择图片或视频"];
+        return NO;
+    }
+    if (_good.price == 0) {
+        [SVProgressHUD showErrorWithStatus:@"单价不能为0"];
+        return NO;
+    }
+    if (_good.count == 0) {
+        [SVProgressHUD showErrorWithStatus:@"数量不能为0"];
+        return NO;
+    }
+    return YES;
+}
+
 /*!
  *  是否推荐
  *
@@ -187,19 +276,52 @@
     WeakObj(self)
     NSLog(@"%@",info);
     [self dismissViewControllerAnimated:YES completion:^{
-        if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {
+        if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {//图片
             UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
-        }else{
+            selfWeak.good.file = [selfWeak dataWithImage:img VideoPath:nil];
+        }else{//视频
             UIImage *img = [ToolUtils thumbnailImageForVideo:[info objectForKey:UIImagePickerControllerMediaURL] atTime:0];
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
+            NSString *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+            selfWeak.good.file = [selfWeak dataWithImage:nil VideoPath:videoURL];
         }
     }];
+}
+//将图片或者视频转化为file
+- (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path{
+    NSData *data;
+    if (path == nil) {
+        if (UIImagePNGRepresentation(image) == nil) {
+            data = UIImageJPEGRepresentation(image, 1);
+        } else {
+            data = UIImagePNGRepresentation(image);
+        }
+    }else{
+        data = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]];
+    }
+    return [AVFile fileWithData:data];
 }
 #pragma mark - 文本框代理 用于计算当前应支付的金额
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     float price = [self.txt_price.text floatValue];
     float number = [self.txt_number.text intValue];
+    self.good.price = price;
+    self.good.count = number;
+    self.good.receivedCount = 0;
     self.subMoney.text = [NSString stringWithFormat:@"%.2f",price*number];
+}
+#pragma mark - textViewDelegate 
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    if (![textView.textColor isEqual:[UIColor blackColor]]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
+}
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"请输入描述内容";
+        [textView setTextColor:[UIColor colorWithWhite:0.498 alpha:1.000]];
+    }
 }
 @end

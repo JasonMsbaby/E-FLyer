@@ -56,7 +56,7 @@
         
         //初始化各种子控件
         self.titleLabel = [[UILabel alloc] init];
-        self.titleLabel.text = @"请输入交易密码";
+        self.titleLabel.text = @"请输入支付密码";
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
         self.titleLabel.textColor = [UIColor blackColor];

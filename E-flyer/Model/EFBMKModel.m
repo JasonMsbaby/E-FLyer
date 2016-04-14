@@ -22,4 +22,15 @@
 }
 
 
++(instancetype)ChinaArea{
+    static EFBMKModel *model = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        model.lat = 0;
+        model.lng = 0;
+        model.address = @"全国";
+    });
+    return model;
+}
+
 @end

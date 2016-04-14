@@ -45,6 +45,7 @@
             UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(0, w/8*7, w, 20)];
             lbl.textAlignment = NSTextAlignmentCenter;
             lbl.text = categroy.name;
+            lbl.font = [UIFont systemFontOfSize:12];
             
             [view addSubview:lbl];
             [view addSubview:btn];
