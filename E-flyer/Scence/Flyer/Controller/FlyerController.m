@@ -42,6 +42,7 @@
  */
 - (void)loadData{
     self.headerView.data = [EFCategroy shareInstance].data;
+    
     [self.tableView reloadData];
 }
 /*!
