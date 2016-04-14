@@ -7,7 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-
+#import <AVOSCloud.h>
 @interface ToolUtils : NSObject
 /*!
  *  获取唯一字符串
@@ -24,5 +24,7 @@
  *  @return
  */
 + (UIImage*) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time;
+
++ (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path;
 
 @end

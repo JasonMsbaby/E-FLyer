@@ -42,4 +42,18 @@
     
     return thumbnailImage;
 }
+//将图片或者视频转化为file
++ (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path{
+    NSData *data;
+    if (path == nil) {
+        if (UIImagePNGRepresentation(image) == nil) {
+            data = UIImageJPEGRepresentation(image, 1);
+        } else {
+            data = UIImagePNGRepresentation(image);
+        }
+    }else{
+        data = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]];
+    }
+    return [AVFile fileWithData:data];
+}
 @end

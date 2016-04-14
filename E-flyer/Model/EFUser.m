@@ -12,6 +12,8 @@
 @dynamic money;
 @dynamic type;
 @dynamic headImg;
+@dynamic lat;
+@dynamic lng;
 
 +(void)load{
     [super load];

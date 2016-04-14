@@ -279,29 +279,16 @@
         if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {//图片
             UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
-            selfWeak.good.file = [selfWeak dataWithImage:img VideoPath:nil];
+            selfWeak.good.file = [ToolUtils dataWithImage:img VideoPath:nil];
         }else{//视频
             UIImage *img = [ToolUtils thumbnailImageForVideo:[info objectForKey:UIImagePickerControllerMediaURL] atTime:0];
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
             NSString *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
-            selfWeak.good.file = [selfWeak dataWithImage:nil VideoPath:videoURL];
+            selfWeak.good.file = [ToolUtils dataWithImage:nil VideoPath:videoURL];
         }
     }];
 }
-//将图片或者视频转化为file
-- (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path{
-    NSData *data;
-    if (path == nil) {
-        if (UIImagePNGRepresentation(image) == nil) {
-            data = UIImageJPEGRepresentation(image, 1);
-        } else {
-            data = UIImagePNGRepresentation(image);
-        }
-    }else{
-        data = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]];
-    }
-    return [AVFile fileWithData:data];
-}
+
 #pragma mark - 文本框代理 用于计算当前应支付的金额
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     float price = [self.txt_price.text floatValue];

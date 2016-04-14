@@ -13,8 +13,8 @@
 #import <AVOSCloud.h>
 #import "EFUser.h"
 #import "EFCategroy.h"
-@interface AppDelegate ()
-
+@interface AppDelegate ()<BMKLocationServiceDelegate>
+@property(strong,nonatomic) BMKLocationService *locationServices;
 @end
 
 @implementation AppDelegate
@@ -76,7 +76,30 @@
     BOOL ret = [self.mapManger start:@"KwEQcioHGhuh2LAV6mxTQpbR4Hi8LLf3"  generalDelegate:nil];
     if (!ret) {
         [SVProgressHUD showErrorWithStatus:@"地图初始化失败,请打开本软件的定位权限"];
-//        exit(0);
+    }else{
+        self.locationServices = [[BMKLocationService alloc]init];
+        self.locationServices.delegate = self;
+        [self.locationServices startUserLocationService];
+    }
+}
+
+
+#pragma mark - 地理位置更新回调
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+    if (userLocation.location != nil) {
+        float lat = userLocation.location.coordinate.latitude;
+        float lng = userLocation.location.coordinate.longitude;
+        CGPoint location;
+        location.x = lat;
+        location.y = lng;
+        [[NSUserDefaults standardUserDefaults] setObject:NSStringFromCGPoint(location) forKey:@"currentLocation"];
+        [self.locationServices stopUserLocationService];
+        EFUser *currentUser = [EFUser currentUser];
+        if (currentUser != nil) {
+            currentUser.lat = lat;
+            currentUser.lng = lng;
+            [currentUser saveInBackground];
+        }
     }
 }
 

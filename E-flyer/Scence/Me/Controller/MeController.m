@@ -10,7 +10,7 @@
 #import "SearchController.h"
 #import "MeMenu.h"
 #import "LoginController.h"
-@interface MeController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface MeController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *Header;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *HeaderMask;
@@ -43,6 +43,8 @@
 - (void)initView{
     self.headImg.layer.cornerRadius = 50;
     self.headImg.clipsToBounds = YES;
+    self.headImg.userInteractionEnabled = YES;
+    [self.headImg addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(uploadHeadImage)]];
     
     _data = [MeMenu menuListWithUser:self.currentUser];
     self.sortedKeys = [_data.allKeys sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
@@ -68,12 +70,9 @@
     if (self.currentUser == nil) {
         self.headImg.image = [UIImage imageNamed:@"head"];
     }else{
-        if (self.currentUser.headImg == nil) {
-            self.headImg.image = [UIImage imageNamed:@"head_default"];
-        }else{
-            //加载用户的头像
-        }}
-}
+        //加载用户的头像
+        [self.headImg sd_setImageWithURL:[NSURL URLWithString:self.currentUser.headImg.url] placeholderImage:[UIImage imageNamed:@"head_default"] completed:nil];
+    }}
 /*!
  *  加载登录按钮
  */
@@ -112,6 +111,46 @@
     [self loginAction:nil];
 }
 
+#pragma mark - 上传头像
+- (void)uploadHeadImage{
+    UIImagePickerController *imgPicVC = [[UIImagePickerController alloc]init];
+    imgPicVC.mediaTypes = @[@"public.image"];
+    imgPicVC.allowsEditing = YES;
+    imgPicVC.delegate = self;
+    WeakObj(self)
+    [self alerSheetWithTitle:@"选择头像" Message:@"选择方式" Buttons:@[@"图库选取",@"照相"] CallBack:^(NSInteger index) {
+        if (index == 1) {
+            if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                [SVProgressHUD showErrorWithStatus:@"您的手机不支持相机功能"];
+                return ;
+            }
+            imgPicVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }else{
+            imgPicVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        [selfWeak presentViewController:imgPicVC animated:YES completion:nil];
+    }];
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    WeakObj(self)
+    [self dismissViewControllerAnimated:YES completion:^{
+        UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+        selfWeak.headImg.image = img;
+        selfWeak.currentUser.headImg = [ToolUtils dataWithImage:img VideoPath:nil];
+        AVFile *oldFile = selfWeak.currentUser.headImg;
+        [selfWeak.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                if (oldFile != nil) {
+                    [oldFile deleteInBackground];
+                }
+                //[SVProgressHUD showSuccessWithStatus:@"上传头像成功"];
+            }else{
+                [selfWeak toastWithError:error];
+            }
+        }];
+    }];
+}
+
 
 #pragma mark - ScrollViewDelegate
 /*!
@@ -121,9 +160,9 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat h = -scrollView.contentOffset.y;
-    NSLog(@"%f",h);
+    //    NSLog(@"%f",h);
     CGFloat alpha = 1 - h / 100;
-    NSLog(@"透明度:%f",alpha);
+    //    NSLog(@"透明度:%f",alpha);
     //更改毛玻璃透明度
     if (h <= 0) {
         alpha = 1;
