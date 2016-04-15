@@ -11,7 +11,8 @@
 @implementation EFGood
 @dynamic title;//标题
 @dynamic content;//内容
-@dynamic file;//图片或者视频
+@dynamic video;//视频
+@dynamic img;
 @dynamic categroy;//类别
 @dynamic question;//问题
 @dynamic answer;//答案

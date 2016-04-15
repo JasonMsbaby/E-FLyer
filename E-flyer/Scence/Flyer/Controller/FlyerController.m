@@ -102,7 +102,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         FlyerRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommendCell"];
-        [cell layout];
+        [cell layout:self.data_new];
         return cell;
     }else{
         FlyerYouLikeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
