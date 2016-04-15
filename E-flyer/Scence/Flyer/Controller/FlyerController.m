@@ -17,14 +17,17 @@
 @interface FlyerController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) FlyerHeaderView *headerView;
+@property(strong,nonatomic) NSArray<EFGood *> *data_new;
 @end
 @implementation FlyerController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
-    [EFGood loadDataWithCategroy:[EFCategroy shareInstance].data[0] PageIndex:0 Block:^(NSArray<EFGood *> *result) {
-        NSLog(@"=====>%ld",result.count);
+    WeakObj(self)
+    [EFGood loadDataWithNewBlock:^(NSArray<EFGood *> *result) {
+        selfWeak.data_new = result;
+        [selfWeak.tableView reloadData];
     }];
 }
 
@@ -45,7 +48,6 @@
  */
 - (void)loadData{
     self.headerView.data = [EFCategroy shareInstance].data;
-    
     [self.tableView reloadData];
 }
 /*!
@@ -88,7 +90,7 @@
     if (section == 0) {
         return 1;
     }
-    return 20;
+    return self.data_new.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -104,6 +106,7 @@
         return cell;
     }else{
         FlyerYouLikeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
+        cell.model = self.data_new[indexPath.row];
         return cell;
     }
 }
@@ -112,7 +115,7 @@
     if (section == 0) {
         return @"今日推荐";
     }
-    return  @"猜你喜欢";
+    return  @"最新上架";
 }
 
 

@@ -98,16 +98,16 @@
         if (currentUser != nil) {
             currentUser.lat = lat;
             currentUser.lng = lng;
-            currentUser.lat = 39.911192;
-            currentUser.lng = 116.460844;
-            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    NSLog(@"上传位置成功");
-                }else{
-                    NSLog(@"上传位置失败,失败原因：%@",error);
-                }
-            }];
-            [self.locationServices stopUserLocationService];
+//            currentUser.lat = 39.911192;
+//            currentUser.lng = 116.460844;
+//            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                if (succeeded) {
+//                    NSLog(@"上传位置成功");
+//                }else{
+//                    NSLog(@"上传位置失败,失败原因：%@",error);
+//                }
+//            }];
+//            [self.locationServices stopUserLocationService];
         }
     }
 }

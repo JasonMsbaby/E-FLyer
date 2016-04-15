@@ -31,46 +31,25 @@
     [self registerSubclass];
 }
 
-//进入二级目录后调用的查询
-+(void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block{
-    if (index == 0) {
-        index = 1;
-    }
-    EFUser *currentUser = [EFUser currentUser];
-    AVQuery *goodsQuery = [EFGood query];
-    [goodsQuery includeKey:@"file"];
-    [goodsQuery includeKey:@"address"];
-    [goodsQuery includeKey:@"crowd"];
-    [goodsQuery includeKey:@"blongUser"];
-    [goodsQuery includeKey:@"categroy"];
-    [goodsQuery whereKey:@"categroy" equalTo:categroy];
-
-    
-    if (currentUser != nil && currentUser.crowd != nil) {
-        EFCrowd *allCrowd = [EFCrowd shareInstance].data[0];
-        [goodsQuery whereKey:@"crowd" containedIn:@[currentUser.crowd,allCrowd]];
-    }
-    
-
-    goodsQuery.limit = pageSize;
-    goodsQuery.skip = (index-1)*pageSize;
-    [goodsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (block != nil) {
-            block([self nearLocationInArray:objects]);
-        }
-    }];
-}
 //今日推荐
 +(void)loadDataWithTodyRecmomandBlock:(GoodFinshBlock)block{
     
 }
 //最新上架
 +(void)loadDataWithNewBlock:(GoodFinshBlock)block{
-    
+    EFUser *currentUser = [EFUser currentUser];
+    if (currentUser == nil) {
+        [self loadDataWithCategroy:nil Crowd:nil PageIndex:1 PageCount:10 Block:^(NSArray<EFGood *> *result) {
+            block(result);
+        }];
+    }
+    [self loadDataWithCategroy:nil Crowd:currentUser.crowd PageIndex:1 PageCount:10 Block:^(NSArray<EFGood *> *result) {
+        block(result);
+    }];
 }
 
 //请求通用方法
-+ (void)loadDataWithCategroyL:(EFCategroy *)categroy Crowd:(EFCrowd *)crowd Location:(CGPoint)location PageIndex:(NSInteger)pageIndex PageCount:(NSInteger)pageCount Block:(GoodFinshBlock)block{
++ (void)loadDataWithCategroy:(EFCategroy *)categroy Crowd:(EFCrowd *)crowd PageIndex:(NSInteger)pageIndex PageCount:(NSInteger)pageCount Block:(GoodFinshBlock)block{
     if (pageIndex == 0) {
         pageIndex = 1;
     }
@@ -84,6 +63,7 @@
     [goodsQuery includeKey:@"crowd"];
     [goodsQuery includeKey:@"blongUser"];
     [goodsQuery includeKey:@"categroy"];
+    [goodsQuery orderByDescending:@"createdAt"];
     if (categroy != nil) {
         [goodsQuery whereKey:@"categroy" equalTo:categroy];
     }

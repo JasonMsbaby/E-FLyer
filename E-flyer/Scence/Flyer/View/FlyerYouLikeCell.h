@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EFGood.h"
 @interface FlyerYouLikeCell : UITableViewCell
+@property(strong,nonatomic) EFGood *model;
+
 
 @end

@@ -27,4 +27,6 @@
 
 + (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path;
 
++ (NSString *)StringWithDate:(NSDate *)d;
+
 @end

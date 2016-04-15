@@ -96,15 +96,94 @@
                                                         <constraint firstAttribute="width" secondItem="dbQ-OR-MHp" secondAttribute="height" multiplier="3:2" id="ZAg-Zl-s6I"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut8-ZM-jna">
+                                                    <rect key="frame" x="154" y="10" width="155.5" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bok-FW-nxL">
+                                                    <rect key="frame" x="154" y="35" width="155.5" height="16"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单价:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-5h-LAJ">
+                                                    <rect key="frame" x="154" y="77" width="23.5" height="12"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjR-Fj-FCh">
+                                                    <rect key="frame" x="179.5" y="77" width="6.5" height="12"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GG-IK-dZH">
+                                                    <rect key="frame" x="191" y="77" width="23.5" height="12"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dw-YT-egg">
+                                                    <rect key="frame" x="216.5" y="77" width="6.5" height="12"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8n-Ga-5bH">
+                                                    <rect key="frame" x="273.5" y="77" width="36.5" height="12"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="Bok-FW-nxL" firstAttribute="trailing" secondItem="ut8-ZM-jna" secondAttribute="trailing" id="7iP-QZ-dbG"/>
+                                                <constraint firstAttribute="trailing" secondItem="n8n-Ga-5bH" secondAttribute="trailing" constant="10" id="8BJ-Ay-80c"/>
                                                 <constraint firstItem="dbQ-OR-MHp" firstAttribute="leading" secondItem="ol4-oO-4Me" secondAttribute="leading" constant="10" id="A3P-V0-11y"/>
+                                                <constraint firstItem="0Dw-YT-egg" firstAttribute="centerY" secondItem="pqw-5h-LAJ" secondAttribute="centerY" id="Caa-dQ-plY"/>
+                                                <constraint firstItem="ut8-ZM-jna" firstAttribute="top" secondItem="ol4-oO-4Me" secondAttribute="top" constant="10" id="HHI-g1-MV0"/>
+                                                <constraint firstItem="Bok-FW-nxL" firstAttribute="leading" secondItem="ut8-ZM-jna" secondAttribute="leading" id="I1J-dS-zZD"/>
+                                                <constraint firstItem="6GG-IK-dZH" firstAttribute="leading" secondItem="GjR-Fj-FCh" secondAttribute="trailing" constant="5" id="IBr-Ag-J06"/>
+                                                <constraint firstItem="ut8-ZM-jna" firstAttribute="leading" secondItem="dbQ-OR-MHp" secondAttribute="trailing" constant="10" id="Qo7-cs-M5y"/>
+                                                <constraint firstAttribute="trailing" secondItem="ut8-ZM-jna" secondAttribute="trailing" constant="10" id="ShP-yt-xxA"/>
+                                                <constraint firstItem="Bok-FW-nxL" firstAttribute="top" secondItem="ut8-ZM-jna" secondAttribute="bottom" constant="5" id="TCL-CZ-bcG"/>
+                                                <constraint firstItem="0Dw-YT-egg" firstAttribute="leading" secondItem="6GG-IK-dZH" secondAttribute="trailing" constant="2" id="TXb-Dc-PZE"/>
+                                                <constraint firstAttribute="bottom" secondItem="pqw-5h-LAJ" secondAttribute="bottom" constant="10" id="Uyo-x8-lOr"/>
                                                 <constraint firstItem="dbQ-OR-MHp" firstAttribute="top" secondItem="ol4-oO-4Me" secondAttribute="top" constant="5" id="XrG-wN-shU"/>
+                                                <constraint firstItem="n8n-Ga-5bH" firstAttribute="centerY" secondItem="pqw-5h-LAJ" secondAttribute="centerY" id="pSO-cU-CUa"/>
+                                                <constraint firstItem="pqw-5h-LAJ" firstAttribute="leading" secondItem="Bok-FW-nxL" secondAttribute="leading" id="qGh-w0-3h3"/>
+                                                <constraint firstItem="GjR-Fj-FCh" firstAttribute="leading" secondItem="pqw-5h-LAJ" secondAttribute="trailing" constant="2" id="qlN-Ah-SVM"/>
+                                                <constraint firstAttribute="bottom" secondItem="GjR-Fj-FCh" secondAttribute="bottom" constant="10" id="qng-Um-ruX"/>
                                                 <constraint firstAttribute="bottom" secondItem="dbQ-OR-MHp" secondAttribute="bottom" constant="5" id="tTg-F1-x2H"/>
+                                                <constraint firstItem="6GG-IK-dZH" firstAttribute="centerY" secondItem="pqw-5h-LAJ" secondAttribute="centerY" id="vSC-L2-3NZ"/>
+                                                <constraint firstItem="GjR-Fj-FCh" firstAttribute="centerY" secondItem="pqw-5h-LAJ" secondAttribute="centerY" id="wZb-XN-afO"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="qng-Um-ruX"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="content" destination="Bok-FW-nxL" id="qvz-Ld-103"/>
+                                            <outlet property="img" destination="dbQ-OR-MHp" id="IdS-DQ-JYQ"/>
+                                            <outlet property="number" destination="0Dw-YT-egg" id="2CP-qY-YFV"/>
+                                            <outlet property="price" destination="GjR-Fj-FCh" id="paA-d5-P0r"/>
+                                            <outlet property="time" destination="n8n-Ga-5bH" id="vt9-kT-gei"/>
+                                            <outlet property="title" destination="ut8-ZM-jna" id="9Yc-kZ-UFu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
