@@ -12,6 +12,8 @@
 
 @dynamic lat;
 @dynamic lng;
+@dynamic latSpan;
+@dynamic lngSpan;
 @dynamic scope;
 @dynamic zoomLevel;
 @dynamic address;

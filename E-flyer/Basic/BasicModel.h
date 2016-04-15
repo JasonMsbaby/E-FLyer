@@ -8,6 +8,7 @@
 #import "AVQuery+EFQuery.h"
 #import <Foundation/Foundation.h>
 #import <AVOSCloud.h>
+#import "Constanst.h"
 typedef void(^callback)(NSArray *result,NSError *error);
 @interface BasicModel : AVObject <AVSubclassing>
 

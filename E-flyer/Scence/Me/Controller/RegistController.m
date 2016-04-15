@@ -5,8 +5,10 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "LrdAlertTableView.h"
 #import "NSTimer+EFTimer.h"
 #import "RegistController.h"
+#import "LrdDateModel.h"
 
 @interface RegistController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn_valid;
@@ -15,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwd1;
 @property (weak, nonatomic) IBOutlet UITextField *pwd2;
 @property (weak, nonatomic) IBOutlet UITextField *txt_valideCode;
+
 @property(strong,nonatomic) NSTimer *timer;
 @property(assign,nonatomic) NSInteger time_span;
 
@@ -98,7 +101,7 @@
     }
     
     WeakObj(self)
-    [self registWithRoleWithBlock:^(int type) {
+    [self registWithRoleWithBlock:^(int type,EFCrowd *crowd) {
         if (type != -1) {
             [SVProgressHUD show];
             [EFUser signUpOrLoginWithMobilePhoneNumberInBackground:self.userName.text smsCode:self.txt_valideCode.text block:^(AVUser *user, NSError *error) {
@@ -110,8 +113,12 @@
                 currentUser.username = [NSString stringWithFormat:@"%@_新用户",self.userName.text];
                 currentUser.password = self.pwd1.text;
                 currentUser.type = type;
+                if (crowd != nil) {
+                    currentUser.crowd = crowd;
+                }
                 [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
+                        [EFUser logOut];
                         [SVProgressHUD dismiss];
                         [selfWeak alerWithTitle:@"注册成功，请返回登录页登录" Message:nil CallBack:^{
                             [selfWeak close:nil];
@@ -134,21 +141,33 @@
 /*!
  *  注册时选择角色
  */
-- (void)registWithRoleWithBlock:(void(^)(int type))block{
+- (void)registWithRoleWithBlock:(void(^)(int type,EFCrowd *crowd))block{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请选择近的角色" preferredStyle:(UIAlertControllerStyleActionSheet)];
     [alert addAction:[UIAlertAction actionWithTitle:@"商家" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        if (block != nil) {
-            block(0);
+        LrdAlertTableView *alertTable = [[LrdAlertTableView alloc] initWithTitle:@"请选择您的身份" SubTitle:nil];
+        NSMutableArray *dataSource = [NSMutableArray array];
+        for (EFCrowd *crowd in [EFCrowd shareInstance].data) {
+            LrdDateModel *model = [[LrdDateModel alloc] initWithTitle:crowd.job];
+            [dataSource addObject:model];
         }
+        alertTable.dataArray = dataSource;
+        alertTable.block = ^(NSInteger index,LrdDateModel *model){
+            EFCrowd *crowd = [EFCrowd shareInstance].data[index];
+            if (block != nil) {
+                block(0,crowd);
+            }
+        };
+        [alertTable pop];
+        
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         if (block != nil) {
-            block(1);
+            block(1,nil);
         }
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         if (block != nil) {
-            block(-1);
+            block(-1,nil);
         }
     }]];
     [self presentViewController:alert animated:YES completion:nil];

@@ -35,7 +35,7 @@ fprintf(stderr, "-------\n");                                               \
 #endif
 //---------------------系统常量--------------------------
 #define kRegist_Time 60
-
+#define pageSize  10
 
 
 

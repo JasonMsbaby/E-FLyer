@@ -11,6 +11,7 @@
 @implementation EFUser
 @dynamic money;
 @dynamic type;
+@dynamic crowd;
 @dynamic headImg;
 @dynamic lat;
 @dynamic lng;

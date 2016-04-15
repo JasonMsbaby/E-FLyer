@@ -17,7 +17,7 @@ typedef void(^DidSelectedBlock)(NSInteger row,LrdDateModel *model);
 - (instancetype)initWithTitle:(NSString *)title SubTitle:(NSString *)subTitle;
 
 //从外面传进来的数据数组
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray<LrdDateModel *> *dataArray;
 
 @property(copy,nonatomic) DidSelectedBlock block;
 //弹出

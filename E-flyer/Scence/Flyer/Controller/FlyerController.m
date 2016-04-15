@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/27.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "EFGood.h"
 #import "FlyerController.h"
 #import "SearchController.h"
 #import "FlyerHeaderView.h"
@@ -23,6 +23,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [EFGood loadDataWithCategroy:[EFCategroy shareInstance].data[0] PageIndex:0 Block:^(NSArray<EFGood *> *result) {
+        NSLog(@"=====>%ld",result.count);
+    }];
 }
 
 - (void)viewDidLoad {

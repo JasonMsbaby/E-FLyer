@@ -23,6 +23,7 @@
 @property(strong,nonatomic) UILabel *number_circle;//圆形的直径
 @property(assign,nonatomic) CGFloat distance;//圆形的直径对应的实际距离
 @property(strong,nonatomic) EFBMKModel *model;//确定最终选择的model
+@property(assign,nonatomic) BMKCoordinateRegion coorRegion;
 //@property(strong,nonatomic) BMKCircle *circle;
 //@property(strong,nonatomic) BMKCircleView *circleView;
 //@property(strong,nonatomic) BMKPointAnnotation *pointAn;
@@ -130,6 +131,8 @@
     
     self.number_circle.text = [NSString stringWithFormat:@"%.2lf公里",BMKMetersBetweenMapPoints(point_start,point_end)/1000];
     self.position = coorDinateRegion.center;
+    self.coorRegion = coorDinateRegion;
+    NSLog(@"%lf,%lf,%lf,%lf",_coorRegion.center.latitude,_coorRegion.center.longitude,_coorRegion.span.latitudeDelta,_coorRegion.span.longitudeDelta);
     NSLog(@"%f,%f",coorDinateRegion.center.latitude,coorDinateRegion.center.longitude);
 }
 
@@ -252,6 +255,8 @@
     [SVProgressHUD dismiss];
     WeakObj(self)
     [self alerWithTitle:@"投放区域" Message:msg CallBack:^{
+        self.model.latSpan = self.coorRegion.span.latitudeDelta;
+        self.model.lngSpan = self.coorRegion.span.longitudeDelta;
         self.block(self.model);
         [selfWeak.navigationController popViewControllerAnimated:YES];
     }];

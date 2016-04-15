@@ -14,7 +14,7 @@
 #import "EFBMKModel.h"
 #import <Foundation/Foundation.h>
 @class EFGood;
-typedef void(^GoodFinshBlock)(NSArray<EFGood *> *);
+typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 
 @interface EFGood :BasicModel
 
@@ -30,20 +30,16 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *);
 @property(strong,nonatomic) EFUser *blongUser;//所属用户
 @property(strong,nonatomic) EFCrowd *crowd;//针对人群
 @property(strong,nonatomic) EFBMKModel *address;//针对区域
+@property(strong,nonatomic) AVGeoPoint *location;//发布的经纬度
+@property(assign,nonatomic) float scope;//范围km
 @property(assign,nonatomic) int status;//状态 1-正常 2-待支付  3-支付失败  4-已下架
 @property(assign,nonatomic) BOOL recommend;//是否推荐
 
 
-#pragma mark - 未登录状态下获取数据
-//分页 分类 分位置
-
-
-
-
-
-#pragma mark - 登录状态下获取数据
-//分页 分类 分位置 分人群
-+(void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block;
-
-
+//分页 分类 分位置 分人群 (进入二级目录下使用)
++ (void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block;
+//今日推荐的  最多六条数据
++ (void)loadDataWithTodyRecmomandBlock:(GoodFinshBlock)block;
+//猜你喜欢
++ (void)loadDataWithNewBlock:(GoodFinshBlock)block;
 @end

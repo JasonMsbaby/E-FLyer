@@ -127,6 +127,8 @@
         NSString *area = [NSString stringWithFormat:@"%@【附近:%.2f公里】",model.address,model.scope/1000];
         [selfWeak.btn_selectArea setTitle:area forState:(UIControlStateNormal)];
         selfWeak.good.address = model;
+        selfWeak.good.location = [AVGeoPoint geoPointWithLatitude:model.lat longitude:model.lng];
+        selfWeak.good.scope = model.scope/1000;
     };
     [[self navigationController] pushViewController:mapVC animated:YES];
     
