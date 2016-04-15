@@ -188,8 +188,8 @@
 }
 //余额支付
 - (void)payWithMoney{
+    WeakObj(self)
     if (self.currentUser == nil) {
-        WeakObj(self)
         [self alerWithTitle:@"提示" Message:@"您未登录,是否跳转到登录页面" CallBack:^{
             [selfWeak.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"] animated:YES];
         }];
@@ -205,6 +205,7 @@
                 [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
                         [SVProgressHUD showInfoWithStatus:@"发布成功"];
+                        [selfWeak dismissViewControllerAnimated:YES completion:nil];
                     }else{
                         [self toastWithError:error];
                     }

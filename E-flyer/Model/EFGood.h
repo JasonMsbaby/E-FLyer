@@ -41,6 +41,6 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 + (void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block;
 //今日推荐的  最多六条数据
 + (void)loadDataWithTodyRecmomandBlock:(GoodFinshBlock)block;
-//猜你喜欢
-+ (void)loadDataWithNewBlock:(GoodFinshBlock)block;
+//最新数据
++(void)loadDataWithNewIndex:(NSInteger)index Block:(GoodFinshBlock)block;
 @end

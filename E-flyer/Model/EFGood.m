@@ -37,14 +37,14 @@
     
 }
 //最新上架
-+(void)loadDataWithNewBlock:(GoodFinshBlock)block{
++(void)loadDataWithNewIndex:(NSInteger)index Block:(GoodFinshBlock)block{
     EFUser *currentUser = [EFUser currentUser];
     if (currentUser == nil) {
-        [self loadDataWithCategroy:nil Crowd:nil PageIndex:1 PageCount:10 Block:^(NSArray<EFGood *> *result) {
+        [self loadDataWithCategroy:nil Crowd:nil PageIndex:index PageCount:10 Block:^(NSArray<EFGood *> *result) {
             block(result);
         }];
     }
-    [self loadDataWithCategroy:nil Crowd:currentUser.crowd PageIndex:1 PageCount:10 Block:^(NSArray<EFGood *> *result) {
+    [self loadDataWithCategroy:nil Crowd:currentUser.crowd PageIndex:index PageCount:10 Block:^(NSArray<EFGood *> *result) {
         block(result);
     }];
 }
@@ -103,7 +103,7 @@
         if (g) {
             CLLocationCoordinate2D coor2D_center = CLLocationCoordinate2DMake(g.address.lat,g.address.lng);
             NSLog(@"当前位置：%lf,%lf，圆心：%lf,%lf，半径：%lf",coor2D_current.latitude,coor2D_current.longitude,coor2D_center.latitude,coor2D_center.longitude,g.address.scope/2);
-            if (coor2D_center.latitude == 0) {
+            if (g.address == nil) {
                 [result addObject:g];
             }else{
                 BOOL isIn = BMKCircleContainsCoordinate(coor2D_current, coor2D_center, g.address.scope/2);
