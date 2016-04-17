@@ -35,10 +35,10 @@
 + (NSDictionary *)menuListWithUser:(EFUser *)currentUser{
     //商家个人菜单
     MeMenu *m1_1 = [[MeMenu alloc]initWithTitle:@"个人信息" Image:@"me_setting" IDD:@"personInfo"];
-    MeMenu *m1_2 = [[MeMenu alloc]initWithTitle:@"店铺信息" Image:@"me_setting"];
-    MeMenu *m1_3= [[MeMenu alloc]initWithTitle:@"用户数据" Image:@"me_setting"];
-    MeMenu *m1_4 = [[MeMenu alloc]initWithTitle:@"商品管理" Image:@"me_setting"];
-    MeMenu *m1_5 = [[MeMenu alloc]initWithTitle:@"账户管理" Image:@"me_setting"];
+    MeMenu *m1_2 = [[MeMenu alloc]initWithTitle:@"店铺信息" Image:@"me_setting" IDD:@"barInfo"];
+    MeMenu *m1_3= [[MeMenu alloc]initWithTitle:@"用户数据" Image:@"me_setting" IDD:@"userInfo"];
+    MeMenu *m1_4 = [[MeMenu alloc]initWithTitle:@"商品管理" Image:@"me_setting" IDD:@"goodsInfo"];
+    MeMenu *m1_5 = [[MeMenu alloc]initWithTitle:@"账户管理" Image:@"me_setting" IDD:@"acountInfo"];
     NSArray *m1 = @[m1_1,m1_2,m1_3,m1_4,m1_5];
     //个人菜单
     MeMenu *m11_1 = [[MeMenu alloc]initWithTitle:@"个人信息" Image:@"me_setting"];

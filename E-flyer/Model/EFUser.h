@@ -17,4 +17,10 @@
 @property(strong,nonatomic) AVFile *headImg;
 @property(assign,nonatomic) float lat;//当前登录时所处的地理位置
 @property(assign,nonatomic) float lng;
+
+@property(strong,nonatomic) NSString  *barName;//店铺名称
+@property(strong,nonatomic) NSString *barInfo;//店铺简介
+@property(strong,nonatomic) NSString *barAddress;//店铺位置
+@property(strong,nonatomic) NSString *barPhone;//店铺电话
+@property(strong,nonatomic) AVFile *barImg;//店铺图片
 @end
