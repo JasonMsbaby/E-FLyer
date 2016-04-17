@@ -36,9 +36,9 @@
 
             UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(w/3/2, w/3/2, w/3*2, w/3*2)];
             NSString *url = categroy.image.url;
-            
+            btn.tag = index;
             [btn sd_setImageWithURL:[NSURL URLWithString:url] forState:(UIControlStateNormal)];
-            
+            [btn addTarget:self action:@selector(btnClick:) forControlEvents:(UIControlEventTouchUpInside)];
             btn.layer.cornerRadius = w/3;
             btn.clipsToBounds = YES;
             
@@ -54,7 +54,13 @@
             index++;
         }
     }
-    
+}
+
+- (void)btnClick:(UIButton *)btn{
+    EFCategroy *categroy = self.data[btn.tag];
+    if (self.block != nil) {
+        self.block(btn.tag,categroy);
+    }
 }
 
 

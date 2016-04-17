@@ -31,6 +31,9 @@
     [super viewDidLoad];
     //添加头视图
     self.headerView = [[FlyerHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2+20)];
+    self.headerView.block = ^(NSInteger index,EFCategroy *categroy){
+        
+    };
     self.tableView.tableHeaderView = self.headerView;
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -53,10 +56,11 @@
                 selfWeak.data_new = [NSMutableArray arrayWithArray:result];
             }else{
                 [selfWeak.data_new addObjectsFromArray:result];
-            }}
-        [selfWeak.tableView.mj_footer endRefreshing];
-        [selfWeak.tableView.mj_header endRefreshing];
-        [selfWeak.tableView reloadData];
+            }
+            [selfWeak.tableView.mj_footer endRefreshing];
+            [selfWeak.tableView.mj_header endRefreshing];
+            [selfWeak.tableView reloadData];
+        }
     }];
 }
 /*!

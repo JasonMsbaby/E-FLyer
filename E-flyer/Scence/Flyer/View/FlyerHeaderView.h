@@ -11,6 +11,14 @@
 /**
  *  传单首页的八宫格视图
  */
+typedef void(^FlyerHeaderBlock)(NSInteger index,EFCategroy *categroy);
+
 @interface FlyerHeaderView : UIView
+
+
+
 @property(strong,nonatomic) NSArray<EFCategroy *> *data;
+
+@property(copy,nonatomic) FlyerHeaderBlock block;
+
 @end

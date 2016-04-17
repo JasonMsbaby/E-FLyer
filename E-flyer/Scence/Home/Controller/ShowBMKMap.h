@@ -9,6 +9,7 @@
 #import "BasicController.h"
 typedef void(^BMKResultBlock)(EFBMKModel *model);
 @interface ShowBMKMap : BasicController
+
 @property(copy,nonatomic)BMKResultBlock block;
 
 @end
