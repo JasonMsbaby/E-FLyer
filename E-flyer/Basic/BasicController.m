@@ -32,9 +32,9 @@
     _currentUser = [EFUser currentUser];
     if (_currentUser == nil) {
         [SVProgressHUD showErrorWithStatus:@"您未登录,请登录后尝试此操作!"];
-        LoginController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"];
-        loginVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:loginVC animated:YES];
+        //LoginController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"];
+        //loginVC.hidesBottomBarWhenPushed = YES;
+        //[self.navigationController pushViewController:loginVC animated:YES];
     }
     return _currentUser;
 }
@@ -86,6 +86,8 @@
     }
     [SVProgressHUD showErrorWithStatus:e];
 }
+
+
 
 
 @end

@@ -39,15 +39,17 @@
 //最新上架
 +(void)loadDataWithNewIndex:(NSInteger)index Block:(GoodFinshBlock)block{
     EFUser *currentUser = [EFUser currentUser];
-    if (currentUser == nil) {
-        [self loadDataWithCategroy:nil Crowd:nil PageIndex:index PageCount:10 Block:^(NSArray<EFGood *> *result) {
-            block(result);
-        }];
+    EFCrowd *crowd = nil;
+    if (currentUser != nil) {
+        crowd = currentUser.crowd;
     }
-    [self loadDataWithCategroy:nil Crowd:currentUser.crowd PageIndex:index PageCount:10 Block:^(NSArray<EFGood *> *result) {
+    [self loadDataWithCategroy:nil Crowd:crowd PageIndex:index PageCount:kPageSize Block:^(NSArray<EFGood *> *result) {
         block(result);
     }];
 }
+
+
+
 //获取指定用户发布的数据
 + (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block{
     AVQuery *goodsQuery = [EFGood query];
@@ -64,6 +66,32 @@
         }
     }];
 }
+//进入二级页面分类请求
++(void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block{
+    EFUser *currentUser = [EFUser currentUser];
+    EFCrowd *crowd = nil;
+    if (currentUser != nil) {
+        crowd = currentUser.crowd;
+    }
+    [self loadDataWithCategroy:categroy Crowd:crowd PageIndex:index PageCount:kPageSize Block:^(NSArray<EFGood *> *result) {
+        if (block != nil) {
+            block(result);
+        }
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //请求通用方法
@@ -72,7 +100,7 @@
         pageIndex = 1;
     }
     if (pageCount == 0) {
-        pageCount = pageSize;
+        pageCount = kPageSize;
     }
     
     AVQuery *goodsQuery = [EFGood query];
@@ -82,6 +110,7 @@
     [goodsQuery includeKey:@"blongUser"];
     [goodsQuery includeKey:@"categroy"];
     [goodsQuery orderByDescending:@"createdAt"];
+    
     if (categroy != nil) {
         [goodsQuery whereKey:@"categroy" equalTo:categroy];
     }

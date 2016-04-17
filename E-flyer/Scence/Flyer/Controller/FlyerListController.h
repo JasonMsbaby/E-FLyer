@@ -9,5 +9,5 @@
 #import "BasicController.h"
 
 @interface FlyerListController : BasicController
-@property(strong,nonatomic) EFGood *good;
+@property(strong,nonatomic) EFCategroy *categroy;
 @end

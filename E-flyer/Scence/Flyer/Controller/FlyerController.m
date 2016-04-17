@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/27.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "FlyerListController.h"
 #import "EFGood.h"
 #import "FlyerController.h"
 #import "SearchController.h"
@@ -31,8 +32,12 @@
     [super viewDidLoad];
     //添加头视图
     self.headerView = [[FlyerHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2+20)];
+    WeakObj(self);
     self.headerView.block = ^(NSInteger index,EFCategroy *categroy){
-        
+        FlyerListController *flyerListVC = [selfWeak.storyboard instantiateViewControllerWithIdentifier:@"FlyerListController"];
+        flyerListVC.categroy = categroy;
+        flyerListVC.hidesBottomBarWhenPushed = YES;
+        [selfWeak.navigationController pushViewController:flyerListVC animated:YES];
     };
     self.tableView.tableHeaderView = self.headerView;
     //注册cell
@@ -47,16 +52,16 @@
  */
 - (void)loadData{
     self.headerView.data = [EFCategroy shareInstance].data;
+    self.data_new = [NSMutableArray array];
     WeakObj(self)
     [EFGood loadDataWithNewIndex:self.index Block:^(NSArray<EFGood *> *result) {
         if (result.count == 0) {
             [selfWeak.tableView.mj_footer endRefreshingWithNoMoreData];
         }else{
             if (selfWeak.index == 1) {
-                selfWeak.data_new = [NSMutableArray arrayWithArray:result];
-            }else{
-                [selfWeak.data_new addObjectsFromArray:result];
+                [selfWeak.data_new removeAllObjects];
             }
+            [selfWeak.data_new addObjectsFromArray:result];
             [selfWeak.tableView.mj_footer endRefreshing];
             [selfWeak.tableView.mj_header endRefreshing];
             [selfWeak.tableView reloadData];
@@ -75,7 +80,6 @@
         self.index++;
         [self loadData];
     }];
-    
 }
 
 //扫一扫
