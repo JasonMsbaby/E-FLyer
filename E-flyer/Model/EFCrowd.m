@@ -34,7 +34,9 @@ static EFCrowd *crowd;
 
 - (void)initFromRemote{
     AVQuery *query = [EFCrowd query];
+    [query openCache];
     self.data = [query findObjects];
+    
 }
 
 - (instancetype)initWithJob:(NSString *)job sort:(NSInteger)sort{

@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/28.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "MeInfoController.h"
 #import "EFUser.h"
 #import "MeController.h"
 #import "SearchController.h"
@@ -41,6 +42,7 @@
  *  加载视图
  */
 - (void)initView{
+    self.navigationController.navigationBarHidden = YES;
     self.headImg.layer.cornerRadius = 50;
     self.headImg.clipsToBounds = YES;
     self.headImg.userInteractionEnabled = YES;
@@ -212,6 +214,11 @@
     MeMenu *menu = _data[self.sortedKeys[section]][row];
     if ([menu.idd isEqualToString:@"exit"]) {
         [self exit];
+    }else{
+        MeInfoController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MeInfoController"];
+        infoVC.hidesBottomBarWhenPushed = YES;
+        infoVC.menu = menu;
+        [self.navigationController pushViewController:infoVC animated:YES];
     }
 }
 @end

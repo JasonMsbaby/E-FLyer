@@ -36,4 +36,9 @@
         [SVProgressHUD dismiss];
     }];
 }
+
+-(void)openCache{
+    self.cachePolicy = kAVCachePolicyNetworkElseCache;
+    self.maxCacheAge = 24*3600;
+}
 @end

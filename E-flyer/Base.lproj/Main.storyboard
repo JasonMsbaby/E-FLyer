@@ -790,11 +790,48 @@
                         <outlet property="userInfoView" destination="sEe-Xm-Ea7" id="581-Ww-DS0"/>
                         <outlet property="userName" destination="7xb-pK-PdR" id="YNz-35-K2l"/>
                         <segue destination="EEq-Sq-iY1" kind="show" id="D79-pP-iQS"/>
+                        <segue destination="xlY-pr-Yod" kind="push" id="DpC-To-22f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7w-fD-JVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3039" y="2317"/>
+        </scene>
+        <!--Me Info Controller-->
+        <scene sceneID="qZT-N0-SEK">
+            <objects>
+                <viewController storyboardIdentifier="MeInfoController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xlY-pr-Yod" customClass="MeInfoController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qzB-gZ-Gyy"/>
+                        <viewControllerLayoutGuide type="bottom" id="9OZ-01-NrV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AnX-bC-lyc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KHn-ii-dvy">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KHn-ii-dvy" secondAttribute="trailing" id="BP7-Pm-KIQ"/>
+                            <constraint firstItem="9OZ-01-NrV" firstAttribute="top" secondItem="KHn-ii-dvy" secondAttribute="bottom" id="Jla-Ol-DV4"/>
+                            <constraint firstItem="KHn-ii-dvy" firstAttribute="leading" secondItem="AnX-bC-lyc" secondAttribute="leading" id="dbn-K6-rfH"/>
+                            <constraint firstItem="KHn-ii-dvy" firstAttribute="top" secondItem="qzB-gZ-Gyy" secondAttribute="bottom" id="vUb-8X-cXU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dxg-LL-NPr"/>
+                    <connections>
+                        <outlet property="tableView" destination="KHn-ii-dvy" id="vlP-q7-5BE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOL-S4-cb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3039" y="3063"/>
         </scene>
         <!--登录-->
         <scene sceneID="aV9-yz-sxW">

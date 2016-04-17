@@ -15,4 +15,6 @@ typedef void(^success)(NSArray *result);
 
 - (void)findObjectsInForegroundWithSuccess:(success)success;
 
+- (void)openCache;
+
 @end

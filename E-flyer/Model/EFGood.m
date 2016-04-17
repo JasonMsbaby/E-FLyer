@@ -79,9 +79,9 @@
     
     goodsQuery.limit = pageCount;
     goodsQuery.skip = (pageIndex-1)*pageCount;
-    [goodsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [goodsQuery findObjectsInBackgroundWithSuccess:^(NSArray *result) {
         if (block != nil) {
-            block([self nearLocationInArray:objects]);
+            block([self nearLocationInArray:result]);
         }
     }];
 }
