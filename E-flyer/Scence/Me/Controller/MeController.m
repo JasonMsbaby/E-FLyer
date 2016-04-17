@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/28.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "GoodsMangerController.h"
 #import "MeInfoController.h"
 #import "EFUser.h"
 #import "MeController.h"
@@ -214,6 +215,10 @@
     MeMenu *menu = _data[self.sortedKeys[section]][row];
     if ([menu.idd isEqualToString:@"exit"]) {
         [self exit];
+    }else if ([menu.idd isEqualToString:@"goodsInfo"]){
+        GoodsMangerController *goodListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GoodsMangerController"];
+        goodListVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:goodListVC animated:YES];
     }else{
         MeInfoController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MeInfoController"];
         infoVC.hidesBottomBarWhenPushed = YES;

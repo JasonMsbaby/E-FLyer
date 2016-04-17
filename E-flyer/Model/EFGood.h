@@ -43,4 +43,6 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 + (void)loadDataWithTodyRecmomandBlock:(GoodFinshBlock)block;
 //最新数据
 +(void)loadDataWithNewIndex:(NSInteger)index Block:(GoodFinshBlock)block;
+//获取指定用户发布的数据
++ (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block;
 @end

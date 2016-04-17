@@ -51,11 +51,11 @@
         }else{
             if (selfWeak.index == 1) {
                 selfWeak.data_new = [NSMutableArray arrayWithArray:result];
-                [selfWeak.tableView.mj_header endRefreshing];
             }else{
                 [selfWeak.data_new addObjectsFromArray:result];
-                [selfWeak.tableView.mj_footer endRefreshing];
             }}
+        [selfWeak.tableView.mj_footer endRefreshing];
+        [selfWeak.tableView.mj_header endRefreshing];
         [selfWeak.tableView reloadData];
     }];
 }

@@ -222,6 +222,7 @@
     self.good.content = self.txt_content.text;
     self.good.question = self.txt_question.text;
     self.good.answer = self.txt_answer.text;
+    self.good.blongUser = self.currentUser;
     
     if (_good.title == nil || [_good.title isEqualToString:@""]) {
         [SVProgressHUD showErrorWithStatus:@"标题不能为空"];

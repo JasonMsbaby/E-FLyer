@@ -48,6 +48,23 @@
         block(result);
     }];
 }
+//获取指定用户发布的数据
++ (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block{
+    AVQuery *goodsQuery = [EFGood query];
+    [goodsQuery includeKey:@"file"];
+    [goodsQuery includeKey:@"address"];
+    [goodsQuery includeKey:@"crowd"];
+    [goodsQuery includeKey:@"blongUser"];
+    [goodsQuery includeKey:@"categroy"];
+    [goodsQuery orderByDescending:@"createdAt"];
+    [goodsQuery whereKey:@"blongUser" equalTo:user];
+    [goodsQuery findObjectsInBackgroundWithSuccess:^(NSArray *result) {
+        if (block != nil) {
+            block(result);
+        }
+    }];
+}
+
 
 //请求通用方法
 + (void)loadDataWithCategroy:(EFCategroy *)categroy Crowd:(EFCrowd *)crowd PageIndex:(NSInteger)pageIndex PageCount:(NSInteger)pageCount Block:(GoodFinshBlock)block{
@@ -75,7 +92,6 @@
         [crowds addObject:crowd];
     }
     [goodsQuery whereKey:@"crowd" containedIn:crowds];
-    
     
     goodsQuery.limit = pageCount;
     goodsQuery.skip = (pageIndex-1)*pageCount;
