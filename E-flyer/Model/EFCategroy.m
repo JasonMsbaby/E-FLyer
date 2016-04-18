@@ -31,6 +31,7 @@ static EFCategroy *categroy;
 - (void)initWithRemote{
     AVQuery *query = [EFCategroy query];
     [query includeKey:@"image"];
+    [query openCache];
     self.data = [query findObjects];
 }
 

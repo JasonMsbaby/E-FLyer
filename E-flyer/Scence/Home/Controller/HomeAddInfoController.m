@@ -188,8 +188,8 @@
 }
 //余额支付
 - (void)payWithMoney{
+    WeakObj(self)
     if (self.currentUser == nil) {
-        WeakObj(self)
         [self alerWithTitle:@"提示" Message:@"您未登录,是否跳转到登录页面" CallBack:^{
             [selfWeak.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"] animated:YES];
         }];
@@ -205,6 +205,7 @@
                 [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
                         [SVProgressHUD showInfoWithStatus:@"发布成功"];
+                        [selfWeak dismissViewControllerAnimated:YES completion:nil];
                     }else{
                         [self toastWithError:error];
                     }
@@ -221,12 +222,13 @@
     self.good.content = self.txt_content.text;
     self.good.question = self.txt_question.text;
     self.good.answer = self.txt_answer.text;
+    self.good.blongUser = self.currentUser;
     
     if (_good.title == nil || [_good.title isEqualToString:@""]) {
         [SVProgressHUD showErrorWithStatus:@"标题不能为空"];
         return NO;
     }
-    if (_good.file == nil) {
+    if (_good.img == nil && _good.video == nil) {
         [SVProgressHUD showErrorWithStatus:@"请选择图片或视频"];
         return NO;
     }
@@ -281,12 +283,12 @@
         if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {//图片
             UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
-            selfWeak.good.file = [ToolUtils dataWithImage:img VideoPath:nil];
+            selfWeak.good.img = [ToolUtils dataWithImage:img VideoPath:nil];
         }else{//视频
             UIImage *img = [ToolUtils thumbnailImageForVideo:[info objectForKey:UIImagePickerControllerMediaURL] atTime:0];
             [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
             NSString *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
-            selfWeak.good.file = [ToolUtils dataWithImage:nil VideoPath:videoURL];
+            selfWeak.good.video = [ToolUtils dataWithImage:nil VideoPath:videoURL];
         }
     }];
 }

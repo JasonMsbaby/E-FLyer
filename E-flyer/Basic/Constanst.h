@@ -35,8 +35,8 @@ fprintf(stderr, "-------\n");                                               \
 #endif
 //---------------------系统常量--------------------------
 #define kRegist_Time 60
-#define pageSize  10
-
+#define kPageSize  10
+#define kLoadingMesssage @"正在努力加载数据,请稍后..."
 
 
 

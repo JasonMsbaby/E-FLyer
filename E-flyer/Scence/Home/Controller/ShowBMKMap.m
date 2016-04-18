@@ -60,7 +60,9 @@
     self.mapView = [[BMKMapView alloc]initWithFrame:self.view.bounds];
     self.mapSearch = [[BMKGeoCodeSearch alloc] init];
     self.mapView.zoomLevel = 18;
-    self.position = self.mapView.centerCoordinate;
+    CGPoint point = CGPointFromString([[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocation"]);
+    self.position = CLLocationCoordinate2DMake(point.y, point.x);
+    self.mapView.centerCoordinate = self.position;
     self.view = self.mapView;
     
     [self addcircle];

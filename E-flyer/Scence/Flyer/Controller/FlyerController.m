@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/27.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "FlyerListController.h"
 #import "EFGood.h"
 #import "FlyerController.h"
 #import "SearchController.h"
@@ -17,29 +18,32 @@
 @interface FlyerController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) FlyerHeaderView *headerView;
-@property(strong,nonatomic) NSArray<EFGood *> *data_new;
+@property(strong,nonatomic) NSMutableArray<EFGood *> *data_new;
+@property(assign,nonatomic) NSInteger index;
 @end
 @implementation FlyerController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
-    WeakObj(self)
-    [EFGood loadDataWithNewBlock:^(NSArray<EFGood *> *result) {
-        selfWeak.data_new = result;
-        [selfWeak.tableView reloadData];
-    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //添加头视图
     self.headerView = [[FlyerHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2+20)];
+    WeakObj(self);
+    self.headerView.block = ^(NSInteger index,EFCategroy *categroy){
+        FlyerListController *flyerListVC = [selfWeak.storyboard instantiateViewControllerWithIdentifier:@"FlyerListController"];
+        flyerListVC.categroy = categroy;
+        flyerListVC.hidesBottomBarWhenPushed = YES;
+        [selfWeak.navigationController pushViewController:flyerListVC animated:YES];
+    };
     self.tableView.tableHeaderView = self.headerView;
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tableView registerClass:[FlyerRecommendCell class] forCellReuseIdentifier:@"recommendCell"];
-    
+    self.index = 1;
     [self loadData];
     [self addMJRefresh];
 }
@@ -48,18 +52,34 @@
  */
 - (void)loadData{
     self.headerView.data = [EFCategroy shareInstance].data;
-    [self.tableView reloadData];
+    self.data_new = [NSMutableArray array];
+    WeakObj(self)
+    [EFGood loadDataWithNewIndex:self.index Block:^(NSArray<EFGood *> *result) {
+        if (result.count == 0) {
+            [selfWeak.tableView.mj_footer endRefreshingWithNoMoreData];
+        }else{
+            if (selfWeak.index == 1) {
+                [selfWeak.data_new removeAllObjects];
+            }
+            [selfWeak.data_new addObjectsFromArray:result];
+            [selfWeak.tableView.mj_footer endRefreshing];
+            [selfWeak.tableView.mj_header endRefreshing];
+            [selfWeak.tableView reloadData];
+        }
+    }];
 }
 /*!
  *  添加上拉 下拉刷新
  */
 - (void)addMJRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        sleep(2);
-        NSLog(@"下拉刷新");
-        [self.tableView.mj_header endRefreshing];
+        self.index = 1;
+        [self loadData];
     }];
-    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        self.index++;
+        [self loadData];
+    }];
 }
 
 //扫一扫
@@ -84,37 +104,37 @@
 }
 #pragma mark - tableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 1;
-    }
+//    if (section == 0) {
+//        return 1;
+//    }
     return self.data_new.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return 150;
-    }
+//    if (indexPath.section == 0) {
+//        return 150;
+//    }
     return 100;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        FlyerRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommendCell"];
-        [cell layout];
-        return cell;
-    }else{
+//    if (indexPath.section == 0) {
+//        FlyerRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommendCell"];
+//        [cell layout:self.data_new];
+//        return cell;
+//    }else{
         FlyerYouLikeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
         cell.model = self.data_new[indexPath.row];
         return cell;
-    }
+//    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return @"今日推荐";
-    }
+//    if (section == 0) {
+//        return @"今日推荐";
+//    }
     return  @"最新上架";
 }
 

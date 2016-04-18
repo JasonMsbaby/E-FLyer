@@ -65,10 +65,12 @@
 
 
 - (void)loading{
-    [SVProgressHUD showWithStatus:@"正在初始化,请稍后..."];
-    [[EFCrowd shareInstance] initFromRemote];
-    [[EFCategroy shareInstance]initWithRemote];
-    [SVProgressHUD dismiss];
+    dispatch_queue_t queue = dispatch_queue_create("queue.init", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_sync(queue, ^{
+        [[EFCrowd shareInstance] initFromRemote];
+        [[EFCategroy shareInstance]initWithRemote];
+    });
+    
 }
 
 - (void)initMap{

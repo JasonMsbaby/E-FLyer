@@ -7,6 +7,7 @@
 //
 #import "App.h"
 #import "BasicController.h"
+#import "LoginController.h"
 
 @interface BasicController ()
 
@@ -17,7 +18,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.currentUser = [EFUser currentUser];
 }
 
 - (void)viewDidLoad {
@@ -25,6 +25,21 @@
     //NSLog(@"BasicViewController");
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"left_back"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]style:(UIBarButtonItemStylePlain) target:self action:@selector(leftBarButtonItemBack:)];
 }
+
+
+
+-(EFUser *)currentUser{
+    _currentUser = [EFUser currentUser];
+    if (_currentUser == nil) {
+        [SVProgressHUD showErrorWithStatus:@"您未登录,请登录后尝试此操作!"];
+        //LoginController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"];
+        //loginVC.hidesBottomBarWhenPushed = YES;
+        //[self.navigationController pushViewController:loginVC animated:YES];
+    }
+    return _currentUser;
+}
+
+
 
 - (void)leftBarButtonItemBack:(UIBarButtonItem *)item{
     [self.navigationController popViewControllerAnimated:YES];
@@ -71,6 +86,8 @@
     }
     [SVProgressHUD showErrorWithStatus:e];
 }
+
+
 
 
 @end

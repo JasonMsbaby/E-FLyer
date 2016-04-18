@@ -31,7 +31,7 @@
 }
 
 - (void)layoutModel{
-    [self.img sd_setImageWithURL:[NSURL URLWithString:self.model.file.url]];
+    [self.img sd_setImageWithURL:[NSURL URLWithString:self.model.img.url]];
     self.title.text = self.model.title;
     self.content.text = self.model.content;
     self.price.text = [NSString stringWithFormat:@"%.2lf元",self.model.price];

@@ -16,6 +16,12 @@
 @dynamic lat;
 @dynamic lng;
 
+@dynamic barAddress;
+@dynamic barImg;
+@dynamic barInfo;
+@dynamic barName;
+@dynamic barPhone;
+
 +(void)load{
     [super load];
     [self registerSubclass];

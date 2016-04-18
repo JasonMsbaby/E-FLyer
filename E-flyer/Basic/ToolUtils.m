@@ -74,7 +74,7 @@
         
         if (num <= 1) {
             
-            timeString = [NSString stringWithFormat:@"刚刚..."];
+            timeString = [NSString stringWithFormat:@"刚刚"];
             
         }else{
             

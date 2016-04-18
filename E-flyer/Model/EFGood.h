@@ -21,7 +21,8 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 @property(strong,nonatomic) NSString *title;//标题
 @property(strong,nonatomic) NSString *content;//内容
 @property(strong,nonatomic) EFCategroy *categroy;//类别
-@property(strong,nonatomic) AVFile *file;//图片或者视频
+@property(strong,nonatomic) AVFile *video;//图片或者视频
+@property(strong,nonatomic) AVFile *img;//传单图片
 @property(strong,nonatomic) NSString *question;//问题
 @property(strong,nonatomic) NSString *answer;//答案
 @property(assign,nonatomic) double price;//价格
@@ -40,6 +41,8 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 + (void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block;
 //今日推荐的  最多六条数据
 + (void)loadDataWithTodyRecmomandBlock:(GoodFinshBlock)block;
-//猜你喜欢
-+ (void)loadDataWithNewBlock:(GoodFinshBlock)block;
+//最新数据
++(void)loadDataWithNewIndex:(NSInteger)index Block:(GoodFinshBlock)block;
+//获取指定用户发布的数据
++ (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block;
 @end
