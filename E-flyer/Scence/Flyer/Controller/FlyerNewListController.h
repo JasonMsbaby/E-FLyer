@@ -8,6 +8,6 @@
 #import "EFGood.h"
 #import "BasicController.h"
 
-@interface FlyerListController : BasicController
+@interface FlyerNewListController : BasicController
 @property(strong,nonatomic) EFCategroy *categroy;
 @end

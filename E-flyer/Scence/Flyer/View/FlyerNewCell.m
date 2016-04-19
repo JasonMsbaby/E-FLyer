@@ -7,9 +7,9 @@
 //
 #import <UIImageView+WebCache.h>
 #import "ToolUtils.h"
-#import "FlyerYouLikeCell.h"
+#import "FlyerNewCell.h"
 
-@interface FlyerYouLikeCell ()
+@interface FlyerNewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *price;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation FlyerYouLikeCell
+@implementation FlyerNewCell
 
 
 - (void)setModel:(EFGood *)model{

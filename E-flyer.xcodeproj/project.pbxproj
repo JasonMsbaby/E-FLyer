@@ -76,7 +76,15 @@
 		96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EEA1CC34AAE00B8AB08 /* MeInfoController.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EEF1CC34B1000B8AB08 /* GoodsMangerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EEE1CC34B1000B8AB08 /* GoodsMangerController.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EF21CC3668C00B8AB08 /* GoodsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EF11CC3668C00B8AB08 /* GoodsListCell.m */; settings = {ASSET_TAGS = (); }; };
-		96B47EF51CC3B35700B8AB08 /* FlyerListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EF41CC3B35700B8AB08 /* FlyerListController.m */; settings = {ASSET_TAGS = (); }; };
+		96B47EF51CC3B35700B8AB08 /* FlyerNewListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EF41CC3B35700B8AB08 /* FlyerNewListController.m */; settings = {ASSET_TAGS = (); }; };
+		96B937811CC61ECC0043E840 /* EveryDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B9375C1CC61ECC0043E840 /* EveryDayTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		96B937831CC61ECC0043E840 /* BlurImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937621CC61ECC0043E840 /* BlurImageView.m */; settings = {ASSET_TAGS = (); }; };
+		96B937841CC61ECC0043E840 /* ContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937641CC61ECC0043E840 /* ContentScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		96B937851CC61ECC0043E840 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937661CC61ECC0043E840 /* ContentView.m */; settings = {ASSET_TAGS = (); }; };
+		96B937861CC61ECC0043E840 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937681CC61ECC0043E840 /* CustomView.m */; settings = {ASSET_TAGS = (); }; };
+		96B937871CC61ECC0043E840 /* EveryDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B9376A1CC61ECC0043E840 /* EveryDayTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B9376C1CC61ECC0043E840 /* ImageContentView.m */; settings = {ASSET_TAGS = (); }; };
+		96B937891CC61ECC0043E840 /* rilegouleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B9376E1CC61ECC0043E840 /* rilegouleView.m */; settings = {ASSET_TAGS = (); }; };
 		96C864061C85330000365512 /* UIView+EFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C864051C85330000365512 /* UIView+EFView.m */; };
 		96C864091C8549AC00365512 /* FlyerRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C864081C8549AC00365512 /* FlyerRecommendCell.m */; };
 		96C8640B1C85511400365512 /* img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C8640A1C85511400365512 /* img@2x.png */; };
@@ -100,7 +108,7 @@
 		96EAA84A1CBA46B700508683 /* EFGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA8491CBA46B700508683 /* EFGood.m */; };
 		96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA84C1CBA48AD00508683 /* EFCrowd.m */; };
 		96EAA8501CBA49BC00508683 /* EFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA84F1CBA49BC00508683 /* EFCity.m */; };
-		96EB75BF1C85647400B3658F /* FlyerYouLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */; };
+		96EB75BF1C85647400B3658F /* FlyerNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75BE1C85647400B3658F /* FlyerNewCell.m */; };
 		96EB75C21C85743400B3658F /* VideoController_abandon.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75C11C85743400B3658F /* VideoController_abandon.m */; };
 		96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75C61C857B5000B3658F /* VideoCarousel.m */; };
 		96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB75D11C8595DF00B3658F /* VideoCell.m */; };
@@ -164,6 +172,7 @@
 		9642E1141CBD270000EEAC61 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_nav_quxiao.png; sourceTree = "<group>"; };
 		9642E1181CBD272D00EEAC61 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
+		964CCC901CC62DBC00930028 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		965343BA1CBDFA1A00459664 /* ShowBMKMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowBMKMap.h; sourceTree = "<group>"; };
 		965343BB1CBDFA1A00459664 /* ShowBMKMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowBMKMap.m; sourceTree = "<group>"; };
 		965343BE1CBE03EB00459664 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -233,8 +242,24 @@
 		96B47EEE1CC34B1000B8AB08 /* GoodsMangerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsMangerController.m; sourceTree = "<group>"; };
 		96B47EF01CC3668C00B8AB08 /* GoodsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListCell.h; sourceTree = "<group>"; };
 		96B47EF11CC3668C00B8AB08 /* GoodsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListCell.m; sourceTree = "<group>"; };
-		96B47EF31CC3B35700B8AB08 /* FlyerListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerListController.h; sourceTree = "<group>"; };
-		96B47EF41CC3B35700B8AB08 /* FlyerListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerListController.m; sourceTree = "<group>"; };
+		96B47EF31CC3B35700B8AB08 /* FlyerNewListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerNewListController.h; sourceTree = "<group>"; };
+		96B47EF41CC3B35700B8AB08 /* FlyerNewListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerNewListController.m; sourceTree = "<group>"; };
+		96B9375B1CC61ECC0043E840 /* EveryDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayTableViewController.h; sourceTree = "<group>"; };
+		96B9375C1CC61ECC0043E840 /* EveryDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayTableViewController.m; sourceTree = "<group>"; };
+		96B937611CC61ECC0043E840 /* BlurImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurImageView.h; sourceTree = "<group>"; };
+		96B937621CC61ECC0043E840 /* BlurImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurImageView.m; sourceTree = "<group>"; };
+		96B937631CC61ECC0043E840 /* ContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentScrollView.h; sourceTree = "<group>"; };
+		96B937641CC61ECC0043E840 /* ContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentScrollView.m; sourceTree = "<group>"; };
+		96B937651CC61ECC0043E840 /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		96B937661CC61ECC0043E840 /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		96B937671CC61ECC0043E840 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		96B937681CC61ECC0043E840 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		96B937691CC61ECC0043E840 /* EveryDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayTableViewCell.h; sourceTree = "<group>"; };
+		96B9376A1CC61ECC0043E840 /* EveryDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayTableViewCell.m; sourceTree = "<group>"; };
+		96B9376B1CC61ECC0043E840 /* ImageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageContentView.h; sourceTree = "<group>"; };
+		96B9376C1CC61ECC0043E840 /* ImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageContentView.m; sourceTree = "<group>"; };
+		96B9376D1CC61ECC0043E840 /* rilegouleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rilegouleView.h; sourceTree = "<group>"; };
+		96B9376E1CC61ECC0043E840 /* rilegouleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rilegouleView.m; sourceTree = "<group>"; };
 		96C864041C85330000365512 /* UIView+EFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EFView.h"; sourceTree = "<group>"; };
 		96C864051C85330000365512 /* UIView+EFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EFView.m"; sourceTree = "<group>"; };
 		96C864071C8549AC00365512 /* FlyerRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerRecommendCell.h; sourceTree = "<group>"; };
@@ -274,8 +299,8 @@
 		96EAA84C1CBA48AD00508683 /* EFCrowd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCrowd.m; sourceTree = "<group>"; };
 		96EAA84E1CBA49BC00508683 /* EFCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFCity.h; sourceTree = "<group>"; };
 		96EAA84F1CBA49BC00508683 /* EFCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCity.m; sourceTree = "<group>"; };
-		96EB75BD1C85647400B3658F /* FlyerYouLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerYouLikeCell.h; sourceTree = "<group>"; };
-		96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerYouLikeCell.m; sourceTree = "<group>"; };
+		96EB75BD1C85647400B3658F /* FlyerNewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerNewCell.h; sourceTree = "<group>"; };
+		96EB75BE1C85647400B3658F /* FlyerNewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerNewCell.m; sourceTree = "<group>"; };
 		96EB75C01C85743400B3658F /* VideoController_abandon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController_abandon.h; sourceTree = "<group>"; };
 		96EB75C11C85743400B3658F /* VideoController_abandon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController_abandon.m; sourceTree = "<group>"; };
 		96EB75C51C857B5000B3658F /* VideoCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCarousel.h; sourceTree = "<group>"; };
@@ -458,6 +483,7 @@
 				9654339D1C803625005B8BD1 /* Assets.xcassets */,
 				9654339F1C803625005B8BD1 /* LaunchScreen.storyboard */,
 				965433A21C803625005B8BD1 /* Info.plist */,
+				964CCC901CC62DBC00930028 /* PrefixHeader.pch */,
 				965433911C803625005B8BD1 /* Supporting Files */,
 			);
 			path = "E-flyer";
@@ -569,8 +595,8 @@
 				96A7F8611C80BEDC00412B79 /* FlyerController.m */,
 				96E390441C81CB2300107FB7 /* SearchController.h */,
 				96E390451C81CB2300107FB7 /* SearchController.m */,
-				96B47EF31CC3B35700B8AB08 /* FlyerListController.h */,
-				96B47EF41CC3B35700B8AB08 /* FlyerListController.m */,
+				96B47EF31CC3B35700B8AB08 /* FlyerNewListController.h */,
+				96B47EF41CC3B35700B8AB08 /* FlyerNewListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -582,8 +608,8 @@
 				9686D9981C846EC0005EC027 /* FlyerHeaderView.m */,
 				96C864071C8549AC00365512 /* FlyerRecommendCell.h */,
 				96C864081C8549AC00365512 /* FlyerRecommendCell.m */,
-				96EB75BD1C85647400B3658F /* FlyerYouLikeCell.h */,
-				96EB75BE1C85647400B3658F /* FlyerYouLikeCell.m */,
+				96EB75BD1C85647400B3658F /* FlyerNewCell.h */,
+				96EB75BE1C85647400B3658F /* FlyerNewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -714,6 +740,7 @@
 		965433FF1C803EDA005B8BD1 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				96B937591CC61ECC0043E840 /* EveryDay */,
 				965343BD1CBE03EB00459664 /* BaiduMap */,
 				9642E0A91CBCB97B00EEAC61 /* LrdAlertView */,
 				96EB75D31C859B1300B3658F /* WMPlayer */,
@@ -783,6 +810,45 @@
 			children = (
 			);
 			path = ThirdVC;
+			sourceTree = "<group>";
+		};
+		96B937591CC61ECC0043E840 /* EveryDay */ = {
+			isa = PBXGroup;
+			children = (
+				96B9375A1CC61ECC0043E840 /* Controller */,
+				96B937601CC61ECC0043E840 /* View */,
+			);
+			path = EveryDay;
+			sourceTree = "<group>";
+		};
+		96B9375A1CC61ECC0043E840 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96B9375B1CC61ECC0043E840 /* EveryDayTableViewController.h */,
+				96B9375C1CC61ECC0043E840 /* EveryDayTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96B937601CC61ECC0043E840 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96B937611CC61ECC0043E840 /* BlurImageView.h */,
+				96B937621CC61ECC0043E840 /* BlurImageView.m */,
+				96B937631CC61ECC0043E840 /* ContentScrollView.h */,
+				96B937641CC61ECC0043E840 /* ContentScrollView.m */,
+				96B937651CC61ECC0043E840 /* ContentView.h */,
+				96B937661CC61ECC0043E840 /* ContentView.m */,
+				96B937671CC61ECC0043E840 /* CustomView.h */,
+				96B937681CC61ECC0043E840 /* CustomView.m */,
+				96B937691CC61ECC0043E840 /* EveryDayTableViewCell.h */,
+				96B9376A1CC61ECC0043E840 /* EveryDayTableViewCell.m */,
+				96B9376B1CC61ECC0043E840 /* ImageContentView.h */,
+				96B9376C1CC61ECC0043E840 /* ImageContentView.m */,
+				96B9376D1CC61ECC0043E840 /* rilegouleView.h */,
+				96B9376E1CC61ECC0043E840 /* rilegouleView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		96CFD2CD1C8E7507007D10E9 /* ViewModel */ = {
@@ -1032,26 +1098,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				9627194A1C80813B00D11747 /* EFTabBar.m in Sources */,
+				96B937841CC61ECC0043E840 /* ContentScrollView.m in Sources */,
 				9642E0C31CBCB97B00EEAC61 /* LrdPasswordAlertView.m in Sources */,
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
 				9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */,
+				96B937811CC61ECC0043E840 /* EveryDayTableViewController.m in Sources */,
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
 				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
 				9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */,
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
-				96B47EF51CC3B35700B8AB08 /* FlyerListController.m in Sources */,
+				96B47EF51CC3B35700B8AB08 /* FlyerNewListController.m in Sources */,
 				9642E0C11CBCB97B00EEAC61 /* CameraAlertView.m in Sources */,
+				96B937871CC61ECC0043E840 /* EveryDayTableViewCell.m in Sources */,
 				96B47EF21CC3668C00B8AB08 /* GoodsListCell.m in Sources */,
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,
+				96B937831CC61ECC0043E840 /* BlurImageView.m in Sources */,
 				96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */,
+				96B937861CC61ECC0043E840 /* CustomView.m in Sources */,
 				9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */,
 				96C864091C8549AC00365512 /* FlyerRecommendCell.m in Sources */,
 				96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */,
+				96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,
 				96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */,
 				965433961C803625005B8BD1 /* AppDelegate.m in Sources */,
@@ -1069,15 +1141,17 @@
 				96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */,
 				96EAA8501CBA49BC00508683 /* EFCity.m in Sources */,
 				96C864061C85330000365512 /* UIView+EFView.m in Sources */,
+				96B937851CC61ECC0043E840 /* ContentView.m in Sources */,
 				9642E0BE1CBCB97B00EEAC61 /* LrdAlertTableView.m in Sources */,
 				96E59ED71C8F04BD00D24F02 /* RegistController.m in Sources */,
 				965343BC1CBDFA1A00459664 /* ShowBMKMap.m in Sources */,
 				96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */,
 				968B1AC11CBEA6CB00FDE255 /* EFBMKModel.m in Sources */,
 				96A7F8621C80BEDC00412B79 /* FlyerController.m in Sources */,
-				96EB75BF1C85647400B3658F /* FlyerYouLikeCell.m in Sources */,
+				96EB75BF1C85647400B3658F /* FlyerNewCell.m in Sources */,
 				9684D8531C82E0A200F4E542 /* MeController.m in Sources */,
 				96B47EEF1CC34B1000B8AB08 /* GoodsMangerController.m in Sources */,
+				96B937891CC61ECC0043E840 /* rilegouleView.m in Sources */,
 				9686D9991C846EC0005EC027 /* FlyerHeaderView.m in Sources */,
 				96CFD2D61C8E7E56007D10E9 /* ToolUtils.m in Sources */,
 				9634C93B1CB8D72500519377 /* App.m in Sources */,
@@ -1226,6 +1300,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/E-flyer/Vendors/BaiduMap",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "E-flyer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1246,6 +1322,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/E-flyer/Vendors/BaiduMap",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "E-flyer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

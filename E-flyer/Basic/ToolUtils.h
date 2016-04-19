@@ -28,5 +28,7 @@
 + (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path;
 
 + (NSString *)StringWithDate:(NSDate *)d;
+//颜色创建图片
++(UIImage *)createImageWithColor:(UIColor*) color;
 
 @end

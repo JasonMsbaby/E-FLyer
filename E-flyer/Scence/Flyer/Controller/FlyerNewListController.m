@@ -6,16 +6,16 @@
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
 #import <MJRefresh.h>
-#import "FlyerListController.h"
-#import "FlyerYouLikeCell.h"
+#import "FlyerNewListController.h"
+#import "FlyerNewCell.h"
 
-@interface FlyerListController ()<UITableViewDataSource,UITableViewDelegate>
+@interface FlyerNewListController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSMutableArray<EFGood *> *dataSource;
 @property(assign,nonatomic) NSInteger index;
 @end
 
-@implementation FlyerListController
+@implementation FlyerNewListController
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -86,7 +86,7 @@
    return self.dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FlyerYouLikeCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FlyerListCell"];
+    FlyerNewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FlyerListCell"];
     cell.model = self.dataSource[indexPath.row];
     return cell;
 }

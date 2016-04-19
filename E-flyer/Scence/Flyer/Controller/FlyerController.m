@@ -5,14 +5,15 @@
 //  Created by Jason_Msbaby on 16/2/27.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-#import "FlyerListController.h"
+#import "EveryDayTableViewController.h"
+#import "FlyerNewListController.h"
 #import "EFGood.h"
 #import "FlyerController.h"
 #import "SearchController.h"
 #import "FlyerHeaderView.h"
 #import <MJRefresh.h>
 #import "FlyerRecommendCell.h"
-#import "FlyerYouLikeCell.h"
+#import "FlyerNewCell.h"
 #import "EFCategroy.h"
 
 @interface FlyerController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -34,10 +35,10 @@
     self.headerView = [[FlyerHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2+20)];
     WeakObj(self);
     self.headerView.block = ^(NSInteger index,EFCategroy *categroy){
-        FlyerListController *flyerListVC = [selfWeak.storyboard instantiateViewControllerWithIdentifier:@"FlyerListController"];
-        flyerListVC.categroy = categroy;
-        flyerListVC.hidesBottomBarWhenPushed = YES;
-        [selfWeak.navigationController pushViewController:flyerListVC animated:YES];
+        EveryDayTableViewController *listVC = [[EveryDayTableViewController alloc] init];
+        listVC.categroy = categroy;
+        listVC.hidesBottomBarWhenPushed = YES;
+        [selfWeak.navigationController pushViewController:listVC animated:YES];
     };
     self.tableView.tableHeaderView = self.headerView;
     //注册cell
@@ -125,7 +126,7 @@
 //        [cell layout:self.data_new];
 //        return cell;
 //    }else{
-        FlyerYouLikeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
+        FlyerNewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
         cell.model = self.data_new[indexPath.row];
         return cell;
 //    }

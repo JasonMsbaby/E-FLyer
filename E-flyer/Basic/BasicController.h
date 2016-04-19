@@ -7,11 +7,12 @@
 //
 #import "ToolUtils.h"
 #import <UIImageView+WebCache.h>
-#import <Masonry.h>
+#import <SVProgressHUD.h>
 #import "EFUser.h"
 #import <UIKit/UIKit.h>
 #import "Constanst.h"
-#import <SVProgressHUD.h>
+#import <Masonry.h>
+
 @interface BasicController : UIViewController
 @property(strong,nonatomic) EFUser *currentUser;
 
