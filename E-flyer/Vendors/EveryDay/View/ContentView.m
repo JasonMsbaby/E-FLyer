@@ -5,7 +5,7 @@
 //  Created by juvham on 16/1/21.
 //  Copyright © 2016年 juvham. All rights reserved.
 //
-
+#import <Masonry.h>
 #import <UIImageView+WebCache.h>
 #import "ContentView.h"
 #import "CustomView.h"
@@ -26,14 +26,23 @@
         [self addSubview:effectView];
 
         
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 5, kWidth, 30)];
+        _titleLabel = [UILabel new];
         _titleLabel.font = [UIFont boldSystemFontOfSize:16];
         _titleLabel.textColor = collor;
         [self addSubview:_titleLabel];
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(10);
+            make.right.equalTo(self).offset(-10);
+        }];
         
-        _lineView = [[UIView alloc]initWithFrame:CGRectMake(5, 35, 200, 1)];
+        _lineView = [UIView new];
         _lineView.backgroundColor = collor;
         [self addSubview:_lineView];
+        [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(_titleLabel);
+            make.top.equalTo(_titleLabel.mas_bottom).offset(2);
+            make.height.equalTo(@1);
+        }];
         
         _littleLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 46, kWidth, 20)];
         _littleLabel.textColor = collor;
