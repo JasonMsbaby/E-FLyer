@@ -141,6 +141,7 @@
 /* Begin PBXFileReference section */
 		34D6CCA0EDCAE98C331D816D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		388D670F6C32EB54EB82B9CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6AABBCFE1CC7DA590001EF94 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		962719481C80813B00D11747 /* EFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTabBar.h; sourceTree = "<group>"; };
 		962719491C80813B00D11747 /* EFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFTabBar.m; sourceTree = "<group>"; };
 		962BCB091C8682A200DCAE4B /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
@@ -172,7 +173,6 @@
 		9642E1141CBD270000EEAC61 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_nav_quxiao.png; sourceTree = "<group>"; };
 		9642E1181CBD272D00EEAC61 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
-		964CCC901CC62DBC00930028 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		965343BA1CBDFA1A00459664 /* ShowBMKMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowBMKMap.h; sourceTree = "<group>"; };
 		965343BB1CBDFA1A00459664 /* ShowBMKMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowBMKMap.m; sourceTree = "<group>"; };
 		965343BE1CBE03EB00459664 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 				9654339D1C803625005B8BD1 /* Assets.xcassets */,
 				9654339F1C803625005B8BD1 /* LaunchScreen.storyboard */,
 				965433A21C803625005B8BD1 /* Info.plist */,
-				964CCC901CC62DBC00930028 /* PrefixHeader.pch */,
+				6AABBCFE1CC7DA590001EF94 /* PrefixHeader.pch */,
 				965433911C803625005B8BD1 /* Supporting Files */,
 			);
 			path = "E-flyer";

@@ -33,6 +33,7 @@
     [super viewDidLoad];
     //添加头视图
     self.headerView = [[FlyerHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2+20)];
+    self.headerView.data = [EFCategroy shareInstance].data;
     WeakObj(self);
     self.headerView.block = ^(NSInteger index,EFCategroy *categroy){
         EveryDayTableViewController *listVC = [[EveryDayTableViewController alloc] init];
@@ -40,6 +41,8 @@
         listVC.hidesBottomBarWhenPushed = YES;
         [selfWeak.navigationController pushViewController:listVC animated:YES];
     };
+    self.data_new = [NSMutableArray array];
+    
     self.tableView.tableHeaderView = self.headerView;
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -52,8 +55,6 @@
  *  加载数据
  */
 - (void)loadData{
-    self.headerView.data = [EFCategroy shareInstance].data;
-    self.data_new = [NSMutableArray array];
     WeakObj(self)
     [EFGood loadDataWithNewIndex:self.index Block:^(NSArray<EFGood *> *result) {
         if (result.count == 0) {
