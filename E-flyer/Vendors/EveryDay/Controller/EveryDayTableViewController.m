@@ -7,7 +7,7 @@
 //
 #import <SDWebImageManager.h>
 #import "EveryDayTableViewController.h"
-
+#import <MJRefresh.h>
 #import "EveryDayTableViewCell.h"
 #import "ContentScrollView.h"
 #import "ContentView.h"
@@ -15,7 +15,7 @@
 #import "CustomView.h"
 #import "ImageContentView.h"
 #import <UIImageView+WebCache.h>
-#import "EFGood.h"
+
 
 @interface SDWebImageManager  (cache)
 
@@ -40,45 +40,82 @@
 
 @property(strong,nonatomic) UITableView *tableView;
 
+@property(nonatomic,assign) NSInteger index;
+
 @property (nonatomic, retain) NSMutableArray<EFGood *> *dateArray;
 
 @end
 
 @implementation EveryDayTableViewController
 
-#pragma mark ---------- 数据解析 -----------
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
-- (NSMutableArray *)dateArray{
-    
-    if (!_dateArray) {
-        _dateArray = [[NSMutableArray alloc]init];
-    }
-    return _dateArray;
-}
 
 #pragma mark ----------------- 加载页面 ----------------
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.dateArray = [NSMutableArray array];
+    [super viewDidLoad];
+    [self loadTableView];
+    [self loadBack];
+    [self addMJRefresh];
+    [self loadData];
+}
 
 //加载数据
 - (void)loadData{
+    self.index = self.index == 0 ? 1 : self.index;
     WeakObj(self)
-    [EFGood loadDataWithCategroy:self.categroy PageIndex:1 Block:^(NSArray<EFGood *> *result) {
-        selfWeak.dateArray = [NSMutableArray arrayWithArray:result];
-        [selfWeak.tableView reloadData];
+    [EFGood loadDataWithCategroy:self.categroy PageIndex:self.index Block:^(NSArray<EFGood *> *result) {
+        if (result.count == 0) {
+            [selfWeak.tableView.mj_footer endRefreshingWithNoMoreData];
+        }else{
+            if (selfWeak.index == 1) {
+                [selfWeak.dateArray removeAllObjects];
+            }
+            [selfWeak.dateArray addObjectsFromArray:result];
+            [selfWeak.tableView.mj_footer endRefreshing];
+            [selfWeak.tableView.mj_header endRefreshing];
+            [selfWeak.tableView reloadData];
+        }
     }];
 }
 
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self loadTableView];
-    [self loadData];
+/*!
+ *  添加上拉 下拉刷新
+ */
+- (void)addMJRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.index = 1;
+        [self loadData];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        self.index++;
+        [self loadData];
+    }];
 }
+
+- (void)loadBack{
+    UIButton *back = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [back setImage:[UIImage imageNamed:@"left_back"] forState:(UIControlStateNormal)];
+    [back addTarget:self action:@selector(btnBack) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:back];
+    [back mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(10);
+        make.top.equalTo(self.view).offset(30);
+        make.width.height.equalTo(@30);
+    }];
+    [self.view bringSubviewToFront:back];
+}
+//添加返回按钮
+- (void)btnBack{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)loadTableView{
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:(UITableViewStylePlain)];
     self.tableView.delegate = self;
@@ -204,14 +241,10 @@
         CGFloat off = ABS( ((int)x % (int)kWidth) - kWidth/2) /(kWidth/2) + .2;
 
         [UIView animateWithDuration:1.0 animations:^{
-            _rilegoule.contentView.titleLabel.alpha = off + 0.3;
-            _rilegoule.contentView.littleLabel.alpha = off + 0.3;
-            _rilegoule.contentView.lineView.alpha = off + 0.3;
-            _rilegoule.contentView.descripLabel.alpha = off + 0.3;
-            _rilegoule.contentView.collectionCustom.alpha = off + 0.3;
-            _rilegoule.contentView.shareCustom.alpha = off + 0.3;
-            _rilegoule.contentView.cacheCustom.alpha = off + 0.3;
-            _rilegoule.contentView.replyCustom.alpha = off + 0.3;
+            
+            for (UIView *v in _rilegoule.contentView.subviews) {
+                v.alpha = off + 0.3;
+            }
             
         }];
 

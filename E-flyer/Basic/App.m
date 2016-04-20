@@ -32,6 +32,8 @@ static App *app = nil;
  */
 - (void)setupErrorCode{
     self.kCode = @{
+                   @"code_6":@"网络似乎开小差了~",
+                   @"code_28":@"请求超时",
                    @"code_210":@"密码错误",
                    @"code_211":@"用户不存在",
                    @"code_214":@"用户已存在,请登录",

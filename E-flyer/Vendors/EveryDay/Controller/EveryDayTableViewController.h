@@ -8,6 +8,7 @@
 #import "EFCategroy.h"
 #import "BasicController.h"
 #import <UIKit/UIKit.h>
+#import "EFGood.h"
 @class rilegouleView;
 
 
@@ -16,6 +17,7 @@
 @property (nonatomic, strong) NSIndexPath *currentIndexPath;
 
 @property(strong,nonatomic) EFCategroy *categroy;
+
 
 
 
