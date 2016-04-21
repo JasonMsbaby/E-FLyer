@@ -23,6 +23,10 @@
     
     if (self) {
         
+//        EFGood *currentGood = imageArray[index];
+        
+//        UIImage *img = [UIImage imageWithData:[currentGood.img getData]];
+        
         self.contentSize = CGSizeMake([imageArray count] * kWidth, 0);
         
         self.bounces = NO;
@@ -34,13 +38,6 @@
         for (int i = 0; i < [imageArray count]; i ++) {
             
             ImageContentView *sonView = [[ImageContentView alloc]initWithFrame:CGRectMake(i * kWidth, 0, kWidth, kHeight) Width:35 model:imageArray[i] collor:[UIColor whiteColor]];
-            
-            EFGood *model = [EFGood object];
-            
-            model = imageArray[i];
-            
-            [sonView.picture sd_setImageWithURL:[NSURL URLWithString:model.img.url] placeholderImage:nil];
-            
             [self addSubview:sonView];;
         }
         

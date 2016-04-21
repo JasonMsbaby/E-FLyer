@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
 		9627194A1C80813B00D11747 /* EFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 962719491C80813B00D11747 /* EFTabBar.m */; };
 		962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0A1C8682A200DCAE4B /* VideoController.m */; };
 		962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0D1C86972300DCAE4B /* VideoPlayController.m */; };
@@ -78,7 +79,6 @@
 		96B47EF21CC3668C00B8AB08 /* GoodsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EF11CC3668C00B8AB08 /* GoodsListCell.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EF51CC3B35700B8AB08 /* FlyerNewListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EF41CC3B35700B8AB08 /* FlyerNewListController.m */; settings = {ASSET_TAGS = (); }; };
 		96B937811CC61ECC0043E840 /* EveryDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B9375C1CC61ECC0043E840 /* EveryDayTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		96B937831CC61ECC0043E840 /* BlurImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937621CC61ECC0043E840 /* BlurImageView.m */; settings = {ASSET_TAGS = (); }; };
 		96B937841CC61ECC0043E840 /* ContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937641CC61ECC0043E840 /* ContentScrollView.m */; settings = {ASSET_TAGS = (); }; };
 		96B937851CC61ECC0043E840 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937661CC61ECC0043E840 /* ContentView.m */; settings = {ASSET_TAGS = (); }; };
 		96B937861CC61ECC0043E840 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B937681CC61ECC0043E840 /* CustomView.m */; settings = {ASSET_TAGS = (); }; };
@@ -141,6 +141,7 @@
 /* Begin PBXFileReference section */
 		34D6CCA0EDCAE98C331D816D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		388D670F6C32EB54EB82B9CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_receive@2x.png"; sourceTree = "<group>"; };
 		6AABBCFE1CC7DA590001EF94 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		962719481C80813B00D11747 /* EFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTabBar.h; sourceTree = "<group>"; };
 		962719491C80813B00D11747 /* EFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFTabBar.m; sourceTree = "<group>"; };
@@ -246,8 +247,6 @@
 		96B47EF41CC3B35700B8AB08 /* FlyerNewListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerNewListController.m; sourceTree = "<group>"; };
 		96B9375B1CC61ECC0043E840 /* EveryDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayTableViewController.h; sourceTree = "<group>"; };
 		96B9375C1CC61ECC0043E840 /* EveryDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayTableViewController.m; sourceTree = "<group>"; };
-		96B937611CC61ECC0043E840 /* BlurImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurImageView.h; sourceTree = "<group>"; };
-		96B937621CC61ECC0043E840 /* BlurImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurImageView.m; sourceTree = "<group>"; };
 		96B937631CC61ECC0043E840 /* ContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentScrollView.h; sourceTree = "<group>"; };
 		96B937641CC61ECC0043E840 /* ContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentScrollView.m; sourceTree = "<group>"; };
 		96B937651CC61ECC0043E840 /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
@@ -761,6 +760,7 @@
 		965434041C804D4C005B8BD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */,
 				9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */,
 				963C74721CBC0DEA00FAFB20 /* money60@2x.png */,
 				963C74701CBC04BE00FAFB20 /* addImg@2x.png */,
@@ -833,8 +833,6 @@
 		96B937601CC61ECC0043E840 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				96B937611CC61ECC0043E840 /* BlurImageView.h */,
-				96B937621CC61ECC0043E840 /* BlurImageView.m */,
 				96B937631CC61ECC0043E840 /* ContentScrollView.h */,
 				96B937641CC61ECC0043E840 /* ContentScrollView.m */,
 				96B937651CC61ECC0043E840 /* ContentView.h */,
@@ -1011,6 +1009,7 @@
 				9642E0BD1CBCB97B00EEAC61 /* close_icon@2x.png in Resources */,
 				96F81BC51CB9650900A3B523 /* head_default@2x.png in Resources */,
 				9642E1191CBD272D00EEAC61 /* city.plist in Resources */,
+				6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */,
 				96A7F7CA1C8099C700412B79 /* tab_add@2x.png in Resources */,
 				968D1A091C8D8DBE00D1BDBC /* meBg@2x.png in Resources */,
 				962FCF2C1C8460D000981B5D /* circle@2x.png in Resources */,
@@ -1117,7 +1116,6 @@
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,
-				96B937831CC61ECC0043E840 /* BlurImageView.m in Sources */,
 				96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */,
 				96B937861CC61ECC0043E840 /* CustomView.m in Sources */,
 				9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */,

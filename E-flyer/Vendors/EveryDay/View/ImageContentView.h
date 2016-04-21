@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class ContentView;
-@class EveryDayModel;
+@class EFGood;
 
 @interface ImageContentView : UIView
 
@@ -16,9 +16,9 @@
 
 
 
-@property (nonatomic, strong) UIImageView *picture;
 
-- (instancetype)initWithFrame:(CGRect)frame Width:(CGFloat)width model:(EveryDayModel *)model collor:(UIColor *)collor;
+
+- (instancetype)initWithFrame:(CGRect)frame Width:(CGFloat)width model:(EFGood *)model collor:(UIColor *)collor;
 
 - (void)imageOffset;
 @end

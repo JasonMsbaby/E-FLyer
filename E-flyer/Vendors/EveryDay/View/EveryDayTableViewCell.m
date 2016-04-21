@@ -22,7 +22,7 @@
         
         _picture = [[UIImageView alloc]initWithFrame:CGRectMake(0, -(kHeight/1.7 -250)/2, kWidth, kHeight/1.7)];
 
-        _picture.contentMode = UIViewContentModeScaleAspectFill;
+        _picture.contentMode = UIViewContentModeScaleToFill;
         [self.contentView  addSubview:_picture];
 
         _coverview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 250)];
@@ -88,9 +88,6 @@
     CGFloat offset =  -offsetDig * (kHeight/1.7 - 250)/2;
 
     CGAffineTransform transY = CGAffineTransformMakeTranslation(0,offset);
-
-//    self.titleLabel.transform = transY;
-//    self.littleLabel.transform = transY;
 
     self.picture.transform = transY;
 

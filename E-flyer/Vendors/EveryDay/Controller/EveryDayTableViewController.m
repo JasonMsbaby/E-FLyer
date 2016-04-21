@@ -63,6 +63,7 @@
     [self loadTableView];
     [self loadBack];
     [self addMJRefresh];
+    [SVProgressHUD show];
     [self loadData];
 }
 
@@ -82,6 +83,7 @@
             [selfWeak.tableView.mj_header endRefreshing];
             [selfWeak.tableView reloadData];
         }
+        [SVProgressHUD dismiss];
     }];
 }
 
@@ -236,17 +238,17 @@
             }
         }
 
-        CGFloat x = _rilegoule.scrollView.contentOffset.x;
-
-        CGFloat off = ABS( ((int)x % (int)kWidth) - kWidth/2) /(kWidth/2) + .2;
-
-        [UIView animateWithDuration:1.0 animations:^{
-            
-            for (UIView *v in _rilegoule.contentView.subviews) {
-                v.alpha = off + 0.3;
-            }
-            
-        }];
+//        CGFloat x = _rilegoule.scrollView.contentOffset.x;
+//
+//        CGFloat off = ABS( ((int)x % (int)kWidth) - kWidth/2) /(kWidth/2) + .2;
+//
+//        [UIView animateWithDuration:1.0 animations:^{
+//            
+//            for (UIView *v in _rilegoule.contentView.subviews) {
+//                v.alpha = off + 0.3;
+//            }
+//            
+//        }];
 
     } else {
 

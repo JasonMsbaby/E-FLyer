@@ -10,46 +10,53 @@
 #import "ContentView.h"
 #import "EFGood.h"
 
+@interface ImageContentView ()
+@property (nonatomic, strong) UIImageView *picture;
+@property(nonatomic,assign) CGFloat currentWith;
+//@property(nonatomic,strong) UIScrollView *scrollView;
+@end
+
 @implementation ImageContentView
 
-//- (instancetype)initWithFrame:(CGRect)frame {
-//    self = [super initWithFrame:frame];
-//
-//    if (self) {
-//        self.clipsToBounds = YES;
-//
-//        _picture = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight / 1.7)];
-//        _picture.contentMode = UIViewContentModeScaleAspectFill;
-//
-//        [self addSubview:_picture];
-//
-//    }
-//}
-
-- (instancetype)initWithFrame:(CGRect)frame Width:(CGFloat)width model:(EveryDayModel *)model collor:(UIColor *)collor{
-    
+- (instancetype)initWithFrame:(CGRect)frame Width:(CGFloat)width model:(EFGood *)model collor:(UIColor *)collor{
     self = [super initWithFrame:frame];
-    
+    UIImage *img = [UIImage imageWithData:[model.img getData]];
     if (self) {
-
         self.clipsToBounds = YES;
-
-        _picture = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight / 1.7)];
-        _picture.contentMode = UIViewContentModeScaleAspectFill;
-        
-        [self addSubview:_picture];
-        
-//        _contentView = [[ContentView alloc]initWithFrame:CGRectMake(0, _picture.frame.size.height, kWidth, kHeight - _picture.frame.size.height) Width:width model:model collor:collor];
-//        [_contentView sd_setImageWithURL:[NSURL URLWithString:model.coverBlurred] placeholderImage:nil];
-//        [self addSubview:_contentView];
-        
+        _picture = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight/1.7)];
+        self.picture.image =img;
+        //为图片添加捏合手势
+        self.picture.userInteractionEnabled = YES;
+        [self.picture addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchAction:)]];
+        //添加拖拽手势
+//        [self.picture addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)]];
+        self.currentWith = kScreenWidth;
+        [self addSubview:self.picture];
+        //_picture.contentMode = UIViewContentModeScaleAspectFill;
+//        self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight / 1.7)];
+//        self.scrollView.contentSize = img.size;
+//        [self.scrollView addSubview:self.picture];
+//        [self addSubview:self.scrollView];
     }
     return self;
 }
+//捏合手势
+- (void)pinchAction:(UIPinchGestureRecognizer *)gesture{
+    CGFloat scale = gesture.scale;
+    if (gesture.view.frame.size.width < kScreenWidth) {
+        gesture.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight/1.7);
+    }
+    gesture.view.transform = CGAffineTransformScale(gesture.view.transform, scale, scale); //在已缩放大小基础下进行累加变化；区别于：使用 CGAffineTransformMakeScale 方法就是在原大小基础下进行变化
+    gesture.scale = 1.0;
+}
+
+//- (void)panAction:(UIPanGestureRecognizer *)gesture{
+//    NSLog(@"fas");
+//}
 
 
 - (void)imageOffset {
-
+    
     CGRect centerToWindow = [self convertRect:self.bounds toView:nil];
 
     CGFloat centerX = CGRectGetMidX(centerToWindow);
@@ -61,17 +68,8 @@
 
     CGAffineTransform transX = CGAffineTransformMakeTranslation(- offsetDig * kWidth * 0.7, 0);
 
-    //    self.titleLabel.transform = transY;
-    //    self.littleLabel.transform = transY;
 
     self.picture.transform = transX;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
