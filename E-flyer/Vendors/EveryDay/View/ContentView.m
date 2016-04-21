@@ -1,10 +1,5 @@
-//
-//  ContentView.m
-//  开眼
-//
-//  Created by juvham on 16/1/21.
-//  Copyright © 2016年 juvham. All rights reserved.
-//
+
+#import "ToolUtils.h"
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 #import "ContentView.h"
@@ -74,7 +69,7 @@
             make.centerY.equalTo(_img_head);
             make.right.equalTo(_lbl_time);
         }];
-        _lbl_info.font = [UIFont systemFontOfSize:14];
+        _lbl_info.font = [UIFont systemFontOfSize:10];
         _lbl_info.text = @"单价:0.50元 / 剩余:5份";
         _lbl_info.textColor = [UIColor whiteColor];
         //单页标题
@@ -169,7 +164,13 @@
 }
 
 - (void)setData:(EFGood *)model {
-    
+    self.lbl_title.text = model.title;
+    self.lbl_userName.text = model.blongUser.username;
+    self.img_head.image = [UIImage imageWithData:[model.blongUser.headImg getData]];
+    self.lbl_content.text = model.content;
+    self.lbl_question.text = model.question;
+    self.lbl_time.text = [ToolUtils StringWithDate:model.createdAt];
+    self.lbl_info.text = [NSString stringWithFormat:@"单价:%.2lf / 剩余:%ld份",model.price,model.count - model.receivedCount];
 }
 
 
