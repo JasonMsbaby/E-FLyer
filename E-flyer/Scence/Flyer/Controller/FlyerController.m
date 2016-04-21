@@ -36,10 +36,14 @@
     self.headerView.data = [EFCategroy shareInstance].data;
     WeakObj(self);
     self.headerView.block = ^(NSInteger index,EFCategroy *categroy){
-        EveryDayTableViewController *listVC = [[EveryDayTableViewController alloc] init];
+        FlyerNewListController *listVC = [selfWeak.storyboard instantiateViewControllerWithIdentifier:@"FlyerNewListController"];
         listVC.categroy = categroy;
         listVC.hidesBottomBarWhenPushed = YES;
         [selfWeak.navigationController pushViewController:listVC animated:YES];
+//        EveryDayTableViewController *listVC = [[EveryDayTableViewController alloc] init];
+//        listVC.categroy = categroy;
+//        listVC.hidesBottomBarWhenPushed = YES;
+//        [selfWeak.navigationController pushViewController:listVC animated:YES];
     };
     self.data_new = [NSMutableArray array];
     

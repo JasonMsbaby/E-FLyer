@@ -29,11 +29,10 @@
     [self loadTableView];
     [self addMJRefresh];
     [self loadData];
+    [SVProgressHUD showWithStatus:kLoadingMesssage];
 }
 
 - (void)loadTableView{
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
     self.tableView.rowHeight = 100;
     UIView *bottom = [[UIView alloc] initWithFrame:CGRectZero];
     [self.tableView setTableFooterView:bottom];
@@ -43,7 +42,6 @@
  *  加载数据
  */
 - (void)loadData{
-    [SVProgressHUD showWithStatus:kLoadingMesssage];
     self.dataSource = [NSMutableArray array];
     WeakObj(self)
     [EFGood loadDataWithCategroy:self.categroy PageIndex:self.index Block:^(NSArray<EFGood *> *result){

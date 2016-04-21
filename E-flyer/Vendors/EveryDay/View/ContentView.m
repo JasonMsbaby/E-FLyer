@@ -155,6 +155,7 @@
         _btn_Submit.clipsToBounds = YES;
         [_btn_Submit setTitle:@"领取现金" forState:(UIControlStateNormal)];
         _btn_Submit.titleLabel.font = [UIFont systemFontOfSize:12];
+        [_btn_Submit addTarget:self action:@selector(btnSubmitAction) forControlEvents:(UIControlEventTouchUpInside)];
         [_btn_Submit setImage:[[UIImage imageNamed:@"btn_receive"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] forState:(UIControlStateNormal)];
         [_btn_Submit setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
         //装载数据
@@ -171,6 +172,11 @@
     self.lbl_question.text = model.question;
     self.lbl_time.text = [ToolUtils StringWithDate:model.createdAt];
     self.lbl_info.text = [NSString stringWithFormat:@"单价:%.2lf / 剩余:%ld份",model.price,model.count - model.receivedCount];
+}
+
+//点击获取奖励
+- (void)btnSubmitAction{
+    [SVProgressHUD showInfoWithStatus:@"123"];
 }
 
 
