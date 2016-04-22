@@ -5,6 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/26.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "EFReciveOrder.h"
 #import "EFGood.h"
 #import <SVProgressHUD.h>
 #import "EFCity.h"

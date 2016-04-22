@@ -54,6 +54,13 @@
     [self.btnAnswer addTarget:self action:@selector(btnAnswerAction) forControlEvents:(UIControlEventTouchUpInside)];
     self.img.userInteractionEnabled = YES;
     [self.img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)]];
+    if ([self.model.question isEqualToString:@""]) {
+        self.answer.enabled = NO;
+        self.answer.placeholder = @"木有问题，领取奖励即可😊";
+    }else{
+        self.answer.placeholder = @"请输入问题答案🔑";
+        self.answer.enabled = YES;
+    }
     //    WeakObj(self)
     //    [self.model.file getThumbnail:YES width:90/2*3 height:90 withBlock:^(UIImage *image, NSError *error) {
     //        selfWeak.img.image = image;

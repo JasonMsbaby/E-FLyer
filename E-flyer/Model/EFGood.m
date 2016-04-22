@@ -95,8 +95,8 @@
     }
     [SVProgressHUD showWithStatus:@"正在领取奖励..."];
     [EFReciveOrder IsUserHaveReceiveWithGood:good Finish:^(BOOL is) {
-        if (is) {
-            good.receivedCount-= 1;
+        if (!is) {
+            good.receivedCount += 1;
             [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
                     EFUser *currentUser = [EFUser currentUser];
