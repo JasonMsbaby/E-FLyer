@@ -7,7 +7,8 @@
 //
 #import "MeInfoModel.h"
 #import "MeInfoController.h"
-
+#import "PopView.h"
+#import "EYInputPopupView.h"
 @interface MeInfoController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSArray<MeInfoModel *> *dataSource;
@@ -54,5 +55,14 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MeInfoModel *model = self.dataSource[indexPath.section];
+    [EYInputPopupView popViewWithTitle:model.title contentText:model.content type:(EYInputPopupView_Type_single_line_text) cancelBlock:nil confirmBlock:^(UIView *view, NSString *text) {
+        NSLog(@"%@",text);
+    } dismissBlock:nil];
+}
+
+
 
 @end

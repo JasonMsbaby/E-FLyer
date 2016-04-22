@@ -12,6 +12,13 @@
 		6A3513A41CC9261400B6DCEC /* last_number@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3513A31CC9261400B6DCEC /* last_number@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA84EDB1CCA033600417701 /* EFReciveOrder.m */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C361CCA35DD00F4B716 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C261CCA35DD00F4B716 /* EYInputPopupView.m */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C371CCA35DD00F4B716 /* EYPopupView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC9C271CCA35DD00F4B716 /* EYPopupView.bundle */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C381CCA35DD00F4B716 /* EYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C291CCA35DD00F4B716 /* EYPopupView.m */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C391CCA35DD00F4B716 /* EYTagPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C2D1CCA35DD00F4B716 /* EYTagPopupView.m */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C3A1CCA35DD00F4B716 /* EYTextPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C2F1CCA35DD00F4B716 /* EYTextPopupView.m */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C3B1CCA35DD00F4B716 /* EYTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C331CCA35DD00F4B716 /* EYTagView.m */; settings = {ASSET_TAGS = (); }; };
+		6ACC9C3C1CCA35DD00F4B716 /* EYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C351CCA35DD00F4B716 /* EYTextField.m */; settings = {ASSET_TAGS = (); }; };
 		9627194A1C80813B00D11747 /* EFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 962719491C80813B00D11747 /* EFTabBar.m */; };
 		962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0A1C8682A200DCAE4B /* VideoController.m */; };
 		962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0D1C86972300DCAE4B /* VideoPlayController.m */; };
@@ -154,6 +161,21 @@
 		6AA84EDA1CCA033600417701 /* EFReciveOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFReciveOrder.h; sourceTree = "<group>"; };
 		6AA84EDB1CCA033600417701 /* EFReciveOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFReciveOrder.m; sourceTree = "<group>"; };
 		6AABBCFE1CC7DA590001EF94 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		6ACC9C251CCA35DD00F4B716 /* EYInputPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYInputPopupView.h; sourceTree = "<group>"; };
+		6ACC9C261CCA35DD00F4B716 /* EYInputPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYInputPopupView.m; sourceTree = "<group>"; };
+		6ACC9C271CCA35DD00F4B716 /* EYPopupView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EYPopupView.bundle; sourceTree = "<group>"; };
+		6ACC9C281CCA35DD00F4B716 /* EYPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupView.h; sourceTree = "<group>"; };
+		6ACC9C291CCA35DD00F4B716 /* EYPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYPopupView.m; sourceTree = "<group>"; };
+		6ACC9C2A1CCA35DD00F4B716 /* EYPopupViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewHeader.h; sourceTree = "<group>"; };
+		6ACC9C2B1CCA35DD00F4B716 /* EYPopupViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewMacro.h; sourceTree = "<group>"; };
+		6ACC9C2C1CCA35DD00F4B716 /* EYTagPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTagPopupView.h; sourceTree = "<group>"; };
+		6ACC9C2D1CCA35DD00F4B716 /* EYTagPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTagPopupView.m; sourceTree = "<group>"; };
+		6ACC9C2E1CCA35DD00F4B716 /* EYTextPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextPopupView.h; sourceTree = "<group>"; };
+		6ACC9C2F1CCA35DD00F4B716 /* EYTextPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextPopupView.m; sourceTree = "<group>"; };
+		6ACC9C321CCA35DD00F4B716 /* EYTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTagView.h; sourceTree = "<group>"; };
+		6ACC9C331CCA35DD00F4B716 /* EYTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTagView.m; sourceTree = "<group>"; };
+		6ACC9C341CCA35DD00F4B716 /* EYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextField.h; sourceTree = "<group>"; };
+		6ACC9C351CCA35DD00F4B716 /* EYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextField.m; sourceTree = "<group>"; };
 		962719481C80813B00D11747 /* EFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTabBar.h; sourceTree = "<group>"; };
 		962719491C80813B00D11747 /* EFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFTabBar.m; sourceTree = "<group>"; };
 		962BCB091C8682A200DCAE4B /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
@@ -377,6 +399,43 @@
 				BEB5D0E83D49F361AA3BD0D1 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6ACC9C241CCA35DD00F4B716 /* EYPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				6ACC9C251CCA35DD00F4B716 /* EYInputPopupView.h */,
+				6ACC9C261CCA35DD00F4B716 /* EYInputPopupView.m */,
+				6ACC9C271CCA35DD00F4B716 /* EYPopupView.bundle */,
+				6ACC9C281CCA35DD00F4B716 /* EYPopupView.h */,
+				6ACC9C291CCA35DD00F4B716 /* EYPopupView.m */,
+				6ACC9C2A1CCA35DD00F4B716 /* EYPopupViewHeader.h */,
+				6ACC9C2B1CCA35DD00F4B716 /* EYPopupViewMacro.h */,
+				6ACC9C2C1CCA35DD00F4B716 /* EYTagPopupView.h */,
+				6ACC9C2D1CCA35DD00F4B716 /* EYTagPopupView.m */,
+				6ACC9C2E1CCA35DD00F4B716 /* EYTextPopupView.h */,
+				6ACC9C2F1CCA35DD00F4B716 /* EYTextPopupView.m */,
+			);
+			path = EYPopupView;
+			sourceTree = "<group>";
+		};
+		6ACC9C301CCA35DD00F4B716 /* EYTagView */ = {
+			isa = PBXGroup;
+			children = (
+				6ACC9C311CCA35DD00F4B716 /* EYTagView */,
+			);
+			path = EYTagView;
+			sourceTree = "<group>";
+		};
+		6ACC9C311CCA35DD00F4B716 /* EYTagView */ = {
+			isa = PBXGroup;
+			children = (
+				6ACC9C321CCA35DD00F4B716 /* EYTagView.h */,
+				6ACC9C331CCA35DD00F4B716 /* EYTagView.m */,
+				6ACC9C341CCA35DD00F4B716 /* EYTextField.h */,
+				6ACC9C351CCA35DD00F4B716 /* EYTextField.m */,
+			);
+			path = EYTagView;
 			sourceTree = "<group>";
 		};
 		6FA6B4A135B94E3880ACEAB0 /* Frameworks */ = {
@@ -756,6 +815,8 @@
 		965433FF1C803EDA005B8BD1 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				6ACC9C241CCA35DD00F4B716 /* EYPopupView */,
+				6ACC9C301CCA35DD00F4B716 /* EYTagView */,
 				96B937591CC61ECC0043E840 /* EveryDay */,
 				965343BD1CBE03EB00459664 /* BaiduMap */,
 				9642E0A91CBCB97B00EEAC61 /* LrdAlertView */,
@@ -1011,6 +1072,7 @@
 				96A7F85F1C80B94E00412B79 /* index_search@2x.png in Resources */,
 				96EB75F81C859B1300B3658F /* WMPlayer.bundle in Resources */,
 				9642E1171CBD271C00EEAC61 /* icon_nav_quxiao.png in Resources */,
+				6ACC9C371CCA35DD00F4B716 /* EYPopupView.bundle in Resources */,
 				965343DB1CBE05AC00459664 /* mapapi.bundle in Resources */,
 				965433A11C803625005B8BD1 /* LaunchScreen.storyboard in Resources */,
 				9654340B1C804D4C005B8BD1 /* tab_seller@2x.png in Resources */,
@@ -1126,6 +1188,7 @@
 				96B937811CC61ECC0043E840 /* EveryDayTableViewController.m in Sources */,
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
 				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
+				6ACC9C3C1CCA35DD00F4B716 /* EYTextField.m in Sources */,
 				9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */,
 				6A13A5DF1CC931F7002BF3EF /* PopBigImageView.m in Sources */,
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
@@ -1136,14 +1199,19 @@
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
+				6ACC9C381CCA35DD00F4B716 /* EYPopupView.m in Sources */,
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,
 				96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */,
+				6ACC9C391CCA35DD00F4B716 /* EYTagPopupView.m in Sources */,
 				96B937861CC61ECC0043E840 /* CustomView.m in Sources */,
+				6ACC9C361CCA35DD00F4B716 /* EYInputPopupView.m in Sources */,
 				9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */,
 				96C864091C8549AC00365512 /* FlyerRecommendCell.m in Sources */,
 				96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */,
+				6ACC9C3A1CCA35DD00F4B716 /* EYTextPopupView.m in Sources */,
 				6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */,
 				96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */,
+				6ACC9C3B1CCA35DD00F4B716 /* EYTagView.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,
 				96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */,
 				965433961C803625005B8BD1 /* AppDelegate.m in Sources */,
