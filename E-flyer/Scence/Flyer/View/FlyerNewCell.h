@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "EFGood.h"
+typedef void(^ButtonReceiveBlock)(EFGood *good,NSString *answer);
 @interface FlyerNewCell : UITableViewCell
-@property(strong,nonatomic) EFGood *model;
 
+@property(strong,nonatomic) EFGood *model;
+@property(nonatomic,copy) ButtonReceiveBlock block;
 
 @end

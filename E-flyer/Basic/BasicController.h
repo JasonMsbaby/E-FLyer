@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import "Constanst.h"
 #import <Masonry.h>
+#import "UIImageView+EFImageView.h"
 
 @interface BasicController : UIViewController
 @property(strong,nonatomic) EFUser *currentUser;

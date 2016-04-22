@@ -31,6 +31,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadTableView];
+    [self loadData];
+    [self addMJRefresh];
+}
+
+- (void)loadTableView{
     //添加头视图
     self.headerView = [[FlyerHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2+20)];
     self.headerView.data = [EFCategroy shareInstance].data;
@@ -40,20 +46,20 @@
         listVC.categroy = categroy;
         listVC.hidesBottomBarWhenPushed = YES;
         [selfWeak.navigationController pushViewController:listVC animated:YES];
-//        EveryDayTableViewController *listVC = [[EveryDayTableViewController alloc] init];
-//        listVC.categroy = categroy;
-//        listVC.hidesBottomBarWhenPushed = YES;
-//        [selfWeak.navigationController pushViewController:listVC animated:YES];
+        //        EveryDayTableViewController *listVC = [[EveryDayTableViewController alloc] init];
+        //        listVC.categroy = categroy;
+        //        listVC.hidesBottomBarWhenPushed = YES;
+        //        [selfWeak.navigationController pushViewController:listVC animated:YES];
     };
     self.data_new = [NSMutableArray array];
     
     self.tableView.tableHeaderView = self.headerView;
+    self.tableView.rowHeight = 200;
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tableView registerClass:[FlyerRecommendCell class] forCellReuseIdentifier:@"recommendCell"];
     self.index = 1;
-    [self loadData];
-    [self addMJRefresh];
+    
 }
 /*!
  *  加载数据
@@ -113,34 +119,24 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    if (section == 0) {
-//        return 1;
-//    }
     return self.data_new.count;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.section == 0) {
-//        return 150;
-//    }
-    return 100;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.section == 0) {
-//        FlyerRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommendCell"];
-//        [cell layout:self.data_new];
-//        return cell;
-//    }else{
-        FlyerNewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
-        cell.model = self.data_new[indexPath.row];
-        return cell;
-//    }
+
+    FlyerNewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlyerYouLikeCell"];
+    cell.model = self.data_new[indexPath.row];
+    cell.block = ^(EFGood *good,NSString *answer){
+        
+        [EFGood reveiveMoneyWithGood:good Answer:answer FinishBlock:^{
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationLeft)];
+        }];
+    };
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    if (section == 0) {
-//        return @"今日推荐";
-//    }
     return  @"最新上架";
 }
 

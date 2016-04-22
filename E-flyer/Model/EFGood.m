@@ -5,6 +5,8 @@
 //  Created by Jason_Msbaby on 16/4/10.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "EFReciveOrder.h"
+#import "ToolUtils.h"
 #import <BaiduMapAPI_Utils/BMKGeometry.h>
 #import "EFGood.h"
 
@@ -80,8 +82,59 @@
     }];
 }
 
-
-
+//用户领取
++ (void)reveiveMoneyWithGood:(EFGood *)good Answer:(NSString *)answer FinishBlock:(void (^)())block{
+#warning 此处应该先获取最新的商品详情后再进行相应的操作，否则会产生逻辑错误
+    if (good.receivedCount >= good.count) {
+        [SVProgressHUD showErrorWithStatus:@"您来晚了,已经领取光了..."];
+        return;
+    }
+    if (![good.answer isEqualToString:answer]) {
+        [SVProgressHUD showErrorWithStatus:@"答案错误"];
+        return;
+    }
+    [SVProgressHUD showWithStatus:@"正在领取奖励..."];
+    [EFReciveOrder IsUserHaveReceiveWithGood:good Finish:^(BOOL is) {
+        if (is) {
+            good.receivedCount-= 1;
+            [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    EFUser *currentUser = [EFUser currentUser];
+                    currentUser.money += good.price;
+                    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (succeeded) {
+                            
+                            EFReciveOrder *order = [EFReciveOrder object];
+                            order.user = currentUser;
+                            order.good = good;
+                            [order saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                if (succeeded) {
+                                    [SVProgressHUD showSuccessWithStatus:@"成功"];
+                                    if (block != nil) {
+                                        block();
+                                    }
+                                }else{
+                                    [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                                }
+                            }];
+                            
+                            
+                        }else{
+                            [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                        }
+                    }];
+                }else{
+                    [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                }
+            }];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"您已经领取过了"];
+        }
+    }];
+    
+    
+    
+}
 
 
 

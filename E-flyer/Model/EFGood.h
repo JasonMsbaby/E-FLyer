@@ -45,4 +45,7 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 +(void)loadDataWithNewIndex:(NSInteger)index Block:(GoodFinshBlock)block;
 //获取指定用户发布的数据
 + (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block;
+//用户回答问题领取奖励
++ (void)reveiveMoneyWithGood:(EFGood *)good Answer:(NSString *)answer FinishBlock:(void(^)())block;
+
 @end

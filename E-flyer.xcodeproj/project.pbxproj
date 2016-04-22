@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A13A5DC1CC92860002BF3EF /* UIImageView+EFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13A5DB1CC92860002BF3EF /* UIImageView+EFImageView.m */; settings = {ASSET_TAGS = (); }; };
+		6A13A5DF1CC931F7002BF3EF /* PopBigImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */; settings = {ASSET_TAGS = (); }; };
+		6A3513A41CC9261400B6DCEC /* last_number@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3513A31CC9261400B6DCEC /* last_number@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
+		6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA84EDB1CCA033600417701 /* EFReciveOrder.m */; settings = {ASSET_TAGS = (); }; };
 		9627194A1C80813B00D11747 /* EFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 962719491C80813B00D11747 /* EFTabBar.m */; };
 		962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0A1C8682A200DCAE4B /* VideoController.m */; };
 		962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0D1C86972300DCAE4B /* VideoPlayController.m */; };
@@ -141,7 +145,14 @@
 /* Begin PBXFileReference section */
 		34D6CCA0EDCAE98C331D816D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		388D670F6C32EB54EB82B9CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6A13A5DA1CC92860002BF3EF /* UIImageView+EFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EFImageView.h"; sourceTree = "<group>"; };
+		6A13A5DB1CC92860002BF3EF /* UIImageView+EFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EFImageView.m"; sourceTree = "<group>"; };
+		6A13A5DD1CC931F7002BF3EF /* PopBigImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopBigImageView.h; sourceTree = "<group>"; };
+		6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopBigImageView.m; sourceTree = "<group>"; };
+		6A3513A31CC9261400B6DCEC /* last_number@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last_number@2x.png"; sourceTree = "<group>"; };
 		6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_receive@2x.png"; sourceTree = "<group>"; };
+		6AA84EDA1CCA033600417701 /* EFReciveOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFReciveOrder.h; sourceTree = "<group>"; };
+		6AA84EDB1CCA033600417701 /* EFReciveOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFReciveOrder.m; sourceTree = "<group>"; };
 		6AABBCFE1CC7DA590001EF94 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		962719481C80813B00D11747 /* EFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTabBar.h; sourceTree = "<group>"; };
 		962719491C80813B00D11747 /* EFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFTabBar.m; sourceTree = "<group>"; };
@@ -541,6 +552,8 @@
 				96E59EC41C8ECC9500D24F02 /* AVQuery+EFQuery.m */,
 				96EAA8451CBA244E00508683 /* NSTimer+EFTimer.h */,
 				96EAA8461CBA244E00508683 /* NSTimer+EFTimer.m */,
+				6A13A5DA1CC92860002BF3EF /* UIImageView+EFImageView.h */,
+				6A13A5DB1CC92860002BF3EF /* UIImageView+EFImageView.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -562,6 +575,8 @@
 				96EAA84F1CBA49BC00508683 /* EFCity.m */,
 				968B1ABF1CBEA6CB00FDE255 /* EFBMKModel.h */,
 				968B1AC01CBEA6CB00FDE255 /* EFBMKModel.m */,
+				6AA84EDA1CCA033600417701 /* EFReciveOrder.h */,
+				6AA84EDB1CCA033600417701 /* EFReciveOrder.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -609,6 +624,8 @@
 				96C864081C8549AC00365512 /* FlyerRecommendCell.m */,
 				96EB75BD1C85647400B3658F /* FlyerNewCell.h */,
 				96EB75BE1C85647400B3658F /* FlyerNewCell.m */,
+				6A13A5DD1CC931F7002BF3EF /* PopBigImageView.h */,
+				6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -760,6 +777,7 @@
 		965434041C804D4C005B8BD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6A3513A31CC9261400B6DCEC /* last_number@2x.png */,
 				6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */,
 				9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */,
 				963C74721CBC0DEA00FAFB20 /* money60@2x.png */,
@@ -1013,6 +1031,7 @@
 				96A7F7CA1C8099C700412B79 /* tab_add@2x.png in Resources */,
 				968D1A091C8D8DBE00D1BDBC /* meBg@2x.png in Resources */,
 				962FCF2C1C8460D000981B5D /* circle@2x.png in Resources */,
+				6A3513A41CC9261400B6DCEC /* last_number@2x.png in Resources */,
 				96CFD2CC1C8E7138007D10E9 /* money@2x.png in Resources */,
 				96CFD2D81C8E8FF2007D10E9 /* me_setting@2x.png in Resources */,
 				96E59EC21C8EC4A500D24F02 /* demo_meishi.png in Resources */,
@@ -1100,6 +1119,7 @@
 				96B937841CC61ECC0043E840 /* ContentScrollView.m in Sources */,
 				9642E0C31CBCB97B00EEAC61 /* LrdPasswordAlertView.m in Sources */,
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
+				6A13A5DC1CC92860002BF3EF /* UIImageView+EFImageView.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
 				9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */,
@@ -1107,6 +1127,7 @@
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
 				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
 				9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */,
+				6A13A5DF1CC931F7002BF3EF /* PopBigImageView.m in Sources */,
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
 				96B47EF51CC3B35700B8AB08 /* FlyerNewListController.m in Sources */,
 				9642E0C11CBCB97B00EEAC61 /* CameraAlertView.m in Sources */,
@@ -1121,6 +1142,7 @@
 				9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */,
 				96C864091C8549AC00365512 /* FlyerRecommendCell.m in Sources */,
 				96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */,
+				6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */,
 				96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,
 				96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */,

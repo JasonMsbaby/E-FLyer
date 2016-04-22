@@ -7,7 +7,7 @@
 //
 
 #import "ToolUtils.h"
-
+#import "App.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVAssetImageGenerator.h>
 #import <AVFoundation/AVAsset.h>
@@ -160,6 +160,14 @@
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
+}
+
+
++ (NSString *)stringWithError:(NSError *)err{
+    NSString *c = [NSString stringWithFormat:@"code_%ld",err.code];
+    App *app = [App sharedApp];
+    NSString *e = app.kCode[c];
+    return e;
 }
 
 @end

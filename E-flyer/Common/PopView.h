@@ -22,6 +22,5 @@
 
 - (void)show;
 
-- (void)hidden;
 
 @end

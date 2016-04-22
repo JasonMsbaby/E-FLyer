@@ -31,4 +31,6 @@
 //颜色创建图片
 +(UIImage *)createImageWithColor:(UIColor*) color;
 
++ (NSString *)stringWithError:(NSError *)err;
+
 @end

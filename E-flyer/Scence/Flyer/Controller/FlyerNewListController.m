@@ -33,7 +33,9 @@
 }
 
 - (void)loadTableView{
-    self.tableView.rowHeight = 100;
+    self.index = 1;
+    self.dataSource = [NSMutableArray array];
+    self.tableView.rowHeight = 200;
     UIView *bottom = [[UIView alloc] initWithFrame:CGRectZero];
     [self.tableView setTableFooterView:bottom];
 }
@@ -42,7 +44,6 @@
  *  加载数据
  */
 - (void)loadData{
-    self.dataSource = [NSMutableArray array];
     WeakObj(self)
     [EFGood loadDataWithCategroy:self.categroy PageIndex:self.index Block:^(NSArray<EFGood *> *result){
         if (result.count == 0) {
@@ -86,6 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FlyerNewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FlyerListCell"];
     cell.model = self.dataSource[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
