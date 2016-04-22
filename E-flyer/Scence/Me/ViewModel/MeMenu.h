@@ -13,6 +13,7 @@
 @property(strong,nonatomic) NSString *idd;
 @property(strong,nonatomic) NSString *title;
 @property(strong,nonatomic) NSString *img;
+@property(nonatomic,assign) BOOL haveNext;
 
 
 /*!

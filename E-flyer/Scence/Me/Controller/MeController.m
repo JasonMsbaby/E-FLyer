@@ -191,12 +191,15 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:@"meCell"];
     }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     NSArray *arr = _data[self.sortedKeys[indexPath.section]];
     MeMenu *menu = arr[indexPath.row];
     cell.textLabel.text = menu.title;
     cell.imageView.image = [UIImage imageNamed:menu.img];
+    if (menu.haveNext) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return  cell;
 }
 #pragma mark - tableViewDelegate

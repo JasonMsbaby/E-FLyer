@@ -52,15 +52,44 @@
     cell.imageView.image = [UIImage imageNamed:model.img];
     cell.textLabel.text = model.title;
     cell.detailTextLabel.text = model.content;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (model.haveNext) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     MeInfoModel *model = self.dataSource[indexPath.section];
-    [EYInputPopupView popViewWithTitle:model.title contentText:model.content type:(EYInputPopupView_Type_single_line_text) cancelBlock:nil confirmBlock:^(UIView *view, NSString *text) {
-        NSLog(@"%@",text);
-    } dismissBlock:nil];
+    if ([model.idd isEqualToString:@"password"]) {//修改密码
+        
+    }else if ([model.idd isEqualToString:@"barImg"]){//修改店铺图片
+        
+    }else if ([model.idd isEqualToString:@"phone"]){//修改店铺图片
+        
+    }
+    else{
+        int type = EYInputPopupView_Type_single_line_text;
+        if ([model.idd isEqualToString:@"barInfo"]) {
+            type = EYInputPopupView_Type_multi_line;
+        }
+        [EYInputPopupView popViewWithTitle:model.title contentText:model.content type:(type) cancelBlock:nil confirmBlock:^(UIView *view, NSString *text) {
+            [self.currentUser setValue:text forKey:model.idd];
+            [SVProgressHUD showWithStatus:@"正在保存..."];
+            [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [SVProgressHUD showSuccessWithStatus:@"更新数据成功"];
+                    model.content = text;
+                    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+                }else{
+                    [self toastWithError:error];
+                }
+            }];
+        } dismissBlock:nil];
+    }
+    
 }
 
 
