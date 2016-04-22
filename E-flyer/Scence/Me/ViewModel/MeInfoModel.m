@@ -33,17 +33,17 @@ static MeInfoModel *model;
     EFUser *user = [EFUser currentUser];
     //个人中心进入的设置
     NSMutableArray *arr_personInfo = [NSMutableArray array];
-    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"username" Image:@"me_setting" Title:@"修改昵称" Content:user.username HaveNext:NO]];
-    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"phone" Image:@"me_setting" Title:@"绑定手机" Content:user.mobilePhoneNumber HaveNext:YES]];
-    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"password" Image:@"me_setting" Title:@"修改密码" Content:@"******" HaveNext:YES]];
+    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"username" Image:@"menu_person_name" Title:@"修改昵称" Content:user.username HaveNext:NO]];
+    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"phone" Image:@"menu_person_phone" Title:@"绑定手机" Content:user.mobilePhoneNumber HaveNext:YES]];
+    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"password" Image:@"menu_person_pwd" Title:@"修改密码" Content:@"******" HaveNext:YES]];
     [self.source setObject:arr_personInfo forKey:@"personInfo"];
     //店铺信息进入的设置
     NSMutableArray *arr_barInfo = [NSMutableArray array];
-    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barName" Image:@"me_setting" Title:@"店铺名称" Content:user.barName HaveNext:NO]];
-    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barInfo" Image:@"me_setting" Title:@"店铺简介" Content:user.barInfo HaveNext:NO]];
-    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barPhone" Image:@"me_setting" Title:@"店铺电话" Content:user.barPhone HaveNext:NO]];
-    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barAddress" Image:@"me_setting" Title:@"店铺位置" Content:user.barAddress HaveNext:NO]];
-    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barImg" Image:@"me_setting" Title:@"店铺图片" Content:@"修改图片" HaveNext:YES]];
+    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barName" Image:@"menu_bar_name" Title:@"店铺名称" Content:user.barName HaveNext:NO]];
+    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barInfo" Image:@"menu_bar_info" Title:@"店铺简介" Content:user.barInfo HaveNext:NO]];
+    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barPhone" Image:@"menu_bar_phone" Title:@"店铺电话" Content:user.barPhone HaveNext:NO]];
+    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barAddress" Image:@"menu_bar_address" Title:@"店铺位置" Content:user.barAddress HaveNext:NO]];
+    [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barImg" Image:@"menu_bar_img" Title:@"店铺图片" Content:@"修改图片" HaveNext:YES]];
     [self.source setObject:arr_barInfo forKey:@"barInfo"];
     //个人中心进入的设置
 //    NSMutableArray *arr_personInfo = [NSMutableArray array];
