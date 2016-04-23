@@ -10,6 +10,9 @@
 		6A13A5DC1CC92860002BF3EF /* UIImageView+EFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13A5DB1CC92860002BF3EF /* UIImageView+EFImageView.m */; settings = {ASSET_TAGS = (); }; };
 		6A13A5DF1CC931F7002BF3EF /* PopBigImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */; settings = {ASSET_TAGS = (); }; };
 		6A3513A41CC9261400B6DCEC /* last_number@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3513A31CC9261400B6DCEC /* last_number@2x.png */; settings = {ASSET_TAGS = (); }; };
+		6A4E40E81CCB1782002B30F3 /* ImageChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */; settings = {ASSET_TAGS = (); }; };
+		6A4E40ED1CCB17A4002B30F3 /* PassWordChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40EA1CCB17A4002B30F3 /* PassWordChangeController.m */; settings = {ASSET_TAGS = (); }; };
+		6A4E40EE1CCB17A4002B30F3 /* PhoneChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */; settings = {ASSET_TAGS = (); }; };
 		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA84EDB1CCA033600417701 /* EFReciveOrder.m */; settings = {ASSET_TAGS = (); }; };
 		6ACC9C361CCA35DD00F4B716 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C261CCA35DD00F4B716 /* EYInputPopupView.m */; settings = {ASSET_TAGS = (); }; };
@@ -172,6 +175,12 @@
 		6A13A5DD1CC931F7002BF3EF /* PopBigImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopBigImageView.h; sourceTree = "<group>"; };
 		6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopBigImageView.m; sourceTree = "<group>"; };
 		6A3513A31CC9261400B6DCEC /* last_number@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last_number@2x.png"; sourceTree = "<group>"; };
+		6A4E40E61CCB1782002B30F3 /* ImageChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageChangeController.h; sourceTree = "<group>"; };
+		6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageChangeController.m; sourceTree = "<group>"; };
+		6A4E40E91CCB17A4002B30F3 /* PassWordChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordChangeController.h; sourceTree = "<group>"; };
+		6A4E40EA1CCB17A4002B30F3 /* PassWordChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordChangeController.m; sourceTree = "<group>"; };
+		6A4E40EB1CCB17A4002B30F3 /* PhoneChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneChangeController.h; sourceTree = "<group>"; };
+		6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneChangeController.m; sourceTree = "<group>"; };
 		6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_receive@2x.png"; sourceTree = "<group>"; };
 		6AA84EDA1CCA033600417701 /* EFReciveOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFReciveOrder.h; sourceTree = "<group>"; };
 		6AA84EDB1CCA033600417701 /* EFReciveOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFReciveOrder.m; sourceTree = "<group>"; };
@@ -932,6 +941,12 @@
 		96B47EEB1CC34AAE00B8AB08 /* ThirdVC */ = {
 			isa = PBXGroup;
 			children = (
+				6A4E40E91CCB17A4002B30F3 /* PassWordChangeController.h */,
+				6A4E40EA1CCB17A4002B30F3 /* PassWordChangeController.m */,
+				6A4E40EB1CCB17A4002B30F3 /* PhoneChangeController.h */,
+				6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */,
+				6A4E40E61CCB1782002B30F3 /* ImageChangeController.h */,
+				6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */,
 			);
 			path = ThirdVC;
 			sourceTree = "<group>";
@@ -1247,6 +1262,7 @@
 				9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */,
 				96B937811CC61ECC0043E840 /* EveryDayTableViewController.m in Sources */,
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
+				6A4E40EE1CCB17A4002B30F3 /* PhoneChangeController.m in Sources */,
 				96EAA84A1CBA46B700508683 /* EFGood.m in Sources */,
 				6ACC9C3C1CCA35DD00F4B716 /* EYTextField.m in Sources */,
 				9642E0C51CBCB97B00EEAC61 /* WTReTextField.m in Sources */,
@@ -1259,6 +1275,7 @@
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
+				6A4E40E81CCB1782002B30F3 /* ImageChangeController.m in Sources */,
 				6ACC9C381CCA35DD00F4B716 /* EYPopupView.m in Sources */,
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,
 				96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */,
@@ -1279,6 +1296,7 @@
 				9642E0C01CBCB97B00EEAC61 /* LrdTableViewCell.m in Sources */,
 				96EB75F91C859B1300B3658F /* WMPlayer.m in Sources */,
 				96E59EBD1C8EB60F00D24F02 /* EFUser.m in Sources */,
+				6A4E40ED1CCB17A4002B30F3 /* PassWordChangeController.m in Sources */,
 				96E59EC51C8ECC9500D24F02 /* AVQuery+EFQuery.m in Sources */,
 				96E390461C81CB2400107FB7 /* SearchController.m in Sources */,
 				9642E0C81CBD01F500EEAC61 /* LrdDateModel.m in Sources */,

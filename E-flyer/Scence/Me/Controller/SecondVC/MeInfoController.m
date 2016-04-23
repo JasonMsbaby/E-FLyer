@@ -8,6 +8,9 @@
 #import "MeInfoModel.h"
 #import "MeInfoController.h"
 #import "PopView.h"
+#import "PassWordChangeController.h"
+#import "PhoneChangeController.h"
+#import "ImageChangeController.h"
 #import "EYInputPopupView.h"
 @interface MeInfoController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -64,10 +67,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     MeInfoModel *model = self.dataSource[indexPath.section];
     if ([model.idd isEqualToString:@"password"]) {//修改密码
+        PassWordChangeController *pwdVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PassWordChangeController"];
+        pwdVC.title = @"修改密码";
+        [self.navigationController pushViewController:pwdVC animated:YES];
         
     }else if ([model.idd isEqualToString:@"barImg"]){//修改店铺图片
+        ImageChangeController *imgVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageChangeController"];
+        imgVC.title = @"修改店铺图片";
+        [self.navigationController pushViewController:imgVC animated:YES];
         
-    }else if ([model.idd isEqualToString:@"phone"]){//修改店铺图片
+    }else if ([model.idd isEqualToString:@"phone"]){
+        PhoneChangeController *phoneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneChangeController"];
+        phoneVC.title = @"修改手机号";
+        [self.navigationController pushViewController:phoneVC animated:YES];
         
     }
     else{
