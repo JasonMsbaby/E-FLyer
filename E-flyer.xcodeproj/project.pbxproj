@@ -13,6 +13,10 @@
 		6A4E40E81CCB1782002B30F3 /* ImageChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40ED1CCB17A4002B30F3 /* PassWordChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40EA1CCB17A4002B30F3 /* PassWordChangeController.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40EE1CCB17A4002B30F3 /* PhoneChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */; settings = {ASSET_TAGS = (); }; };
+		6A4E40F21CCB4CDF002B30F3 /* UserRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F11CCB4CDF002B30F3 /* UserRecordController.m */; settings = {ASSET_TAGS = (); }; };
+		6A4E40F51CCB5208002B30F3 /* UserRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F41CCB5208002B30F3 /* UserRecordCell.m */; settings = {ASSET_TAGS = (); }; };
+		6A4E40F81CCB5D83002B30F3 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F71CCB5D83002B30F3 /* AccountController.m */; settings = {ASSET_TAGS = (); }; };
+		6A4E40FB1CCB68D1002B30F3 /* AcountRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */; settings = {ASSET_TAGS = (); }; };
 		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA84EDB1CCA033600417701 /* EFReciveOrder.m */; settings = {ASSET_TAGS = (); }; };
 		6ACC9C361CCA35DD00F4B716 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9C261CCA35DD00F4B716 /* EYInputPopupView.m */; settings = {ASSET_TAGS = (); }; };
@@ -181,6 +185,14 @@
 		6A4E40EA1CCB17A4002B30F3 /* PassWordChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordChangeController.m; sourceTree = "<group>"; };
 		6A4E40EB1CCB17A4002B30F3 /* PhoneChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneChangeController.h; sourceTree = "<group>"; };
 		6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneChangeController.m; sourceTree = "<group>"; };
+		6A4E40F01CCB4CDF002B30F3 /* UserRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordController.h; sourceTree = "<group>"; };
+		6A4E40F11CCB4CDF002B30F3 /* UserRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRecordController.m; sourceTree = "<group>"; };
+		6A4E40F31CCB5208002B30F3 /* UserRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordCell.h; sourceTree = "<group>"; };
+		6A4E40F41CCB5208002B30F3 /* UserRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRecordCell.m; sourceTree = "<group>"; };
+		6A4E40F61CCB5D83002B30F3 /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountController.h; sourceTree = "<group>"; };
+		6A4E40F71CCB5D83002B30F3 /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountController.m; sourceTree = "<group>"; };
+		6A4E40F91CCB68D1002B30F3 /* AcountRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcountRecordCell.h; sourceTree = "<group>"; };
+		6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcountRecordCell.m; sourceTree = "<group>"; };
 		6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_receive@2x.png"; sourceTree = "<group>"; };
 		6AA84EDA1CCA033600417701 /* EFReciveOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFReciveOrder.h; sourceTree = "<group>"; };
 		6AA84EDB1CCA033600417701 /* EFReciveOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFReciveOrder.m; sourceTree = "<group>"; };
@@ -791,6 +803,10 @@
 			children = (
 				96B47EF01CC3668C00B8AB08 /* GoodsListCell.h */,
 				96B47EF11CC3668C00B8AB08 /* GoodsListCell.m */,
+				6A4E40F31CCB5208002B30F3 /* UserRecordCell.h */,
+				6A4E40F41CCB5208002B30F3 /* UserRecordCell.m */,
+				6A4E40F91CCB68D1002B30F3 /* AcountRecordCell.h */,
+				6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -934,6 +950,10 @@
 				96B47EEA1CC34AAE00B8AB08 /* MeInfoController.m */,
 				96B47EED1CC34B1000B8AB08 /* GoodsMangerController.h */,
 				96B47EEE1CC34B1000B8AB08 /* GoodsMangerController.m */,
+				6A4E40F01CCB4CDF002B30F3 /* UserRecordController.h */,
+				6A4E40F11CCB4CDF002B30F3 /* UserRecordController.m */,
+				6A4E40F61CCB5D83002B30F3 /* AccountController.h */,
+				6A4E40F71CCB5D83002B30F3 /* AccountController.m */,
 			);
 			path = SecondVC;
 			sourceTree = "<group>";
@@ -1254,7 +1274,9 @@
 			files = (
 				9627194A1C80813B00D11747 /* EFTabBar.m in Sources */,
 				96B937841CC61ECC0043E840 /* ContentScrollView.m in Sources */,
+				6A4E40FB1CCB68D1002B30F3 /* AcountRecordCell.m in Sources */,
 				9642E0C31CBCB97B00EEAC61 /* LrdPasswordAlertView.m in Sources */,
+				6A4E40F21CCB4CDF002B30F3 /* UserRecordController.m in Sources */,
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
 				6A13A5DC1CC92860002BF3EF /* UIImageView+EFImageView.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
@@ -1272,6 +1294,7 @@
 				9642E0C11CBCB97B00EEAC61 /* CameraAlertView.m in Sources */,
 				96B937871CC61ECC0043E840 /* EveryDayTableViewCell.m in Sources */,
 				96B47EF21CC3668C00B8AB08 /* GoodsListCell.m in Sources */,
+				6A4E40F51CCB5208002B30F3 /* UserRecordCell.m in Sources */,
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
@@ -1305,6 +1328,7 @@
 				965433931C803625005B8BD1 /* main.m in Sources */,
 				96A7F8651C80C5C200412B79 /* BasicController.m in Sources */,
 				96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */,
+				6A4E40F81CCB5D83002B30F3 /* AccountController.m in Sources */,
 				96EAA8501CBA49BC00508683 /* EFCity.m in Sources */,
 				96C864061C85330000365512 /* UIView+EFView.m in Sources */,
 				96B937851CC61ECC0043E840 /* ContentView.m in Sources */,

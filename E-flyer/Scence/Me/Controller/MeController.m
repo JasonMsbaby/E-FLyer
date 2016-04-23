@@ -13,6 +13,9 @@
 #import "SearchController.h"
 #import "MeMenu.h"
 #import "LoginController.h"
+#import "UserRecordController.h"
+#import "AccountController.h"
+
 @interface MeController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *Header;
@@ -223,7 +226,16 @@
         GoodsMangerController *goodListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GoodsMangerController"];
         goodListVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:goodListVC animated:YES];
-    }else{
+    }else if([menu.idd isEqualToString:@"userInfo"]){
+        UserRecordController *userVC = [self.storyboard instantiateViewControllerWithIdentifier:@"UserRecordController"];
+        userVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:userVC animated:YES];
+    }else if([menu.idd isEqualToString:@"acountInfo"]){
+        AccountController *accountVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountController"];
+        accountVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:accountVC animated:YES];
+    }
+    else{
         MeInfoController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MeInfoController"];
         infoVC.hidesBottomBarWhenPushed = YES;
         infoVC.menu = menu;

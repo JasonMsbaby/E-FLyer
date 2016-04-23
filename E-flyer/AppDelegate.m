@@ -68,6 +68,7 @@
 - (void)loading{
     [SVProgressHUD setDefaultMaskType:(SVProgressHUDMaskTypeGradient)];
     [SVProgressHUD setMinimumDismissTimeInterval:1];
+    
     dispatch_queue_t queue = dispatch_queue_create("queue.init", DISPATCH_QUEUE_CONCURRENT);
     dispatch_sync(queue, ^{
         [[EFCrowd shareInstance] initFromRemote];
