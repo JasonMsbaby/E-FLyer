@@ -17,6 +17,7 @@
 		6A4E40F51CCB5208002B30F3 /* UserRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F41CCB5208002B30F3 /* UserRecordCell.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40F81CCB5D83002B30F3 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F71CCB5D83002B30F3 /* AccountController.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40FB1CCB68D1002B30F3 /* AcountRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */; settings = {ASSET_TAGS = (); }; };
+		6A532AFA1CCD24C600DFDE1C /* PayInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A532AF91CCD24C600DFDE1C /* PayInController.m */; settings = {ASSET_TAGS = (); }; };
 		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A9DBE651CCCEDD400A4E242 /* barImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9DBE641CCCEDD400A4E242 /* barImg@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A9DBE681CCD06D000A4E242 /* EFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DBE671CCD06D000A4E242 /* EFLog.m */; settings = {ASSET_TAGS = (); }; };
@@ -199,6 +200,8 @@
 		6A4E40F71CCB5D83002B30F3 /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountController.m; sourceTree = "<group>"; };
 		6A4E40F91CCB68D1002B30F3 /* AcountRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcountRecordCell.h; sourceTree = "<group>"; };
 		6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcountRecordCell.m; sourceTree = "<group>"; };
+		6A532AF81CCD24C600DFDE1C /* PayInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInController.h; sourceTree = "<group>"; };
+		6A532AF91CCD24C600DFDE1C /* PayInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInController.m; sourceTree = "<group>"; };
 		6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_receive@2x.png"; sourceTree = "<group>"; };
 		6A9DBE641CCCEDD400A4E242 /* barImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barImg@2x.png"; sourceTree = "<group>"; };
 		6A9DBE661CCD06D000A4E242 /* EFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLog.h; sourceTree = "<group>"; };
@@ -987,6 +990,8 @@
 				6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */,
 				6A4E40E61CCB1782002B30F3 /* ImageChangeController.h */,
 				6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */,
+				6A532AF81CCD24C600DFDE1C /* PayInController.h */,
+				6A532AF91CCD24C600DFDE1C /* PayInController.m */,
 			);
 			path = ThirdVC;
 			sourceTree = "<group>";
@@ -1336,6 +1341,7 @@
 				96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */,
 				6ACC9C3A1CCA35DD00F4B716 /* EYTextPopupView.m in Sources */,
 				6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */,
+				6A532AFA1CCD24C600DFDE1C /* PayInController.m in Sources */,
 				96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */,
 				6ACC9C3B1CCA35DD00F4B716 /* EYTagView.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,

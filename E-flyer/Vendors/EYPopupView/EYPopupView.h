@@ -12,6 +12,7 @@
 
 typedef enum{
     EYInputPopupView_Type_single_line_text,
+    EYInputPopupView_Type_single_line_number,
     EYInputPopupView_Type_multi_line,
 }EYInputPopupView_Type;
 

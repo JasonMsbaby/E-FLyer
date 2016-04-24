@@ -42,8 +42,8 @@
 + (void)popViewWithTitle:(NSString *)title
              contentText:(NSString *)content
                     type:(EYInputPopupView_Type)type
-               cancelBlock:(dispatch_block_t)cancelBlock
-              confirmBlock:(clickBlock)confirmBlock
+             cancelBlock:(dispatch_block_t)cancelBlock
+            confirmBlock:(clickBlock)confirmBlock
             dismissBlock:(dispatch_block_t)dismissBlock
 {
     EYInputPopupView* popView=[EYInputPopupView new];
@@ -52,7 +52,7 @@
     popView.cancelBlock=cancelBlock;
     popView.confirmBlock=confirmBlock;
     popView.dismissBlock=dismissBlock;
-
+    
     popView.layer.cornerRadius = 5.0;
     popView.backgroundColor = [UIColor whiteColor];
     popView.lbTitle = [[UILabel alloc] initWithFrame:CGRectMake((kAlertWidth - kTitleWidth) * 0.5, kTitleTopMargin, kTitleWidth, kTitleHeight)];
@@ -78,6 +78,21 @@
             popView.tfContent.text = content;
         }
             break;
+        case EYInputPopupView_Type_single_line_number:
+        {
+            popView.tfContent = [[EYTextField alloc] initWithFrame:CGRectMake((kAlertWidth - kContentWidth) * 0.5, CGRectGetMaxY(popView.lbTitle.frame)+kContentTopMargin, kContentWidth, kContentMinHeight)];
+            popView.tfContent.keyboardType = UIKeyboardTypeNumberPad;
+            popView.tfContent.delegate=popView;
+            popView.tfContent.layer.cornerRadius=3;
+            popView.tfContent.layer.borderColor=COLORRGB(0xaeeeeee).CGColor;
+            popView.tfContent.layer.borderWidth=0.5;
+            popView.tfContent.textAlignment = NSTextAlignmentLeft;
+            popView.tfContent.textColor = [UIColor colorWithRed:127.0/255.0 green:127.0/255.0 blue:127.0/255.0 alpha:1];
+            popView.tfContent.font = [UIFont systemFontOfSize:15.0f];
+            popView.tfContent.backgroundColor=[UIColor clearColor];
+            [popView addSubview:popView.tfContent];
+            popView.tfContent.text = content;
+        }break;
         case EYInputPopupView_Type_multi_line:
         {
             popView.tvContent = [[UITextView alloc] initWithFrame:CGRectMake((kAlertWidth - kContentWidth) * 0.5, CGRectGetMaxY(popView.lbTitle.frame)+kContentTopMargin, kContentWidth, kContentMinHeight)];
@@ -228,9 +243,9 @@
     [UIView animateWithDuration:0.35f delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.transform = CGAffineTransformMakeRotation(0);
         self.frame  = CGRectMake((CGRectGetWidth(topVC.view.bounds) - kAlertWidth) * 0.5,
-                                              (CGRectGetHeight(topVC.view.bounds) - self.frame.size.height) * 0.5,
-                                              self.frame.size.width,
-                                              self.frame.size.height);
+                                 (CGRectGetHeight(topVC.view.bounds) - self.frame.size.height) * 0.5,
+                                 self.frame.size.width,
+                                 self.frame.size.height);
     } completion:^(BOOL finished) {
     }];
     [super willMoveToSuperview:newSuperview];
@@ -276,7 +291,7 @@
         {
             CGRect frame=self.frame;
             frame.size.height=kTitleTopMargin+kTitleHeight+kContentTopMargin+kContentBottomMargin+kButtonHeight+kButtonBottomMargin
-                    +self.tfContent.frame.size.height;
+            +self.tfContent.frame.size.height;
             frame.size.width=kAlertWidth;
             self.frame=frame;
         }
@@ -310,10 +325,10 @@
         default:
             break;
     }
- 
+    
     
 }
-#pragma mark UITextView & 
+#pragma mark UITextView &
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     [self slipView:YES offset:80];
 }
@@ -352,7 +367,7 @@
         } completion:^(BOOL finished) {
         }];
     }
-   
+    
 }
 
 @end

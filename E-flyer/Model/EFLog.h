@@ -15,9 +15,13 @@ typedef NS_ENUM(NSInteger,EFLogType){
 };
 @interface EFLog : BasicModel
 @property(nonatomic,strong) EFUser *user;
-@property(nonatomic,assign) EFLogType type;
+@property(nonatomic,assign) EFLogType type;//类型
+@property(nonatomic,strong) NSString *source;//渠道
 @property(nonatomic,assign) CGFloat money;
 @property(nonatomic,strong) EFGood *good;
+
++ (void)saveLogWithType:(EFLogType)type Source:(NSString *)source Money:(CGFloat)money Good:(EFGood *)good;
++ (void)saveLogWithType:(EFLogType)type Source:(NSString *)source Money:(CGFloat)money Good:(EFGood *)good Finish:(void(^)(BOOL success))finish;
 
 //根据当前登录的用户获取日志表
 + (void)LogWithBlock:(void(^)(NSArray<EFLog *>*))block;

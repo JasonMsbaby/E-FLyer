@@ -207,12 +207,8 @@
                 [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
                         [SVProgressHUD showInfoWithStatus:@"发布成功"];
-                        EFLog *log = [EFLog object];
-                        log.user = self.currentUser;
-                        log.money = [self.subMoney.text floatValue];
-                        log.type = EFLogTypePublish;
-                        log.good = self.good;
-                        [log saveInBackground];
+                        
+                        [EFLog saveLogWithType:(EFLogTypePublish) Source:self.txt_title.text Money:[self.subMoney.text floatValue] Good:self.good];
                         [selfWeak dismissViewControllerAnimated:YES completion:nil];
                     }else{
                         [self toastWithError:error];
