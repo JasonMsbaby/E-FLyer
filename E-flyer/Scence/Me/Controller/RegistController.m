@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwd1;
 @property (weak, nonatomic) IBOutlet UITextField *pwd2;
 @property (weak, nonatomic) IBOutlet UITextField *txt_valideCode;
+@property (weak, nonatomic) IBOutlet UILabel *navTitle;
 
 @property(strong,nonatomic) NSTimer *timer;
 @property(assign,nonatomic) NSInteger time_span;
@@ -24,6 +25,17 @@
 @end
 
 @implementation RegistController
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.RegistControllerType == RegistControllerTypeRegist) {
+        self.navTitle.text = @"注册";
+        [self.btn_regist setTitle:@"立即注册" forState:(UIControlStateNormal)];
+    }else{
+        self.navTitle.text = @"找回密码";
+        [self.btn_regist setTitle:@"立即找回" forState:(UIControlStateNormal)];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,14 +60,25 @@
  */
 - (IBAction)btn_sendValideCode:(id)sender {
     if (self.userName.text != nil) {
-        [AVOSCloud requestSmsCodeWithPhoneNumber:self.userName.text callback:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                [SVProgressHUD showInfoWithStatus:@"发送验证码成功,请耐心等待"];
-                [self.timer resume];
-            }else{
-                [self toastWithError:error];
-            }
-        }];
+        if (self.RegistControllerType == RegistControllerTypeRegist) {
+            [AVOSCloud requestSmsCodeWithPhoneNumber:self.userName.text callback:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [SVProgressHUD showInfoWithStatus:@"发送验证码成功,请耐心等待"];
+                    [self.timer resume];
+                }else{
+                    [self toastWithError:error];
+                }
+            }];
+        }else{
+            [AVUser requestPasswordResetWithPhoneNumber:self.userName.text block:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [SVProgressHUD showInfoWithStatus:@"发送验证码成功,请耐心等待"];
+                    [self.timer resume];
+                }else{
+                    [self toastWithError:error];
+                }
+            }];
+        }
     }else{
         [SVProgressHUD showErrorWithStatus:@"请填写手机号!"];
     }
@@ -92,14 +115,43 @@
  */
 - (IBAction)regist:(id)sender {
     if ([self.userName.text isEqualToString:@""]) {
-        [SVProgressHUD showInfoWithStatus:@"用户名不能为空"];
+        [SVProgressHUD showInfoWithStatus:@"手机号不能为空"];
+        return;
+    }
+    if ([self.pwd1.text isEqualToString:@""] || [self.pwd2.text isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
         return;
     }
     if (![self.pwd1.text isEqualToString:self.pwd2.text]) {
         [SVProgressHUD showInfoWithStatus:@"两次输入的密码不一致"];
         return;
     }
+    if([self.txt_valideCode.text isEqualToString:@""]){
+        [SVProgressHUD showErrorWithStatus:@"验证码不能为空"];
+        return;
+    }
     
+    if (self.RegistControllerType == RegistControllerTypeRegist) {
+        [self regist];
+    }else{
+        [self findPwd];
+    }
+    
+}
+//找回密码操作
+- (void)findPwd{
+    [AVUser resetPasswordWithSmsCode:self.txt_valideCode.text newPassword:self.pwd1.text block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [SVProgressHUD showSuccessWithStatus:@"密码找回成功,请登录"];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self toastWithError:error];
+        }
+    }];
+}
+
+//注册操作
+- (void)regist{
     WeakObj(self)
     [self registWithRoleWithBlock:^(int type,EFCrowd *crowd) {
         if (type != -1) {
@@ -134,8 +186,8 @@
             }];
         }
     }];
+    
 }
-
 
 
 /*!

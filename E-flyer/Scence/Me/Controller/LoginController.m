@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "RegistController.h"
 #import "LoginController.h"
 
 
@@ -43,8 +43,14 @@
 - (IBAction)winxinLoginAction:(id)sender {
 }
 - (IBAction)forgetPwdAction:(id)sender {
+    RegistController *findPwdVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RegistController"];
+    findPwdVC.RegistControllerType = RegistControllerTypeForGetPwd;
+    [self presentViewController:findPwdVC animated:YES completion:nil];
 }
 - (IBAction)registAction:(id)sender {
+    RegistController *registVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RegistController"];
+    registVC.RegistControllerType = RegistControllerTypeRegist;
+    [self presentViewController:registVC animated:YES completion:nil];
 }
 - (IBAction)loginAction:(id)sender {
     [SVProgressHUD show];

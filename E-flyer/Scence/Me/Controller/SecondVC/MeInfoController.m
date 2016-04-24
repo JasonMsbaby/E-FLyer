@@ -76,13 +76,13 @@
         imgVC.title = @"修改店铺图片";
         [self.navigationController pushViewController:imgVC animated:YES];
         
-    }else if ([model.idd isEqualToString:@"phone"]){
+    }else if ([model.idd isEqualToString:@"phone"]){//修改手机号
         PhoneChangeController *phoneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneChangeController"];
         phoneVC.title = @"修改手机号";
         [self.navigationController pushViewController:phoneVC animated:YES];
         
     }
-    else{
+    else{//调用通用修改的弹出对话框修改简单基本信息
         int type = EYInputPopupView_Type_single_line_text;
         if ([model.idd isEqualToString:@"barInfo"]) {
             type = EYInputPopupView_Type_multi_line;

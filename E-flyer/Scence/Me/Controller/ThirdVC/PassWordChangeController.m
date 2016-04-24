@@ -5,7 +5,7 @@
 //  Created by 苗爽 on 16/4/23.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "LoginController.h"
 #import "PassWordChangeController.h"
 
 @interface PassWordChangeController ()
@@ -35,7 +35,11 @@
     [SVProgressHUD showWithStatus:@"正在修改..."];
     [self.currentUser updatePassword:self.oldPassWord.text newPassword:self.passWord1.text block:^(id object, NSError *error) {
         if (!error) {
-            [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            [SVProgressHUD showSuccessWithStatus:@"修改成功,请重新登录"];
+            [EFUser logOut];//修改成功 注销登录  调回登录页面
+            LoginController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"];
+            loginController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:loginController animated:YES];
         }else{
             [self toastWithError:error];
         }

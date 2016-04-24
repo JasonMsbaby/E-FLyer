@@ -2129,20 +2129,6 @@
                                     <constraint firstAttribute="height" constant="1" id="kLn-M8-xDw"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-nj-QgP">
-                                <rect key="frame" x="20" y="473" width="280" height="45"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="xNI-wc-w1b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="  微信登录" image="weixin.png">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="winxinLoginAction:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="g4U-GD-ck9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有账号?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rs-rj-KUB">
                                 <rect key="frame" x="10" y="473" width="106.5" height="16"/>
                                 <animations/>
@@ -2159,22 +2145,36 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-sS-vXZ">
-                                <rect key="frame" x="119.5" y="467" width="52" height="28"/>
+                                <rect key="frame" x="119" y="467" width="52" height="28"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="立即注册"/>
                                 <connections>
                                     <action selector="registAction:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="435-Zz-87C"/>
-                                    <segue destination="bNb-ir-oHN" kind="presentation" id="CzP-Vx-o5e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-ZK-PMV">
-                                <rect key="frame" x="181.5" y="467" width="95" height="28"/>
+                                <rect key="frame" x="181" y="467" width="95" height="28"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="不想注册,再看看"/>
                                 <connections>
                                     <action selector="back:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="zCJ-4V-jOr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-nj-QgP">
+                                <rect key="frame" x="20" y="513" width="280" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="xNI-wc-w1b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="  微信登录" image="weixin.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="winxinLoginAction:" destination="EEq-Sq-iY1" eventType="touchUpInside" id="g4U-GD-ck9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2186,6 +2186,7 @@
                             <constraint firstItem="zRP-aC-bQV" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" id="6k6-oJ-444"/>
                             <constraint firstItem="zRP-aC-bQV" firstAttribute="top" secondItem="coF-Af-xrH" secondAttribute="bottom" constant="-20" id="8P9-UG-nu9"/>
                             <constraint firstItem="Cw3-ZK-PMV" firstAttribute="leading" secondItem="5Ra-sS-vXZ" secondAttribute="trailing" constant="10" id="AzM-jj-NPL"/>
+                            <constraint firstAttribute="bottom" secondItem="p7M-nj-QgP" secondAttribute="bottom" constant="10" id="BUS-gJ-kEk"/>
                             <constraint firstItem="MK3-M6-iqf" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" constant="20" id="CGs-Zl-XF5"/>
                             <constraint firstItem="5Ra-sS-vXZ" firstAttribute="centerY" secondItem="2Rs-rj-KUB" secondAttribute="centerY" id="FUV-NJ-VCG"/>
                             <constraint firstItem="Cw3-ZK-PMV" firstAttribute="top" secondItem="5Ra-sS-vXZ" secondAttribute="top" id="FvB-fs-4en"/>
@@ -2205,6 +2206,7 @@
                             <constraint firstAttribute="trailing" secondItem="neQ-XZ-1Cq" secondAttribute="trailing" constant="20" id="b2o-ue-MHs"/>
                             <constraint firstItem="p7M-nj-QgP" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" constant="20" id="bp7-th-4v3"/>
                             <constraint firstItem="5Ra-sS-vXZ" firstAttribute="leading" secondItem="2Rs-rj-KUB" secondAttribute="trailing" constant="10" id="fb5-4w-Q88"/>
+                            <constraint firstItem="2Rs-rj-KUB" firstAttribute="top" secondItem="0Vx-Lk-BDu" secondAttribute="bottom" constant="20" id="gHj-Pu-obS"/>
                             <constraint firstAttribute="trailing" secondItem="MK3-M6-iqf" secondAttribute="trailing" constant="20" id="gRU-uE-qMf"/>
                             <constraint firstItem="Cw3-ZK-PMV" firstAttribute="height" secondItem="5Ra-sS-vXZ" secondAttribute="height" id="hpx-7h-vMQ"/>
                             <constraint firstItem="0Vx-Lk-BDu" firstAttribute="top" secondItem="Yea-CO-gmQ" secondAttribute="bottom" constant="10" id="htN-MN-8tr"/>
@@ -2213,6 +2215,7 @@
                             <constraint firstAttribute="trailing" secondItem="zRP-aC-bQV" secondAttribute="trailing" id="sDF-Sr-19w"/>
                             <constraint firstItem="p7M-nj-QgP" firstAttribute="top" secondItem="0Vx-Lk-BDu" secondAttribute="bottom" constant="20" id="tH3-zZ-4zA"/>
                             <constraint firstItem="2Rs-rj-KUB" firstAttribute="centerX" secondItem="ufg-Bn-hFs" secondAttribute="centerX" id="u3M-0a-ptI"/>
+                            <constraint firstItem="p7M-nj-QgP" firstAttribute="top" secondItem="Cw3-ZK-PMV" secondAttribute="bottom" constant="10" id="wF3-1w-6gd"/>
                             <constraint firstItem="neQ-XZ-1Cq" firstAttribute="leading" secondItem="ufg-Bn-hFs" secondAttribute="leading" constant="20" id="xzm-4f-UEy"/>
                             <constraint firstItem="Yea-CO-gmQ" firstAttribute="top" secondItem="MK3-M6-iqf" secondAttribute="bottom" constant="20" id="y1r-th-4uJ"/>
                             <constraint firstItem="p7M-nj-QgP" firstAttribute="centerX" secondItem="ufg-Bn-hFs" secondAttribute="centerX" id="z4o-dm-Qvc"/>
@@ -2223,7 +2226,10 @@
                                 <exclude reference="u3M-0a-ptI"/>
                                 <exclude reference="FUV-NJ-VCG"/>
                                 <exclude reference="fb5-4w-Q88"/>
+                                <exclude reference="tH3-zZ-4zA"/>
+                                <exclude reference="wF3-1w-6gd"/>
                                 <exclude reference="He1-NS-Ygr"/>
+                                <exclude reference="NeF-eK-1IZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -2233,6 +2239,7 @@
                         <outlet property="password" destination="vMh-qk-pK8" id="G7l-mh-LtW"/>
                         <outlet property="phone" destination="OIX-Eb-rwe" id="d8M-Up-wyH"/>
                         <outlet property="weixinLogin" destination="p7M-nj-QgP" id="LMj-Sd-mhh"/>
+                        <segue destination="bNb-ir-oHN" kind="push" id="nOe-ZG-2g3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mM-gn-R5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2266,8 +2273,8 @@
                                             <action selector="close:" destination="bNb-ir-oHN" eventType="touchUpInside" id="JIh-L5-R21"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册账户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYL-lH-f1z">
-                                        <rect key="frame" x="126" y="33.5" width="68" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册账户或者是忘记密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYL-lH-f1z">
+                                        <rect key="frame" x="66" y="34" width="187" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2291,10 +2298,10 @@
                                 </variation>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hle-f2-ZXk">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vg-Ww-1C2">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQb-LC-3Jr">
                                                 <rect key="frame" x="20" y="20" width="280" height="45"/>
@@ -2443,7 +2450,7 @@
                                             <constraint firstItem="qHc-2b-KN7" firstAttribute="height" secondItem="EiY-GA-n3V" secondAttribute="height" id="jbo-LT-LNc"/>
                                             <constraint firstAttribute="trailing" secondItem="JbR-zU-hlD" secondAttribute="trailing" constant="20" id="lyB-uj-OAm"/>
                                             <constraint firstItem="JbR-zU-hlD" firstAttribute="leading" secondItem="6Vg-Ww-1C2" secondAttribute="leading" constant="20" id="oJc-Qn-3UP"/>
-                                            <constraint firstAttribute="height" constant="800" id="opS-PK-1Fo"/>
+                                            <constraint firstAttribute="height" constant="600" id="opS-PK-1Fo"/>
                                             <constraint firstItem="66N-4g-T2L" firstAttribute="leading" secondItem="6Vg-Ww-1C2" secondAttribute="leading" constant="20" id="pNS-Tw-X3M"/>
                                             <constraint firstAttribute="trailing" secondItem="66N-4g-T2L" secondAttribute="trailing" constant="20" id="qnK-lT-j5U"/>
                                             <constraint firstItem="66N-4g-T2L" firstAttribute="top" secondItem="JbR-zU-hlD" secondAttribute="bottom" constant="10" id="qpN-ZI-8eF"/>
@@ -2489,9 +2496,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="inm-fa-47n"/>
                     <connections>
                         <outlet property="btn_regist" destination="rfB-Rp-DZD" id="x0R-9m-OpV"/>
                         <outlet property="btn_valid" destination="qHc-2b-KN7" id="ZKf-MM-vcg"/>
+                        <outlet property="navTitle" destination="LYL-lH-f1z" id="4q2-Iy-CTh"/>
                         <outlet property="pwd1" destination="8wV-NZ-E7h" id="tTs-Xr-yJj"/>
                         <outlet property="pwd2" destination="xIQ-k1-10Q" id="YJ4-Tp-7At"/>
                         <outlet property="txt_valideCode" destination="EiY-GA-n3V" id="B6X-hN-6yn"/>
@@ -2500,7 +2509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMt-gP-OUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3936" y="2317"/>
+            <point key="canvasLocation" x="3898" y="2317"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jiE-P2-0cU">
