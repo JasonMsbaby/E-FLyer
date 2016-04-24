@@ -1431,7 +1431,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izi-3S-7xA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="izi-3S-7xA">
                                 <rect key="frame" x="10" y="30" width="300" height="300"/>
                                 <animations/>
                                 <constraints>
@@ -3007,6 +3007,7 @@
     </scenes>
     <resources>
         <image name="addImg.png" width="74" height="74"/>
+        <image name="barImg.png" width="400" height="400"/>
         <image name="btn_receive.png" width="30" height="30"/>
         <image name="down_close.png" width="30" height="30"/>
         <image name="head.png" width="100" height="100"/>

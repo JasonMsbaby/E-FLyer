@@ -41,7 +41,7 @@
 
 - (void)layoutModel{
     [self.img imagedWithAVFile:self.model.img];
-    [self.headImg imagedWithAVFile:self.model.blongUser.headImg];
+    [self.headImg imagedWithAVFile:self.model.blongUser.barImg];
     [_headImg setCornerRadius:self.headImg.width/2];
     self.title.text = self.model.title;
     self.content.text = self.model.content;
@@ -50,7 +50,7 @@
     self.time.text = [ToolUtils StringWithDate:self.model.createdAt];
     self.userName.text = self.model.blongUser.barName;
     self.question.text = self.model.question;
-    NSLog(@"%@",self.model.question);
+//    NSLog(@"%@",self.model.question);
     [self.btnAnswer addTarget:self action:@selector(btnAnswerAction) forControlEvents:(UIControlEventTouchUpInside)];
     self.img.userInteractionEnabled = YES;
     [self.img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)]];
