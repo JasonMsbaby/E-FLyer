@@ -23,11 +23,11 @@
     [super viewWillAppear:animated];
     self.title = self.menu.title;
     self.dataSource = [[MeInfoModel sharedInstance].source objectForKey:self.menu.idd];
+    [self loadTableView];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadTableView];
 }
 - (void)loadTableView{
     self.navigationController.navigationBarHidden = NO;
