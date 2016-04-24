@@ -7,9 +7,11 @@
 //
 #import "UserRecordCell.h"
 #import "UserRecordController.h"
+#import "EFReciveOrder.h"
 
 @interface UserRecordController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic,strong) NSArray *dataSource;
 
 @end
 
@@ -27,15 +29,22 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.rowHeight = 40;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dataSource = [NSArray array];
+    WeakObj(self);
+    [EFReciveOrder userReceiveOrderWithBlock:^(NSArray<EFReciveOrder *> *result) {
+        selfWeak.dataSource = result;
+        [selfWeak.tableView reloadData];
+    }];
 }
 
 
 #pragma mark - tableview数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UserRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userRecordCell"];
+    cell.model = self.dataSource[indexPath.row];
     return cell;
 }
 

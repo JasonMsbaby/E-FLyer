@@ -17,6 +17,19 @@
 
 @implementation UserRecordCell
 
+- (void)setModel:(EFReciveOrder *)model{
+    if (_model != model) {
+        _model = nil;
+        _model = model;
+        [self loadModel];
+    }
+}
+- (void)loadModel{
+    self.userName.text = self.model.user.username;
+    self.userAddress.text = self.model.good.title;
+    self.goodName.text = [NSString stringWithFormat:@"+%.2lf元",self.model.good.price];
+    self.publishTime.text = [NSString stringWithFormat:@"%@",self.model.createdAt];
+}
 
 
 @end

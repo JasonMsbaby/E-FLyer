@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EFReciveOrder.h"
 @interface UserRecordCell : UITableViewCell
-
+@property(nonatomic,strong) EFReciveOrder *model;
 @end

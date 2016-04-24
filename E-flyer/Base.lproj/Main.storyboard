@@ -1627,14 +1627,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="愤怒的小鸟" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGj-uD-2cQ">
-                                                    <rect key="frame" x="0.0" y="12.5" width="48" height="24"/>
+                                                    <rect key="frame" x="0.0" y="18.5" width="64" height="12"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-lI-s3W">
-                                                    <rect key="frame" x="48" y="0.0" width="1" height="49.5"/>
+                                                    <rect key="frame" x="64" y="0.0" width="1" height="49.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1642,14 +1642,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市朝阳区建外soho西区1605" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OP-aB-8Jl">
-                                                    <rect key="frame" x="49" y="12" width="128" height="24"/>
+                                                    <rect key="frame" x="65" y="12" width="128" height="24"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FPz-P3-85R">
-                                                    <rect key="frame" x="177" y="0.0" width="1" height="49.5"/>
+                                                    <rect key="frame" x="193" y="0.0" width="1" height="49.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1657,14 +1657,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大酬宾" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgO-t7-yAP">
-                                                    <rect key="frame" x="178" y="1" width="96" height="47.5"/>
+                                                    <rect key="frame" x="194" y="1" width="48" height="47.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v2c-ZU-syd">
-                                                    <rect key="frame" x="274" y="0.0" width="1" height="49.5"/>
+                                                    <rect key="frame" x="242" y="0.0" width="1" height="49.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1672,7 +1672,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6小时前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkq-QH-0Xq">
-                                                    <rect key="frame" x="272" y="18" width="48" height="12"/>
+                                                    <rect key="frame" x="240" y="18" width="80" height="12"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1699,7 +1699,7 @@
                                                 <constraint firstItem="gkq-QH-0Xq" firstAttribute="centerY" secondItem="oGj-uD-2cQ" secondAttribute="centerY" id="O5d-tj-wVi"/>
                                                 <constraint firstItem="2pm-AX-bvb" firstAttribute="leading" secondItem="cOu-If-5B7" secondAttribute="leading" id="OlP-Q3-8md"/>
                                                 <constraint firstItem="2pm-AX-bvb" firstAttribute="top" secondItem="FgO-t7-yAP" secondAttribute="bottom" id="PiL-cq-3RU"/>
-                                                <constraint firstItem="FgO-t7-yAP" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.3" id="TVf-rs-tXG"/>
+                                                <constraint firstItem="FgO-t7-yAP" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.15" id="TVf-rs-tXG"/>
                                                 <constraint firstItem="FgO-t7-yAP" firstAttribute="centerY" secondItem="oGj-uD-2cQ" secondAttribute="centerY" id="V2r-1T-4uQ"/>
                                                 <constraint firstItem="v2c-ZU-syd" firstAttribute="top" secondItem="cOu-If-5B7" secondAttribute="top" id="b9w-yu-TPT"/>
                                                 <constraint firstAttribute="trailing" secondItem="2pm-AX-bvb" secondAttribute="trailing" id="bGp-GO-WqV"/>
@@ -1710,9 +1710,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="gkq-QH-0Xq" secondAttribute="trailing" id="nhL-Fp-Ydw"/>
                                                 <constraint firstItem="8OP-aB-8Jl" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.4" id="nxO-s0-Wns"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qro-lI-s3W" secondAttribute="bottom" id="oJf-1Y-Xt6"/>
-                                                <constraint firstItem="gkq-QH-0Xq" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.15" id="pss-wg-iPg"/>
+                                                <constraint firstItem="gkq-QH-0Xq" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.25" id="pss-wg-iPg"/>
                                                 <constraint firstItem="Qro-lI-s3W" firstAttribute="leading" secondItem="oGj-uD-2cQ" secondAttribute="trailing" id="uk2-Hv-pjd"/>
-                                                <constraint firstItem="oGj-uD-2cQ" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.15" id="wFB-F6-Vdq"/>
+                                                <constraint firstItem="oGj-uD-2cQ" firstAttribute="width" secondItem="cOu-If-5B7" secondAttribute="width" multiplier="0.2" id="wFB-F6-Vdq"/>
                                                 <constraint firstItem="8OP-aB-8Jl" firstAttribute="leading" secondItem="Qro-lI-s3W" secondAttribute="trailing" id="yFA-zF-3TU"/>
                                             </constraints>
                                         </tableViewCellContentView>
