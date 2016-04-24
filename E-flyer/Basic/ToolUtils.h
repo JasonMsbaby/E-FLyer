@@ -32,5 +32,7 @@
 +(UIImage *)createImageWithColor:(UIColor*) color;
 
 + (NSString *)stringWithError:(NSError *)err;
+//将时间转换成字符串 精确到天
++ (NSString *)dateFormatDayWithTime:(NSDate *)date;
 
 @end

@@ -19,6 +19,7 @@
 #import "LrdPasswordAlertView.h"
 #import "ShowBMKMap.h"
 #import "EFGood.h"
+#import "EFLog.h"
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
 @interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
@@ -201,10 +202,17 @@
         [SVProgressHUD showWithStatus:@"正在发布,请稍后.由于图片较大,上传缓慢,请耐心等候..."];
         [self.good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
+#warning 此处扣除金额应该做线程处理
                 self.currentUser.money = self.currentUser.money - [self.subMoney.text floatValue];
                 [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
                         [SVProgressHUD showInfoWithStatus:@"发布成功"];
+                        EFLog *log = [EFLog object];
+                        log.user = self.currentUser;
+                        log.money = [self.subMoney.text floatValue];
+                        log.type = EFLogTypePublish;
+                        log.good = self.good;
+                        [log saveInBackground];
                         [selfWeak dismissViewControllerAnimated:YES completion:nil];
                     }else{
                         [self toastWithError:error];

@@ -34,8 +34,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    UIView *bottom = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.tableView setTableFooterView:bottom];
 }
 
 

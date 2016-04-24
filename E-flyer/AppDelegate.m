@@ -66,6 +66,9 @@
 
 
 - (void)loading{
+    UIView *bottom = [[UIView alloc] initWithFrame:CGRectZero];
+    [[UITableView appearance] setTableFooterView:bottom];
+    
     [SVProgressHUD setDefaultMaskType:(SVProgressHUDMaskTypeGradient)];
     [SVProgressHUD setMinimumDismissTimeInterval:1];
     
