@@ -9,7 +9,7 @@
 #import "EFLog.h"
 #import "AcountRecordCell.h"
 #import "AccountController.h"
-#import "PayInController.h"
+#import "PayInOutController.h"
 
 @interface AccountController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -47,12 +47,15 @@
 #pragma mark - 充值/提现操作
 //提现
 - (IBAction)btnOutMoneyAction:(id)sender {
-   
+    PayInOutController *payInVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PayInOutController"];
+    payInVC.type = EFLogTypeOut;
+    payInVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:payInVC animated:YES];
 }
 //充值
 - (IBAction)btnInMoneyAction:(id)sender {
-    PayInController *payInVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PayInController"];
-    payInVC.title = @"充值";
+    PayInOutController *payInVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PayInOutController"];
+    payInVC.type = EFLogTypeIn;
     payInVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:payInVC animated:YES];
 }

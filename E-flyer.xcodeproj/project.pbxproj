@@ -17,7 +17,6 @@
 		6A4E40F51CCB5208002B30F3 /* UserRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F41CCB5208002B30F3 /* UserRecordCell.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40F81CCB5D83002B30F3 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40F71CCB5D83002B30F3 /* AccountController.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40FB1CCB68D1002B30F3 /* AcountRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */; settings = {ASSET_TAGS = (); }; };
-		6A532AFA1CCD24C600DFDE1C /* PayInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A532AF91CCD24C600DFDE1C /* PayInController.m */; settings = {ASSET_TAGS = (); }; };
 		6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A9DBE651CCCEDD400A4E242 /* barImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9DBE641CCCEDD400A4E242 /* barImg@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A9DBE681CCD06D000A4E242 /* EFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DBE671CCD06D000A4E242 /* EFLog.m */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +47,7 @@
 		6ACC9C581CCA49B600F4B716 /* menu_bar_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC9C531CCA49B600F4B716 /* menu_bar_info@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6ACC9C591CCA49B600F4B716 /* menu_bar_name@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC9C541CCA49B600F4B716 /* menu_bar_name@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6ACC9C5A1CCA49B600F4B716 /* menu_bar_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC9C551CCA49B600F4B716 /* menu_bar_phone@2x.png */; settings = {ASSET_TAGS = (); }; };
+		6AF2F1751CCDF44500AE113F /* PayInOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2F1741CCDF44400AE113F /* PayInOutController.m */; settings = {ASSET_TAGS = (); }; };
 		9627194A1C80813B00D11747 /* EFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 962719491C80813B00D11747 /* EFTabBar.m */; };
 		962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0A1C8682A200DCAE4B /* VideoController.m */; };
 		962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0D1C86972300DCAE4B /* VideoPlayController.m */; };
@@ -200,8 +200,6 @@
 		6A4E40F71CCB5D83002B30F3 /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountController.m; sourceTree = "<group>"; };
 		6A4E40F91CCB68D1002B30F3 /* AcountRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcountRecordCell.h; sourceTree = "<group>"; };
 		6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcountRecordCell.m; sourceTree = "<group>"; };
-		6A532AF81CCD24C600DFDE1C /* PayInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInController.h; sourceTree = "<group>"; };
-		6A532AF91CCD24C600DFDE1C /* PayInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInController.m; sourceTree = "<group>"; };
 		6A7106CB1CC8BD2100DE47ED /* btn_receive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_receive@2x.png"; sourceTree = "<group>"; };
 		6A9DBE641CCCEDD400A4E242 /* barImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barImg@2x.png"; sourceTree = "<group>"; };
 		6A9DBE661CCD06D000A4E242 /* EFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLog.h; sourceTree = "<group>"; };
@@ -243,6 +241,8 @@
 		6ACC9C531CCA49B600F4B716 /* menu_bar_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_bar_info@2x.png"; sourceTree = "<group>"; };
 		6ACC9C541CCA49B600F4B716 /* menu_bar_name@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_bar_name@2x.png"; sourceTree = "<group>"; };
 		6ACC9C551CCA49B600F4B716 /* menu_bar_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_bar_phone@2x.png"; sourceTree = "<group>"; };
+		6AF2F1731CCDF44400AE113F /* PayInOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInOutController.h; sourceTree = "<group>"; };
+		6AF2F1741CCDF44400AE113F /* PayInOutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInOutController.m; sourceTree = "<group>"; };
 		962719481C80813B00D11747 /* EFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTabBar.h; sourceTree = "<group>"; };
 		962719491C80813B00D11747 /* EFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFTabBar.m; sourceTree = "<group>"; };
 		962BCB091C8682A200DCAE4B /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
@@ -990,8 +990,8 @@
 				6A4E40EC1CCB17A4002B30F3 /* PhoneChangeController.m */,
 				6A4E40E61CCB1782002B30F3 /* ImageChangeController.h */,
 				6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */,
-				6A532AF81CCD24C600DFDE1C /* PayInController.h */,
-				6A532AF91CCD24C600DFDE1C /* PayInController.m */,
+				6AF2F1731CCDF44400AE113F /* PayInOutController.h */,
+				6AF2F1741CCDF44400AE113F /* PayInOutController.m */,
 			);
 			path = ThirdVC;
 			sourceTree = "<group>";
@@ -1341,7 +1341,6 @@
 				96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */,
 				6ACC9C3A1CCA35DD00F4B716 /* EYTextPopupView.m in Sources */,
 				6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */,
-				6A532AFA1CCD24C600DFDE1C /* PayInController.m in Sources */,
 				96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */,
 				6ACC9C3B1CCA35DD00F4B716 /* EYTagView.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,
@@ -1358,6 +1357,7 @@
 				96EB75FC1C85A3C300B3658F /* DataManger.m in Sources */,
 				96B47EE31CC33BF400B8AB08 /* MeInfoModel.m in Sources */,
 				965433931C803625005B8BD1 /* main.m in Sources */,
+				6AF2F1751CCDF44500AE113F /* PayInOutController.m in Sources */,
 				96A7F8651C80C5C200412B79 /* BasicController.m in Sources */,
 				96E59ECF1C8EF5CC00D24F02 /* LoginController.m in Sources */,
 				6A4E40F81CCB5D83002B30F3 /* AccountController.m in Sources */,
