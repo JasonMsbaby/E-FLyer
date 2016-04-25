@@ -28,16 +28,11 @@
     self.title = self.categroy.name;
     [self loadTableView];
     [self addMJRefresh];
-    [self loadData];
-    [SVProgressHUD showWithStatus:kLoadingMesssage];
 }
 
 - (void)loadTableView{
-    self.index = 1;
     self.dataSource = [NSMutableArray array];
     self.tableView.rowHeight = 200;
-    UIView *bottom = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.tableView setTableFooterView:bottom];
 }
 
 /*!
@@ -47,6 +42,7 @@
     WeakObj(self)
     [EFGood loadDataWithCategroy:self.categroy PageIndex:self.index Block:^(NSArray<EFGood *> *result){
         if (result.count == 0) {
+            
             [selfWeak.tableView.mj_footer endRefreshingWithNoMoreData];
         }else{
             if (selfWeak.index == 1) {
@@ -54,10 +50,9 @@
             }
             [selfWeak.dataSource addObjectsFromArray:result];
             [selfWeak.tableView.mj_footer endRefreshing];
-            [selfWeak.tableView.mj_header endRefreshing];
             [selfWeak.tableView reloadData];
         }
-        [SVProgressHUD dismiss];
+        [selfWeak.tableView.mj_header endRefreshing];
     }];
 }
 /*!
@@ -72,6 +67,8 @@
         self.index++;
         [self loadData];
     }];
+    self.index = 1;
+    [self.tableView.mj_header beginRefreshing];
 }
 
 

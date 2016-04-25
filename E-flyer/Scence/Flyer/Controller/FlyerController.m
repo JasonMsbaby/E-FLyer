@@ -32,7 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadTableView];
-    [self loadData];
     [self addMJRefresh];
 }
 
@@ -58,7 +57,7 @@
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tableView registerClass:[FlyerRecommendCell class] forCellReuseIdentifier:@"recommendCell"];
-    self.index = 1;
+    
     
 }
 /*!
@@ -75,9 +74,9 @@
             }
             [selfWeak.data_new addObjectsFromArray:result];
             [selfWeak.tableView.mj_footer endRefreshing];
-            [selfWeak.tableView.mj_header endRefreshing];
             [selfWeak.tableView reloadData];
         }
+        [selfWeak.tableView.mj_header endRefreshing];
     }];
 }
 /*!
@@ -92,6 +91,9 @@
         self.index++;
         [self loadData];
     }];
+    //刚进入后执行刷新
+    self.index = 1;
+    [self.tableView.mj_header beginRefreshing];
 }
 
 //扫一扫
