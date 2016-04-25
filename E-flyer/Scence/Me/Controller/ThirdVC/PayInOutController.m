@@ -5,9 +5,9 @@
 //  Created by 苗爽 on 16/4/25.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import <MJRefresh.h>
 #import "PayInOutController.h"
-
+#import "PayInOutRecordCell.h"
 @interface PayInOutController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *currentMoney;
 @property (weak, nonatomic) IBOutlet UITextField *money;
@@ -33,14 +33,27 @@
         [self.btnSubmit setTitle:@"提现" forState:(UIControlStateNormal)];
     }
     self.currentMoney.text = [NSString stringWithFormat:@"%.2lf元",self.currentUser.money];
+    [self.tableView.mj_header beginRefreshing];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"payInOutTableViewCell"];
+    [self addMJRefresh];
 }
 //加载充值 提现 记录
 - (void)loadRecord{
-    
+    WeakObj(self)
+    [EFLog LogWithType:self.type Block:^(NSArray<EFLog *> *result) {
+        selfWeak.dataSource = result;
+        [selfWeak.tableView reloadData];
+        [selfWeak.tableView.mj_header endRefreshing];
+    }];
+}
+//添加下拉刷新
+- (void)addMJRefresh{
+    WeakObj(self)
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [selfWeak loadRecord];
+    }];
 }
 //点击充值或者提现
 - (IBAction)btnSubmitAction:(id)sender {
@@ -138,7 +151,9 @@
     return self.dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"payInOutTableViewCell"];
+    PayInOutRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PayInOutRecordCell"];
+    EFLog *log = self.dataSource[indexPath.row];
+    cell.model = log;
     return cell;
 }
 

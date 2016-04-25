@@ -34,5 +34,6 @@
 + (NSString *)stringWithError:(NSError *)err;
 //将时间转换成字符串 精确到天
 + (NSString *)dateFormatDayWithTime:(NSDate *)date;
-
+//将时间转换成字符串 精确秒
++ (NSString *)dateFormatSecondWithTime:(NSDate *)date;
 @end

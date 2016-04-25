@@ -61,4 +61,17 @@
     }];
 }
 
++ (void)LogWithType:(EFLogType)type Block:(void (^)(NSArray<EFLog *> *))block{
+    AVQuery *query = [EFLog query];
+    [query includeKey:@"user"];
+    [query includeKey:@"good"];
+    [query whereKey:@"type" equalTo:@(type)];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {
+        if (block != nil) {
+            block(result);
+        }
+    }];
+}
+
 @end

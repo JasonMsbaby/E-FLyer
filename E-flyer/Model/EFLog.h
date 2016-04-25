@@ -25,5 +25,7 @@ typedef NS_ENUM(NSInteger,EFLogType){
 
 //根据当前登录的用户获取日志表
 + (void)LogWithBlock:(void(^)(NSArray<EFLog *>*))block;
+//根据当前用户获取指定类型的日志
++ (void)LogWithType:(EFLogType)type Block:(void (^)(NSArray<EFLog *> *))block;
 
 @end

@@ -5,6 +5,7 @@
 //  Created by 苗爽 on 16/4/23.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import <MJRefresh.h>
 #import "EYInputPopupView.h"
 #import "EFLog.h"
 #import "AcountRecordCell.h"
@@ -24,26 +25,32 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
-    [self loadData];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addMJRefresh];
     self.title = @"账户管理";
     self.tableView.rowHeight = 50;
 }
 //加载数据
 - (void)loadData{
     self.money.text = [NSString stringWithFormat:@"💰 %.2lf 元",self.currentUser.money];
-    [SVProgressHUD showWithStatus:@"正在加载账户信息,请稍后..."];
     WeakObj(self)
     [EFLog LogWithBlock:^(NSArray<EFLog *> * result) {
         selfWeak.dataSource = result;
         [selfWeak.tableView reloadData];
-        [SVProgressHUD dismiss];
+        [selfWeak.tableView.mj_header endRefreshing];
     }];
 }
-
+//添加下拉刷新
+- (void)addMJRefresh{
+    WeakObj(self)
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [selfWeak loadData];
+    }];
+}
 #pragma mark - 充值/提现操作
 //提现
 - (IBAction)btnOutMoneyAction:(id)sender {

@@ -2136,6 +2136,54 @@
                                 <rect key="frame" x="0.0" y="201" width="320" height="318"/>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayInOutRecordCell" id="Yqs-5i-lrw" customClass="PayInOutRecordCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yqs-5i-lrw" id="658-av-4eX">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXW-6p-VAX">
+                                                    <rect key="frame" x="10" y="21" width="34.5" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaj-Yx-Q7c">
+                                                    <rect key="frame" x="286" y="44" width="24" height="14.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-S4-ATv">
+                                                    <rect key="frame" x="54.5" y="22.5" width="31" height="18"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="EXW-6p-VAX" firstAttribute="centerY" secondItem="658-av-4eX" secondAttribute="centerY" id="Ivd-Vv-ai3"/>
+                                                <constraint firstItem="WBX-S4-ATv" firstAttribute="centerY" secondItem="EXW-6p-VAX" secondAttribute="centerY" id="J2m-HU-KBl"/>
+                                                <constraint firstAttribute="bottom" secondItem="Oaj-Yx-Q7c" secondAttribute="bottom" constant="5" id="TIY-bT-mDu"/>
+                                                <constraint firstItem="EXW-6p-VAX" firstAttribute="leading" secondItem="658-av-4eX" secondAttribute="leading" constant="10" id="fic-v0-Rit"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oaj-Yx-Q7c" secondAttribute="trailing" constant="10" id="oo6-D7-Nt8"/>
+                                                <constraint firstItem="WBX-S4-ATv" firstAttribute="leading" secondItem="EXW-6p-VAX" secondAttribute="trailing" constant="10" id="z8b-q2-EY3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="money" destination="EXW-6p-VAX" id="3sG-Af-TMJ"/>
+                                            <outlet property="source" destination="WBX-S4-ATv" id="SDM-F3-06z"/>
+                                            <outlet property="time" destination="Oaj-Yx-Q7c" id="Onj-cD-WLb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="RgL-cq-JuL" id="Q9j-gS-36j"/>
                                     <outlet property="delegate" destination="RgL-cq-JuL" id="bki-yz-69N"/>

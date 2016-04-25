@@ -178,5 +178,15 @@
     NSString *currentDateStr = [dateFormatter stringFromDate:date];
     return currentDateStr;
 }
++ (NSString *)dateFormatSecondWithTime:(NSDate *)date{
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    //用[NSDate date]可以获取系统当前时间
+    NSString *currentDateStr = [dateFormatter stringFromDate:date];
+    return currentDateStr;
+
+}
 
 @end

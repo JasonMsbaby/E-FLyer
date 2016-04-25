@@ -48,6 +48,7 @@
 		6ACC9C591CCA49B600F4B716 /* menu_bar_name@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC9C541CCA49B600F4B716 /* menu_bar_name@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6ACC9C5A1CCA49B600F4B716 /* menu_bar_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC9C551CCA49B600F4B716 /* menu_bar_phone@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6AF2F1751CCDF44500AE113F /* PayInOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2F1741CCDF44400AE113F /* PayInOutController.m */; settings = {ASSET_TAGS = (); }; };
+		6AF2F1781CCDFDCC00AE113F /* PayInOutRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2F1771CCDFDCC00AE113F /* PayInOutRecordCell.m */; settings = {ASSET_TAGS = (); }; };
 		9627194A1C80813B00D11747 /* EFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 962719491C80813B00D11747 /* EFTabBar.m */; };
 		962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0A1C8682A200DCAE4B /* VideoController.m */; };
 		962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BCB0D1C86972300DCAE4B /* VideoPlayController.m */; };
@@ -243,6 +244,8 @@
 		6ACC9C551CCA49B600F4B716 /* menu_bar_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_bar_phone@2x.png"; sourceTree = "<group>"; };
 		6AF2F1731CCDF44400AE113F /* PayInOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInOutController.h; sourceTree = "<group>"; };
 		6AF2F1741CCDF44400AE113F /* PayInOutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInOutController.m; sourceTree = "<group>"; };
+		6AF2F1761CCDFDCC00AE113F /* PayInOutRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInOutRecordCell.h; sourceTree = "<group>"; };
+		6AF2F1771CCDFDCC00AE113F /* PayInOutRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInOutRecordCell.m; sourceTree = "<group>"; };
 		962719481C80813B00D11747 /* EFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTabBar.h; sourceTree = "<group>"; };
 		962719491C80813B00D11747 /* EFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFTabBar.m; sourceTree = "<group>"; };
 		962BCB091C8682A200DCAE4B /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
@@ -825,6 +828,8 @@
 				6A4E40F41CCB5208002B30F3 /* UserRecordCell.m */,
 				6A4E40F91CCB68D1002B30F3 /* AcountRecordCell.h */,
 				6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */,
+				6AF2F1761CCDFDCC00AE113F /* PayInOutRecordCell.h */,
+				6AF2F1771CCDFDCC00AE113F /* PayInOutRecordCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1309,6 +1314,7 @@
 				6A4E40F21CCB4CDF002B30F3 /* UserRecordController.m in Sources */,
 				96E59EC81C8EDE1100D24F02 /* HomeAddInfoController.m in Sources */,
 				6A13A5DC1CC92860002BF3EF /* UIImageView+EFImageView.m in Sources */,
+				6AF2F1781CCDFDCC00AE113F /* PayInOutRecordCell.m in Sources */,
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
 				9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */,
