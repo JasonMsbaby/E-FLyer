@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6A13A5DC1CC92860002BF3EF /* UIImageView+EFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13A5DB1CC92860002BF3EF /* UIImageView+EFImageView.m */; settings = {ASSET_TAGS = (); }; };
 		6A13A5DF1CC931F7002BF3EF /* PopBigImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */; settings = {ASSET_TAGS = (); }; };
+		6A2F6E661CCFC5A800E2A87F /* GoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F6E651CCFC5A800E2A87F /* GoodDetailController.m */; settings = {ASSET_TAGS = (); }; };
+		6A2F6E691CCFC7EC00E2A87F /* GoodReceiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F6E681CCFC7EC00E2A87F /* GoodReceiveCell.m */; settings = {ASSET_TAGS = (); }; };
 		6A3513A41CC9261400B6DCEC /* last_number@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3513A31CC9261400B6DCEC /* last_number@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6A4E40E81CCB1782002B30F3 /* ImageChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */; settings = {ASSET_TAGS = (); }; };
 		6A4E40ED1CCB17A4002B30F3 /* PassWordChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E40EA1CCB17A4002B30F3 /* PassWordChangeController.m */; settings = {ASSET_TAGS = (); }; };
@@ -186,6 +188,10 @@
 		6A13A5DB1CC92860002BF3EF /* UIImageView+EFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EFImageView.m"; sourceTree = "<group>"; };
 		6A13A5DD1CC931F7002BF3EF /* PopBigImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopBigImageView.h; sourceTree = "<group>"; };
 		6A13A5DE1CC931F7002BF3EF /* PopBigImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopBigImageView.m; sourceTree = "<group>"; };
+		6A2F6E641CCFC5A800E2A87F /* GoodDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodDetailController.h; sourceTree = "<group>"; };
+		6A2F6E651CCFC5A800E2A87F /* GoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodDetailController.m; sourceTree = "<group>"; };
+		6A2F6E671CCFC7EC00E2A87F /* GoodReceiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodReceiveCell.h; sourceTree = "<group>"; };
+		6A2F6E681CCFC7EC00E2A87F /* GoodReceiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodReceiveCell.m; sourceTree = "<group>"; };
 		6A3513A31CC9261400B6DCEC /* last_number@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last_number@2x.png"; sourceTree = "<group>"; };
 		6A4E40E61CCB1782002B30F3 /* ImageChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageChangeController.h; sourceTree = "<group>"; };
 		6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageChangeController.m; sourceTree = "<group>"; };
@@ -830,6 +836,8 @@
 				6A4E40FA1CCB68D1002B30F3 /* AcountRecordCell.m */,
 				6AF2F1761CCDFDCC00AE113F /* PayInOutRecordCell.h */,
 				6AF2F1771CCDFDCC00AE113F /* PayInOutRecordCell.m */,
+				6A2F6E671CCFC7EC00E2A87F /* GoodReceiveCell.h */,
+				6A2F6E681CCFC7EC00E2A87F /* GoodReceiveCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -997,6 +1005,8 @@
 				6A4E40E71CCB1782002B30F3 /* ImageChangeController.m */,
 				6AF2F1731CCDF44400AE113F /* PayInOutController.h */,
 				6AF2F1741CCDF44400AE113F /* PayInOutController.m */,
+				6A2F6E641CCFC5A800E2A87F /* GoodDetailController.h */,
+				6A2F6E651CCFC5A800E2A87F /* GoodDetailController.m */,
 			);
 			path = ThirdVC;
 			sourceTree = "<group>";
@@ -1355,9 +1365,11 @@
 				96EB75C21C85743400B3658F /* VideoController_abandon.m in Sources */,
 				9642E0C01CBCB97B00EEAC61 /* LrdTableViewCell.m in Sources */,
 				96EB75F91C859B1300B3658F /* WMPlayer.m in Sources */,
+				6A2F6E691CCFC7EC00E2A87F /* GoodReceiveCell.m in Sources */,
 				96E59EBD1C8EB60F00D24F02 /* EFUser.m in Sources */,
 				6A4E40ED1CCB17A4002B30F3 /* PassWordChangeController.m in Sources */,
 				96E59EC51C8ECC9500D24F02 /* AVQuery+EFQuery.m in Sources */,
+				6A2F6E661CCFC5A800E2A87F /* GoodDetailController.m in Sources */,
 				96E390461C81CB2400107FB7 /* SearchController.m in Sources */,
 				9642E0C81CBD01F500EEAC61 /* LrdDateModel.m in Sources */,
 				96EB75FC1C85A3C300B3658F /* DataManger.m in Sources */,

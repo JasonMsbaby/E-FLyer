@@ -57,6 +57,10 @@
 }
 //点击充值或者提现
 - (IBAction)btnSubmitAction:(id)sender {
+    if ([self.money.text isEqualToString:@""] || [self.money.text floatValue] <= 0) {
+        [SVProgressHUD showErrorWithStatus:@"金额应大于0元"];
+        return ;
+    }
     if (self.type == EFLogTypeIn) {//如果是充值的话
         [self alerSheetWithTitle:@"充值" Message:@"请选择充值方式" Buttons:@[@"支付宝支付",@"微信支付",@"测试支付"] CallBack:^(NSInteger index) {
             switch (index) {
@@ -97,10 +101,6 @@
     [SVProgressHUD showInfoWithStatus:@"测试中，暂未开通"];
 }
 - (void)payInWithTest{
-    if ([self.money.text isEqualToString:@""] || [self.money.text floatValue] <= 0) {
-        [SVProgressHUD showErrorWithStatus:@"充值金额应大于0元"];
-        return ;
-    }
     [SVProgressHUD showInfoWithStatus:@"正在充值,请稍后..."];
     self.currentUser.money += [self.money.text floatValue];
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -125,16 +125,12 @@
     [SVProgressHUD showInfoWithStatus:@"测试中，暂未开通"];
 }
 - (void)payOutWithTest{
-    if ([self.money.text isEqualToString:@""] || [self.money.text floatValue] <= 0) {
-        [SVProgressHUD showErrorWithStatus:@"提现金额应大于0元"];
-        return ;
-    }
     [SVProgressHUD showInfoWithStatus:@"正在提现,请稍后..."];
     self.currentUser.money -= [self.money.text floatValue];
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             //创建充值记录
-            [EFLog saveLogWithType:(EFLogTypeIn) Source:kPayType_Test Money:[self.money.text floatValue] Good:nil Finish:^(BOOL success) {
+            [EFLog saveLogWithType:(EFLogTypeOut) Source:kPayType_Test Money:[self.money.text floatValue] Good:nil Finish:^(BOOL success) {
                 
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"提现请求已申请,请耐心等候..."]];
                 

@@ -8,7 +8,7 @@
 #import "EFGood.h"
 #import "GoodsListCell.h"
 #import "GoodsMangerController.h"
-
+#import "GoodDetailController.h"
 @interface GoodsMangerController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property(strong,nonatomic) NSArray<EFGood *> *dataSources;
@@ -67,5 +67,11 @@
     cell.model = good;
     return cell;
 }
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    EFGood *good = self.dataSources[indexPath.item];
+    GoodDetailController *goodDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GoodDetailController"];
+    goodDetailVC.hidesBottomBarWhenPushed = YES;
+    goodDetailVC.good = good;
+    [self.navigationController pushViewController:goodDetailVC animated:YES];
+}
 @end
