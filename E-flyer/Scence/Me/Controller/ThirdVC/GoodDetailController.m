@@ -25,6 +25,7 @@
     self.title = @"商品详情";
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
 }
 
 #pragma mark - 领取记录tableView

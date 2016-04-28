@@ -200,24 +200,28 @@
         [SVProgressHUD showErrorWithStatus:@"账户余额不足,请充值后再支付"];
     }else{
         [SVProgressHUD showWithStatus:@"正在发布,请稍后.由于图片较大,上传缓慢,请耐心等候..."];
-        [self.good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
 #warning 此处扣除金额应该做线程处理
-                self.currentUser.money = self.currentUser.money - [self.subMoney.text floatValue];
-                [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        self.currentUser.money = self.currentUser.money - [self.subMoney.text floatValue];
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                self.good.status = GoodStatusNormal;
+                [self.good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
                         [SVProgressHUD showInfoWithStatus:@"发布成功"];
-                        
                         [EFLog saveLogWithType:(EFLogTypePublish) Source:self.txt_title.text Money:[self.subMoney.text floatValue] Good:self.good];
-                        [selfWeak dismissViewControllerAnimated:YES completion:nil];
                     }else{
                         [self toastWithError:error];
                     }
                 }];
+                [selfWeak dismissViewControllerAnimated:YES completion:nil];
             }else{
                 [self toastWithError:error];
             }
         }];
+        
+        
+        
+        
     }
 }
 

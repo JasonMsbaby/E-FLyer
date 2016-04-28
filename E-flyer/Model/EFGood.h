@@ -15,6 +15,12 @@
 #import <Foundation/Foundation.h>
 @class EFGood;
 typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
+typedef NS_ENUM(NSInteger,GoodStatus){
+    GoodStatusNormal = 0,//正常
+    GoodStatusWaittingPay,//待支付
+    GoodStatusPayError,//支付失败
+    GoodStatusDelete//已下架
+};
 
 @interface EFGood :BasicModel
 
@@ -33,7 +39,7 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 @property(strong,nonatomic) EFBMKModel *address;//针对区域
 @property(strong,nonatomic) AVGeoPoint *location;//发布的经纬度
 @property(assign,nonatomic) float scope;//范围km
-@property(assign,nonatomic) int status;//状态 1-正常 2-待支付  3-支付失败  4-已下架
+@property(assign,nonatomic) NSInteger status;//商品状态
 @property(assign,nonatomic) BOOL recommend;//是否推荐
 
 

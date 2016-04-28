@@ -163,6 +163,7 @@
     [goodsQuery includeKey:@"blongUser"];
     [goodsQuery includeKey:@"categroy"];
     [goodsQuery orderByDescending:@"createdAt"];
+    [goodsQuery whereKey:@"status" equalTo:@(GoodStatusNormal)];
     
     if (categroy != nil) {
         [goodsQuery whereKey:@"categroy" equalTo:categroy];
