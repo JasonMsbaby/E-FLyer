@@ -8,7 +8,17 @@
 #import "EFGood.h"
 #import <UIKit/UIKit.h>
 
+@protocol GoodDetailCellDelegate <NSObject>
+//商品下架
+- (void)GoodDetailCellDelegate_UnShelve:(EFGood *)good;
+//商品续费
+- (void)GoodDetailCellDelegate_Resume:(EFGood *)good;
+@end
+
+
 @interface GoodDetailCell : UITableViewCell
+
+@property(nonatomic,copy) id<GoodDetailCellDelegate> delegate;
 
 @property(nonatomic,strong) EFGood *model;
 

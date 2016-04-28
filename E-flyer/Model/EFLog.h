@@ -5,15 +5,10 @@
 //  Created by 苗爽 on 16/4/24.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-#import "EFUser.h"
-#import "EFGood.h"
 #import "BasicModel.h"
-typedef NS_ENUM(NSInteger,EFLogType){
-    EFLogTypeIn = 0,//充值
-    EFLogTypeOut,//提现
-    EFLogTypePublish,//发布
-    EFLogTypeBack//商品下架 资金回退
-};
+@class EFGood;
+@class EFUser;
+
 @interface EFLog : BasicModel
 @property(nonatomic,strong) EFUser *user;
 @property(nonatomic,assign) EFLogType type;//类型

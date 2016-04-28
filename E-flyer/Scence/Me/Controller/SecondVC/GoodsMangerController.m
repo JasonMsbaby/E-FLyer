@@ -20,13 +20,13 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self loadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self loadCollectionView];
-    [self loadData];
 }
 - (void)loadCollectionView{
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

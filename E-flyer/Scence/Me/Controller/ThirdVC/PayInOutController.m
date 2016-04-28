@@ -106,7 +106,7 @@
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             //创建充值记录
-            [EFLog saveLogWithType:(EFLogTypeIn) Source:kPayType_Test Money:[self.money.text floatValue] Good:nil Finish:^(BOOL success) {
+            [EFLog saveLogWithType:(EFLogTypeIn) Source:@"测试充值" Money:[self.money.text floatValue] Good:nil Finish:^(BOOL success) {
                 
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"充值成功,成功充入%.2lf元",[self.money.text floatValue]]];
                 
@@ -130,7 +130,7 @@
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             //创建充值记录
-            [EFLog saveLogWithType:(EFLogTypeOut) Source:kPayType_Test Money:[self.money.text floatValue] Good:nil Finish:^(BOOL success) {
+            [EFLog saveLogWithType:(EFLogTypeOut) Source:@"测试提现" Money:[self.money.text floatValue] Good:nil Finish:^(BOOL success) {
                 
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"提现请求已申请,请耐心等候..."]];
                 

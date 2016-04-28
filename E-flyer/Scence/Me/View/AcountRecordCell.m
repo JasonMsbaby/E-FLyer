@@ -8,7 +8,8 @@
 #import "UIImageView+EFImageView.h"
 #import "AcountRecordCell.h"
 #import "ToolUtils.h"
-
+#import "EFUser.h"
+#import "EFGood.h"
 @interface AcountRecordCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *acountImg;
 @property (weak, nonatomic) IBOutlet UILabel *acountName;

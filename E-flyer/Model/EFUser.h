@@ -5,7 +5,6 @@
 //  Created by Jason_Msbaby on 16/3/8.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
 #import "BasicModel.h"
 #import "EFCrowd.h"
 #import <AVOSCloud.h>
@@ -23,4 +22,10 @@
 @property(strong,nonatomic) NSString *barAddress;//店铺位置
 @property(strong,nonatomic) NSString *barPhone;//店铺电话
 @property(strong,nonatomic) AVFile *barImg;//店铺图片
+
+
+
+
+
+
 @end

@@ -20,6 +20,7 @@
 #import "ShowBMKMap.h"
 #import "EFGood.h"
 #import "EFLog.h"
+
 //typedef void(^Result)(NSData *fileData, NSString *fileName);
 
 @interface HomeAddInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
@@ -169,13 +170,31 @@
  */
 - (IBAction)btnPayClick:(id)sender {
     if ([self checkInfo]) {
-        [self alerSheetWithTitle:@"支付" Message:@"请选择支付类型" Buttons:@[@"支付宝支付",@"余额支付"] CallBack:^(NSInteger index) {
+        [self alerSheetWithTitle:@"支付" Message:@"请选择支付类型" Buttons:@[@"支付宝支付",@"微信支付",@"余额支付"] CallBack:^(NSInteger index) {
             switch (index) {
                 case 0://支付宝支付
-                    [self payWithAliPay];
+                {
+                    [EFGood publishWithType:(PayTypeAliay) Good:self.good Success:^{
+                        [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    }];
+                }
+                     
                     break;
                 case 1:
-                    [self payWithMoney];
+                {
+                    [EFGood publishWithType:(PayTypeWeiXin) Good:self.good Success:^{
+                        
+                    }];
+                }
+                    
+                    break;
+                case 2:
+                {
+                    [EFGood publishWithType:(PayTypeYuEr) Good:self.good Success:^{
+                        
+                    }];
+                }
                     break;
                 default:
                     break;
@@ -183,48 +202,6 @@
         }];
     }
 }
-//支付宝支付
-- (void)payWithAliPay{
-    
-}
-//余额支付
-- (void)payWithMoney{
-    WeakObj(self)
-    if (self.currentUser == nil) {
-        [self alerWithTitle:@"提示" Message:@"您未登录,是否跳转到登录页面" CallBack:^{
-            [selfWeak.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"] animated:YES];
-        }];
-        return;
-    }
-    if ([self.subMoney.text floatValue]>self.currentUser.money) {
-        [SVProgressHUD showErrorWithStatus:@"账户余额不足,请充值后再支付"];
-    }else{
-        [SVProgressHUD showWithStatus:@"正在发布,请稍后.由于图片较大,上传缓慢,请耐心等候..."];
-#warning 此处扣除金额应该做线程处理
-        self.currentUser.money = self.currentUser.money - [self.subMoney.text floatValue];
-        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                self.good.status = GoodStatusNormal;
-                [self.good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    if (succeeded) {
-                        [SVProgressHUD showInfoWithStatus:@"发布成功"];
-                        [EFLog saveLogWithType:(EFLogTypePublish) Source:self.txt_title.text Money:[self.subMoney.text floatValue] Good:self.good];
-                    }else{
-                        [self toastWithError:error];
-                    }
-                }];
-                [selfWeak dismissViewControllerAnimated:YES completion:nil];
-            }else{
-                [self toastWithError:error];
-            }
-        }];
-        
-        
-        
-        
-    }
-}
-
 - (BOOL)checkInfo{
     self.good.title = self.txt_title.text;
     self.good.content = self.txt_content.text;

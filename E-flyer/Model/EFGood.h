@@ -5,22 +5,17 @@
 //  Created by Jason_Msbaby on 16/4/10.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-#import <AVOSCloud.h>
-#import "EFCity.h"
-#import "EFCrowd.h"
-#import "EFCategroy.h"
-#import "BasicModel.h"
-#import "EFUser.h"
-#import "EFBMKModel.h"
 #import <Foundation/Foundation.h>
+#import "BasicModel.h"
+
 @class EFGood;
+@class EFCity;
+@class EFCategroy;
+@class EFBMKModel;
+@class EFCrowd;
+@class EFUser;
+@class EFLog;
 typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
-typedef NS_ENUM(NSInteger,GoodStatus){
-    GoodStatusNormal = 0,//正常
-    GoodStatusWaittingPay = 1,//待支付
-    GoodStatusPayError = 2,//支付失败
-    GoodStatusDelete = 3//已下架
-};
 
 @interface EFGood :BasicModel
 
@@ -39,7 +34,7 @@ typedef NS_ENUM(NSInteger,GoodStatus){
 @property(strong,nonatomic) EFBMKModel *address;//针对区域
 @property(strong,nonatomic) AVGeoPoint *location;//发布的经纬度
 @property(assign,nonatomic) float scope;//范围km
-@property(assign,nonatomic) NSInteger status;//商品状态
+@property(assign,nonatomic) GoodStatus status;//商品状态
 @property(assign,nonatomic) BOOL recommend;//是否推荐
 
 
@@ -53,6 +48,8 @@ typedef NS_ENUM(NSInteger,GoodStatus){
 + (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block;
 //用户回答问题领取奖励
 + (void)reveiveMoneyWithGood:(EFGood *)good Answer:(NSString *)answer FinishBlock:(void(^)())block;
+//发布商品
++ (void)publishWithType:(PayType)type Good:(EFGood *)good Success:(void(^)())success;
 //商品下架
 + (void)unShelveGood:(EFGood *)good Success:(void(^)())success;
 

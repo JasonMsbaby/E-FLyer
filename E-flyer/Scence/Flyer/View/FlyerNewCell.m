@@ -10,6 +10,7 @@
 #import <UIImageView+WebCache.h>
 #import "ToolUtils.h"
 #import "PopBigImageView.h"
+#import "EFUser.h"
 #import "FlyerNewCell.h"
 
 @interface FlyerNewCell ()

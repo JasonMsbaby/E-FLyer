@@ -9,6 +9,12 @@
 #import "UIImageView+EFImageView.h"
 #import "GoodDetailCell.h"
 #import "EFLog.h"
+#import "EFCrowd.h"
+#import "GoodsListCell.h"
+#import "EFGood.h"
+#import "EFBMKModel.h"
+
+
 
 @interface GoodDetailCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *img;
@@ -25,6 +31,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnDestory;
 @property (weak, nonatomic) IBOutlet UIButton *btnAddMoney;
+
+
+
+
 
 @end
 
@@ -48,42 +58,44 @@
     self.sum.text = [NSString stringWithFormat:@"%.2lf元",self.model.price*self.model.count];
     self.question.text  = self.model.question;
     self.answer.text = self.model.answer;
-    self.left.text = [NSString stringWithFormat:@"%ld",self.model.count - self.model.receivedCount];
+    self.left.text = [NSString stringWithFormat:@"%ld份",self.model.count - self.model.receivedCount];
     self.title.text = self.model.title;
     self.content.text = self.model.content;
     self.crowed.text = self.model.crowd.job;
-    self.area.text = [NSString stringWithFormat:@"%@方圆【%.2lf】公里",self.model.address.address,self.model.address.scope/1000];
+    if(self.model.address == nil){
+        self.area.text = @"投放区域：全国";
+    }else{
+        self.area.text = [NSString stringWithFormat:@"投放区域：%@方圆【%.2lf】公里",self.model.address.address,self.model.address.scope/1000];
+    }
+    
+    
+    [GoodsListCell AddStatusImgWithStatus:self.model.status ToImageView:self.img];
+    
     if (self.model.status == GoodStatusDelete) {
-        UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
-        [self.img addSubview:haveDeleteImageView];
-        [haveDeleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.top.equalTo(self.img);
-            make.height.equalTo(@50);
-            make.width.equalTo(@50);
-        }];
+        
         self.btnDestory.enabled = NO;
         self.btnDestory.backgroundColor = [UIColor colorWithWhite:0.502 alpha:1.000];
         [self.btnDestory setTitle:@"已下架" forState:(UIControlStateNormal)];
         
     }else{
+        
         [self.btnDestory setTitle:@"下架" forState:(UIControlStateNormal)];
         self.btnDestory.backgroundColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
         self.btnDestory.enabled = YES;
-        for (UIView *v in self.img.subviews) {
-            [v removeFromSuperview];
-        }
     }
 }
 
 //商品下架  资金退回余额  并且商品的使用数量给减掉
 - (IBAction)btnDestoryAction:(id)sender {
-    [SVProgressHUD showWithStatus:@"正在下架..."];
-    [EFGood unShelveGood:self.model Success:^{
-        [SVProgressHUD showSuccessWithStatus:@"商品下架成功,金额已退回到您的账户余额"];
-    }];
+    if (self.delegate != nil) {
+        [self.delegate GoodDetailCellDelegate_UnShelve:self.model];
+    }
 }
+//商品续费
 - (IBAction)btnAddMoneyAction:(id)sender {
-    
+    if (self.delegate != nil) {
+        [self.delegate GoodDetailCellDelegate_Resume:self.model];
+    }
 }
 
 

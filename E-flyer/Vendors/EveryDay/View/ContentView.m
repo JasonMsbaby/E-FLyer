@@ -4,6 +4,7 @@
 #import <UIImageView+WebCache.h>
 #import "ContentView.h"
 #import "CustomView.h"
+#import "EFUser.h"
 
 @interface ContentView ()
 @property(nonatomic,strong) UILabel *lbl_userName;

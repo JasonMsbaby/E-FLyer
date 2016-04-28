@@ -8,7 +8,7 @@
 #import <MJRefresh.h>
 #import "FlyerNewListController.h"
 #import "FlyerNewCell.h"
-
+#import "EFCategroy.h"
 @interface FlyerNewListController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSMutableArray<EFGood *> *dataSource;

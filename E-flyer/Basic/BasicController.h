@@ -14,6 +14,9 @@
 #import <Masonry.h>
 #import "UIImageView+EFImageView.h"
 
+//typedef void(^Finish)(BOOL success);
+
+
 @interface BasicController : UIViewController
 @property(strong,nonatomic) EFUser *currentUser;
 

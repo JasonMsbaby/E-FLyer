@@ -10,4 +10,9 @@
 
 @interface GoodsListCell : UICollectionViewCell
 @property(strong,nonatomic) EFGood *model;
+
+//为图片添加标签
++ (void)AddStatusImgWithStatus:(GoodStatus)status ToImageView:(UIImageView *)imageView;
+
+
 @end

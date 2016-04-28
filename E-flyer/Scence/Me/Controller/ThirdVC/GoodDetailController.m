@@ -11,7 +11,7 @@
 #import "GoodDetailController.h"
 #import "EFReciveOrder.h"
 
-@interface GoodDetailController ()<UITableViewDataSource,UITableViewDelegate>
+@interface GoodDetailController ()<UITableViewDataSource,UITableViewDelegate,GoodDetailCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray <EFReciveOrder *> *dataSource;
 @end
@@ -85,6 +85,7 @@
         GoodDetailCell *detailCell = [tableView dequeueReusableCellWithIdentifier:@"GoodDetailCell"];
         detailCell.selectionStyle = UITableViewCellSelectionStyleNone;
         detailCell.model = self.good;
+//        detailCell.delegate = self;
         return detailCell;
     }else{
         GoodReceiveCell *receiveCell = [tableView dequeueReusableCellWithIdentifier:@"GoodReceiveCell"];
@@ -93,6 +94,45 @@
         return receiveCell;
     }
     
+}
+
+#pragma mark - GoodDetailCellDelegate
+//商品下架
+- (void)GoodDetailCellDelegate_UnShelve:(EFGood *)good{
+    [SVProgressHUD showWithStatus:@"正在下架..."];
+    [EFGood unShelveGood:good Success:^{
+        [SVProgressHUD showSuccessWithStatus:@"商品下架成功,金额已退回到您的账户余额"];
+    }];
+}
+//商品续费
+- (void)GoodDetailCellDelegate_Resume:(EFGood *)good{
+    [self alerSheetWithTitle:@"商品续费" Message:@"请选择续费方式" Buttons:@[@"支付宝支付",@"微信支付",@"余额支付"] CallBack:^(NSInteger index) {
+        switch (index) {
+            case 0:
+            {
+                good.status = GoodStatusNormal;
+                [SVProgressHUD showWithStatus:@"正在续费..."];
+                [EFGood publishWithType:(PayTypeAliay) Good:good Success:^{
+                    [SVProgressHUD showSuccessWithStatus:@"续费成功"];
+                }];
+            }break;
+            case 1:
+            {
+                [EFGood publishWithType:(PayTypeWeiXin) Good:good Success:^{
+                    
+                }];
+            }break;
+            case 3:
+            {
+                [EFGood publishWithType:(PayTypeYuEr) Good:good Success:^{
+                    
+                }];
+            }break;
+                
+            default:
+                break;
+        }
+    }];
 }
 
 @end

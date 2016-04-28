@@ -7,7 +7,8 @@
 //
 
 #import "EFLog.h"
-
+#import "EFUser.h"
+#import "EFGood.h"
 @implementation EFLog
 @dynamic user;
 @dynamic money;

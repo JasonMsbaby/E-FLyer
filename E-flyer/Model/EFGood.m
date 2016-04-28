@@ -9,6 +9,11 @@
 #import "ToolUtils.h"
 #import <BaiduMapAPI_Utils/BMKGeometry.h>
 #import "EFGood.h"
+#import "EFCrowd.h"
+#import "EFUser.h"
+#import "EFCity.h"
+#import "EFBMKModel.h"
+#import "EFCategroy.h"
 #import "EFLog.h"
 
 @implementation EFGood
@@ -25,7 +30,7 @@
 @dynamic blongUser;//所属用
 @dynamic crowd;//针对人群
 @dynamic address;//针对区域
-@dynamic status;//
+@dynamic status;//商品状态
 @dynamic location;
 @dynamic scope;
 @dynamic recommend;//是否推荐
@@ -133,7 +138,7 @@
                 [SVProgressHUD showErrorWithStatus:@"您已经领取过了"];
             }
         }];
-
+        
     }else{
         [SVProgressHUD showErrorWithStatus:@"请登录后操作"];
     }
@@ -142,6 +147,60 @@
     
 }
 
+//发布商品
++ (void)publishWithType:(PayType)type Good:(EFGood *)good Success:(Success)success{
+    CGFloat money = good.price*good.count;
+    EFUser *currentUser = [EFUser currentUser];
+    if (currentUser == nil) {
+        [SVProgressHUD showErrorWithStatus:@"您未登录,请登录后发布"];
+        return;
+    }
+    switch (type) {
+        case PayTypeAliay:
+        {
+            [SVProgressHUD showInfoWithStatus:@"测试版本，暂不支持"];
+        }
+            break;
+        case PayTypeWeiXin:
+        {
+            [SVProgressHUD showInfoWithStatus:@"测试版本，暂不支持"];
+        }
+            break;
+        case PayTypeYuEr:
+        {
+            if (money>currentUser.money) {
+                [SVProgressHUD showErrorWithStatus:@"账户余额不足,请充值后再支付"];
+            }else{
+                [SVProgressHUD showWithStatus:@"正在发布,请稍后..."];
+#warning 此处扣除金额应该做线程处理
+                currentUser.money = currentUser.money - money;
+                [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        good.status = GoodStatusNormal;
+                        [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            if (succeeded) {
+                                [EFLog saveLogWithType:(EFLogTypePublish) Source:good.title Money:money Good:good];
+                                success();
+                            }else{
+                                [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                            }
+                        }];
+                    }else{
+                        [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                    }
+                }];
+            }
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+//商品下架
 + (void)unShelveGood:(EFGood *)good Success:(void(^)())success{
     //第一步余额回退
     EFUser *currentUser = [EFUser currentUser];
@@ -171,6 +230,8 @@
     }
     
 }
+
+//商品续费
 
 
 
@@ -226,12 +287,12 @@
 + (NSArray<EFGood *> *)nearLocationInArray:(NSArray<EFGood *> *)arr{
     NSMutableArray *result = [NSMutableArray array];
     CGPoint currentLocation = currentLocation = CGPointFromString([[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocation"]);;//当前地理位置
-//    EFUser *currentUser = [EFUser currentUser];
-//    if (currentUser== nil) {
-//        currentLocation = CGPointFromString([[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocation"]);
-//    }else{
-//        currentLocation = CGPointMake(currentUser.lng, currentUser.lat);
-//    }
+    //    EFUser *currentUser = [EFUser currentUser];
+    //    if (currentUser== nil) {
+    //        currentLocation = CGPointFromString([[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocation"]);
+    //    }else{
+    //        currentLocation = CGPointMake(currentUser.lng, currentUser.lat);
+    //    }
     CLLocationCoordinate2D coor2D_current = CLLocationCoordinate2DMake(currentLocation.y,currentLocation.x);
     //循环遍历  查找位置符合的数据
     for (EFGood *g in arr) {

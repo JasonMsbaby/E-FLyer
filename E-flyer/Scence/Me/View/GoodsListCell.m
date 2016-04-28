@@ -35,30 +35,29 @@
     self.haveRead.text = [NSString stringWithFormat:@"%ld人",self.model.receivedCount];
     self.createdAt.text = [NSString stringWithFormat:@"发布时间:%@",[ToolUtils StringWithDate:self.model.createdAt]];
     
-    if (self.model.status == GoodStatusDelete) {
-        UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
-        [self.img addSubview:haveDeleteImageView];
-        [haveDeleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.top.equalTo(self.img);
-            make.height.equalTo(@70);
-            make.width.equalTo(@70);
+    [GoodsListCell AddStatusImgWithStatus:self.model.status ToImageView:self.img];
+}
+
+
++ (void)AddStatusImgWithStatus:(GoodStatus)status ToImageView:(UIImageView *)imageView{
+    if (status == GoodStatusDelete || status == GoodStatusFinish) {
+        UIImage *img = nil;
+        if (status == GoodStatusFinish) {
+            img = [UIImage imageNamed:@"haveFinish"];
+        }else{
+            img = [UIImage imageNamed:@"havaDelete"];
+        }
+        UIImageView *imageV = [[UIImageView alloc] initWithImage:img];
+        [imageView addSubview:imageV];
+        [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(imageView);
+            make.width.height.equalTo(imageView.mas_width).multipliedBy(0.6);
         }];
         
     }else{
-        for (UIView *v in self.img.subviews) {
+        for (UIView *v in imageView.subviews) {
             [v removeFromSuperview];
         }
-    }
-    
-    if (self.model.status == GoodStatusDelete) {
-        UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
-        [self.img addSubview:haveDeleteImageView];
-        [haveDeleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.top.equalTo(self.img);
-            make.height.equalTo(@70);
-            make.width.equalTo(@70);
-        }];
-        
     }
 }
 
