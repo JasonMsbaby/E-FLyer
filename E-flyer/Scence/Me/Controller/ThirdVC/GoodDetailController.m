@@ -5,31 +5,52 @@
 //  Created by 苗爽 on 16/4/26.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import <MJRefresh.h>
 #import "GoodDetailCell.h"
 #import "GoodReceiveCell.h"
 #import "GoodDetailController.h"
+#import "EFReciveOrder.h"
 
 @interface GoodDetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic,strong) NSArray <EFReciveOrder *> *dataSource;
 @end
 
 @implementation GoodDetailController
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView.mj_header beginRefreshing];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
+    [self addMJRefresh];
 }
 
 - (void)setupView{
     self.title = @"商品详情";
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self loadBasicData];
 }
 
-- (void)loadBasicData{
-    
+- (void)loadDataSource{
+    WeakObj(self)
+    [EFReciveOrder userListWithGoods:self.good Block:^(NSArray<EFReciveOrder *> *result) {
+        selfWeak.dataSource = result;
+        [selfWeak.tableView reloadData];
+        [selfWeak.tableView.mj_header endRefreshing];
+    }];
+}
+
+//添加下拉刷新
+- (void)addMJRefresh{
+    WeakObj(self)
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [selfWeak loadDataSource];
+    }];
 }
 
 #pragma mark - 领取记录tableView
@@ -56,7 +77,7 @@
     if (section == 0) {
         return 1;
     }
-    return 10;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -67,6 +88,8 @@
         return detailCell;
     }else{
         GoodReceiveCell *receiveCell = [tableView dequeueReusableCellWithIdentifier:@"GoodReceiveCell"];
+        EFReciveOrder *model = self.dataSource[indexPath.row];
+        receiveCell.model = model;
         return receiveCell;
     }
     

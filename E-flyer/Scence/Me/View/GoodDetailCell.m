@@ -5,8 +5,10 @@
 //  Created by 张杰 on 16/4/28.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "ToolUtils.h"
 #import "UIImageView+EFImageView.h"
 #import "GoodDetailCell.h"
+#import "EFLog.h"
 
 @interface GoodDetailCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *img;
@@ -69,10 +71,14 @@
     }
 }
 
-
+//商品下架  资金退回余额  并且商品的使用数量给减掉
 - (IBAction)btnDestoryAction:(id)sender {
+    [EFGood unShelveGood:self.model Success:^{
+        [SVProgressHUD showSuccessWithStatus:@"商品下架成功,金额已退回到您的账户余额"];
+    }];
 }
 - (IBAction)btnAddMoneyAction:(id)sender {
+    
 }
 
 

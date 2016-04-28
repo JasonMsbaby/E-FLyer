@@ -48,4 +48,16 @@
     }];
 }
 
++ (void)userListWithGoods:(EFGood *)good Block:(EFReceiveBlock)block{
+    AVQuery *query = [EFReciveOrder query];
+    [query includeKey:@"user"];
+    [query whereKey:@"good" equalTo:good];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {
+        if (block != nil) {
+            block(result);
+        }
+    }];
+}
+
 @end

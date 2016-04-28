@@ -1886,6 +1886,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="time" destination="kB7-sl-21Y" id="RbA-Qn-7CF"/>
+                                            <outlet property="userName" destination="tKQ-7A-Ixp" id="aNc-em-GYo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

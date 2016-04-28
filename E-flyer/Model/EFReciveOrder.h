@@ -9,7 +9,7 @@
 #import "EFGood.h"
 #import "BasicModel.h"
 @class EFReciveOrder;
-typedef void(^EFReceiveBlock)(NSArray <EFReciveOrder *> *);
+typedef void(^EFReceiveBlock)(NSArray <EFReciveOrder *> *result);
 @interface EFReciveOrder : BasicModel
 
 @property(nonatomic,strong) EFUser *user;
@@ -19,5 +19,7 @@ typedef void(^EFReceiveBlock)(NSArray <EFReciveOrder *> *);
 + (void)IsUserHaveReceiveWithGood:(EFGood *)good Finish:(void(^)(BOOL is))is;
 //根据当前登录的商户账户获取其商品的领取记录
 + (void)userReceiveOrderWithBlock:(EFReceiveBlock)block;
+//根据商品获取领取过的用户列表
++(void)userListWithGoods:(EFGood *)good Block:(EFReceiveBlock)block;
 
 @end

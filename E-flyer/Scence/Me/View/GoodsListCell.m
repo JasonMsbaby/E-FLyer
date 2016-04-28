@@ -35,7 +35,6 @@
     self.haveRead.text = [NSString stringWithFormat:@"%ld人",self.model.receivedCount];
     self.createdAt.text = [NSString stringWithFormat:@"发布时间:%@",[ToolUtils StringWithDate:self.model.createdAt]];
     
-    
     if (self.model.status == GoodStatusDelete) {
         UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
         [self.img addSubview:haveDeleteImageView];

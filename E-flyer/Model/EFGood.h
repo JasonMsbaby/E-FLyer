@@ -53,5 +53,8 @@ typedef NS_ENUM(NSInteger,GoodStatus){
 + (void)loadDataWithBelongUser:(EFUser *)user Block:(GoodFinshBlock)block;
 //用户回答问题领取奖励
 + (void)reveiveMoneyWithGood:(EFGood *)good Answer:(NSString *)answer FinishBlock:(void(^)())block;
+//商品下架
++ (void)unShelveGood:(EFGood *)good Success:(void(^)())success;
+
 
 @end

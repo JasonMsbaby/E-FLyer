@@ -9,6 +9,7 @@
 #import "ToolUtils.h"
 #import <BaiduMapAPI_Utils/BMKGeometry.h>
 #import "EFGood.h"
+#import "EFLog.h"
 
 @implementation EFGood
 @dynamic title;//标题
@@ -134,6 +135,32 @@
     
     
     
+}
+
++ (void)unShelveGood:(EFGood *)good Success:(void(^)())success{
+    //第一步余额回退
+    EFUser *currentUser = [EFUser currentUser];
+    CGFloat money = (good.count - good.receivedCount)*good.price;
+    currentUser.money += money;
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            //第二步 商品改变状态
+            good.status = GoodStatusDelete;
+            good.count = 0;
+            good.receivedCount = 0;
+            [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    //第三步 保存日志
+                    [EFLog saveLogWithType:(EFLogTypeBack) Source:@"账户余额" Money:money Good:good];
+                }else{
+                    [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                }
+            }];
+            
+        }else{
+            [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+        }
+    }];
 }
 
 

@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSInteger,EFLogType){
     EFLogTypeIn = 0,//充值
     EFLogTypeOut,//提现
-    EFLogTypePublish//发布
+    EFLogTypePublish,//发布
+    EFLogTypeBack//商品下架 资金回退
 };
 @interface EFLog : BasicModel
 @property(nonatomic,strong) EFUser *user;
