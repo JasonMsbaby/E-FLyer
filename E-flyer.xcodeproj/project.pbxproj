@@ -116,6 +116,7 @@
 		96A7F8621C80BEDC00412B79 /* FlyerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A7F8611C80BEDC00412B79 /* FlyerController.m */; };
 		96A7F8651C80C5C200412B79 /* BasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A7F8641C80C5C200412B79 /* BasicController.m */; };
 		96A7F8671C80C6F700412B79 /* left_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A7F8661C80C6F700412B79 /* left_back@2x.png */; };
+		96B3E7441CD1BCA0004AE882 /* GoodDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EE31CC33BF400B8AB08 /* MeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EE21CC33BF400B8AB08 /* MeInfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EEA1CC34AAE00B8AB08 /* MeInfoController.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EEF1CC34B1000B8AB08 /* GoodsMangerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EEE1CC34B1000B8AB08 /* GoodsMangerController.m */; settings = {ASSET_TAGS = (); }; };
@@ -344,6 +345,8 @@
 		96A7F8631C80C5C200412B79 /* BasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicController.h; sourceTree = "<group>"; };
 		96A7F8641C80C5C200412B79 /* BasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicController.m; sourceTree = "<group>"; };
 		96A7F8661C80C6F700412B79 /* left_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_back@2x.png"; sourceTree = "<group>"; };
+		96B3E7421CD1BCA0004AE882 /* GoodDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodDetailCell.h; sourceTree = "<group>"; };
+		96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodDetailCell.m; sourceTree = "<group>"; };
 		96B47EE11CC33BF400B8AB08 /* MeInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoModel.h; sourceTree = "<group>"; };
 		96B47EE21CC33BF400B8AB08 /* MeInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInfoModel.m; sourceTree = "<group>"; };
 		96B47EE91CC34AAE00B8AB08 /* MeInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoController.h; sourceTree = "<group>"; };
@@ -838,6 +841,8 @@
 				6AF2F1771CCDFDCC00AE113F /* PayInOutRecordCell.m */,
 				6A2F6E671CCFC7EC00E2A87F /* GoodReceiveCell.h */,
 				6A2F6E681CCFC7EC00E2A87F /* GoodReceiveCell.m */,
+				96B3E7421CD1BCA0004AE882 /* GoodDetailCell.h */,
+				96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1338,6 +1343,7 @@
 				962BCB0B1C8682A200DCAE4B /* VideoController.m in Sources */,
 				96B47EF51CC3B35700B8AB08 /* FlyerNewListController.m in Sources */,
 				9642E0C11CBCB97B00EEAC61 /* CameraAlertView.m in Sources */,
+				96B3E7441CD1BCA0004AE882 /* GoodDetailCell.m in Sources */,
 				96B937871CC61ECC0043E840 /* EveryDayTableViewCell.m in Sources */,
 				96B47EF21CC3668C00B8AB08 /* GoodsListCell.m in Sources */,
 				6A4E40F51CCB5208002B30F3 /* UserRecordCell.m in Sources */,
