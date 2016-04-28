@@ -18,7 +18,7 @@
 
 @interface GoodDetailCell : UITableViewCell
 
-@property(nonatomic,copy) id<GoodDetailCellDelegate> delegate;
+@property(nonatomic,weak) id<GoodDetailCellDelegate> delegate;
 
 @property(nonatomic,strong) EFGood *model;
 

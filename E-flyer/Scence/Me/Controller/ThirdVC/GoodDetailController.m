@@ -10,7 +10,7 @@
 #import "GoodReceiveCell.h"
 #import "GoodDetailController.h"
 #import "EFReciveOrder.h"
-
+#import "EYInputPopupView.h"
 @interface GoodDetailController ()<UITableViewDataSource,UITableViewDelegate,GoodDetailCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray <EFReciveOrder *> *dataSource;
@@ -84,8 +84,9 @@
     if(indexPath.section == 0){
         GoodDetailCell *detailCell = [tableView dequeueReusableCellWithIdentifier:@"GoodDetailCell"];
         detailCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        detailCell.delegate = self;
         detailCell.model = self.good;
-//        detailCell.delegate = self;
+        
         return detailCell;
     }else{
         GoodReceiveCell *receiveCell = [tableView dequeueReusableCellWithIdentifier:@"GoodReceiveCell"];
@@ -110,23 +111,28 @@
         switch (index) {
             case 0:
             {
-                good.status = GoodStatusNormal;
-                [SVProgressHUD showWithStatus:@"正在续费..."];
-                [EFGood publishWithType:(PayTypeAliay) Good:good Success:^{
-                    [SVProgressHUD showSuccessWithStatus:@"续费成功"];
+                [EFGood publishWithType:(PayTypeYuEr) Good:good Success:^{
+                    
                 }];
             }break;
+                
             case 1:
             {
                 [EFGood publishWithType:(PayTypeWeiXin) Good:good Success:^{
                     
                 }];
             }break;
-            case 3:
+            case 2:
             {
-                [EFGood publishWithType:(PayTypeYuEr) Good:good Success:^{
+                [EYInputPopupView popViewWithTitle:@"请输入续费数量" contentText:@"0" type:(EYInputPopupView_Type_single_line_number) cancelBlock:nil confirmBlock:^(UIView *view, NSString *text) {
                     
-                }];
+                    good.status = GoodStatusNormal;
+                    [SVProgressHUD showWithStatus:@"正在续费..."];
+                    //                    [EFGood publishWithType:(PayTypeAliay) Good:good Success:^{
+                    //                        [SVProgressHUD showSuccessWithStatus:@"续费成功"];
+                    //                    }];
+                } dismissBlock:nil];
+                
             }break;
                 
             default:
