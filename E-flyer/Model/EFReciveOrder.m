@@ -36,16 +36,21 @@
 }
 
 + (void)userReceiveOrderWithBlock:(EFReceiveBlock)block{
-    AVQuery *query = [EFReciveOrder query];
-    [query includeKey:@"user"];
-    [query includeKey:@"good"];
-    [query orderByDescending:@"createdAt"];
-    [query whereKey:@"user" equalTo:[EFUser currentUser]];
-    [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {
-        if (block != nil) {
-            block(result);
-        }
-    }];
+    if ([EFUser currentUser] != nil) {
+        AVQuery *query = [EFReciveOrder query];
+        [query includeKey:@"user"];
+        [query includeKey:@"good"];
+        [query orderByDescending:@"createdAt"];
+        [query whereKey:@"user" equalTo:[EFUser currentUser]];
+        [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {
+            if (block != nil) {
+                block(result);
+            }
+        }];
+    }else{
+        block(nil);
+    }
+    
 }
 
 + (void)userListWithGoods:(EFGood *)good Block:(EFReceiveBlock)block{

@@ -94,44 +94,49 @@
         [SVProgressHUD showErrorWithStatus:@"答案错误"];
         return;
     }
-    [SVProgressHUD showWithStatus:@"正在领取奖励..."];
-    [EFReciveOrder IsUserHaveReceiveWithGood:good Finish:^(BOOL is) {
-        if (!is) {
-            good.receivedCount += 1;
-            [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    EFUser *currentUser = [EFUser currentUser];
-                    currentUser.money += good.price;
-                    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        if (succeeded) {
-                            
-                            EFReciveOrder *order = [EFReciveOrder object];
-                            order.user = currentUser;
-                            order.good = good;
-                            [order saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                                if (succeeded) {
-                                    [SVProgressHUD showSuccessWithStatus:@"成功"];
-                                    if (block != nil) {
-                                        block();
+    if ([EFUser currentUser] != nil) {
+        [SVProgressHUD showWithStatus:@"正在领取奖励..."];
+        [EFReciveOrder IsUserHaveReceiveWithGood:good Finish:^(BOOL is) {
+            if (!is) {
+                good.receivedCount += 1;
+                [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        EFUser *currentUser = [EFUser currentUser];
+                        currentUser.money += good.price;
+                        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            if (succeeded) {
+                                
+                                EFReciveOrder *order = [EFReciveOrder object];
+                                order.user = currentUser;
+                                order.good = good;
+                                [order saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                    if (succeeded) {
+                                        [SVProgressHUD showSuccessWithStatus:@"成功"];
+                                        if (block != nil) {
+                                            block();
+                                        }
+                                    }else{
+                                        [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
                                     }
-                                }else{
-                                    [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
-                                }
-                            }];
-                            
-                            
-                        }else{
-                            [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
-                        }
-                    }];
-                }else{
-                    [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
-                }
-            }];
-        }else{
-            [SVProgressHUD showErrorWithStatus:@"您已经领取过了"];
-        }
-    }];
+                                }];
+                                
+                                
+                            }else{
+                                [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                            }
+                        }];
+                    }else{
+                        [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                    }
+                }];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"您已经领取过了"];
+            }
+        }];
+
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"请登录后操作"];
+    }
     
     
     
@@ -140,27 +145,31 @@
 + (void)unShelveGood:(EFGood *)good Success:(void(^)())success{
     //第一步余额回退
     EFUser *currentUser = [EFUser currentUser];
-    CGFloat money = (good.count - good.receivedCount)*good.price;
-    currentUser.money += money;
-    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            //第二步 商品改变状态
-            good.status = GoodStatusDelete;
-            good.count = 0;
-            good.receivedCount = 0;
-            [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    //第三步 保存日志
-                    [EFLog saveLogWithType:(EFLogTypeBack) Source:@"账户余额" Money:money Good:good];
-                }else{
-                    [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
-                }
-            }];
-            
-        }else{
-            [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
-        }
-    }];
+    if (currentUser != nil) {
+        CGFloat money = (good.count - good.receivedCount)*good.price;
+        currentUser.money += money;
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                //第二步 商品改变状态
+                good.status = GoodStatusDelete;
+                good.count = 0;
+                good.receivedCount = 0;
+                [good saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        //第三步 保存日志
+                        [EFLog saveLogWithType:(EFLogTypeBack) Source:@"账户余额" Money:money Good:good];
+                        success();
+                    }else{
+                        [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+                    }
+                }];
+                
+            }else{
+                [SVProgressHUD showErrorWithStatus:[ToolUtils stringWithError:error]];
+            }
+        }];
+    }
+    
 }
 
 

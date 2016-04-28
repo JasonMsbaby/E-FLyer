@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *left;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UILabel *crowed;
+@property (weak, nonatomic) IBOutlet UILabel *area;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnDestory;
 @property (weak, nonatomic) IBOutlet UIButton *btnAddMoney;
 
@@ -48,7 +51,8 @@
     self.left.text = [NSString stringWithFormat:@"%ld",self.model.count - self.model.receivedCount];
     self.title.text = self.model.title;
     self.content.text = self.model.content;
-    
+    self.crowed.text = self.model.crowd.job;
+    self.area.text = [NSString stringWithFormat:@"%@方圆【%.2lf】公里",self.model.address.address,self.model.address.scope/1000];
     if (self.model.status == GoodStatusDelete) {
         UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
         [self.img addSubview:haveDeleteImageView];
@@ -73,6 +77,7 @@
 
 //商品下架  资金退回余额  并且商品的使用数量给减掉
 - (IBAction)btnDestoryAction:(id)sender {
+    [SVProgressHUD showWithStatus:@"正在下架..."];
     [EFGood unShelveGood:self.model Success:^{
         [SVProgressHUD showSuccessWithStatus:@"商品下架成功,金额已退回到您的账户余额"];
     }];
