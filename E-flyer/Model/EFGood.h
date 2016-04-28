@@ -17,9 +17,9 @@
 typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 typedef NS_ENUM(NSInteger,GoodStatus){
     GoodStatusNormal = 0,//正常
-    GoodStatusWaittingPay,//待支付
-    GoodStatusPayError,//支付失败
-    GoodStatusDelete//已下架
+    GoodStatusWaittingPay = 1,//待支付
+    GoodStatusPayError = 2,//支付失败
+    GoodStatusDelete = 3//已下架
 };
 
 @interface EFGood :BasicModel

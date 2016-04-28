@@ -1742,7 +1742,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8x-UM-H59">
                                                     <rect key="frame" x="159" y="0.0" width="1" height="291.5"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="JTy-j0-ffZ"/>
                                                         <constraint firstAttribute="height" constant="20" id="lSZ-yk-tMk"/>
@@ -1763,6 +1763,9 @@
                                                     <state key="normal" title="下架">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnDestoryAction:" destination="frg-bc-So8" eventType="touchUpInside" id="Q8r-Xj-Txq"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLN-2J-msK">
                                                     <rect key="frame" x="170" y="246.5" width="140" height="35"/>
@@ -1774,6 +1777,9 @@
                                                     <state key="normal" title="续费">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnAddMoneyAction:" destination="frg-bc-So8" eventType="touchUpInside" id="mfU-TG-KPN"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -1835,6 +1841,19 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="answer" destination="ihx-7S-vmV" id="GMp-Zu-nIP"/>
+                                            <outlet property="btnAddMoney" destination="QLN-2J-msK" id="PET-PN-4dU"/>
+                                            <outlet property="btnDestory" destination="HF6-Fp-3LB" id="vrG-m6-cFs"/>
+                                            <outlet property="content" destination="ee7-1S-jJT" id="F2a-sb-UAN"/>
+                                            <outlet property="img" destination="xpM-5U-7yu" id="mf4-lY-4T3"/>
+                                            <outlet property="left" destination="Ke2-Sh-O0V" id="Voi-oP-4rc"/>
+                                            <outlet property="number" destination="T8S-Yg-BCI" id="gnI-KR-2lH"/>
+                                            <outlet property="price" destination="aUg-7O-Ke8" id="xP7-jU-K6k"/>
+                                            <outlet property="question" destination="lgS-Jf-xGM" id="FVv-GI-8pB"/>
+                                            <outlet property="sum" destination="p57-f4-IjR" id="kh0-ul-egv"/>
+                                            <outlet property="title" destination="X0J-X6-3Wc" id="FTY-5j-Pf5"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoodReceiveCell" rowHeight="63" id="Blk-0d-IJH" customClass="GoodReceiveCell">
                                         <rect key="frame" x="0.0" y="320" width="320" height="63"/>

@@ -25,6 +25,10 @@
     self.title = @"商品详情";
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self loadBasicData];
+}
+
+- (void)loadBasicData{
     
 }
 
@@ -59,6 +63,7 @@
     if(indexPath.section == 0){
         GoodDetailCell *detailCell = [tableView dequeueReusableCellWithIdentifier:@"GoodDetailCell"];
         detailCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        detailCell.model = self.good;
         return detailCell;
     }else{
         GoodReceiveCell *receiveCell = [tableView dequeueReusableCellWithIdentifier:@"GoodReceiveCell"];

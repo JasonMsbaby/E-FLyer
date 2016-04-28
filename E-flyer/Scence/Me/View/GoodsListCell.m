@@ -34,6 +34,33 @@
     self.title.text = self.model.title;
     self.haveRead.text = [NSString stringWithFormat:@"%ld人",self.model.receivedCount];
     self.createdAt.text = [NSString stringWithFormat:@"发布时间:%@",[ToolUtils StringWithDate:self.model.createdAt]];
+    
+    
+    if (self.model.status == GoodStatusDelete) {
+        UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
+        [self.img addSubview:haveDeleteImageView];
+        [haveDeleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.top.equalTo(self.img);
+            make.height.equalTo(@70);
+            make.width.equalTo(@70);
+        }];
+        
+    }else{
+        for (UIView *v in self.img.subviews) {
+            [v removeFromSuperview];
+        }
+    }
+    
+    if (self.model.status == GoodStatusDelete) {
+        UIImageView *haveDeleteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"havaDelete"]];
+        [self.img addSubview:haveDeleteImageView];
+        [haveDeleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.top.equalTo(self.img);
+            make.height.equalTo(@70);
+            make.width.equalTo(@70);
+        }];
+        
+    }
 }
 
 @end

@@ -117,6 +117,7 @@
 		96A7F8651C80C5C200412B79 /* BasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A7F8641C80C5C200412B79 /* BasicController.m */; };
 		96A7F8671C80C6F700412B79 /* left_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A7F8661C80C6F700412B79 /* left_back@2x.png */; };
 		96B3E7441CD1BCA0004AE882 /* GoodDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */; settings = {ASSET_TAGS = (); }; };
+		96B3E7461CD1E691004AE882 /* havaDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B3E7451CD1E691004AE882 /* havaDelete@2x.png */; settings = {ASSET_TAGS = (); }; };
 		96B47EE31CC33BF400B8AB08 /* MeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EE21CC33BF400B8AB08 /* MeInfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EEA1CC34AAE00B8AB08 /* MeInfoController.m */; settings = {ASSET_TAGS = (); }; };
 		96B47EEF1CC34B1000B8AB08 /* GoodsMangerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B47EEE1CC34B1000B8AB08 /* GoodsMangerController.m */; settings = {ASSET_TAGS = (); }; };
@@ -347,6 +348,7 @@
 		96A7F8661C80C6F700412B79 /* left_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_back@2x.png"; sourceTree = "<group>"; };
 		96B3E7421CD1BCA0004AE882 /* GoodDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodDetailCell.h; sourceTree = "<group>"; };
 		96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodDetailCell.m; sourceTree = "<group>"; };
+		96B3E7451CD1E691004AE882 /* havaDelete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "havaDelete@2x.png"; sourceTree = "<group>"; };
 		96B47EE11CC33BF400B8AB08 /* MeInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoModel.h; sourceTree = "<group>"; };
 		96B47EE21CC33BF400B8AB08 /* MeInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInfoModel.m; sourceTree = "<group>"; };
 		96B47EE91CC34AAE00B8AB08 /* MeInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoController.h; sourceTree = "<group>"; };
@@ -929,6 +931,7 @@
 		965434041C804D4C005B8BD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				96B3E7451CD1E691004AE882 /* havaDelete@2x.png */,
 				6A9DBE6D1CCD11C200A4E242 /* btn_chongzhi@2x.png */,
 				6A9DBE6E1CCD11C200A4E242 /* btn_tixian@2x.png */,
 				6A9DBE691CCD0B7C00A4E242 /* log_in@2x.png */,
@@ -1225,6 +1228,7 @@
 				96E59ECA1C8EE06400D24F02 /* down_close@2x.png in Resources */,
 				9642E0BD1CBCB97B00EEAC61 /* close_icon@2x.png in Resources */,
 				96F81BC51CB9650900A3B523 /* head_default@2x.png in Resources */,
+				96B3E7461CD1E691004AE882 /* havaDelete@2x.png in Resources */,
 				9642E1191CBD272D00EEAC61 /* city.plist in Resources */,
 				6A7106CC1CC8BD2100DE47ED /* btn_receive@2x.png in Resources */,
 				6ACC9C4E1CCA478300F4B716 /* menu_order@2x.png in Resources */,

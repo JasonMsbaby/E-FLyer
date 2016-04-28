@@ -5,9 +5,11 @@
 //  Created by 张杰 on 16/4/28.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "EFGood.h"
 #import <UIKit/UIKit.h>
 
 @interface GoodDetailCell : UITableViewCell
+
+@property(nonatomic,strong) EFGood *model;
 
 @end
