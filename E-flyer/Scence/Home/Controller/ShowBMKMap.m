@@ -24,19 +24,13 @@
 @property(assign,nonatomic) CGFloat distance;//圆形的直径对应的实际距离
 @property(strong,nonatomic) EFBMKModel *model;//确定最终选择的model
 @property(assign,nonatomic) BMKCoordinateRegion coorRegion;
-//@property(strong,nonatomic) BMKCircle *circle;
-//@property(strong,nonatomic) BMKCircleView *circleView;
-//@property(strong,nonatomic) BMKPointAnnotation *pointAn;
+
 @end
 
 @implementation ShowBMKMap
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    
-    //    [self drawCircle];
-    //    [self addAnnotationView];
-    
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     _mapSearch.delegate = self;
@@ -164,21 +158,7 @@
     _number_circle.font = [UIFont systemFontOfSize:12];
     _number_circle.text = @"10km";
 }
-/*!
- *  绘制图层
- */
-//- (void)drawCircle{
-//    _circle = [BMKCircle circleWithCenterCoordinate:self.position radius:100];
-//    [self.mapView addOverlay:_circle];
-//}
-/*!
- *  添加标注
- */
-//- (void)addAnnotationView{
-//    _pointAn = [[BMKPointAnnotation alloc] init];
-//    _pointAn.coordinate = self.position;
-//    [self.mapView addAnnotation:_pointAn];
-//}
+
 
 #pragma mark - BMKMapViewDelegate
 
@@ -195,31 +175,7 @@
     [self disTanceInView];
 }
 
-//- (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay{
-//    if ([overlay isKindOfClass:[BMKCircle class]]){
-//        if (_circleView == nil) {
-//            _circleView = [[BMKCircleView alloc] initWithOverlay:overlay];
-//            _circleView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.5];
-//            _circleView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
-//            _circleView.lineWidth = 2.0;
-//            _circleView.userInteractionEnabled = YES;
-//            NSLog(@"%d",_circleView.isUserInteractionEnabled);
-//        }
-//        NSLog(@"%@",_circleView);
-//        return _circleView;
-//    }
-//    return nil;
-//}
 
-//- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
-//    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
-//        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
-//        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
-//        newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
-//        return newAnnotationView;
-//    }
-//    return nil;
-//}
 
 
 - (void)dragCircleView:(UIPanGestureRecognizer *)sender{
@@ -236,20 +192,6 @@
 }
 
 
-//-(void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
-//    float lat =  coordinate.latitude;
-//    float lng = coordinate.longitude;
-//    //反地理编码出地理位置
-//    CLLocationCoordinate2D pt=(CLLocationCoordinate2D){0,0};
-//    pt=(CLLocationCoordinate2D){lat,lng};
-//    BMKReverseGeoCodeOption *option = [[BMKReverseGeoCodeOption alloc] init];
-//    option.reverseGeoPoint = pt;
-//    [self.mapSearch reverseGeoCode:option];
-//    [SVProgressHUD showWithStatus:@"正在定位..."];
-//}
-//- (void)mapView:(BMKMapView *)mapView annotationView:(BMKAnnotationView *)view didChangeDragState:(BMKAnnotationViewDragState)newState fromOldState:(BMKAnnotationViewDragState)oldState{
-//    NSLog(@"。。。。。");
-//}
 #pragma mark - BMKGeoCodeSearchDelegate
 -(void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error{
     NSString *msg = [NSString stringWithFormat:@"您将投放于【%@】方圆【%.2f】公里之内区域",result.address,self.distance/1000];

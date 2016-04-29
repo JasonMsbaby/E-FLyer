@@ -150,16 +150,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入问题答案" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vL6-yR-Iyr">
-                                                    <rect key="frame" x="76" y="159" width="194" height="30"/>
+                                                    <rect key="frame" x="76" y="159" width="174" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niT-uc-0zj">
-                                                    <rect key="frame" x="280" y="159" width="30" height="30"/>
+                                                    <rect key="frame" x="260" y="159" width="50" height="30"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="0X7-BZ-xzb"/>
+                                                        <constraint firstAttribute="width" constant="50" id="0X7-BZ-xzb"/>
                                                         <constraint firstAttribute="height" constant="30" id="KSq-Sv-gv9"/>
                                                     </constraints>
                                                     <state key="normal" image="btn_receive.png"/>
@@ -239,6 +239,7 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="cer-JG-TaS"/>
+                                                    <exclude reference="9nY-gu-GIo"/>
                                                     <exclude reference="lh0-Pk-Sk7"/>
                                                     <exclude reference="KA1-0s-PEk"/>
                                                 </mask>
@@ -1243,8 +1244,8 @@
                                                     <exclude reference="KF0-qN-HGm"/>
                                                     <exclude reference="SZZ-EC-9Fv"/>
                                                     <exclude reference="6K3-Yt-X19"/>
-                                                    <exclude reference="vs5-Kr-VKp"/>
                                                     <exclude reference="upH-ec-xEd"/>
+                                                    <exclude reference="vs5-Kr-VKp"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

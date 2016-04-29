@@ -219,6 +219,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([EFUser currentUser] == nil) {
+        [SVProgressHUD showErrorWithStatus:@"请登录后操作"];
+        return;
+    }
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     MeMenu *menu = _data[self.sortedKeys[section]][row];

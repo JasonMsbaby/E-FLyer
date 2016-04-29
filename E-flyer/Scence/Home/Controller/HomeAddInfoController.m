@@ -175,8 +175,7 @@
                 case 0://支付宝支付
                 {
                     [EFGood publishWithType:(PayTypeAliay) Good:self.good Success:^{
-                        [SVProgressHUD showSuccessWithStatus:@"发布成功"];
-                        [self dismissViewControllerAnimated:YES completion:nil];
+                        
                     }];
                 }
                      
@@ -192,7 +191,8 @@
                 case 2:
                 {
                     [EFGood publishWithType:(PayTypeYuEr) Good:self.good Success:^{
-                        
+                        [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+                        [self dismissViewControllerAnimated:YES completion:nil];
                     }];
                 }
                     break;

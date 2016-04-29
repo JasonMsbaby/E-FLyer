@@ -27,7 +27,7 @@
 //加载数据
 - (void)loadData{
     WeakObj(self)
-    [EFReciveOrder allReceiveWithCurrentBarBlock:^(NSArray<EFReciveOrder *> *result) {
+    [EFReciveOrder userReceiveOrderWithBlock:^(NSArray<EFReciveOrder *> *result) {
         selfWeak.dataSource = result;
         [selfWeak.tableView reloadData];
         [selfWeak.tableView.mj_header endRefreshing];

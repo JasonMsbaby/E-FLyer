@@ -91,6 +91,16 @@
 //用户领取
 + (void)reveiveMoneyWithGood:(EFGood *)good Answer:(NSString *)answer FinishBlock:(void (^)())block{
 #warning 此处应该先获取最新的商品详情后再进行相应的操作，否则会产生逻辑错误
+    if([EFUser currentUser] == nil){
+        [SVProgressHUD showErrorWithStatus:@"请登录后领取"];
+        return;
+    }
+    
+    if ([EFUser currentUser].type == UserRoleTypeBar) {
+        [SVProgressHUD showInfoWithStatus:@"您是商家，不能领取"];
+        return;
+    }
+    
     if (good.receivedCount >= good.count) {
         [SVProgressHUD showErrorWithStatus:@"您来晚了,已经领取光了..."];
         return;
@@ -99,6 +109,7 @@
         [SVProgressHUD showErrorWithStatus:@"答案错误"];
         return;
     }
+    
     if ([EFUser currentUser] != nil) {
         [SVProgressHUD showWithStatus:@"正在领取奖励..."];
         [EFReciveOrder IsUserHaveReceiveWithGood:good Finish:^(BOOL is) {
@@ -263,23 +274,33 @@
     [goodsQuery orderByDescending:@"updatedAt"];
     [goodsQuery whereKey:@"status" equalTo:@(GoodStatusNormal)];
     
+    EFUser *currentUser = [EFUser currentUser];
+    
     if (categroy != nil) {
         [goodsQuery whereKey:@"categroy" equalTo:categroy];
     }
     
     NSMutableArray *crowds = [NSMutableArray array];
     [crowds addObject:[EFCrowd shareInstance].data[0]];
-    if (crowd != nil) {
+    if (crowd != nil && currentUser.type == UserRoleTypeCustome) {
         [crowds addObject:crowd];
+        [goodsQuery whereKey:@"crowd" containedIn:crowds];
     }
-    [goodsQuery whereKey:@"crowd" containedIn:crowds];
     
     goodsQuery.limit = pageCount;
     goodsQuery.skip = (pageIndex-1)*pageCount;
+    
     [goodsQuery findObjectsInBackgroundWithSuccess:^(NSArray *result) {
-        if (block != nil) {
-            block([self nearLocationInArray:result]);
+        if (currentUser.type == UserRoleTypeCustome) {
+            if (block != nil) {
+                block([self nearLocationInArray:result]);
+            }
+        }else{
+            if (block != nil) {
+                block(result);
+            }
         }
+        
     }];
 }
 

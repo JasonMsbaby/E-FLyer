@@ -83,7 +83,7 @@
 - (void)initMap{
     self.mapManger = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [self.mapManger start:@"KwEQcioHGhuh2LAV6mxTQpbR4Hi8LLf3"  generalDelegate:nil];
+    BOOL ret = [self.mapManger start:@"CweiaLn1vi90DhFVk6iAan6VSuFFn50e"  generalDelegate:nil];
     if (!ret) {
         [SVProgressHUD showErrorWithStatus:@"地图初始化失败,请打开本软件的定位权限"];
     }else{

@@ -1177,7 +1177,7 @@
 				TargetAttributes = {
 					9654338D1C803625005B8BD1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 4H5SRE5F8G;
+						DevelopmentTeam = ZR767ETKP6;
 					};
 					965433A61C803625005B8BD1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1581,9 +1581,10 @@
 				INFOPLIST_FILE = "E-flyer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.beijing.JasonMsbaby.EFlyer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beijing.jason.EFlyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1603,9 +1604,10 @@
 				INFOPLIST_FILE = "E-flyer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.beijing.JasonMsbaby.EFlyer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beijing.jason.EFlyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

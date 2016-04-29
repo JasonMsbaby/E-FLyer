@@ -101,7 +101,7 @@
     [SVProgressHUD showInfoWithStatus:@"测试中，暂未开通"];
 }
 - (void)payInWithTest{
-    [SVProgressHUD showInfoWithStatus:@"正在充值,请稍后..."];
+    [SVProgressHUD showWithStatus:@"正在充值,请稍后..."];
     self.currentUser.money += [self.money.text floatValue];
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -125,7 +125,7 @@
     [SVProgressHUD showInfoWithStatus:@"测试中，暂未开通"];
 }
 - (void)payOutWithTest{
-    [SVProgressHUD showInfoWithStatus:@"正在提现,请稍后..."];
+    [SVProgressHUD showWithStatus:@"正在提现,请稍后..."];
     self.currentUser.money -= [self.money.text floatValue];
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {

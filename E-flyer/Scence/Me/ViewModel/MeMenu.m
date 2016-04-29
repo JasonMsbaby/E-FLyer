@@ -63,7 +63,7 @@
         [m2 addObject:m2_2];
     }
     
-    if(currentUser.type == 0){
+    if(currentUser != nil && currentUser.type == UserRoleTypeBar){
         return @{@"我的":m1,@"设置":m2};
     }else{
         return @{@"我的":m11,@"设置":m2};

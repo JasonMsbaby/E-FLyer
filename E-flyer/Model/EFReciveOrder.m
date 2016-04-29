@@ -41,6 +41,7 @@
         AVQuery *query = [EFReciveOrder query];
         [query includeKey:@"user"];
         [query includeKey:@"good"];
+        [query includeKey:@"blongUser"];
         [query orderByDescending:@"createdAt"];
         [query whereKey:@"user" equalTo:[EFUser currentUser]];
         [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {

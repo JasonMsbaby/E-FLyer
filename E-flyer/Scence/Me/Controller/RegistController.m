@@ -197,6 +197,11 @@
 - (void)registWithRoleWithBlock:(void(^)(int type,EFCrowd *crowd))block{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请选择近的角色" preferredStyle:(UIAlertControllerStyleActionSheet)];
     [alert addAction:[UIAlertAction actionWithTitle:@"商家" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        if (block != nil) {
+            block(UserRoleTypeCustome,nil);
+        }
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         LrdAlertTableView *alertTable = [[LrdAlertTableView alloc] initWithTitle:@"请选择您的身份" SubTitle:nil];
         NSMutableArray *dataSource = [NSMutableArray array];
         for (EFCrowd *crowd in [EFCrowd shareInstance].data) {
@@ -211,12 +216,6 @@
             }
         };
         [alertTable pop];
-        
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        if (block != nil) {
-            block(UserRoleTypeCustome,nil);
-        }
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         if (block != nil) {
