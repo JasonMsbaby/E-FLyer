@@ -114,6 +114,7 @@
                                 EFReciveOrder *order = [EFReciveOrder object];
                                 order.user = currentUser;
                                 order.good = good;
+                                order.blongUser = good.blongUser;
                                 [order saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                     if (succeeded) {
                                         [SVProgressHUD showSuccessWithStatus:@"成功"];

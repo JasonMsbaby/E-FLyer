@@ -34,14 +34,17 @@
 
 - (void)loadModel{
     UIImage *goodimg = [UIImage imageWithData:[self.model.good.img getData]];
-    UIImage *barimg = [UIImage imageWithData:[self.model.good.blongUser.barImg getData]];
+    UIImage *barimg = [UIImage imageWithData:[self.model.blongUser.barImg getData]];
     [self.goodImg setBackgroundImage:goodimg forState:(UIControlStateNormal)];
     [self.barImg setBackgroundImage:barimg forState:(UIControlStateNormal)];
+    
+    
     
     self.barImg.layer.cornerRadius = self.barImg.bounds.size.width/2;
     self.barImg.clipsToBounds = YES;
     
-    self.barTitle.text = self.model.good.blongUser.barName;
+    
+    self.barTitle.text = self.model.blongUser.barName;
     self.goodTitle.text = self.model.good.title;
     self.goodPrice.text = [NSString stringWithFormat:@"单价：%.2lf元",self.model.good.price];
     self.receiveTime.text = [ToolUtils StringWithDate:self.model.createdAt];

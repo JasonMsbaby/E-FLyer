@@ -12,6 +12,7 @@
 
 @dynamic user;
 @dynamic good;
+@dynamic blongUser;
 
 
 + (void)load{
@@ -57,13 +58,10 @@
     EFUser *currentUser = [EFUser currentUser];
     if (currentUser != nil) {
         AVQuery *receiveQuery = [EFReciveOrder query];
-        AVQuery *goodQuery = [EFGood query];
-        [goodQuery includeKey:@"img"];
-        [goodQuery includeKey:@"blongUser"];
-        [goodQuery whereKey:@"blongUser" equalTo:currentUser];
-        [receiveQuery whereKey:@"good" matchesQuery:goodQuery];
+        [receiveQuery whereKey:@"blongUser" equalTo:currentUser];
         [receiveQuery includeKey:@"user"];
         [receiveQuery includeKey:@"good"];
+        [receiveQuery includeKey:@"blongUser"];
         [receiveQuery orderByDescending:@"createdAt"];
         [receiveQuery findObjectsInBackgroundWithSuccess:^(NSArray *result) {
             if (block != nil) {

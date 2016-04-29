@@ -14,6 +14,7 @@ typedef void(^EFReceiveBlock)(NSArray <EFReciveOrder *> *result);
 
 @property(nonatomic,strong) EFUser *user;
 @property(nonatomic,strong) EFGood *good;
+@property(nonatomic,strong) EFUser *blongUser;
 
 //判断用户是否领取过该商品
 + (void)IsUserHaveReceiveWithGood:(EFGood *)good Finish:(void(^)(BOOL is))is;
