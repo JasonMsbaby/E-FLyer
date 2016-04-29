@@ -102,6 +102,10 @@
 		9672B6AF1CD2353C0088B21D /* haveFinish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9672B6AE1CD2353C0088B21D /* haveFinish@2x.png */; settings = {ASSET_TAGS = (); }; };
 		9684D8531C82E0A200F4E542 /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9684D8521C82E0A200F4E542 /* MeController.m */; };
 		9686D9991C846EC0005EC027 /* FlyerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686D9981C846EC0005EC027 /* FlyerHeaderView.m */; };
+		968773631CD349060007F347 /* menu_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968773621CD349060007F347 /* menu_history@2x.png */; settings = {ASSET_TAGS = (); }; };
+		968773661CD34E100007F347 /* CustomHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968773651CD34E100007F347 /* CustomHistoryController.m */; settings = {ASSET_TAGS = (); }; };
+		968773691CD34E880007F347 /* CustomInComeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968773681CD34E880007F347 /* CustomInComeController.m */; settings = {ASSET_TAGS = (); }; };
+		9687736C1CD3657D0007F347 /* CustomHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687736B1CD3657D0007F347 /* CustomHistoryCell.m */; settings = {ASSET_TAGS = (); }; };
 		968B1AC11CBEA6CB00FDE255 /* EFBMKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 968B1AC01CBEA6CB00FDE255 /* EFBMKModel.m */; };
 		968D1A021C8D760000D1BDBC /* sendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968D1A011C8D760000D1BDBC /* sendButton@2x.png */; };
 		968D1A041C8D76A500D1BDBC /* sendButton_focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 968D1A031C8D76A500D1BDBC /* sendButton_focus@2x.png */; };
@@ -330,6 +334,13 @@
 		9684D8521C82E0A200F4E542 /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeController.m; sourceTree = "<group>"; };
 		9686D9971C846EC0005EC027 /* FlyerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerHeaderView.h; sourceTree = "<group>"; };
 		9686D9981C846EC0005EC027 /* FlyerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerHeaderView.m; sourceTree = "<group>"; };
+		968773621CD349060007F347 /* menu_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_history@2x.png"; sourceTree = "<group>"; };
+		968773641CD34E100007F347 /* CustomHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHistoryController.h; sourceTree = "<group>"; };
+		968773651CD34E100007F347 /* CustomHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHistoryController.m; sourceTree = "<group>"; };
+		968773671CD34E880007F347 /* CustomInComeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInComeController.h; sourceTree = "<group>"; };
+		968773681CD34E880007F347 /* CustomInComeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInComeController.m; sourceTree = "<group>"; };
+		9687736A1CD3657D0007F347 /* CustomHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHistoryCell.h; sourceTree = "<group>"; };
+		9687736B1CD3657D0007F347 /* CustomHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHistoryCell.m; sourceTree = "<group>"; };
 		968B1ABF1CBEA6CB00FDE255 /* EFBMKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFBMKModel.h; sourceTree = "<group>"; };
 		968B1AC01CBEA6CB00FDE255 /* EFBMKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFBMKModel.m; sourceTree = "<group>"; };
 		968D1A011C8D760000D1BDBC /* sendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sendButton@2x.png"; sourceTree = "<group>"; };
@@ -847,6 +858,8 @@
 				6A2F6E681CCFC7EC00E2A87F /* GoodReceiveCell.m */,
 				96B3E7421CD1BCA0004AE882 /* GoodDetailCell.h */,
 				96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */,
+				9687736A1CD3657D0007F347 /* CustomHistoryCell.h */,
+				9687736B1CD3657D0007F347 /* CustomHistoryCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -933,6 +946,7 @@
 		965434041C804D4C005B8BD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				968773621CD349060007F347 /* menu_history@2x.png */,
 				9672B6AE1CD2353C0088B21D /* haveFinish@2x.png */,
 				96B3E7451CD1E691004AE882 /* havaDelete@2x.png */,
 				6A9DBE6D1CCD11C200A4E242 /* btn_chongzhi@2x.png */,
@@ -1001,6 +1015,10 @@
 				6A4E40F11CCB4CDF002B30F3 /* UserRecordController.m */,
 				6A4E40F61CCB5D83002B30F3 /* AccountController.h */,
 				6A4E40F71CCB5D83002B30F3 /* AccountController.m */,
+				968773641CD34E100007F347 /* CustomHistoryController.h */,
+				968773651CD34E100007F347 /* CustomHistoryController.m */,
+				968773671CD34E880007F347 /* CustomInComeController.h */,
+				968773681CD34E880007F347 /* CustomInComeController.m */,
 			);
 			path = SecondVC;
 			sourceTree = "<group>";
@@ -1198,6 +1216,7 @@
 			files = (
 				96A7F7C91C8099C700412B79 /* tab_add_select@2x.png in Resources */,
 				6ACC9C481CCA478300F4B716 /* menu_person_phone@2x.png in Resources */,
+				968773631CD349060007F347 /* menu_history@2x.png in Resources */,
 				6A9DBE6B1CCD0B7C00A4E242 /* log_in@2x.png in Resources */,
 				96A7F7CE1C80A20B00412B79 /* index_xiala@2x.png in Resources */,
 				6ACC9C581CCA49B600F4B716 /* menu_bar_info@2x.png in Resources */,
@@ -1357,6 +1376,7 @@
 				6A4E40F51CCB5208002B30F3 /* UserRecordCell.m in Sources */,
 				96EAA8471CBA244E00508683 /* NSTimer+EFTimer.m in Sources */,
 				96EB75D21C8595DF00B3658F /* VideoCell.m in Sources */,
+				9687736C1CD3657D0007F347 /* CustomHistoryCell.m in Sources */,
 				6A9DBE681CCD06D000A4E242 /* EFLog.m in Sources */,
 				96EB75C71C857B5000B3658F /* VideoCarousel.m in Sources */,
 				6A4E40E81CCB1782002B30F3 /* ImageChangeController.m in Sources */,
@@ -1383,6 +1403,7 @@
 				96E59EBD1C8EB60F00D24F02 /* EFUser.m in Sources */,
 				6A4E40ED1CCB17A4002B30F3 /* PassWordChangeController.m in Sources */,
 				96E59EC51C8ECC9500D24F02 /* AVQuery+EFQuery.m in Sources */,
+				968773661CD34E100007F347 /* CustomHistoryController.m in Sources */,
 				6A2F6E661CCFC5A800E2A87F /* GoodDetailController.m in Sources */,
 				96E390461C81CB2400107FB7 /* SearchController.m in Sources */,
 				9642E0C81CBD01F500EEAC61 /* LrdDateModel.m in Sources */,
@@ -1401,6 +1422,7 @@
 				965343BC1CBDFA1A00459664 /* ShowBMKMap.m in Sources */,
 				96F66DFD1C9691C80023F6F3 /* PopView.m in Sources */,
 				968B1AC11CBEA6CB00FDE255 /* EFBMKModel.m in Sources */,
+				968773691CD34E880007F347 /* CustomInComeController.m in Sources */,
 				96A7F8621C80BEDC00412B79 /* FlyerController.m in Sources */,
 				96EB75BF1C85647400B3658F /* FlyerNewCell.m in Sources */,
 				9684D8531C82E0A200F4E542 /* MeController.m in Sources */,

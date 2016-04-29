@@ -12,6 +12,8 @@
 #import "PhoneChangeController.h"
 #import "ImageChangeController.h"
 #import "EYInputPopupView.h"
+#import "CustomHistoryController.h"
+#import "CustomInComeController.h"
 @interface MeInfoController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSArray<MeInfoModel *> *dataSource;

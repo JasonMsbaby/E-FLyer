@@ -37,5 +37,7 @@
  */
 - (void)toastWithError:(NSError *)err;
 
+- (void)pushNext:(UIViewController *)controller navIsHidden:(BOOL)hidden;
+
 
 @end

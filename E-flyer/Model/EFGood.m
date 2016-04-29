@@ -66,7 +66,7 @@
     [goodsQuery includeKey:@"crowd"];
     [goodsQuery includeKey:@"blongUser"];
     [goodsQuery includeKey:@"categroy"];
-    [goodsQuery orderByDescending:@"createdAt"];
+    [goodsQuery orderByDescending:@"updatedAt"];
     [goodsQuery whereKey:@"blongUser" equalTo:user];
     [goodsQuery findObjectsInBackgroundWithSuccess:^(NSArray *result) {
         if (block != nil) {
@@ -259,7 +259,7 @@
     [goodsQuery includeKey:@"crowd"];
     [goodsQuery includeKey:@"blongUser"];
     [goodsQuery includeKey:@"categroy"];
-    [goodsQuery orderByDescending:@"createdAt"];
+    [goodsQuery orderByDescending:@"updatedAt"];
     [goodsQuery whereKey:@"status" equalTo:@(GoodStatusNormal)];
     
     if (categroy != nil) {

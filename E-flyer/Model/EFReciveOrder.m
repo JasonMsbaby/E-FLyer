@@ -50,8 +50,29 @@
     }else{
         block(nil);
     }
-    
 }
+
+
++ (void)allReceiveWithCurrentBarBlock:(EFReceiveBlock)block{
+    EFUser *currentUser = [EFUser currentUser];
+    if (currentUser != nil) {
+        AVQuery *receiveQuery = [EFReciveOrder query];
+        AVQuery *goodQuery = [EFGood query];
+        [goodQuery includeKey:@"img"];
+        [goodQuery includeKey:@"blongUser"];
+        [goodQuery whereKey:@"blongUser" equalTo:currentUser];
+        [receiveQuery whereKey:@"good" matchesQuery:goodQuery];
+        [receiveQuery includeKey:@"user"];
+        [receiveQuery includeKey:@"good"];
+        [receiveQuery orderByDescending:@"createdAt"];
+        [receiveQuery findObjectsInBackgroundWithSuccess:^(NSArray *result) {
+            if (block != nil) {
+                block(result);
+            }
+        }];
+    }
+}
+
 
 + (void)userListWithGoods:(EFGood *)good Block:(EFReceiveBlock)block{
     AVQuery *query = [EFReciveOrder query];

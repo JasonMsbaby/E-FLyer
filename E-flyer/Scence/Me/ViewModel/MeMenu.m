@@ -50,9 +50,9 @@
     MeMenu *m1_5 = [[MeMenu alloc]initWithTitle:@"账户管理" Image:@"menu_acount" IDD:@"acountInfo" HaveNext:YES];
     NSArray *m1 = @[m1_1,m1_2,m1_3,m1_4,m1_5];
     //个人菜单
-    MeMenu *m11_1 = [[MeMenu alloc]initWithTitle:@"个人信息" Image:@"me_setting" IDD:@"personInfo" HaveNext:YES];
-    MeMenu *m11_2 = [[MeMenu alloc]initWithTitle:@"历史记录" Image:@"me_setting" IDD:@"personInfo" HaveNext:YES];
-    MeMenu *m11_3 = [[MeMenu alloc]initWithTitle:@"收入" Image:@"me_setting" IDD:@"personInfo" HaveNext:YES];
+    MeMenu *m11_1 = [[MeMenu alloc]initWithTitle:@"个人信息" Image:@"menu_person" IDD:@"personInfo" HaveNext:YES];
+    MeMenu *m11_2 = [[MeMenu alloc]initWithTitle:@"历史记录" Image:@"menu_history" IDD:@"customeHistory" HaveNext:YES];
+    MeMenu *m11_3 = [[MeMenu alloc]initWithTitle:@"账户管理" Image:@"menu_acount" IDD:@"customIncome" HaveNext:YES];
     NSArray *m11 = @[m11_1,m11_2,m11_3];
     
     //通用菜单

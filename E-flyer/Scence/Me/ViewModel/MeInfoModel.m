@@ -45,12 +45,6 @@ static MeInfoModel *model;
     [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barAddress" Image:@"menu_bar_address" Title:@"店铺位置" Content:user.barAddress HaveNext:NO]];
     [arr_barInfo addObject:[[MeInfoModel alloc]initWithIdd:@"barImg" Image:@"menu_bar_img" Title:@"店铺图片" Content:@"修改图片" HaveNext:YES]];
     [self.source setObject:arr_barInfo forKey:@"barInfo"];
-    //个人中心进入的设置
-//    NSMutableArray *arr_personInfo = [NSMutableArray array];
-//    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"" Image:@"me_setting" Title:@"修改昵称" Content:user.username]];
-//    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"" Image:@"me_setting" Title:@"绑定手机" Content:user.mobilePhoneNumber]];
-//    [arr_personInfo addObject:[[MeInfoModel alloc]initWithIdd:@"" Image:@"me_setting" Title:@"修改密码" Content:@"******"]];
-//    [self.source setObject:arr_personInfo forKey:@"personInfo"];
 }
 
 

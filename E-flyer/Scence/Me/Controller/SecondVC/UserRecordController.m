@@ -32,7 +32,7 @@
     self.dataSource = [NSArray array];
     [SVProgressHUD showWithStatus:@"正在请求用户数据，请稍后..."];
     WeakObj(self);
-    [EFReciveOrder userReceiveOrderWithBlock:^(NSArray<EFReciveOrder *> *result) {
+    [EFReciveOrder allReceiveWithCurrentBarBlock:^(NSArray<EFReciveOrder *> *result) {
         selfWeak.dataSource = result;
         [selfWeak.tableView reloadData];
         [SVProgressHUD dismiss];

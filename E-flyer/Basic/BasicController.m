@@ -87,6 +87,12 @@
 }
 
 
+- (void)pushNext:(UIViewController *)controller navIsHidden:(BOOL)hidden{
+    controller.hidesBottomBarWhenPushed = YES;
+    self.navigationController.navigationBarHidden = hidden;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 
 
 @end

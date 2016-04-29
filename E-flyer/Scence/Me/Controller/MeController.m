@@ -11,6 +11,8 @@
 #import "EFUser.h"
 #import "MeController.h"
 #import "SearchController.h"
+#import "CustomInComeController.h"
+#import "CustomHistoryController.h"
 #import "MeMenu.h"
 #import "LoginController.h"
 #import "UserRecordController.h"
@@ -222,24 +224,29 @@
     MeMenu *menu = _data[self.sortedKeys[section]][row];
     if ([menu.idd isEqualToString:@"exit"]) {
         [self exit];
-    }else if ([menu.idd isEqualToString:@"goodsInfo"]){
+    }else if ([menu.idd isEqualToString:@"goodsInfo"]){//商户 商品管理
         GoodsMangerController *goodListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GoodsMangerController"];
-        goodListVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:goodListVC animated:YES];
-    }else if([menu.idd isEqualToString:@"userInfo"]){
+        [self pushNext:goodListVC navIsHidden:NO];
+    }else if([menu.idd isEqualToString:@"userInfo"]){//商户 用户管理
         UserRecordController *userVC = [self.storyboard instantiateViewControllerWithIdentifier:@"UserRecordController"];
-        userVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:userVC animated:YES];
-    }else if([menu.idd isEqualToString:@"acountInfo"]){
+        [self pushNext:userVC navIsHidden:NO];
+        
+    }else if([menu.idd isEqualToString:@"acountInfo"]){//商户 账户管理
         AccountController *accountVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountController"];
-        accountVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:accountVC animated:YES];
+        [self pushNext:accountVC navIsHidden:NO];
+        
+    }else if([menu.idd isEqualToString:@"customeHistory"]){//用户 历史数据
+        CustomHistoryController *customHistoryVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomHistoryController"];
+        [self pushNext:customHistoryVC navIsHidden:NO];
+        
+    }else if([menu.idd isEqualToString:@"customIncome"]){//用户 资金管理
+        CustomInComeController *customeIncomeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomInComeController"];
+        [self pushNext:customeIncomeVC navIsHidden:NO];
     }
     else{
         MeInfoController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MeInfoController"];
-        infoVC.hidesBottomBarWhenPushed = YES;
         infoVC.menu = menu;
-        [self.navigationController pushViewController:infoVC animated:YES];
+        [self pushNext:infoVC navIsHidden:NO];
     }
 }
 @end
