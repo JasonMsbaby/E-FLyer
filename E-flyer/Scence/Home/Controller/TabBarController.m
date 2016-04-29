@@ -20,14 +20,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    EFTabBar *tabBar = [[EFTabBar alloc]initWithFrame:self.tabBar.frame];
-    [self setValue:tabBar forKey:@"tabBar"];
+    [self loadTabbar];
+}
+//重新加载tabbar
+- (void)reloadTabbar{
+   [self.tabBar layoutSubviews];
+}
+
+- (void)loadTabbar{
+    EFTabBar *tabbar = [[EFTabBar alloc]initWithFrame:self.tabBar.frame];
+    [self setValue:tabbar forKey:@"tabBar"];
     self.selectedIndex= 0;
-    [tabBar.addButton addTarget:self action:@selector(addInfo:) forControlEvents:(UIControlEventTouchUpInside)];
+    [tabbar.addButton addTarget:self action:@selector(addInfo:) forControlEvents:(UIControlEventTouchUpInside)];
+    //添加通知  用户用户角色改变时重新布局tabbar
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(reloadTabbar) name:@"reloadTabbar" object:nil];
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
+
 
 
 #pragma mark - 中间的按钮点击事件

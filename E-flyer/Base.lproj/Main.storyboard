@@ -3118,7 +3118,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="jiE-P2-0cU">
             <objects>
-                <tabBarController id="b6b-sf-KBx" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b6b-sf-KBx" customClass="TabBarController" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fh9-38-I8V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

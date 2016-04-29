@@ -8,6 +8,7 @@
 #import "LrdAlertTableView.h"
 #import "NSTimer+EFTimer.h"
 #import "RegistController.h"
+#import "BasicModel.h"
 #import "LrdDateModel.h"
 
 @interface RegistController ()
@@ -206,7 +207,7 @@
         alertTable.block = ^(NSInteger index,LrdDateModel *model){
             EFCrowd *crowd = [EFCrowd shareInstance].data[index];
             if (block != nil) {
-                block(0,crowd);
+                block(UserRoleTypeBar,crowd);
             }
         };
         [alertTable pop];
@@ -214,7 +215,7 @@
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         if (block != nil) {
-            block(1,nil);
+            block(UserRoleTypeCustome,nil);
         }
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {

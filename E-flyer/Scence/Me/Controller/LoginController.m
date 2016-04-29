@@ -7,7 +7,7 @@
 //
 #import "RegistController.h"
 #import "LoginController.h"
-
+#import "TabBarController.h"
 
 @interface LoginController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
@@ -57,12 +57,14 @@
     WeakObj(self)
     [EFUser logInWithMobilePhoneNumberInBackground:self.phone.text password:self.password.text block:^(AVUser *user, NSError *error) {
         if (error != nil) {
-            NSLog(@"%@",error);
             [selfWeak toastWithError:error];
             return ;
         }
         [self.navigationController popViewControllerAnimated:YES];
         [SVProgressHUD dismiss];
+        //通知tabbar重新刷新
+        NSNotification *notice = [NSNotification notificationWithName:@"reloadTabbar" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:notice];
     }];
 }
 

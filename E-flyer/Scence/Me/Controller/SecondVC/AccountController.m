@@ -74,7 +74,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AcountRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AcountRecordCell"];
-    cell.model = self.dataSource[indexPath.row];
+    EFLog *model = self.dataSource[indexPath.row];
+    cell.model = model;
     return cell;
 }
 

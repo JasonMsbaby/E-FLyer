@@ -53,7 +53,7 @@
             self.acountName.text = [NSString stringWithFormat:@"发布"];
             self.acountMoney.textColor = [UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000];
             self.acountMoney.text = [NSString stringWithFormat:@"-%.2lf元",self.model.money];
-        }
+        }break;
         case EFLogTypeBack:
         {
             [self.acountImg imagedWithAVFile:self.model.good.img];
