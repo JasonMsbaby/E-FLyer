@@ -86,7 +86,6 @@
         detailCell.selectionStyle = UITableViewCellSelectionStyleNone;
         detailCell.delegate = self;
         detailCell.model = self.good;
-        
         return detailCell;
     }else{
         GoodReceiveCell *receiveCell = [tableView dequeueReusableCellWithIdentifier:@"GoodReceiveCell"];
@@ -101,44 +100,53 @@
 //商品下架
 - (void)GoodDetailCellDelegate_UnShelve:(EFGood *)good{
     [SVProgressHUD showWithStatus:@"正在下架..."];
-    [EFGood unShelveGood:good Success:^{
+    [EFGood unShelveGood:self.good Success:^{
         [SVProgressHUD showSuccessWithStatus:@"商品下架成功,金额已退回到您的账户余额"];
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:(UITableViewRowAnimationFade)];
     }];
 }
 //商品续费
 - (void)GoodDetailCellDelegate_Resume:(EFGood *)good{
-    [self alerSheetWithTitle:@"商品续费" Message:@"请选择续费方式" Buttons:@[@"支付宝支付",@"微信支付",@"余额支付"] CallBack:^(NSInteger index) {
-        switch (index) {
-            case 0:
-            {
-                [EFGood publishWithType:(PayTypeYuEr) Good:good Success:^{
-                    
-                }];
-            }break;
-                
-            case 1:
-            {
-                [EFGood publishWithType:(PayTypeWeiXin) Good:good Success:^{
-                    
-                }];
-            }break;
-            case 2:
-            {
-                [EYInputPopupView popViewWithTitle:@"请输入续费数量" contentText:@"0" type:(EYInputPopupView_Type_single_line_number) cancelBlock:nil confirmBlock:^(UIView *view, NSString *text) {
-                    
-                    good.status = GoodStatusNormal;
-                    [SVProgressHUD showWithStatus:@"正在续费..."];
-                    //                    [EFGood publishWithType:(PayTypeAliay) Good:good Success:^{
-                    //                        [SVProgressHUD showSuccessWithStatus:@"续费成功"];
-                    //                    }];
-                } dismissBlock:nil];
-                
-            }break;
-                
-            default:
-                break;
+    [EYInputPopupView popViewWithTitle:@"请输入续费数量" contentText:@"" type:(EYInputPopupView_Type_single_line_number) cancelBlock:nil confirmBlock:^(UIView *view, NSString *text) {
+        NSLog(@"%@",text);
+        NSInteger number = [text integerValue];
+        if (number <= 0) {
+            [SVProgressHUD showErrorWithStatus:@"续费数量不能小于0"];
+            return ;
         }
-    }];
+        WeakObj(self)
+        [self alerSheetWithTitle:[NSString stringWithFormat:@"支付:%.2lf元",number*self.good.price] Message:[NSString stringWithFormat:@"单价:%.2lf元 数量:%ld份",self.good.price,number] Buttons:@[@"支付宝支付",@"微信支付",@"余额支付"] CallBack:^(NSInteger index) {
+            selfWeak.good.status = GoodStatusNormal;
+            selfWeak.good.count += number;
+            switch (index) {
+                case 0:
+                {
+                    [EFGood publishWithType:(PayTypeAliay) Good:selfWeak.good Success:^{
+                        [selfWeak.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:(UITableViewRowAnimationFade)];
+                    }];
+                }break;
+                    
+                case 1:
+                {
+                    [EFGood publishWithType:(PayTypeWeiXin) Good:selfWeak.good Success:^{
+                        [selfWeak.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:(UITableViewRowAnimationFade)];
+                    }];
+                }break;
+                case 2:
+                {
+                    [SVProgressHUD showWithStatus:@"正在续费..."];
+                    [EFGood publishWithType:(PayTypeYuEr) Good:selfWeak.good Success:^{
+                        [SVProgressHUD showSuccessWithStatus:@"续费成功"];
+                        [selfWeak.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:(UITableViewRowAnimationFade)];
+                    }];
+                    
+                }break;
+            }
+        }];
+        
+        
+    } dismissBlock:nil];
+    
 }
 
 @end

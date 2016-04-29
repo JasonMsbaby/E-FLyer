@@ -10,9 +10,9 @@
 #import "EYPopupViewMacro.h"
 #import "EYTextField.h"
 
-#define CONTENT_VIEW_POPVIEW ((popView.type==EYInputPopupView_Type_single_line_text)?popView.tfContent:popView.tvContent)
-#define CONTENT_VIEW ((_type==EYInputPopupView_Type_single_line_text)?_tfContent:_tvContent)
-#define CONTENT_TEXT ((_type==EYInputPopupView_Type_single_line_text)?_tfContent.text:_tvContent.text)
+#define CONTENT_VIEW_POPVIEW ((popView.type==EYInputPopupView_Type_single_line_text||popView.type==EYInputPopupView_Type_single_line_number)?popView.tfContent:popView.tvContent)
+#define CONTENT_VIEW ((_type==EYInputPopupView_Type_single_line_text||_type==EYInputPopupView_Type_single_line_number)?_tfContent:_tvContent)
+#define CONTENT_TEXT ((_type==EYInputPopupView_Type_single_line_text||_type==EYInputPopupView_Type_single_line_number)?_tfContent.text:_tvContent.text)
 
 
 @interface EYInputPopupView ()<UITextViewDelegate,UITextFieldDelegate>
@@ -276,6 +276,16 @@
             }
         }
             break;
+        case EYInputPopupView_Type_single_line_number:
+        {
+            if (_tfContent.isFirstResponder) {
+                [_tfContent resignFirstResponder];
+            } else {
+                _leftLeave = YES;
+                [self dismissAlert];
+            }
+        }
+            break;
             
         default:
             break;
@@ -288,6 +298,15 @@
     
     switch (_type) {
         case EYInputPopupView_Type_single_line_text:
+        {
+            CGRect frame=self.frame;
+            frame.size.height=kTitleTopMargin+kTitleHeight+kContentTopMargin+kContentBottomMargin+kButtonHeight+kButtonBottomMargin
+            +self.tfContent.frame.size.height;
+            frame.size.width=kAlertWidth;
+            self.frame=frame;
+        }
+            break;
+        case EYInputPopupView_Type_single_line_number:
         {
             CGRect frame=self.frame;
             frame.size.height=kTitleTopMargin+kTitleHeight+kContentTopMargin+kContentBottomMargin+kButtonHeight+kButtonBottomMargin
