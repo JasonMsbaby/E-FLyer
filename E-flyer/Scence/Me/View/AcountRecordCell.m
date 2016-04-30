@@ -61,6 +61,13 @@
             self.acountMoney.textColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
             self.acountMoney.text = [NSString stringWithFormat:@"+%.2lf元",self.model.money];
         }break;
+        case EFLogTypeReceive:
+        {
+            [self.acountImg imagedWithAVFile:self.model.good.img];
+            self.acountName.text = @"奖励";
+            self.acountMoney.textColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
+            self.acountMoney.text = [NSString stringWithFormat:@"+%.2lf元",self.model.money];
+        }break;
     }
     [self.acountImg setCornerRadius:10];
     self.acountSource.text = [NSString stringWithFormat:@"【%@】",self.model.source];

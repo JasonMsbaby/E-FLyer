@@ -129,6 +129,7 @@
                                 [order saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                     if (succeeded) {
                                         [SVProgressHUD showSuccessWithStatus:@"成功"];
+                                        [EFLog saveLogWithType:(EFLogTypeReceive) Source:@"账户余额" Money:good.price Good:good];
                                         if (block != nil) {
                                             block();
                                         }

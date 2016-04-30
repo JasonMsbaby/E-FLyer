@@ -20,7 +20,8 @@ typedef NS_ENUM(NSInteger,EFLogType){
     EFLogTypeIn = 0,//充值
     EFLogTypeOut,//提现
     EFLogTypePublish,//发布
-    EFLogTypeBack//商品下架 资金回退
+    EFLogTypeBack,//商品下架 资金回退
+    EFLogTypeReceive//领取商品奖励
 };
 //商品状态
 typedef NS_ENUM(NSInteger,GoodStatus){
