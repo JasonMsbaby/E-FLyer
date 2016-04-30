@@ -142,6 +142,7 @@
 		96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CFD2D21C8E77BF007D10E9 /* MeMenu.m */; };
 		96CFD2D61C8E7E56007D10E9 /* ToolUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CFD2D51C8E7E56007D10E9 /* ToolUtils.m */; };
 		96CFD2D81C8E8FF2007D10E9 /* me_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CFD2D71C8E8FF2007D10E9 /* me_setting@2x.png */; };
+		96DDCEF51CD45FB40088C994 /* AboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DDCEF41CD45FB40088C994 /* AboutUsController.m */; settings = {ASSET_TAGS = (); }; };
 		96E390461C81CB2400107FB7 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E390451C81CB2300107FB7 /* SearchController.m */; };
 		96E59EBA1C8EB53000D24F02 /* BasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E59EB91C8EB53000D24F02 /* BasicModel.m */; };
 		96E59EBD1C8EB60F00D24F02 /* EFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E59EBC1C8EB60F00D24F02 /* EFUser.m */; };
@@ -397,6 +398,8 @@
 		96CFD2D41C8E7E56007D10E9 /* ToolUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolUtils.h; sourceTree = "<group>"; };
 		96CFD2D51C8E7E56007D10E9 /* ToolUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolUtils.m; sourceTree = "<group>"; };
 		96CFD2D71C8E8FF2007D10E9 /* me_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_setting@2x.png"; sourceTree = "<group>"; };
+		96DDCEF31CD45FB40088C994 /* AboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsController.h; sourceTree = "<group>"; };
+		96DDCEF41CD45FB40088C994 /* AboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsController.m; sourceTree = "<group>"; };
 		96E390441C81CB2300107FB7 /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
 		96E390451C81CB2300107FB7 /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 		96E59EB81C8EB53000D24F02 /* BasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicModel.h; sourceTree = "<group>"; };
@@ -839,6 +842,8 @@
 				96E59ECE1C8EF5CC00D24F02 /* LoginController.m */,
 				96E59ED51C8F04BD00D24F02 /* RegistController.h */,
 				96E59ED61C8F04BD00D24F02 /* RegistController.m */,
+				96DDCEF31CD45FB40088C994 /* AboutUsController.h */,
+				96DDCEF41CD45FB40088C994 /* AboutUsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1409,6 +1414,7 @@
 				9642E0C81CBD01F500EEAC61 /* LrdDateModel.m in Sources */,
 				96EB75FC1C85A3C300B3658F /* DataManger.m in Sources */,
 				96B47EE31CC33BF400B8AB08 /* MeInfoModel.m in Sources */,
+				96DDCEF51CD45FB40088C994 /* AboutUsController.m in Sources */,
 				965433931C803625005B8BD1 /* main.m in Sources */,
 				6AF2F1751CCDF44500AE113F /* PayInOutController.m in Sources */,
 				96A7F8651C80C5C200412B79 /* BasicController.m in Sources */,

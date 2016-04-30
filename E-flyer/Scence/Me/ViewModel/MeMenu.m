@@ -56,7 +56,7 @@
     NSArray *m11 = @[m11_1,m11_2,m11_3];
     
     //通用菜单
-    MeMenu *m2_1 = [[MeMenu alloc]initWithTitle:@"关于我们" Image:@"menu_about_us" IDD:@"personInfo" HaveNext:YES];
+    MeMenu *m2_1 = [[MeMenu alloc]initWithTitle:@"关于我们" Image:@"menu_about_us" IDD:@"aboutUs" HaveNext:YES];
     MeMenu *m2_2 = [[MeMenu alloc]initWithTitle:@"退出登录" Image:@"menu_exit" IDD:@"exit" HaveNext:NO];
     NSMutableArray *m2 = [NSMutableArray arrayWithObjects:m2_1, nil];
     if (currentUser != nil) {

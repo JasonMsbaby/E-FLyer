@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/2/28.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "AboutUsController.h"
 #import "GoodsMangerController.h"
 #import "MeInfoController.h"
 #import "EFUser.h"
@@ -246,6 +246,9 @@
     }else if([menu.idd isEqualToString:@"customIncome"]){//用户 资金管理
         CustomInComeController *customeIncomeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomInComeController"];
         [self pushNext:customeIncomeVC navIsHidden:NO];
+    }else if([menu.idd isEqualToString:@"aboutUs"]){
+        AboutUsController *aboutUsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutUsController"];
+        [self pushNext:aboutUsVC navIsHidden:NO];
     }
     else{
         MeInfoController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MeInfoController"];

@@ -1089,11 +1089,12 @@
                         <segue destination="EUT-SM-a4x" kind="push" id="4yd-o8-HaR"/>
                         <segue destination="rXj-zp-QVt" kind="push" id="pXc-bG-9S5"/>
                         <segue destination="tBa-8X-AlO" kind="push" id="yQq-da-3rO"/>
+                        <segue destination="HpH-xZ-ana" kind="push" id="uEo-SJ-cWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7w-fD-JVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2507" y="2269"/>
+            <point key="canvasLocation" x="2597" y="2263"/>
         </scene>
         <!--Custom In Come Controller-->
         <scene sceneID="XFu-FM-I9z">
@@ -3185,7 +3186,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mM-gn-R5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962" y="2269"/>
+            <point key="canvasLocation" x="3210" y="1631"/>
+        </scene>
+        <!--About Us Controller-->
+        <scene sceneID="5P5-qK-XHg">
+            <objects>
+                <viewController storyboardIdentifier="AboutUsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HpH-xZ-ana" customClass="AboutUsController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h2j-L0-7JK"/>
+                        <viewControllerLayoutGuide type="bottom" id="GV2-tg-Cbb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eE4-fg-nzR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="xiK-Ly-tjt">
+                                <rect key="frame" x="53" y="40" width="213" height="213"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xiK-Ly-tjt" secondAttribute="height" id="hgQ-oq-9l4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fz-HS-Chp">
+                                <rect key="frame" x="10" y="263" width="300" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GV2-tg-Cbb" firstAttribute="top" secondItem="8fz-HS-Chp" secondAttribute="bottom" constant="10" id="5R1-tV-Z1R"/>
+                            <constraint firstItem="8fz-HS-Chp" firstAttribute="top" secondItem="xiK-Ly-tjt" secondAttribute="bottom" constant="10" id="MVJ-uZ-gqf"/>
+                            <constraint firstItem="xiK-Ly-tjt" firstAttribute="width" secondItem="eE4-fg-nzR" secondAttribute="width" multiplier="2:3" id="UxH-Yb-NHH"/>
+                            <constraint firstItem="8fz-HS-Chp" firstAttribute="leading" secondItem="eE4-fg-nzR" secondAttribute="leading" constant="10" id="cu5-kt-PYp"/>
+                            <constraint firstAttribute="trailing" secondItem="8fz-HS-Chp" secondAttribute="trailing" constant="10" id="kNv-2h-erI"/>
+                            <constraint firstItem="xiK-Ly-tjt" firstAttribute="top" secondItem="h2j-L0-7JK" secondAttribute="bottom" constant="20" id="oQx-jY-2zY"/>
+                            <constraint firstItem="xiK-Ly-tjt" firstAttribute="centerX" secondItem="eE4-fg-nzR" secondAttribute="centerX" id="yGy-hh-aIy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5R1-tV-Z1R"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="H49-re-XU1"/>
+                    <connections>
+                        <outlet property="img" destination="xiK-Ly-tjt" id="BR8-dU-7eh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frY-iC-hvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3210" y="2269"/>
         </scene>
         <!--Regist Controller-->
         <scene sceneID="DqC-0r-NV3">
@@ -3450,7 +3504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMt-gP-OUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3366" y="2269"/>
+            <point key="canvasLocation" x="3614" y="1631"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jiE-P2-0cU">
