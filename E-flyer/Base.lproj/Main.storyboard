@@ -888,10 +888,10 @@
             </objects>
             <point key="canvasLocation" x="3039" y="972"/>
         </scene>
-        <!--View Controller-->
+        <!--商家-->
         <scene sceneID="hgG-BN-hBU">
             <objects>
-                <viewController id="9Za-Df-2ac" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarListController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Za-Df-2ac" customClass="BarListController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UcM-Wa-M9c"/>
                         <viewControllerLayoutGuide type="bottom" id="ef5-Ch-qhA"/>
@@ -899,10 +899,84 @@
                     <view key="view" contentMode="scaleToFill" id="eY2-Vb-EbG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3o-0e-ftj">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WKv-1k-oSf">
+                                    <size key="itemSize" width="144" height="184"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BarListCell" id="H4o-Jp-kar" customClass="BarListCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="184"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="184"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-rp-Su8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="154"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-U8-4NE">
+                                                    <rect key="frame" x="0.0" y="157" width="24" height="24"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="IOg-U8-4NE" secondAttribute="height" id="cKt-QC-5dG"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市朝阳区建外soho西区1605室" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-C6-nc1">
+                                                    <rect key="frame" x="29" y="155" width="115" height="29"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QQC-rp-Su8" secondAttribute="trailing" id="38q-LV-MQT"/>
+                                            <constraint firstAttribute="trailing" secondItem="jQv-C6-nc1" secondAttribute="trailing" id="7Fk-dl-Yxs"/>
+                                            <constraint firstItem="IOg-U8-4NE" firstAttribute="leading" secondItem="H4o-Jp-kar" secondAttribute="leading" id="XsW-Xn-MoM"/>
+                                            <constraint firstItem="jQv-C6-nc1" firstAttribute="leading" secondItem="IOg-U8-4NE" secondAttribute="trailing" constant="5" id="cdV-OW-tlk"/>
+                                            <constraint firstItem="QQC-rp-Su8" firstAttribute="top" secondItem="H4o-Jp-kar" secondAttribute="top" id="eKp-sh-8Dw"/>
+                                            <constraint firstAttribute="bottom" secondItem="IOg-U8-4NE" secondAttribute="bottom" constant="3" id="fRi-yT-hrX"/>
+                                            <constraint firstItem="jQv-C6-nc1" firstAttribute="centerY" secondItem="IOg-U8-4NE" secondAttribute="centerY" id="gFY-63-geW"/>
+                                            <constraint firstItem="IOg-U8-4NE" firstAttribute="top" secondItem="QQC-rp-Su8" secondAttribute="bottom" constant="3" id="jxT-Sz-STC"/>
+                                            <constraint firstAttribute="bottom" secondItem="QQC-rp-Su8" secondAttribute="bottom" constant="30" id="klm-hi-GpK"/>
+                                            <constraint firstItem="QQC-rp-Su8" firstAttribute="leading" secondItem="H4o-Jp-kar" secondAttribute="leading" id="shr-it-PK3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="address" destination="jQv-C6-nc1" id="fVB-o6-Gwq"/>
+                                            <outlet property="img" destination="QQC-rp-Su8" id="cOn-Fx-q05"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Za-Df-2ac" id="ceE-UH-v0h"/>
+                                    <outlet property="delegate" destination="9Za-Df-2ac" id="3Pu-qe-pQr"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="F3o-0e-ftj" firstAttribute="top" secondItem="UcM-Wa-M9c" secondAttribute="bottom" id="Af9-aY-TOi"/>
+                            <constraint firstItem="ef5-Ch-qhA" firstAttribute="top" secondItem="F3o-0e-ftj" secondAttribute="bottom" id="GHc-1j-WHD"/>
+                            <constraint firstItem="F3o-0e-ftj" firstAttribute="leading" secondItem="eY2-Vb-EbG" secondAttribute="leading" id="Rlv-gM-64c"/>
+                            <constraint firstAttribute="trailing" secondItem="F3o-0e-ftj" secondAttribute="trailing" id="xY9-g9-bMP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DPy-Ch-1Oi"/>
+                    <navigationItem key="navigationItem" title="商家" id="DPy-Ch-1Oi"/>
+                    <connections>
+                        <outlet property="collectionView" destination="F3o-0e-ftj" id="Bb3-CZ-QEQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcV-a9-SWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1288,7 +1362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRz-4M-6yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="3097"/>
+            <point key="canvasLocation" x="628" y="3601"/>
         </scene>
         <!--Custom History Controller-->
         <scene sceneID="UAR-Ce-hYq">
@@ -1427,7 +1501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKN-FL-VA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1630" y="3097"/>
+            <point key="canvasLocation" x="262" y="3601"/>
         </scene>
         <!--Me Info Controller-->
         <scene sceneID="qZT-N0-SEK">
@@ -1466,7 +1540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOL-S4-cb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2589" y="3097"/>
+            <point key="canvasLocation" x="1221" y="3601"/>
         </scene>
         <!--Phone Change Controller-->
         <scene sceneID="hHd-Gc-B26">
@@ -1631,7 +1705,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52H-nS-WwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="3967"/>
+            <point key="canvasLocation" x="1229" y="4471"/>
         </scene>
         <!--Pass Word Change Controller-->
         <scene sceneID="f72-Qa-Jjn">
@@ -1756,7 +1830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFb-JY-SCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944" y="3967"/>
+            <point key="canvasLocation" x="1576" y="4471"/>
         </scene>
         <!--Image Change Controller-->
         <scene sceneID="C4k-6b-uSI">
@@ -1812,7 +1886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBC-c6-NKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3288" y="3967"/>
+            <point key="canvasLocation" x="1920" y="4471"/>
         </scene>
         <!--Goods Manger Controller-->
         <scene sceneID="AER-26-LJk">
@@ -1940,7 +2014,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTQ-9B-Wl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2943" y="3097"/>
+            <point key="canvasLocation" x="1575" y="3601"/>
         </scene>
         <!--Good Detail Controller-->
         <scene sceneID="tYl-GY-eru">
@@ -2318,7 +2392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxS-HU-0pV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3639" y="3967"/>
+            <point key="canvasLocation" x="2271" y="4471"/>
         </scene>
         <!--User Record Controller-->
         <scene sceneID="RWU-fp-Maa">
@@ -2465,7 +2539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwY-2K-xs8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3290" y="3097"/>
+            <point key="canvasLocation" x="1922" y="3601"/>
         </scene>
         <!--Account Controller-->
         <scene sceneID="dNF-Od-EJ5">
@@ -2772,7 +2846,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGT-jY-AsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3640" y="3097"/>
+            <point key="canvasLocation" x="2272" y="3601"/>
         </scene>
         <!--Pay In Out Controller-->
         <scene sceneID="b7E-om-vVF">
@@ -2955,7 +3029,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WzJ-Rw-HSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4053" y="3097"/>
+            <point key="canvasLocation" x="2685" y="3601"/>
         </scene>
         <!--登录-->
         <scene sceneID="aV9-yz-sxW">
@@ -3186,7 +3260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mM-gn-R5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210" y="1631"/>
+            <point key="canvasLocation" x="3018" y="2269"/>
         </scene>
         <!--About Us Controller-->
         <scene sceneID="5P5-qK-XHg">
@@ -3239,7 +3313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frY-iC-hvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210" y="2269"/>
+            <point key="canvasLocation" x="3018" y="2907"/>
         </scene>
         <!--Regist Controller-->
         <scene sceneID="DqC-0r-NV3">
@@ -3504,7 +3578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMt-gP-OUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3614" y="1631"/>
+            <point key="canvasLocation" x="3422" y="2269"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jiE-P2-0cU">
@@ -3963,7 +4037,7 @@
         <!--商家-->
         <scene sceneID="UxV-UU-Wtp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TS5-g9-uEt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TS5-g9-uEt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="商家" image="tab_seller.png" id="m3e-jU-5gZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vrq-3A-h7g">
@@ -4008,6 +4082,7 @@
         <image name="btn_tixian.png" width="100" height="100"/>
         <image name="down_close.png" width="30" height="30"/>
         <image name="head.png" width="100" height="100"/>
+        <image name="index_location.png" width="25" height="25"/>
         <image name="index_search.png" width="20" height="20"/>
         <image name="last_number.png" width="30" height="30"/>
         <image name="meBg.png" width="528" height="407"/>

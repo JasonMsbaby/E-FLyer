@@ -8,7 +8,12 @@
 #import "BasicModel.h"
 #import "EFCrowd.h"
 #import <AVOSCloud.h>
+@class EFUser;
+typedef void(^UserBlock)(NSArray<EFUser *> *result);
+
 @interface EFUser : AVUser<AVSubclassing>
+
+
 @property(assign,nonatomic) double money;//金额
 
 @property(assign,nonatomic) int type;//用户类型  0-商家  1-个人中心
@@ -23,6 +28,16 @@
 @property(strong,nonatomic) NSString *barPhone;//店铺电话
 @property(strong,nonatomic) AVFile *barImg;//店铺图片
 
+
+/**
+ *  分页获取所有的商家列表
+ *
+ *  @param page
+ *  @param block
+ *
+ *  @return 
+ */
++ (void)barInfoListWithPage:(NSInteger)page Block:(UserBlock)block;
 
 
 

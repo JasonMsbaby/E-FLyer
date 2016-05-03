@@ -30,6 +30,18 @@
     return @"_User";
 }
 
++ (void)barInfoListWithPage:(NSInteger)page Block:(UserBlock)block{
+    AVQuery *query = [EFUser query];
+    [query whereKey:@"type" equalTo:UserRoleTypeBar];
+    [query orderByDescending:@"updatedAt"];
+    [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {
+        if (block) {
+            block(result);
+        }
+    }];
+}
+
+
 
 
 

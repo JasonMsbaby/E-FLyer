@@ -70,6 +70,8 @@
 		9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642E1141CBD270000EEAC61 /* CityViewController.m */; };
 		9642E1171CBD271C00EEAC61 /* icon_nav_quxiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */; };
 		9642E1191CBD272D00EEAC61 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9642E1181CBD272D00EEAC61 /* city.plist */; };
+		964638C11CD8747E00E31855 /* BarListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964638C01CD8747E00E31855 /* BarListController.m */; settings = {ASSET_TAGS = (); }; };
+		964638C41CD875FF00E31855 /* BarListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 964638C31CD875FF00E31855 /* BarListCell.m */; settings = {ASSET_TAGS = (); }; };
 		965343BC1CBDFA1A00459664 /* ShowBMKMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 965343BB1CBDFA1A00459664 /* ShowBMKMap.m */; };
 		965343C31CBE03EB00459664 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965343BE1CBE03EB00459664 /* BaiduMapAPI_Base.framework */; };
 		965343C41CBE03EB00459664 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965343BF1CBE03EB00459664 /* BaiduMapAPI_Location.framework */; };
@@ -291,6 +293,10 @@
 		9642E1141CBD270000EEAC61 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		9642E1161CBD271C00EEAC61 /* icon_nav_quxiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_nav_quxiao.png; sourceTree = "<group>"; };
 		9642E1181CBD272D00EEAC61 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
+		964638BF1CD8747E00E31855 /* BarListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarListController.h; sourceTree = "<group>"; };
+		964638C01CD8747E00E31855 /* BarListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarListController.m; sourceTree = "<group>"; };
+		964638C21CD875FF00E31855 /* BarListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarListCell.h; sourceTree = "<group>"; };
+		964638C31CD875FF00E31855 /* BarListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarListCell.m; sourceTree = "<group>"; };
 		965343BA1CBDFA1A00459664 /* ShowBMKMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowBMKMap.h; sourceTree = "<group>"; };
 		965343BB1CBDFA1A00459664 /* ShowBMKMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowBMKMap.m; sourceTree = "<group>"; };
 		965343BE1CBE03EB00459664 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -599,6 +605,33 @@
 			path = LrdPasswordAlertView;
 			sourceTree = "<group>";
 		};
+		964638BC1CD8747100E31855 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				964638BD1CD8747100E31855 /* Controller */,
+				964638BE1CD8747100E31855 /* View */,
+			);
+			path = Bar;
+			sourceTree = "<group>";
+		};
+		964638BD1CD8747100E31855 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				964638BF1CD8747E00E31855 /* BarListController.h */,
+				964638C01CD8747E00E31855 /* BarListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		964638BE1CD8747100E31855 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				964638C21CD875FF00E31855 /* BarListCell.h */,
+				964638C31CD875FF00E31855 /* BarListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		965343BD1CBE03EB00459664 /* BaiduMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,10 +775,10 @@
 		965433EF1C803EDA005B8BD1 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
+				964638BC1CD8747100E31855 /* Bar */,
 				965433F01C803EDA005B8BD1 /* Flyer */,
 				965433F31C803EDA005B8BD1 /* Home */,
 				965433F61C803EDA005B8BD1 /* Me */,
-				965433F91C803EDA005B8BD1 /* Seller */,
 				965433FC1C803EDA005B8BD1 /* Video */,
 			);
 			path = Scence;
@@ -865,29 +898,6 @@
 				96B3E7431CD1BCA0004AE882 /* GoodDetailCell.m */,
 				9687736A1CD3657D0007F347 /* CustomHistoryCell.h */,
 				9687736B1CD3657D0007F347 /* CustomHistoryCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		965433F91C803EDA005B8BD1 /* Seller */ = {
-			isa = PBXGroup;
-			children = (
-				965433FA1C803EDA005B8BD1 /* Controller */,
-				965433FB1C803EDA005B8BD1 /* View */,
-			);
-			path = Seller;
-			sourceTree = "<group>";
-		};
-		965433FA1C803EDA005B8BD1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		965433FB1C803EDA005B8BD1 /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1365,6 +1375,7 @@
 				96E59EC01C8EB79500D24F02 /* EFCategroy.m in Sources */,
 				962BCB0E1C86972300DCAE4B /* VideoPlayController.m in Sources */,
 				9642E1151CBD270000EEAC61 /* CityViewController.m in Sources */,
+				964638C41CD875FF00E31855 /* BarListCell.m in Sources */,
 				96B937811CC61ECC0043E840 /* EveryDayTableViewController.m in Sources */,
 				96EAA84D1CBA48AD00508683 /* EFCrowd.m in Sources */,
 				6A4E40EE1CCB17A4002B30F3 /* PhoneChangeController.m in Sources */,
@@ -1389,6 +1400,7 @@
 				965434021C803F3C005B8BD1 /* TabBarController.m in Sources */,
 				96B47EEC1CC34AAE00B8AB08 /* MeInfoController.m in Sources */,
 				6ACC9C391CCA35DD00F4B716 /* EYTagPopupView.m in Sources */,
+				964638C11CD8747E00E31855 /* BarListController.m in Sources */,
 				96B937861CC61ECC0043E840 /* CustomView.m in Sources */,
 				6ACC9C361CCA35DD00F4B716 /* EYInputPopupView.m in Sources */,
 				9642E0C41CBCB97B00EEAC61 /* WTReParser.m in Sources */,
