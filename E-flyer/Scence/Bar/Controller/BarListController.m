@@ -76,7 +76,6 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BarListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BarListCell" forIndexPath:indexPath];
-    cell.backgroundColor = kRandomColor;
     cell.model = self.dataSource[indexPath.item];
     return cell;
 }

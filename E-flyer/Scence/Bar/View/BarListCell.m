@@ -27,6 +27,7 @@
 
 - (void)loadModel{
     [self.img imagedWithAVFile:self.model.barImg];
+    [self.img setCornerRadius:10];
     if ([self.model.barAddress isEqualToString:@""]) {
         self.address.text = @"暂无位置信息";
     }else{

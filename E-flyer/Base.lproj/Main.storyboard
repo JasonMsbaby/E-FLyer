@@ -891,7 +891,7 @@
         <!--商家-->
         <scene sceneID="hgG-BN-hBU">
             <objects>
-                <viewController storyboardIdentifier="BarListController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Za-Df-2ac" customClass="BarListController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarListController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Za-Df-2ac" customClass="BarListController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UcM-Wa-M9c"/>
                         <viewControllerLayoutGuide type="bottom" id="ef5-Ch-qhA"/>
@@ -918,11 +918,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-rp-Su8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="184"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="159"/>
                                                     <animations/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-rz-Wwd">
-                                                    <rect key="frame" x="0.0" y="154.5" width="25" height="25"/>
+                                                    <rect key="frame" x="0.0" y="159" width="25" height="25"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="WAZ-6I-Cmc"/>
@@ -930,10 +930,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建外SOHO西区" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szq-Me-kgY">
-                                                    <rect key="frame" x="25" y="159" width="119" height="14.5"/>
+                                                    <rect key="frame" x="25" y="164" width="119" height="14.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -943,9 +943,11 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="QQC-rp-Su8" secondAttribute="trailing" id="38q-LV-MQT"/>
+                                            <constraint firstItem="szq-Me-kgY" firstAttribute="top" secondItem="QQC-rp-Su8" secondAttribute="bottom" constant="5" id="BDI-Zq-bMU"/>
                                             <constraint firstItem="szq-Me-kgY" firstAttribute="leading" secondItem="Kuf-rz-Wwd" secondAttribute="trailing" id="KTi-Bd-WTh"/>
                                             <constraint firstItem="Kuf-rz-Wwd" firstAttribute="leading" secondItem="H4o-Jp-kar" secondAttribute="leading" id="VLZ-Yr-I56"/>
                                             <constraint firstAttribute="bottom" secondItem="szq-Me-kgY" secondAttribute="bottom" constant="10" id="XVw-C1-LHE"/>
+                                            <constraint firstAttribute="bottom" secondItem="szq-Me-kgY" secondAttribute="bottom" constant="5" id="cpw-9W-drT"/>
                                             <constraint firstItem="QQC-rp-Su8" firstAttribute="top" secondItem="H4o-Jp-kar" secondAttribute="top" id="eKp-sh-8Dw"/>
                                             <constraint firstItem="szq-Me-kgY" firstAttribute="centerY" secondItem="Kuf-rz-Wwd" secondAttribute="centerY" id="g8L-9M-saO"/>
                                             <constraint firstAttribute="bottom" secondItem="Kuf-rz-Wwd" secondAttribute="bottom" constant="50" id="hk5-lJ-g2d"/>
@@ -956,7 +958,9 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="klm-hi-GpK"/>
                                                 <exclude reference="hk5-lJ-g2d"/>
+                                                <exclude reference="XVw-C1-LHE"/>
                                                 <exclude reference="oF0-qQ-r9G"/>
                                             </mask>
                                         </variation>

@@ -33,6 +33,11 @@
 + (void)barInfoListWithPage:(NSInteger)page Block:(UserBlock)block{
     AVQuery *query = [EFUser query];
     [query whereKey:@"type" equalTo:@(UserRoleTypeBar)];
+    if (page == 0) {
+        page = 1;
+    }
+    query.limit = kPageSize;
+    query.skip = (page - 1)*kPageSize;
     [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithSuccess:^(NSArray *result) {
         if (block) {
