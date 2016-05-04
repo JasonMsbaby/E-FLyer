@@ -918,21 +918,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-rp-Su8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="154"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="184"/>
                                                     <animations/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-U8-4NE">
-                                                    <rect key="frame" x="0.0" y="157" width="24" height="24"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-rz-Wwd">
+                                                    <rect key="frame" x="0.0" y="154.5" width="25" height="25"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="IOg-U8-4NE" secondAttribute="height" id="cKt-QC-5dG"/>
+                                                        <constraint firstAttribute="height" constant="25" id="WAZ-6I-Cmc"/>
+                                                        <constraint firstAttribute="width" constant="25" id="l3i-kt-8Ra"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市朝阳区建外soho西区1605室" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-C6-nc1">
-                                                    <rect key="frame" x="29" y="155" width="115" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建外SOHO西区" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szq-Me-kgY">
+                                                    <rect key="frame" x="25" y="159" width="119" height="14.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -942,18 +943,25 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="QQC-rp-Su8" secondAttribute="trailing" id="38q-LV-MQT"/>
-                                            <constraint firstAttribute="trailing" secondItem="jQv-C6-nc1" secondAttribute="trailing" id="7Fk-dl-Yxs"/>
-                                            <constraint firstItem="IOg-U8-4NE" firstAttribute="leading" secondItem="H4o-Jp-kar" secondAttribute="leading" id="XsW-Xn-MoM"/>
-                                            <constraint firstItem="jQv-C6-nc1" firstAttribute="leading" secondItem="IOg-U8-4NE" secondAttribute="trailing" constant="5" id="cdV-OW-tlk"/>
+                                            <constraint firstItem="szq-Me-kgY" firstAttribute="leading" secondItem="Kuf-rz-Wwd" secondAttribute="trailing" id="KTi-Bd-WTh"/>
+                                            <constraint firstItem="Kuf-rz-Wwd" firstAttribute="leading" secondItem="H4o-Jp-kar" secondAttribute="leading" id="VLZ-Yr-I56"/>
+                                            <constraint firstAttribute="bottom" secondItem="szq-Me-kgY" secondAttribute="bottom" constant="10" id="XVw-C1-LHE"/>
                                             <constraint firstItem="QQC-rp-Su8" firstAttribute="top" secondItem="H4o-Jp-kar" secondAttribute="top" id="eKp-sh-8Dw"/>
-                                            <constraint firstAttribute="bottom" secondItem="IOg-U8-4NE" secondAttribute="bottom" constant="3" id="fRi-yT-hrX"/>
-                                            <constraint firstItem="jQv-C6-nc1" firstAttribute="centerY" secondItem="IOg-U8-4NE" secondAttribute="centerY" id="gFY-63-geW"/>
-                                            <constraint firstItem="IOg-U8-4NE" firstAttribute="top" secondItem="QQC-rp-Su8" secondAttribute="bottom" constant="3" id="jxT-Sz-STC"/>
-                                            <constraint firstAttribute="bottom" secondItem="QQC-rp-Su8" secondAttribute="bottom" constant="30" id="klm-hi-GpK"/>
+                                            <constraint firstItem="szq-Me-kgY" firstAttribute="centerY" secondItem="Kuf-rz-Wwd" secondAttribute="centerY" id="g8L-9M-saO"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kuf-rz-Wwd" secondAttribute="bottom" constant="50" id="hk5-lJ-g2d"/>
+                                            <constraint firstAttribute="bottom" secondItem="QQC-rp-Su8" secondAttribute="bottom" id="klm-hi-GpK"/>
+                                            <constraint firstItem="szq-Me-kgY" firstAttribute="top" secondItem="Kuf-rz-Wwd" secondAttribute="top" id="oF0-qQ-r9G"/>
                                             <constraint firstItem="QQC-rp-Su8" firstAttribute="leading" secondItem="H4o-Jp-kar" secondAttribute="leading" id="shr-it-PK3"/>
+                                            <constraint firstAttribute="trailing" secondItem="szq-Me-kgY" secondAttribute="trailing" id="zdX-ws-Nyy"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="hk5-lJ-g2d"/>
+                                                <exclude reference="oF0-qQ-r9G"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
-                                            <outlet property="address" destination="jQv-C6-nc1" id="fVB-o6-Gwq"/>
+                                            <outlet property="address" destination="szq-Me-kgY" id="zwF-hg-P2A"/>
                                             <outlet property="img" destination="QQC-rp-Su8" id="cOn-Fx-q05"/>
                                         </connections>
                                     </collectionViewCell>
