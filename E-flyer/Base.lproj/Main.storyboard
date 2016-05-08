@@ -901,7 +901,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3o-0e-ftj">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WKv-1k-oSf">
                                     <size key="itemSize" width="144" height="184"/>
@@ -979,10 +979,10 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="F3o-0e-ftj" firstAttribute="top" secondItem="UcM-Wa-M9c" secondAttribute="bottom" id="Af9-aY-TOi"/>
-                            <constraint firstItem="ef5-Ch-qhA" firstAttribute="top" secondItem="F3o-0e-ftj" secondAttribute="bottom" id="GHc-1j-WHD"/>
-                            <constraint firstItem="F3o-0e-ftj" firstAttribute="leading" secondItem="eY2-Vb-EbG" secondAttribute="leading" id="Rlv-gM-64c"/>
-                            <constraint firstAttribute="trailing" secondItem="F3o-0e-ftj" secondAttribute="trailing" id="xY9-g9-bMP"/>
+                            <constraint firstAttribute="trailing" secondItem="F3o-0e-ftj" secondAttribute="trailing" id="GMC-ke-b5b"/>
+                            <constraint firstItem="F3o-0e-ftj" firstAttribute="leading" secondItem="eY2-Vb-EbG" secondAttribute="leading" id="GUx-Bh-5bC"/>
+                            <constraint firstItem="F3o-0e-ftj" firstAttribute="top" secondItem="UcM-Wa-M9c" secondAttribute="bottom" id="bHe-Ex-AvP"/>
+                            <constraint firstAttribute="bottom" secondItem="F3o-0e-ftj" secondAttribute="bottom" id="pP6-EY-KdD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="商家" id="DPy-Ch-1Oi"/>

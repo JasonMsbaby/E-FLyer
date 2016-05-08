@@ -21,6 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationItem.leftBarButtonItem = nil;
+    self.title = @"商家";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self loadCollectionView];
     [self addMJRefresh];
 }
