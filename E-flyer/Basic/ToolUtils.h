@@ -23,9 +23,10 @@
  *
  *  @return
  */
++(UIImage *)getImage:(NSURL *)videoURL;
 + (UIImage*) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time;
 
-+ (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path;
++ (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSURL *)path;
 
 + (NSString *)StringWithDate:(NSDate *)d;
 //颜色创建图片

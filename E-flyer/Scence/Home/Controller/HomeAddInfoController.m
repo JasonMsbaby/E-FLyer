@@ -246,7 +246,7 @@
         // 设置录制视频的质量
         [_mediaVC setVideoQuality:UIImagePickerControllerQualityTypeHigh];
         //设置最长摄像时间
-        [_mediaVC setVideoMaximumDuration:10.f];
+//        [_mediaVC setVideoMaximumDuration:10.f];
         [_mediaVC setAllowsEditing:YES];// 设置是否可以管理已经存在的图片或者视频
         [self presentViewController:_mediaVC animated:YES completion:nil];
     }else{
@@ -262,20 +262,18 @@
 
 #pragma mark - imagePickControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    WeakObj(self)
-    NSLog(@"%@",info);
-    [self dismissViewControllerAnimated:YES completion:^{
-        if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {//图片
-            UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
-            [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
-            selfWeak.good.img = [ToolUtils dataWithImage:img VideoPath:nil];
-        }else{//视频
-            UIImage *img = [ToolUtils thumbnailImageForVideo:[info objectForKey:UIImagePickerControllerMediaURL] atTime:0];
-            [selfWeak.btn_addFile setImage:img forState:(UIControlStateNormal)];
-            NSString *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
-            selfWeak.good.video = [ToolUtils dataWithImage:nil VideoPath:videoURL];
-        }
-    }];
+    if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {//图片
+        UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
+        [self.btn_addFile setImage:img forState:(UIControlStateNormal)];
+        self.good.img = [ToolUtils dataWithImage:img VideoPath:nil];
+    }else{//视频
+        NSURL *videoURL = [[info objectForKey:UIImagePickerControllerMediaURL] absoluteURL];
+        UIImage *img = [ToolUtils getImage:videoURL];
+        [self.btn_addFile setImage:img forState:(UIControlStateNormal)];
+        self.good.video = [ToolUtils dataWithImage:nil VideoPath:videoURL];
+        self.good.img = [ToolUtils dataWithImage:img VideoPath:nil];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - 文本框代理 用于计算当前应支付的金额

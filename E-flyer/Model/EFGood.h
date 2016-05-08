@@ -36,10 +36,11 @@ typedef void(^GoodFinshBlock)(NSArray<EFGood *> *result);
 @property(assign,nonatomic) float scope;//范围km
 @property(assign,nonatomic) GoodStatus status;//商品状态
 @property(assign,nonatomic) BOOL recommend;//是否推荐
+@property(nonatomic,assign) BOOL isplaying;//是否正在播放
 
 
 //分页 分类 分位置 分人群 (进入二级目录下使用)
-+ (void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block;
++ (void)loadDataWithCategroy:(EFCategroy *)categroy SourceType:(EFGoodType)sourceType PageIndex:(NSInteger)index Block:(GoodFinshBlock)block;
 //今日推荐的  最多六条数据
 + (void)loadDataWithTodyRecmomandBlock:(GoodFinshBlock)block;
 //最新数据

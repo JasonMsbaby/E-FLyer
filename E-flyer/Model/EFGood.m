@@ -51,7 +51,7 @@
     if (currentUser != nil) {
         crowd = currentUser.crowd;
     }
-    [self loadDataWithCategroy:nil Crowd:crowd PageIndex:index PageCount:kPageSize Block:^(NSArray<EFGood *> *result) {
+    [self loadDataWithCategroy:nil SourceType:EFGoodTypeImage Crowd:crowd PageIndex:index PageCount:kPageSize Block:^(NSArray<EFGood *> *result) {
         block(result);
     }];
 }
@@ -75,13 +75,13 @@
     }];
 }
 //进入二级页面分类请求
-+(void)loadDataWithCategroy:(EFCategroy *)categroy PageIndex:(NSInteger)index Block:(GoodFinshBlock)block{
++(void)loadDataWithCategroy:(EFCategroy *)categroy SourceType:(EFGoodType)sourceType PageIndex:(NSInteger)index Block:(GoodFinshBlock)block{
     EFUser *currentUser = [EFUser currentUser];
     EFCrowd *crowd = nil;
     if (currentUser != nil) {
         crowd = currentUser.crowd;
     }
-    [self loadDataWithCategroy:categroy Crowd:crowd PageIndex:index PageCount:kPageSize Block:^(NSArray<EFGood *> *result) {
+    [self loadDataWithCategroy:categroy SourceType:sourceType Crowd:crowd PageIndex:index PageCount:kPageSize Block:^(NSArray<EFGood *> *result) {
         if (block != nil) {
             block(result);
         }
@@ -258,7 +258,7 @@
 
 
 //请求通用方法
-+ (void)loadDataWithCategroy:(EFCategroy *)categroy Crowd:(EFCrowd *)crowd PageIndex:(NSInteger)pageIndex PageCount:(NSInteger)pageCount Block:(GoodFinshBlock)block{
++ (void)loadDataWithCategroy:(EFCategroy *)categroy SourceType:(EFGoodType)sourceType Crowd:(EFCrowd *)crowd PageIndex:(NSInteger)pageIndex PageCount:(NSInteger)pageCount Block:(GoodFinshBlock)block{
     if (pageIndex == 0) {
         pageIndex = 1;
     }
@@ -274,10 +274,15 @@
     [goodsQuery includeKey:@"categroy"];
     [goodsQuery orderByDescending:@"updatedAt"];
     [goodsQuery whereKey:@"status" equalTo:@(GoodStatusNormal)];
+    if (sourceType == EFGoodTypeVideo) {
+        [goodsQuery whereKeyExists:@"video"];
+    }else{
+        [goodsQuery whereKeyDoesNotExist:@"video"];
+    }
     
     EFUser *currentUser = [EFUser currentUser];
     
-    if (categroy != nil) {
+    if (categroy != nil && sourceType != EFGoodTypeVideo) {
         [goodsQuery whereKey:@"categroy" equalTo:categroy];
     }
     

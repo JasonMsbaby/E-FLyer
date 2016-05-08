@@ -5,9 +5,10 @@
 //  Created by Jason_Msbaby on 16/3/1.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+
 #import "Constanst.h"
 #import "VideoCell.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+EFImageView.h"
 #import "WMPlayer.h"
 @interface VideoCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
@@ -19,7 +20,7 @@
 @implementation VideoCell
 
 
-- (void)setModel:(VideoModel *)model{
+- (void)setModel:(EFGood *)model{
     if(_model != model){
         _model = nil;
         _model = model;
@@ -39,8 +40,8 @@
     self.ask_view.layer.cornerRadius = 4;
     self.ask_view.clipsToBounds = YES;
     self.ask_view.layer.borderColor = [[UIColor colorWithWhite:0.800 alpha:1.000] CGColor];
-    _lbl_title.text = [NSString stringWithFormat:@"%@%@%@",self.model.des,self.model.title,self.model.title];
-    [_img_cover sd_setImageWithURL:[NSURL URLWithString:self.model.cover]];
+    _lbl_title.text = [NSString stringWithFormat:@"%@",self.model.title];
+    [_img_cover imagedWithAVFile:self.model.img];
     [_btn_play addTarget:self action:@selector(btnPlay) forControlEvents:(UIControlEventTouchUpInside)];
     [self layoutIfNeeded];
 }

@@ -22,6 +22,32 @@
     NSString *uniqueID =  [NSString stringWithFormat:@"%@",uuidStringRef];
     return uniqueID;
 }
++(UIImage *)getImage:(NSURL *)videoURL
+{
+    
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    
+    AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    
+    gen.appliesPreferredTrackTransform = YES;
+    
+    CMTime time = CMTimeMakeWithSeconds(0.0, 600);
+    
+    NSError *error = nil;
+    
+    CMTime actualTime;
+    
+    CGImageRef image = [gen copyCGImageAtTime:time actualTime:&actualTime error:&error];
+    
+    UIImage *thumb = [[UIImage alloc] initWithCGImage:image];
+    
+    CGImageRelease(image);
+    
+    return thumb;
+    
+    
+    
+}
 + (UIImage*) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time {
     
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
@@ -43,12 +69,12 @@
     return thumbnailImage;
 }
 //将图片或者视频转化为file
-+ (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSString *)path{
++ (AVFile *)dataWithImage:(UIImage *)image VideoPath:(NSURL *)path{
     NSData *data;
     if (path == nil) {
         data = UIImageJPEGRepresentation(image, 0.3);
     }else{
-        data = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]];
+        data = [NSData dataWithContentsOfURL:path];
     }
     return [AVFile fileWithData:data];
 }

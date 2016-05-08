@@ -40,7 +40,7 @@
  */
 - (void)loadData{
     WeakObj(self)
-    [EFGood loadDataWithCategroy:self.categroy PageIndex:self.index Block:^(NSArray<EFGood *> *result){
+    [EFGood loadDataWithCategroy:self.categroy SourceType:EFGoodTypeImage PageIndex:self.index Block:^(NSArray<EFGood *> *result){
         if (result.count == 0) {
             
             [selfWeak.tableView.mj_footer endRefreshingWithNoMoreData];

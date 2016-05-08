@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "VideoCell.h"
 #import "VideoModel.h"
-
+#import "EFGood.h"
 @protocol VideoCellDelegate <NSObject>
 
-- (void)videoCellButtonClicked:(VideoModel *)model indexPath:(NSIndexPath *)indexPath;
+- (void)videoCellButtonClicked:(EFGood *)model indexPath:(NSIndexPath *)indexPath;
 
 @end
 
 
 @interface VideoCell : UITableViewCell
-@property(strong,nonatomic) VideoModel *model;
+@property(strong,nonatomic) EFGood *model;
 @property(assign,nonatomic) id<VideoCellDelegate> delegate;
 @property(strong,nonatomic) NSIndexPath *indexPath;
 
@@ -32,6 +32,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *ask_input;
 
 
-+ (CGFloat)cellHeight:(VideoModel *)model;
++ (CGFloat)cellHeight:(EFGood *)model;
 
 @end

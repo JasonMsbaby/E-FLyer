@@ -37,7 +37,11 @@ typedef NS_ENUM(NSInteger,PayType){
     PayTypeWeiXin = 1,//微信支付
     PayTypeYuEr = 2//余额支付
 };
-
+//商品类型
+typedef NS_ENUM(NSInteger,EFGoodType){
+    EFGoodTypeImage = 0,//图片
+    EFGoodTypeVideo//视频
+};
 
 typedef void(^Success)();
 

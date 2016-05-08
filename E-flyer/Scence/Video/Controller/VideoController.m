@@ -5,7 +5,7 @@
 //  Created by Jason_Msbaby on 16/3/2.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "EFGood.h"
 #import "VideoController.h"
 #import "VideoModel.h"
 #import "VideoCell.h"
@@ -16,10 +16,11 @@
 #import "SVProgressHUD.h"
 
 @interface VideoController ()<UITableViewDelegate,UITableViewDataSource,VideoCellDelegate>
-@property(strong,nonatomic) NSArray<VideoModel *> *data;
+@property(strong,nonatomic) NSMutableArray<EFGood *> *data;
 @property(strong,nonatomic) WMPlayer *wmplayer;
 @property(strong,nonatomic) VideoCell *currentCell;
 @property(strong,nonatomic) NSIndexPath *currentIndexPath;
+@property(nonatomic,assign) NSInteger index;
 @end
 
 @implementation VideoController
@@ -27,9 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    [self loadCarousel];
-    [self loadData];
+    self.navigationItem.leftBarButtonItem = nil;
+    self.title = @"短视频";
+//    [self loadCarousel];
+    self.index = 1;
+    self.data = [NSMutableArray array];
     [self addMJRefresh];
     [self addNotification];
 }
@@ -55,23 +60,35 @@
 - (void)addMJRefresh{
     //下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.index = 1;
         [self loadData];
-        [self.tableView.mj_header endRefreshing];
     }];
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        sleep(2);
-        [self.tableView.mj_footer endRefreshing];
+        self.index++;
+        [self loadData];
     }];
+    [self.tableView.mj_header beginRefreshing];
 }
 - (void)loadCarousel{
     VideoCarousel *carousel = [[VideoCarousel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 180)];
     self.tableView.tableHeaderView = carousel;
 }
 - (void)loadData{
-    [VideoModel videoList:^(NSArray<VideoModel *> *result) {
-        self.data = [NSArray arrayWithArray:result];
+    [EFGood loadDataWithCategroy:nil SourceType:(EFGoodTypeVideo) PageIndex:self.index Block:^(NSArray<EFGood *> *result) {
+        if (self.index == 1) {
+            [self.data removeAllObjects];
+        }else{
+            if (result != nil && result.count == 0) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }else{
+                [self.tableView.mj_footer endRefreshing];
+            }
+         }
+        [self.data addObjectsFromArray:result];
         [self.tableView reloadData];
-    } error:nil];
+        [self.tableView.mj_header endRefreshing];
+        
+    }];
 }
 
 #pragma mark - tableViewDataSource
@@ -90,7 +107,6 @@
     cell.delegate = self;
     cell.indexPath = indexPath;
     if (_currentIndexPath != indexPath) {
-        NSLog(@"123");
         [self videoStop];
     }
     [cell.btn_send addTarget:self action:@selector(btnSendClicked:) forControlEvents:(UIControlEventTouchUpInside)];
@@ -113,11 +129,11 @@
  *  @param model     传过来的model
  *  @param indexPath 传过来的indexPath
  */
--(void)videoCellButtonClicked:(VideoModel *)model indexPath:(NSIndexPath *)indexPath{
+-(void)videoCellButtonClicked:(EFGood *)model indexPath:(NSIndexPath *)indexPath{
     _currentIndexPath = indexPath;
     model.isplaying = YES;
     VideoCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
-    [self playWithPath:model.mp4_url onCell:cell];
+    [self playWithPath:model.video.url onCell:cell];
 }
 #pragma mark - 视频相关
 /*!
