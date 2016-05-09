@@ -5,16 +5,19 @@
 //  Created by Jason_Msbaby on 16/3/1.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
-
+#import "EFUser.h"
 #import "Constanst.h"
 #import "VideoCell.h"
 #import "UIImageView+EFImageView.h"
 #import "WMPlayer.h"
+#import "ToolUtils.h"
+#import "UILabel+EFLabel.h"
 @interface VideoCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
 @property (weak, nonatomic) IBOutlet UILabel *partnerName;
 @property (weak, nonatomic) IBOutlet UILabel *sendTime;
-@property (weak, nonatomic) IBOutlet UILabel *problem;
+@property (weak, nonatomic) IBOutlet UILabel *txt_question;
+
 @end
 
 @implementation VideoCell
@@ -40,10 +43,17 @@
     self.ask_view.layer.cornerRadius = 4;
     self.ask_view.clipsToBounds = YES;
     self.ask_view.layer.borderColor = [[UIColor colorWithWhite:0.800 alpha:1.000] CGColor];
-    _lbl_title.text = [NSString stringWithFormat:@"%@",self.model.title];
     [_img_cover imagedWithAVFile:self.model.img];
     [_btn_play addTarget:self action:@selector(btnPlay) forControlEvents:(UIControlEventTouchUpInside)];
     [self layoutIfNeeded];
+    [self.headImg imagedWithAVFile:self.model.blongUser.barImg];
+    self.partnerName.text = self.model.blongUser.barName;
+    self.sendTime.text = [ToolUtils StringWithDate:self.model.updatedAt];
+    
+    [self.lbl_title appendAttributeString:self.model.title FontSize:14 FontColor:[UIColor blackColor] WithWrapNumber:2];
+    [self.lbl_title appendAttributeString:self.model.content FontSize:12 FontColor:[UIColor grayColor] WithWrapNumber:0];
+    
+    self.txt_question.text = self.model.question;
 }
 
 - (void)btnPlay{

@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
 @property (weak, nonatomic) IBOutlet UIButton *btn_play;
 
+
 //无关数据 进行样式代码调整
 @property (weak, nonatomic) IBOutlet UIView *ask_view;
 @property (weak, nonatomic) IBOutlet UITextField *ask_input;
