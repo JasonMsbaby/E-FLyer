@@ -28,15 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = NO;
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
     self.navigationItem.leftBarButtonItem = nil;
-    self.title = @"短视频";
+    self.automaticallyAdjustsScrollViewInsets = NO;
 //    [self loadCarousel];
     self.index = 1;
     self.data = [NSMutableArray array];
     [self addMJRefresh];
     [self addNotification];
+    
 }
 - (void)addNotification{
     //注册播放完成通知

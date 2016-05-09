@@ -23,8 +23,10 @@
     [self loadTabbar];
 }
 //重新加载tabbar
-- (void)reloadTabbar{
-   [self.tabBar layoutSubviews];
+- (void)reloadTabbar:(NSNotification *)notification{
+    if ([notification.name isEqualToString:@"reloadTabbar"]) {
+        [self.tabBar layoutSubviews];
+    }
 }
 
 - (void)loadTabbar{
@@ -34,7 +36,7 @@
     [tabbar.addButton addTarget:self action:@selector(addInfo:) forControlEvents:(UIControlEventTouchUpInside)];
     //添加通知  用户用户角色改变时重新布局tabbar
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(reloadTabbar) name:@"reloadTabbar" object:nil];
+    [center addObserver:self selector:@selector(reloadTabbar:) name:@"reloadTabbar" object:nil];
 }
 
 
