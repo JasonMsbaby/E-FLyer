@@ -108,7 +108,6 @@
     if (_currentIndexPath != indexPath) {
         [self videoStop];
     }
-    [cell.btn_send addTarget:self action:@selector(btnSendClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     return  cell;
 }
 #pragma mark - tableViewDelegate
@@ -181,9 +180,17 @@
     self.data[_currentIndexPath.row].isplaying = NO;
 }
 
-#pragma mark - 事件相应
-- (void)btnSendClicked:(UIButton *)sender{
-    [SVProgressHUD showInfoWithStatus:@"+1"];
+#pragma mark - 点击领取奖励
+
+- (void)videoCellReceiveButtonClicked:(EFGood *)model Answer:(NSString *)answer indexPath:(NSIndexPath *)indexPath{
+    if (model.question != nil && ![model.question isEqualToString:@""] && [answer isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入问题答案"];
+        return ;
+    }
+    [EFGood reveiveMoneyWithGood:model Answer:answer FinishBlock:^{
+        [SVProgressHUD showSuccessWithStatus:@"领取成功,奖金已发放到您的账户"];
+    }];
+    
 }
 
 

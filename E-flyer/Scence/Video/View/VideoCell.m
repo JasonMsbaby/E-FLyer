@@ -52,14 +52,29 @@
     
     [self.lbl_title appendAttributeString:self.model.title FontSize:14 FontColor:[UIColor blackColor] WithWrapNumber:2];
     [self.lbl_title appendAttributeString:self.model.content FontSize:12 FontColor:[UIColor grayColor] WithWrapNumber:0];
-    
     self.txt_question.text = self.model.question;
+    [self.btn_send addTarget:self action:@selector(btnSendAction) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    if (self.model.question == nil || [self.model.question isEqualToString:@""]) {
+        self.ask_input.placeholder = @"木有问题,尽情领取奖励吧!💰";
+        self.ask_input.enabled = NO;
+    }else{
+        self.ask_input.placeholder = @"请输入问题答案领取奖励🔑";
+        self.ask_input.enabled = YES;
+    }
+    
 }
 
 - (void)btnPlay{
     _btn_play.hidden = YES;
     if (self.delegate != nil) {
         [self.delegate videoCellButtonClicked:_model indexPath:_indexPath];
+    }
+}
+
+- (void)btnSendAction{
+    if (self.delegate != nil) {
+        [self.delegate videoCellReceiveButtonClicked:_model Answer:self.ask_input.text indexPath:_indexPath];
     }
 }
 

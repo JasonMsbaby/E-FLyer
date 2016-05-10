@@ -14,6 +14,8 @@
 
 - (void)videoCellButtonClicked:(EFGood *)model indexPath:(NSIndexPath *)indexPath;
 
+- (void)videoCellReceiveButtonClicked:(EFGood *)model Answer:(NSString *)answer indexPath:(NSIndexPath *)indexPath;
+
 @end
 
 
