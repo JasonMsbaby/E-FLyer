@@ -5,6 +5,7 @@
 //  Created by 张杰 on 16/5/3.
 //  Copyright © 2016年 Jason_Msbaby. All rights reserved.
 //
+#import "BarGoodsController.h"
 #import <MJRefresh.h>
 #import "BarListCell.h"
 #import "UIView+EFView.h"
@@ -82,6 +83,12 @@
     BarListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BarListCell" forIndexPath:indexPath];
     cell.model = self.dataSource[indexPath.item];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    BarGoodsController *barGoodsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BarGoodsController"];
+    barGoodsVC.barUser = self.dataSource[indexPath.row];
+    [self pushNext:barGoodsVC navIsHidden:YES];
 }
 
 @end

@@ -88,6 +88,7 @@
 		965343D71CBE051400459664 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965343D61CBE051400459664 /* CoreTelephony.framework */; };
 		965343D91CBE052800459664 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 965343D81CBE052800459664 /* libstdc++.6.0.9.tbd */; };
 		965343DB1CBE05AC00459664 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 965343DA1CBE05AC00459664 /* mapapi.bundle */; };
+		96535A1B1CE1D9570056CF1E /* BarGoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96535A1A1CE1D9570056CF1E /* BarGoodsController.m */; settings = {ASSET_TAGS = (); }; };
 		965433931C803625005B8BD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433921C803625005B8BD1 /* main.m */; };
 		965433961C803625005B8BD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965433951C803625005B8BD1 /* AppDelegate.m */; };
 		9654339C1C803625005B8BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9654339A1C803625005B8BD1 /* Main.storyboard */; };
@@ -315,6 +316,8 @@
 		965343D61CBE051400459664 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		965343D81CBE052800459664 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		965343DA1CBE05AC00459664 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = "E-flyer/Vendors/BaiduMap/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"; sourceTree = SOURCE_ROOT; };
+		96535A191CE1D9570056CF1E /* BarGoodsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGoodsController.h; sourceTree = "<group>"; };
+		96535A1A1CE1D9570056CF1E /* BarGoodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGoodsController.m; sourceTree = "<group>"; };
 		9654338E1C803625005B8BD1 /* E-flyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-flyer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		965433921C803625005B8BD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		965433941C803625005B8BD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -622,6 +625,8 @@
 			children = (
 				964638BF1CD8747E00E31855 /* BarListController.h */,
 				964638C01CD8747E00E31855 /* BarListController.m */,
+				96535A191CE1D9570056CF1E /* BarGoodsController.h */,
+				96535A1A1CE1D9570056CF1E /* BarGoodsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1415,6 +1420,7 @@
 				6AA84EDC1CCA033600417701 /* EFReciveOrder.m in Sources */,
 				96B937881CC61ECC0043E840 /* ImageContentView.m in Sources */,
 				6ACC9C3B1CCA35DD00F4B716 /* EYTagView.m in Sources */,
+				96535A1B1CE1D9570056CF1E /* BarGoodsController.m in Sources */,
 				96CFD2D31C8E77BF007D10E9 /* MeMenu.m in Sources */,
 				96EB75FF1C85A82700B3658F /* VideoModel.m in Sources */,
 				965433961C803625005B8BD1 /* AppDelegate.m in Sources */,

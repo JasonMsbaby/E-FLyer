@@ -74,6 +74,17 @@
         }
     }];
 }
+
+//获取指定用户发布的数据并且进行地理位置校验
++ (void)loadDataWithBelongUserAndLocation:(EFUser *)user Block:(GoodFinshBlock)block{
+    [self loadDataWithBelongUser:user Block:^(NSArray<EFGood *> *result) {
+        NSArray *arr = [self nearLocationInArray:result];
+        block(arr);
+    }];
+}
+
+
+
 //进入二级页面分类请求
 +(void)loadDataWithCategroy:(EFCategroy *)categroy SourceType:(EFGoodType)sourceType PageIndex:(NSInteger)index Block:(GoodFinshBlock)block{
     EFUser *currentUser = [EFUser currentUser];
